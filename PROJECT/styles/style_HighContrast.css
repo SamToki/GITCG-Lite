@@ -1,0 +1,211 @@
+/* For SamToki.github.io/GITCGLite */
+/* Released under GNU GPL v3 open source license. */
+/* (C) 2024 SAM TOKI STUDIO */
+
+/* This is a theme variant, so only colors along with few things are configured. */
+
+/* General */
+	/* Basics */
+		/* Game */
+		.HP, .Heal {
+			color: #80FF80;
+		}
+		.ProgbarFg.Shaped.HP .Shape {
+			fill: #00A000;
+		}
+		.ProgbarFg.Shaped.HP.Low .Shape {
+			fill: #FF0000;
+		}
+		.Energy {
+			color: #FFFF00;
+		}
+		.Energy .Shape {
+			fill: #808000;
+		}
+		.ProgbarFg.Shaped.Energy .Shape {
+			fill: #808000;
+		}
+		.Progbar.Shaped:has(.Energy.Charged) {
+			filter: none;
+		}
+		.Matching .Shape {
+			fill: #000000;
+		}
+		.Unaligned .Shape {
+			fill: #000000;
+		}
+		.Omni, .Physical {
+			color: unset;
+		}
+		.Pyro {
+			color: unset;
+		}
+		.Pyro .Shape {
+			fill: #000000;
+		}
+		.Hydro {
+			color: unset;
+		}
+		.Hydro .Shape {
+			fill: #000000;
+		}
+		.Anemo {
+			color: unset;
+		}
+		.Anemo .Shape {
+			fill: #000000;
+		}
+		.Electro {
+			color: unset;
+		}
+		.Electro .Shape {
+			fill: #000000;
+		}
+		.Dendro {
+			color: unset;
+		}
+		.Dendro .Shape {
+			fill: #000000;
+		}
+		.Cryo {
+			color: unset;
+		}
+		.Cryo .Shape {
+			fill: #000000;
+		}
+		.Geo {
+			color: unset;
+		}
+		.Geo .Shape {
+			fill: #000000;
+		}
+
+/* Area specific */
+	/* Main */
+		/* Game */
+			/* Viewport */
+				/* Independent ctrls */
+					/* Cards */
+						/* Name on card */
+						.NameOnCard {
+							background-color: #402050;
+							color: #FFFFFF; text-shadow: none;
+						}
+
+						/* Indicators on card */
+						.Card .Progbar > .Shape {
+							fill: #404040;
+						}
+						.Card.Shadow .HP, .Card.Shadow .Energy, .Card.Shadow .CharacterStatus, .Card.Shadow .Cost, .Card.Shadow .Duration, .Card.Shadow .Counter {
+							filter: none;
+						}
+
+						/* Character cards */
+							/* Character status */
+							.StatusText {
+								background-color: #000000;
+								color: #FFFFFF; text-shadow: none;
+							}
+							.StatusText.DurationInRounds {
+								color: #FFFF00;
+							}
+
+							/* Damage indicators */
+							.DamageIndicator {
+								background-color: #402050;
+								text-shadow: none;
+							}
+
+							/* Spoken lines */
+							.SpokenLine {
+								filter: drop-shadow(0 0 1px #FFFFFF);
+							}
+							.SpokenLine .Ctrl {
+								background-color: #402050;
+							}
+
+						/* Summons cards */
+						.Card .CtrlGroup .Duration .ProgbarText.DurationInRounds {
+							color: #FFFF00;
+						}
+
+						/* Action cards */
+						.Card .CtrlGroup .Counter .Shape {
+							fill: #000000;
+						}
+
+				/* Table */
+					/* Skill ctrl */
+					.SkillImage, .StatusImage {
+						filter: none;
+					}
+					.CostIndicatorText {
+						color: #FFFFFF;
+					}
+
+			/* Floating ctrls */
+				/* Flash on high damage */
+				#ScreenFilter_GameFlashOnHighDamage.Flash {
+					background-color: #FFFFFF !important;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Physical {
+					background-color: #80808080;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Pyro {
+					background-color: #E86F2C80;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Hydro {
+					background-color: #1BAEE980;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Anemo {
+					background-color: #58B69780;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Electro {
+					background-color: #B47FD180;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Dendro {
+					background-color: #8EAC3080;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Cryo {
+					background-color: #61BCD180;
+				}
+				#ScreenFilter_GameFlashOnHighDamage.Geo {
+					background-color: #E79D0980;
+				}
+
+				/* Skill indicator */
+				#Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorType, #Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorName {
+					background-color: #402050;
+				}
+				#Ctnr_GameSkillIndicator span {
+					color: #FFFFFF; text-shadow: none;
+				}
+
+				/* Info window */
+					/* Sections */
+					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+						width: 238px;
+					}
+						/* Content */
+						.InfoWindowContent {
+							border-bottom: 1px solid #FFFFFF;
+						}
+						.InfoWindowTags .Ctrl.Box {
+							background-color: #000000;
+						}
+						.InfoWindowContent i {
+							opacity: unset;
+						}
+
+/* Responsive web design */
+@media (max-width: 830px) {
+	/* Area specific */
+		/* Main */
+			/* Game */
+				/* Floating ctrls */
+					/* Info window */
+						/* Sections */
+						#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+							width: 178px;
+						}
+}
