@@ -46,7 +46,6 @@
 								"Error",
 								"牌盒中第" + Looper + "张卡牌「" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "」的 ID「" + Casket.Card[Looper].BasicProperties.ID + "」不合法。请尝试修复牌盒。",
 								"", "", "", "确定");
-							PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 							Game.Status.Operation = "Title";
 							setTimeout(ExitGame, 0);
 							return;
@@ -64,7 +63,6 @@
 								"Error",
 								"牌盒中存在重复的卡牌 ID「" + Casket.Card[Looper].BasicProperties.ID + "」。请尝试修复牌盒。",
 								"", "", "", "确定");
-							PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 							Game.Status.Operation = "Title";
 							setTimeout(ExitGame, 0);
 							return;
@@ -81,7 +79,6 @@
 							"Error",
 							"牌盒中只有" + Counter + "张角色牌。至少需要3张角色牌才能开始游戏。",
 							"", "", "", "确定");
-						PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 						Game.Status.Operation = "Title";
 						setTimeout(ExitGame, 0);
 						return;
@@ -97,7 +94,6 @@
 							"Error",
 							"牌盒中只有" + Counter + "张行动牌。至少需要30张行动牌才能开始游戏。",
 							"", "", "", "确定");
-						PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 						Game.Status.Operation = "Title";
 						setTimeout(ExitGame, 0);
 						return;
@@ -121,7 +117,6 @@
 									"Error",
 									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -131,7 +126,6 @@
 									"Error",
 									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -155,7 +149,6 @@
 									"Error",
 									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -165,7 +158,6 @@
 									"Error",
 									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -194,7 +186,6 @@
 									"Error",
 									"您的牌组含有未知的角色牌。请尝试修复牌组。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -207,7 +198,6 @@
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -229,7 +219,6 @@
 										"Question",
 										"您的牌组配置不当。行动牌「" + ReadCardNameByID(Game.Status.Player.ActionCard[(Game0.Load.Progress - 16) / 2].ID) + "」不适用于任何角色牌，将无法出牌。是否继续？",
 										"不再询问", "", "继续", "取消");
-									PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 									Game0.Load.IsPaused = true;
 								}
 								break;
@@ -238,7 +227,6 @@
 									"Error",
 									"您的牌组含有未知的行动牌。请尝试修复牌组。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -251,7 +239,6 @@
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -271,7 +258,6 @@
 									"Error",
 									"对手牌组含有未知的角色牌。请尝试修复牌组。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -284,7 +270,6 @@
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -306,7 +291,6 @@
 										"Question",
 										"对手牌组配置不当。行动牌「" + ReadCardNameByID(Game.Status.Opponent.ActionCard[(Game0.Load.Progress - 82) / 2].ID) + "」不适用于任何角色牌，将无法出牌。是否继续？",
 										"不再询问", "", "继续", "取消");
-									PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 									Game0.Load.IsPaused = true;
 								}
 								break;
@@ -315,7 +299,6 @@
 									"Error",
 									"对手牌组含有未知的行动牌。请尝试修复牌组。",
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -328,7 +311,6 @@
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
 									"", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -363,7 +345,6 @@
 											"Question",
 											"您的牌组配置不当。所有角色均为主力角色，缺乏辅助角色。是否继续？",
 											"不再询问", "", "继续", "取消");
-										PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 										Game0.Load.IsPaused = true;
 										break;
 									case -3:
@@ -371,7 +352,6 @@
 											"Question",
 											"您的牌组配置不当。所有角色均为辅助角色，缺乏主力角色。是否继续？",
 											"不再询问", "", "继续", "取消");
-										PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 										Game0.Load.IsPaused = true;
 										break;
 									default:
@@ -392,7 +372,6 @@
 									"Question",
 									"您的牌组配置不当。所有角色元素类型相同，难以触发元素反应。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -415,7 +394,6 @@
 									"Question",
 									"您的牌组配置不当。行动牌中没有天赋牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -438,7 +416,6 @@
 									"Question",
 									"您的牌组配置不当。行动牌中没有武器牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -461,7 +438,6 @@
 									"Question",
 									"您的牌组配置不当。行动牌中没有圣遗物牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -484,7 +460,6 @@
 									"Question",
 									"您的牌组配置不当。行动牌中没有支援牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -507,7 +482,6 @@
 									"Question",
 									"您的牌组配置不当。行动牌中没有事件牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -539,7 +513,6 @@
 											"Question",
 											"对手牌组配置不当。所有角色均为主力角色，缺乏辅助角色。是否继续？",
 											"不再询问", "", "继续", "取消");
-										PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 										Game0.Load.IsPaused = true;
 										break;
 									case -3:
@@ -547,7 +520,6 @@
 											"Question",
 											"对手牌组配置不当。所有角色均为辅助角色，缺乏主力角色。是否继续？",
 											"不再询问", "", "继续", "取消");
-										PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 										Game0.Load.IsPaused = true;
 										break;
 									default:
@@ -568,7 +540,6 @@
 									"Question",
 									"对手牌组配置不当。所有角色元素类型相同，难以触发元素反应。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -591,7 +562,6 @@
 									"Question",
 									"对手牌组配置不当。行动牌中没有天赋牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -614,7 +584,6 @@
 									"Question",
 									"对手牌组配置不当。行动牌中没有武器牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -637,7 +606,6 @@
 									"Question",
 									"对手牌组配置不当。行动牌中没有圣遗物牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -660,7 +628,6 @@
 									"Question",
 									"对手牌组配置不当。行动牌中没有支援牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -683,7 +650,6 @@
 									"Question",
 									"对手牌组配置不当。行动牌中没有事件牌。是否继续？",
 									"不再询问", "", "继续", "取消");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -852,8 +818,8 @@
 						break;
 
 				// Request sounds
-				case Game0.Load.Progress >= 488 && Game0.Load.Progress < 519:
-					ChangeText("Label_GameLoadingPrompt", "正在请求音效... " + (Game0.Load.Progress - 488) + "/30");
+				case Game0.Load.Progress >= 488 && Game0.Load.Progress < 518:
+					ChangeText("Label_GameLoadingPrompt", "正在请求音效... " + (Game0.Load.Progress - 488) + "/29");
 					if(Game0.Load.Progress == 488) {
 						ResetPreloadAudio();
 						if(Subsystem.Audio.SoundVolume > 0) {
@@ -865,32 +831,31 @@
 							LoadAudio("Audio_Preload6", "audio/sounds/Counter.mp3");
 							LoadAudio("Audio_Preload7", "audio/sounds/CreateDice.mp3");
 							LoadAudio("Audio_Preload8", "audio/sounds/Defeat.mp3");
-							LoadAudio("Audio_Preload9", "audio/sounds/Dialog.mp3");
-							LoadAudio("Audio_Preload10", "audio/sounds/DrawCard.mp3");
-							LoadAudio("Audio_Preload11", "audio/sounds/Fallen.mp3");
-							LoadAudio("Audio_Preload12", "audio/sounds/Heal.mp3");
-							LoadAudio("Audio_Preload13", "audio/sounds/Invalid.mp3");
-							LoadAudio("Audio_Preload14", "audio/sounds/NewPhase.mp3");
-							LoadAudio("Audio_Preload15", "audio/sounds/NewRound.mp3");
-							LoadAudio("Audio_Preload16", "audio/sounds/PlayCard1.mp3");
-							LoadAudio("Audio_Preload17", "audio/sounds/PlayCard2.mp3");
-							LoadAudio("Audio_Preload18", "audio/sounds/RechargeComplete.mp3");
-							LoadAudio("Audio_Preload19", "audio/sounds/RollDice.mp3");
-							LoadAudio("Audio_Preload20", "audio/sounds/RollPhaseSelectDice.mp3");
-							LoadAudio("Audio_Preload21", "audio/sounds/SelectCard.mp3");
-							LoadAudio("Audio_Preload22", "audio/sounds/SelectSkill.mp3");
-							LoadAudio("Audio_Preload23", "audio/sounds/SkillIndicator.mp3");
-							LoadAudio("Audio_Preload24", "audio/sounds/Start.mp3");
-							LoadAudio("Audio_Preload25", "audio/sounds/SwitchCharacter.mp3");
-							LoadAudio("Audio_Preload26", "audio/sounds/SwitchStartingHand.mp3");
-							LoadAudio("Audio_Preload27", "audio/sounds/TableSelectDice.mp3");
-							LoadAudio("Audio_Preload28", "audio/sounds/Tuning.mp3");
-							LoadAudio("Audio_Preload29", "audio/sounds/Turn.mp3");
-							LoadAudio("Audio_Preload30", "audio/sounds/Victory.mp3");
+							LoadAudio("Audio_Preload9", "audio/sounds/DrawCard.mp3");
+							LoadAudio("Audio_Preload10", "audio/sounds/Fallen.mp3");
+							LoadAudio("Audio_Preload11", "audio/sounds/Heal.mp3");
+							LoadAudio("Audio_Preload12", "audio/sounds/Invalid.mp3");
+							LoadAudio("Audio_Preload13", "audio/sounds/NewPhase.mp3");
+							LoadAudio("Audio_Preload14", "audio/sounds/NewRound.mp3");
+							LoadAudio("Audio_Preload15", "audio/sounds/PlayCard1.mp3");
+							LoadAudio("Audio_Preload16", "audio/sounds/PlayCard2.mp3");
+							LoadAudio("Audio_Preload17", "audio/sounds/RechargeComplete.mp3");
+							LoadAudio("Audio_Preload18", "audio/sounds/RollDice.mp3");
+							LoadAudio("Audio_Preload19", "audio/sounds/RollPhaseSelectDice.mp3");
+							LoadAudio("Audio_Preload20", "audio/sounds/SelectCard.mp3");
+							LoadAudio("Audio_Preload21", "audio/sounds/SelectSkill.mp3");
+							LoadAudio("Audio_Preload22", "audio/sounds/SkillIndicator.mp3");
+							LoadAudio("Audio_Preload23", "audio/sounds/Start.mp3");
+							LoadAudio("Audio_Preload24", "audio/sounds/SwitchCharacter.mp3");
+							LoadAudio("Audio_Preload25", "audio/sounds/SwitchStartingHand.mp3");
+							LoadAudio("Audio_Preload26", "audio/sounds/TableSelectDice.mp3");
+							LoadAudio("Audio_Preload27", "audio/sounds/Tuning.mp3");
+							LoadAudio("Audio_Preload28", "audio/sounds/Turn.mp3");
+							LoadAudio("Audio_Preload29", "audio/sounds/Victory.mp3");
 						}
 					}
 					Counter = 0;
-					for(let Looper = 1; Looper <= 30; Looper++) {
+					for(let Looper = 1; Looper <= 29; Looper++) {
 						if(IsAudioLoaded("Audio_Preload" + Looper) == true) {
 							Counter++;
 						}
@@ -900,9 +865,9 @@
 
 				// Request voiceovers
 					// Player
-					case Game0.Load.Progress >= 519 && Game0.Load.Progress < 565:
-						ChangeText("Label_GameLoadingPrompt", "正在请求玩家角色语音... " + (Game0.Load.Progress - 519) + "/45");
-						if(Game0.Load.Progress == 519) {
+					case Game0.Load.Progress >= 518 && Game0.Load.Progress < 564:
+						ChangeText("Label_GameLoadingPrompt", "正在请求玩家角色语音... " + (Game0.Load.Progress - 518) + "/45");
+						if(Game0.Load.Progress == 518) {
 							ResetPreloadAudio();
 							if(Subsystem.Audio.VoiceVolume > 0) {
 								for(let Looper = 1; Looper <= 3; Looper++) {
@@ -930,13 +895,13 @@
 								Counter++;
 							}
 						}
-						Game0.Load.Progress = 520 + Counter;
+						Game0.Load.Progress = 519 + Counter;
 						break;
 
 					// Opponent
-					case Game0.Load.Progress >= 565 && Game0.Load.Progress < 611:
-						ChangeText("Label_GameLoadingPrompt", "正在请求对手角色语音... " + (Game0.Load.Progress - 565) + "/45");
-						if(Game0.Load.Progress == 565) {
+					case Game0.Load.Progress >= 564 && Game0.Load.Progress < 610:
+						ChangeText("Label_GameLoadingPrompt", "正在请求对手角色语音... " + (Game0.Load.Progress - 564) + "/45");
+						if(Game0.Load.Progress == 564) {
 							ResetPreloadAudio();
 							if(Subsystem.Audio.VoiceVolume > 0) {
 								for(let Looper = 1; Looper <= 3; Looper++) {
@@ -964,26 +929,11 @@
 								Counter++;
 							}
 						}
-						Game0.Load.Progress = 566 + Counter;
-						break;
-
-					// Too low!
-					case Game0.Load.Progress >= 611 && Game0.Load.Progress < 613:
-						ChangeText("Label_GameLoadingPrompt", "正在请求低血量语音提示...");
-						if(Game0.Load.Progress == 611) {
-							ResetPreloadAudio();
-							if(Subsystem.Audio.VoiceVolume > 0 && Subsystem.Audio.PlayLowHPVoiceoverReminder == true) {
-								LoadAudio("Audio_Preload1", "audio/voices/TooLow.mp3");
-							}
-							Game0.Load.Progress++;
-						}
-						if(IsAudioLoaded("Audio_Preload1") == true) {
-							Game0.Load.Progress++;
-						}
+						Game0.Load.Progress = 565 + Counter;
 						break;
 
 				// Reset HP to full
-				case Game0.Load.Progress >= 613 && Game0.Load.Progress < 617:
+				case Game0.Load.Progress >= 610 && Game0.Load.Progress < 614:
 					ChangeText("Label_GameLoadingPrompt", "正在重置角色牌血量...");
 					for(let Looper = 1; Looper <= 3; Looper++) {
 						Game.Status.Player.CharacterCard[Looper].HP = Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP;
@@ -995,7 +945,7 @@
 					break;
 
 				// Shuffle action cards
-				case Game0.Load.Progress >= 617 && Game0.Load.Progress < 621:
+				case Game0.Load.Progress >= 614 && Game0.Load.Progress < 618:
 					ChangeText("Label_GameLoadingPrompt", "正在洗牌...");
 					for(let Looper = 1; Looper <= 100; Looper++) {
 						let LotteryNumber = Randomize(1, 30), LotteryNumber2 = Randomize(1, 30);
@@ -1015,7 +965,7 @@
 					break;
 
 				// Backup initial game status for restart
-				case Game0.Load.Progress >= 621 && Game0.Load.Progress < 623:
+				case Game0.Load.Progress >= 618 && Game0.Load.Progress < 620:
 					ChangeText("Label_GameLoadingPrompt", "正在备份对局状态...");
 					Game.InitialStatus = structuredClone(Game.Status);
 					Game.InitialStatus.Operation = "Table";
@@ -1023,7 +973,7 @@
 					break;
 
 				// Check viewport
-				case Game0.Load.Progress >= 623 && Game0.Load.Progress < 625:
+				case Game0.Load.Progress >= 620 && Game0.Load.Progress < 622:
 					ChangeText("Label_GameLoadingPrompt", "正在检查窗口布局...");
 					if(System.DontShowAgain.includes("GITCGLite_Game_WindowLayoutImproper") == false) {
 						switch(true) {
@@ -1032,42 +982,36 @@
 									"Info",
 									"窗口过小。这可能导致控件重叠，影响游戏体验。建议您调大窗口或缩小网页。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							case window.innerWidth >= 400 && window.innerWidth <= 600 && window.innerHeight < 650:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							case window.innerWidth > 600 && window.innerWidth <= 830:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在竖版布局下过宽。这可能影响游戏体验。建议您调窄窗口，或调宽至横版布局。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							case window.innerWidth > 830 && window.innerWidth <= 1100:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在横板布局下过窄。这可能影响游戏体验。建议您调宽窗口，或调窄至竖版布局。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							case window.innerWidth > 1100 && window.innerWidth <= 1920 && window.innerHeight < 700:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							case window.innerWidth > 1920:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过大。这可能影响游戏体验。建议您调小窗口或放大网页。",
 									"不再提示", "", "", "确定");
-								PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 								break;
 							default:
 								break;
@@ -1077,7 +1021,7 @@
 					break;
 
 				// Ready
-				case Game0.Load.Progress == 625:
+				case Game0.Load.Progress == 622:
 					ChangeText("Label_GameLoadingPrompt", "就绪");
 					if(Date.now() - Game0.Load.StartTime >= 2000) {
 						Game.Status.Operation = "Table";
@@ -1097,7 +1041,7 @@
 			} else {
 				Hide("Ctrl_GameCheckNetworkPrompt");
 			}
-			ChangeProgbar("ProgbarFg_GameLoading", "Horizontal", Game0.Load.Progress / 625 * 100);
+			ChangeProgbar("ProgbarFg_GameLoading", "Horizontal", Game0.Load.Progress / 622 * 100);
 		}
 		function RefreshHPDisplay() {
 			// Check and fix HP overflow
@@ -1610,34 +1554,6 @@
 				}
 			}
 
-			// Too low!
-			let Percentage = 0, Percentage2 = 0,
-			TotalHP = {
-				Player: {
-					HP: 0, PreviousHP: 0, MaxHP: 0
-				},
-				Opponent: {
-					HP: 0, PreviousHP: 0, MaxHP: 0
-				}
-			};
-			for(let Looper = 1; Looper <= 3; Looper++) {
-				if(ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID) > 0) {
-					TotalHP.Player.HP += Game.Status.Player.CharacterCard[Looper].HP;
-					TotalHP.Player.PreviousHP += Game.Status.Player.CharacterCard[Looper].PreviousHP;
-					TotalHP.Player.MaxHP += Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP;
-				}
-				if(ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID) > 0) {
-					TotalHP.Opponent.HP += Game.Status.Opponent.CharacterCard[Looper].HP;
-					TotalHP.Opponent.PreviousHP += Game.Status.Opponent.CharacterCard[Looper].PreviousHP;
-					TotalHP.Opponent.MaxHP += Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP;
-				}
-			}
-			Percentage = TotalHP.Player.HP / TotalHP.Player.MaxHP * 100;
-			Percentage2 = TotalHP.Player.PreviousHP / TotalHP.Player.MaxHP * 100;
-			if(Game.Status.Operation == "Table" && Percentage <= Subsystem.Display.HPCautionThreshold && Percentage2 > Subsystem.Display.HPCautionThreshold && Subsystem.Audio.PlayLowHPVoiceoverReminder == true) {
-				PlayAudio("Audio_VoicePlayer", "audio/voices/TooLow.mp3");
-			}
-
 			// Victory or defeat
 			// ???
 		}
@@ -1685,7 +1601,6 @@
 							"是否击倒对手的角色牌「" + ReadCardNameByID(Game.Status.Opponent.CharacterCard[Number].ID) + "」？<br />" +
 							"(作弊功能)",
 							"", "", "击倒", "取消");
-						PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 						break;
 					case "SummonsCard":
 						ShowDialog("Game_ConfirmDiscardOpponentSummonsCard",
@@ -1693,7 +1608,6 @@
 							"是否弃置对手的召唤物牌「" + ReadCardNameByID(Game.Status.Opponent.SummonsCard[Number].ID) + "」？<br />" +
 							"(作弊功能)",
 							"", "", "弃置", "取消");
-						PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 						break;
 					case "ActionCard":
 						ShowDialog("Game_ConfirmDiscardOpponentActionCard",
@@ -1701,7 +1615,6 @@
 							"是否弃置对手的行动牌「" + ReadCardNameByID(Game.Status.Opponent.ActionCard[Number].ID) + "」？<br />" +
 							"(作弊功能)",
 							"", "", "弃置", "取消");
-						PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 						break;
 					default:
 						AlertSystemError("The value of CardType \"" + CardType + "\" in function ClickCard is invalid.");
@@ -3809,14 +3722,12 @@
 				"Question",
 				"您确认要重新开始本次对局？",
 				"", "", "重新开始", "取消");
-			PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 		}
 		function ConfirmExitGame() {
 			ShowDialog("Game_ConfirmExitGame",
 				"Question",
 				"您确认要退出对局？",
 				"", "", "退出", "取消");
-			PlayAudio("Audio_Sound", "audio/sounds/Dialog.mp3");
 		}
 
 		// Cards

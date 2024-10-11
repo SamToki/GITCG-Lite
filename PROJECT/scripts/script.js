@@ -21,7 +21,7 @@
 			},
 			Load: {
 				StartTime: 0,
-				Progress: 0, // Full is 625.
+				Progress: 0, // Full is 622.
 				IsPaused: false
 			},
 			Stats: {
@@ -83,8 +83,7 @@
 				FlashOnHighDamage: false
 			},
 			Audio: {
-				SoundVolume: 100, VoiceVolume: 40,
-				PlayLowHPVoiceoverReminder: false
+				SoundVolume: 100, VoiceVolume: 40
 			},
 			Dev: {
 				Cheat: false
@@ -934,11 +933,6 @@
 				Hide("Ctrl_SettingsSoundVolume");
 				Hide("Ctrl_SettingsVoiceVolume");
 			}
-			if(System.Audio.PlayAudio == true && Subsystem.Audio.VoiceVolume > 0) {
-				Show("Ctrl_SettingsPlayLowHPVoiceoverReminder");
-			} else {
-				Hide("Ctrl_SettingsPlayLowHPVoiceoverReminder");
-			}
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsTryToOptimizePerformance", System.Dev.TryToOptimizePerformance);
@@ -1045,12 +1039,6 @@
 			}
 			ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
 			ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
-			if(System.Audio.PlayAudio == true && Subsystem.Audio.VoiceVolume > 0) {
-				Show("Ctrl_SettingsPlayLowHPVoiceoverReminder");
-			} else {
-				Hide("Ctrl_SettingsPlayLowHPVoiceoverReminder");
-			}
-			ChangeChecked("Checkbox_SettingsPlayLowHPVoiceoverReminder", Subsystem.Audio.PlayLowHPVoiceoverReminder);
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsCheat", Subsystem.Dev.Cheat);
@@ -1204,10 +1192,6 @@
 		}
 		function PreviewVoiceVolume() {
 			PlayAudio("Audio_VoicePlayer", "audio/voices/PreviewVoiceVolume.mp3");
-		}
-		function SetPlayLowHPVoiceoverReminder() {
-			Subsystem.Audio.PlayLowHPVoiceoverReminder = IsChecked("Checkbox_SettingsPlayLowHPVoiceoverReminder");
-			RefreshSubsystem();
 		}
 
 		// Dev
