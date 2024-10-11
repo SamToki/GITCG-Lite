@@ -5535,19 +5535,13 @@
 					case "Unaligned":
 						return true;
 					case "Pyro":
-						return Dice.Omni + Dice.Pyro >= Cost[1];
 					case "Hydro":
-						return Dice.Omni + Dice.Hydro >= Cost[1];
 					case "Anemo":
-						return Dice.Omni + Dice.Anemo >= Cost[1];
 					case "Electro":
-						return Dice.Omni + Dice.Electro >= Cost[1];
 					case "Dendro":
-						return Dice.Omni + Dice.Dendro >= Cost[1];
 					case "Cryo":
-						return Dice.Omni + Dice.Cryo >= Cost[1];
 					case "Geo":
-						return Dice.Omni + Dice.Geo >= Cost[1];
+						return Dice.Omni + Dice[Cost[2]] >= Cost[1];
 					default:
 						AlertSystemError("The value of Cost[2] \"" + Cost[2] + "\" in function IsDiceAdequate is invalid.");
 						break;
@@ -5557,7 +5551,12 @@
 			}
 		}
 		function AutoSelectDice(PlayerOrOpponent, ActionType, ActionCardNumber) {
-			// ???
+			if(IsDiceAdequate(PlayerOrOpponent, ActionType, ActionCardNumber) == true) {
+				let Cost = ReadCost(PlayerOrOpponent, ActionType, ActionCardNumber);
+				// ???
+			} else {
+				ShowToast("骰子不足");
+			}
 		}
 		function IsSelectedDiceMatchingCost(PlayerOrOpponent, ActionType, ActionCardNumber) {
 			// Initialization
@@ -5597,19 +5596,13 @@
 					case "Unaligned":
 						return true;
 					case "Pyro":
-						return Dice.Omni + Dice.Pyro >= Cost[1];
 					case "Hydro":
-						return Dice.Omni + Dice.Hydro >= Cost[1];
 					case "Anemo":
-						return Dice.Omni + Dice.Anemo >= Cost[1];
 					case "Electro":
-						return Dice.Omni + Dice.Electro >= Cost[1];
 					case "Dendro":
-						return Dice.Omni + Dice.Dendro >= Cost[1];
 					case "Cryo":
-						return Dice.Omni + Dice.Cryo >= Cost[1];
 					case "Geo":
-						return Dice.Omni + Dice.Geo >= Cost[1];
+						return Dice.Omni + Dice[Cost[2]] >= Cost[1];
 					default:
 						AlertSystemError("The value of Cost[2] \"" + Cost[2] + "\" in function IsDiceAdequate is invalid.");
 						break;
