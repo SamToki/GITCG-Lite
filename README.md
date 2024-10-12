@@ -1,6 +1,13 @@
-## 这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。<br>This is an early test version which is not indicative of the final content and quality. Many features still don't work. Do not distribute.
+这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。<br>
+This is an early test version which is not indicative of the final content and quality. Many features still don't work. Do not distribute.
 
-## 以下部分内容无法加载是正常现象。<br>There are some unreadable content below.
+本项目预计长时间暂停开发。<br>
+The development of this project is expected to be paused for a long time.
+
+以下部分内容无法加载是正常现象。<br>
+There are some unreadable content below.
+
+----------
 
 # 简介 Description
 
