@@ -2141,7 +2141,7 @@ function AlertGameFunctionError(Message) {
 	console.error("● 游戏函数错误\n" +
 		Message + "\n" +
 		"\n" +
-		"● Additional Info\n" +
+		"[Additional Info]\n" +
 		"Operation: \"" + Game.Status.Operation + "\"\n" +
 		"Phase: \"" + Game.Status.Phase[1] + " " + Game.Status.Phase[2] + "\"\n" +
 		"Active characters: \"" + Game.Status.Player.CharacterCard[Game.Status.Player.ActiveCharacter].ID + "\", \"" + Game.Status.Opponent.CharacterCard[Game.Status.Opponent.ActiveCharacter].ID + "\"\n" +
