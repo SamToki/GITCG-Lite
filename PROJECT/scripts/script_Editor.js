@@ -202,25 +202,25 @@
 					ChangeValue("Textbox_EditorElementalSkillCostQuantity", Casket.Card[Editor.CardNumber].ElementalSkill.Cost);
 					switch(Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType) {
 						case "Pyro":
-							ChangeText("Label_EditorElementalSkillCostType", "火骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "火");
 							break;
 						case "Hydro":
-							ChangeText("Label_EditorElementalSkillCostType", "水骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "水");
 							break;
 						case "Anemo":
-							ChangeText("Label_EditorElementalSkillCostType", "风骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "风");
 							break;
 						case "Electro":
-							ChangeText("Label_EditorElementalSkillCostType", "雷骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "雷");
 							break;
 						case "Dendro":
-							ChangeText("Label_EditorElementalSkillCostType", "草骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "草");
 							break;
 						case "Cryo":
-							ChangeText("Label_EditorElementalSkillCostType", "冰骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "冰");
 							break;
 						case "Geo":
-							ChangeText("Label_EditorElementalSkillCostType", "岩骰子");
+							ChangeText("Label_EditorElementalSkillCostType", "岩");
 							break;
 						default:
 							AlertSystemError("The value of Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType \"" + Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType + "\" in function RefreshEditor is invalid. The card ID is \"" + Casket.Card[Editor.CardNumber].BasicProperties.ID + "\".");
@@ -241,25 +241,25 @@
 						ChangeValue("Textbox_EditorSecondaryElementalSkillCostQuantity", Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Cost);
 						switch(Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType) {
 							case "Pyro":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "火骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "火");
 								break;
 							case "Hydro":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "水骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "水");
 								break;
 							case "Anemo":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "风骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "风");
 								break;
 							case "Electro":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "雷骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "雷");
 								break;
 							case "Dendro":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "草骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "草");
 								break;
 							case "Cryo":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "冰骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "冰");
 								break;
 							case "Geo":
-								ChangeText("Label_EditorSecondaryElementalSkillCostType", "岩骰子");
+								ChangeText("Label_EditorSecondaryElementalSkillCostType", "岩");
 								break;
 							default:
 								AlertSystemError("The value of Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType \"" + Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType + "\" in function RefreshEditor is invalid. The card ID is \"" + Casket.Card[Editor.CardNumber].BasicProperties.ID + "\".");
@@ -283,25 +283,25 @@
 					ChangeValue("Textbox_EditorElementalBurstCostQuantity", Casket.Card[Editor.CardNumber].ElementalBurst.Cost);
 					switch(Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType) {
 						case "Pyro":
-							ChangeText("Label_EditorElementalBurstCostType", "火骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "火");
 							break;
 						case "Hydro":
-							ChangeText("Label_EditorElementalBurstCostType", "水骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "水");
 							break;
 						case "Anemo":
-							ChangeText("Label_EditorElementalBurstCostType", "风骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "风");
 							break;
 						case "Electro":
-							ChangeText("Label_EditorElementalBurstCostType", "雷骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "雷");
 							break;
 						case "Dendro":
-							ChangeText("Label_EditorElementalBurstCostType", "草骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "草");
 							break;
 						case "Cryo":
-							ChangeText("Label_EditorElementalBurstCostType", "冰骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "冰");
 							break;
 						case "Geo":
-							ChangeText("Label_EditorElementalBurstCostType", "岩骰子");
+							ChangeText("Label_EditorElementalBurstCostType", "岩");
 							break;
 						default:
 							AlertSystemError("The value of Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType \"" + Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType + "\" in function RefreshEditor is invalid. The card ID is \"" + Casket.Card[Editor.CardNumber].BasicProperties.ID + "\".");
@@ -519,16 +519,14 @@
 					ChangeValue("Textbox_EditorTalentCardPropertiesCostQuantity", Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[1]);
 					ChangeValue("Combobox_EditorTalentCardPropertiesCostType", Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[2]);
 					if(Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[2] != "Unaligned") {
-						HideHorizontally("Label_EditorTalentCardPropertiesCost1");
-						Show("Label_EditorTalentCardPropertiesCost2");
+						Show("Label_EditorTalentCardPropertiesCost1");
 						Show("Textbox_EditorTalentCardPropertiesCostUnaligned");
-						Show("Label_EditorTalentCardPropertiesCost3");
+						Show("Label_EditorTalentCardPropertiesCost2");
 						ChangeValue("Textbox_EditorTalentCardPropertiesCostUnaligned", Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[3]);
 					} else {
-						Show("Label_EditorTalentCardPropertiesCost1");
-						HideHorizontally("Label_EditorTalentCardPropertiesCost2");
+						HideHorizontally("Label_EditorTalentCardPropertiesCost1");
 						HideHorizontally("Textbox_EditorTalentCardPropertiesCostUnaligned");
-						HideHorizontally("Label_EditorTalentCardPropertiesCost3");
+						HideHorizontally("Label_EditorTalentCardPropertiesCost2");
 					}
 					ChangeValue("Textbox_EditorTalentCardPropertiesOrientedCharacterCardID", Casket.Card[Editor.CardNumber].TalentCardProperties.OrientedCharacterCardID);
 					ChangeValue("Combobox_EditorTalentCardPropertiesSkillType", Casket.Card[Editor.CardNumber].TalentCardProperties.SkillType);

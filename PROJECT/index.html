@@ -6384,7 +6384,7 @@
 										<input class="Textbox Width60" id="Textbox_EditorNormalAttackCostQuantity" type="number" min="0" max="8" step="1" value="1" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostQuantity')" onchange="SetNormalAttackCostQuantity()" />
 										<span id="Label_EditorNormalAttackCostType">元素类型 +</span>
 										<input class="Textbox Width60" id="Textbox_EditorNormalAttackCostUnaligned" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostUnaligned')" onchange="SetNormalAttackCostUnaligned()" />
-										<span>任意骰子</span>
+										<span>任意</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6437,7 +6437,7 @@
 									<label for="Textbox_EditorElementalSkillCostQuantity">
 										<span>花费：</span>
 										<input class="Textbox Width120" id="Textbox_EditorElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorElementalSkillCostQuantity')" onchange="SetElementalSkillCostQuantity()" />
-										<span id="Label_EditorElementalSkillCostType">元素类型 骰子</span>
+										<span id="Label_EditorElementalSkillCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6476,7 +6476,7 @@
 									<label for="Textbox_EditorSecondaryElementalSkillCostQuantity">
 										<span>花费：</span>
 										<input class="Textbox Width120" id="Textbox_EditorSecondaryElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="5" placeholder="0~8" onclick="SelectText('Textbox_EditorSecondaryElementalSkillCostQuantity')" onchange="SetSecondaryElementalSkillCostQuantity()" />
-										<span id="Label_EditorSecondaryElementalSkillCostType">元素类型 骰子</span>
+										<span id="Label_EditorSecondaryElementalSkillCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6515,7 +6515,7 @@
 									<label for="Textbox_EditorElementalBurstCostQuantity">
 										<span>花费：</span>
 										<input class="Textbox Width120" id="Textbox_EditorElementalBurstCostQuantity" type="number" min="0" max="8" step="1" value="4" placeholder="0~8" onclick="SelectText('Textbox_EditorElementalBurstCostQuantity')" onchange="SetElementalBurstCostQuantity()" />
-										<span id="Label_EditorElementalBurstCostType">元素类型 骰子</span>
+										<span id="Label_EditorElementalBurstCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6676,7 +6676,6 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span>骰子</span>
 									</label>
 								</li>
 								<li class="Ctrl Hidden" id="Ctrl_EditorAffiliatedCardAffectedObject" inert="true"> <!-- Only for event cards. -->
@@ -6759,10 +6758,9 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span class="HiddenHorizontally" id="Label_EditorTalentCardPropertiesCost1" inert="true">骰子</span>
-										<span id="Label_EditorTalentCardPropertiesCost2">+</span>
+										<span id="Label_EditorTalentCardPropertiesCost1">+</span>
 										<input class="Textbox Width60" id="Textbox_EditorTalentCardPropertiesCostUnaligned" type="number" min="0" max="8" step="1" value="0" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostUnaligned')" onchange="SetTalentCardPropertiesCostUnaligned()" />
-										<span id="Label_EditorTalentCardPropertiesCost3">任意骰子</span>
+										<span id="Label_EditorTalentCardPropertiesCost2">任意</span>
 									</label>
 								</li>
 								<li class="Ctrl" id="Ctrl_EditorTalentCardPropertiesOrientedCharacterCardID">
@@ -6805,7 +6803,6 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span>骰子</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6848,7 +6845,6 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span>骰子</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6879,7 +6875,6 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span>骰子</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6932,7 +6927,6 @@
 											<option value="Cryo">冰</option>
 											<option value="Geo">岩</option>
 										</select>
-										<span>骰子</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -7641,7 +7635,7 @@
 					<li class="Item">
 						<fieldset>
 							<legend>隐私权声明</legend>
-							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 Local Storage 功能在本地存储用户数据，您可随时手动<a href="#Item_SettingsUserData" onclick="ShowIAmHere('Item_SettingsUserData')">删除</a>。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
+							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 Local Storage 功能在本地存储<a href="#Item_SettingsUserData" onclick="ShowIAmHere('Item_SettingsUserData')">用户数据</a>，您可随时手动删除。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
 							<p>出于安全考虑，<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub 的服务器可能会记录您的 IP 地址</a>，但我无法访问这些数据。</p>
 						</fieldset>
 					</li>
