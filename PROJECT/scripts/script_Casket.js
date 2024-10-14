@@ -22,7 +22,7 @@
 					"	</label>" +
 					"</li>" +
 					"<li class=\"Ctrl\">" +
-					"	<label class=\"Active\" id=\"Label_CasketRandomlySelectDeck\" for=\"Radiobtn_CasketRandomlySelectDeckPlayer\">" +
+					"	<label id=\"Label_CasketRandomlySelectDeck\" for=\"Radiobtn_CasketRandomlySelectDeckPlayer\">" +
 					"		<input class=\"Radiobtn\" id=\"Radiobtn_CasketRandomlySelectDeckPlayer\" type=\"radio\" checked=\"true\" onchange=\"SetPlayerDeckRandomlySelectDeck()\" />" +
 					"		<input class=\"Radiobtn\" id=\"Radiobtn_CasketRandomlySelectDeckOpponent\" type=\"radio\" checked=\"true\" onchange=\"SetOpponentDeckRandomlySelectDeck()\" />" +
 					"		<span>(随机选择牌组)</span>" +
@@ -193,10 +193,8 @@
 			// Decks
 			if(Casket.DeckSelection[1] == -2) {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckPlayer", true);
-				AddClass("Label_CasketGenerateTemporaryDeck", "Active");
 			} else {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckPlayer", false);
-				RemoveClass("Label_CasketGenerateTemporaryDeck", "Active");
 			}
 			if(Casket.DeckSelection[2] == -2) {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckOpponent", true);
@@ -205,10 +203,8 @@
 			}
 			if(Casket.DeckSelection[1] == -1) {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckPlayer", true);
-				AddClass("Label_CasketRandomlySelectDeck", "Active");
 			} else {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckPlayer", false);
-				RemoveClass("Label_CasketRandomlySelectDeck", "Active");
 			}
 			if(Casket.DeckSelection[2] == -1) {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckOpponent", true);
