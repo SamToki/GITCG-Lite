@@ -303,26 +303,26 @@
 								position: absolute; top: unset; left: unset;
 								background-color: #E0E0E0;
 							}
-							.SpokenLine .SpokenLineBalloon {
-								top: unset; left: 20px;
+							.SpokenLine .Balloon {
+								left: 20px;
 								width: calc(100% - 40px); height: 60px; border-radius: 5px; padding: 10px;
 								display: flex; justify-content: center; align-items: center; overflow: hidden;
 							}
-							#SpokenLine_Player .SpokenLineBalloon {
+							#SpokenLine_GamePlayer .Balloon {
 								top: 50px;
 							}
-							#SpokenLine_Opponent .SpokenLineBalloon {
+							#SpokenLine_GameOpponent .Balloon {
 								top: 0;
 							}
-							.SpokenLine .SpokenLineBalloonTail {
-								top: unset; left: 0;
+							.SpokenLine .BalloonTail {
+								left: 0;
 								width: 100%; height: 50px;
 							}
-							#SpokenLine_Player .SpokenLineBalloonTail {
+							#SpokenLine_GamePlayer .BalloonTail {
 								top: 0;
 								clip-path: polygon(50% 0, 45% 100%, 55% 100%);
 							}
-							#SpokenLine_Opponent .SpokenLineBalloonTail {
+							#SpokenLine_GameOpponent .BalloonTail {
 								top: 60px;
 								clip-path: polygon(45% 0, 55% 0, 50% 100%);
 							}
@@ -794,46 +794,46 @@
 						}
 
 						/* Spoken lines */
-						#SpokenLine_Player {
+						#SpokenLine_GamePlayer {
 							top: calc(50% + 90px);
 						}
-						#SpokenLine_Opponent {
+						#SpokenLine_GameOpponent {
 							top: calc(50% - 302px);
 						}
-						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) #SpokenLine_Player {
+						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) #SpokenLine_GamePlayer {
 							transform-origin: top left;
 						}
-						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) #SpokenLine_Player {
+						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) #SpokenLine_GamePlayer {
 							transform-origin: top center;
 						}
-						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) #SpokenLine_Player {
+						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) #SpokenLine_GamePlayer {
 							transform-origin: top right;
 						}
-						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) #SpokenLine_Opponent {
+						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) #SpokenLine_GameOpponent {
 							transform-origin: bottom left;
 						}
-						#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) #SpokenLine_Opponent {
+						#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) #SpokenLine_GameOpponent {
 							transform-origin: bottom center;
 						}
-						#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) #SpokenLine_Opponent {
+						#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) #SpokenLine_GameOpponent {
 							transform-origin: bottom right;
 						}
-						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) #SpokenLine_Player .SpokenLineBalloonTail {
+						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
 							clip-path: polygon(0 0, 15% 100%, 25% 100%);
 						}
-						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) #SpokenLine_Player .SpokenLineBalloonTail {
+						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
 							clip-path: polygon(50% 0, 45% 100%, 55% 100%);
 						}
-						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) #SpokenLine_Player .SpokenLineBalloonTail {
+						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
 							clip-path: polygon(100% 0, 75% 100%, 85% 100%);
 						}
-						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) #SpokenLine_Opponent .SpokenLineBalloonTail {
+						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) #SpokenLine_GameOpponent .BalloonTail {
 							clip-path: polygon(15% 0, 25% 0, 0 100%);
 						}
-						#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) #SpokenLine_Opponent .SpokenLineBalloonTail {
+						#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) #SpokenLine_GameOpponent .BalloonTail {
 							clip-path: polygon(45% 0, 55% 0, 50% 100%);
 						}
-						#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) #SpokenLine_Opponent .SpokenLineBalloonTail {
+						#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) #SpokenLine_GameOpponent .BalloonTail {
 							clip-path: polygon(75% 0, 85% 0, 100% 100%);
 						}
 
@@ -1256,7 +1256,7 @@
 					/* Sections */
 					#CtrlGroup_GameInfoWindowCloseButton {
 						position: sticky; top: 0; left: 0; z-index: 1;
-						width: 100%;
+						width: 240px;
 					}
 					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 						width: 240px; padding: 15px 0;
@@ -1525,11 +1525,11 @@
 									left: 42px;
 									width: 198px; height: 120px;
 								}
-								.SpokenLine .SpokenLineBalloon {
+								.SpokenLine .Balloon {
 									left: 0;
 									width: 100%;
 								}
-								.SpokenLineBalloonTail {
+								.BalloonTail {
 									height: 60px;
 								}
 
@@ -1917,10 +1917,10 @@
 							}
 
 							/* Spoken lines */
-							#SpokenLine_Player {
+							#SpokenLine_GamePlayer {
 								top: calc(50% + 75px);
 							}
-							#SpokenLine_Opponent {
+							#SpokenLine_GameOpponent {
 								top: calc(50% - 264px);
 							}
 
@@ -2163,7 +2163,7 @@
 						top: 15px;
 					}
 						/* Sections */
-						#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+						#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 							width: 180px;
 						}
 						#Window_Game #CtrlGroup_GameInfoWindowCloseButton .Ctrl {
@@ -2171,7 +2171,7 @@
 						}
 							/* Title */
 							.InfoWindowTitle .Ctrl {
-								width: calc(100% - 40px); height: unset; min-height: 30px;
+								width: calc(100% - 40px); min-height: 30px;
 							}
 
 							/* Content */

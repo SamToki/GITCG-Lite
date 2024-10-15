@@ -4203,7 +4203,7 @@
 				);
 				if(Subsystem.Display.ShowSpokenLines == true && SpokenLineType != "Fallen") {
 					ChangeText("Label_GameSpokenLine" + PlayerOrOpponent, Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][LotteryNumber]);
-					Show("SpokenLine_" + PlayerOrOpponent);
+					Show("SpokenLine_Game" + PlayerOrOpponent);
 					clearTimeout(Automation.FadeSpokenLine[PlayerOrOpponent]);
 					Automation.FadeSpokenLine[PlayerOrOpponent] = setTimeout(function() {
 						FadeSpokenLine(PlayerOrOpponent);
@@ -4213,7 +4213,7 @@
 			}
 		}
 		function FadeSpokenLine(PlayerOrOpponent) {
-			Fade("SpokenLine_" + PlayerOrOpponent);
+			Fade("SpokenLine_Game" + PlayerOrOpponent);
 			clearTimeout(Automation.FadeSpokenLine[PlayerOrOpponent]);
 		}
 
