@@ -320,7 +320,7 @@
 							}
 							#SpokenLine_GamePlayer .BalloonTail {
 								top: 0;
-								clip-path: polygon(50% 0, 45% 100%, 55% 100%);
+								clip-path: polygon(50% 0, 55% 100%, 45% 100%);
 							}
 							#SpokenLine_GameOpponent .BalloonTail {
 								top: 60px;
@@ -819,13 +819,13 @@
 							transform-origin: bottom right;
 						}
 						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
-							clip-path: polygon(0 0, 15% 100%, 25% 100%);
+							clip-path: polygon(0 0, 25% 100%, 15% 100%);
 						}
 						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
-							clip-path: polygon(50% 0, 45% 100%, 55% 100%);
+							clip-path: polygon(50% 0, 55% 100%, 45% 100%);
 						}
 						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) #SpokenLine_GamePlayer .BalloonTail {
-							clip-path: polygon(100% 0, 75% 100%, 85% 100%);
+							clip-path: polygon(100% 0, 85% 100%, 75% 100%);
 						}
 						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) #SpokenLine_GameOpponent .BalloonTail {
 							clip-path: polygon(15% 0, 25% 0, 0 100%);
@@ -949,7 +949,7 @@
 						clip-path: polygon(0 0, 100% 0, 50% 100%);
 					}
 					#Ctrl_GameTurnIndicatorOpponent {
-						clip-path: polygon(50% 0, 0 100%, 100% 100%);
+						clip-path: polygon(50% 0, 100% 100%, 0 100%);
 					}
 					#Ctrl_GameTurnIndicatorAdditionalTextPlayer, #Ctrl_GameTurnIndicatorAdditionalTextOpponent {
 						width: 60px; height: 20px;
