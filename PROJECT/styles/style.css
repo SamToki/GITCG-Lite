@@ -241,11 +241,11 @@
 								pointer-events: none;
 							}
 							.CharacterStatus .CtrlGroup, .PartyStatus .CtrlGroup {
-								width: 100%;
+								width: 100%; height: 100%;
 								justify-content: center;
 							}
 							.CharacterStatus .Ctrl, .PartyStatus .Ctrl {
-								width: 25px; height: 25px; margin: 0 1px;
+								width: 25px; height: 100%; margin: 0 1px;
 								pointer-events: auto;
 							}
 							.Card .StatusImage, .PartyStatus .StatusImage {
@@ -266,11 +266,11 @@
 								position: absolute; top: unset; left: unset; z-index: 12;
 								width: 112px; height: 112px; border-radius: 56px;
 								text-shadow: 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF; text-align: center;
-								display: flex; justify-content: center; align-items: center;
 								pointer-events: none;
 							}
 							.DamageIndicator .CtrlGroup {
-								width: 100%;
+								width: 100%; height: 100%;
+								flex-direction: column; justify-content: center; align-items: center;
 							}
 							.DamageIndicator .CtrlGroup .Ctrl {
 								width: 100%; height: unset; margin: -5px 0;
@@ -286,7 +286,7 @@
 							/* Party status */
 							.PartyStatus {
 								position: absolute; top: unset; left: unset; z-index: 1;
-								width: 112px;
+								width: 112px; height: 25px;
 							}
 
 							/* Spoken lines */
@@ -345,7 +345,7 @@
 						}
 						.Card .CtrlGroup .Cost .CostIndicator {
 							position: absolute; top: 0; left: 0;
-							width: 30px; height: 30px;
+							width: 100%; height: 30px;
 						}
 						.Card .CtrlGroup .Cost .CostIndicator.Additional {
 							top: 22px;
@@ -905,11 +905,11 @@
 						display: flex; flex-direction: column; justify-content: space-between;
 					}
 					#Ctnr_GameStatus .CtrlGroup {
-						width: 100%;
+						width: 100%; height: 30px;
 						justify-content: start;
 					}
 					#Ctnr_GameStatus .Ctrl {
-						height: 30px; margin: 0 10px 0 0;
+						height: 100%; margin: 0 10px 0 0;
 						display: flex; align-items: center;
 					}
 					#Ctnr_GameStatus #Ctrl_GameBusy {
@@ -1151,7 +1151,7 @@
 					position: absolute; top: 0; right: 0; z-index: 34;
 				}
 				#Ctnr_GameCtrl .CtrlGroup {
-					width: 90px;
+					width: 90px; height: 40px;
 				}
 				#DropctrlGroup_GameMenu {
 					top: 0; right: 0;
@@ -1501,7 +1501,7 @@
 									height: 20px;
 								}
 								.CharacterStatus .Ctrl, .PartyStatus .Ctrl {
-									width: 20px; height: 20px; margin: 0;
+									width: 20px; margin: 0;
 								}
 
 								/* Damage indicators */
@@ -1517,7 +1517,7 @@
 
 								/* Party status */
 								.PartyStatus {
-									width: 84px;
+									width: 84px; height: 20px;
 								}
 
 								/* Spoken lines */
@@ -1547,7 +1547,7 @@
 								font-size: 0.75em;
 							}
 							.Card .CtrlGroup .Cost .CostIndicator {
-								width: 25px; height: 25px;
+								height: 25px;
 							}
 							.Card .CtrlGroup .Cost .CostIndicator.Additional {
 								top: 18px;
@@ -1994,10 +1994,10 @@
 							width: 70px; height: 90px;
 						}
 						#Ctnr_GameStatus .CtrlGroup {
-							width: 100%;
+							height: 40px;
 						}
 						#Ctnr_GameStatus .Ctrl {
-							width: 100%; height: 20px; margin: 0;
+							width: 100%; height: 50%; margin: 0;
 							text-align: end;
 							justify-content: end;
 						}
