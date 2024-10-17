@@ -5033,7 +5033,8 @@
 					IsCombatAction: false,
 					Queue: [0],
 					CardPlayed: ""
-				}
+				},
+				Master: [0, "Player", 0]
 			};
 		}
 		function ResetGameAction() {

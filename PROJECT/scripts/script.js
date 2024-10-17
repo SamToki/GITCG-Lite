@@ -62,8 +62,7 @@
 					Damage: [0, [0, "", 0], [0, "", 0], [0, "", 0]],
 					SummonsCard: [0]
 				}
-			},
-			Master: [0, "Player", 0] // 2: Card number.
+			}
 		},
 		Editor = {
 			CardNumber: 0
@@ -641,7 +640,8 @@
 						} */
 					],
 					CardPlayed: ""
-				}
+				},
+				Master: [0, "Player", 0] // 2: Card number.
 			},
 			InitialStatus: {}
 		};
@@ -2147,7 +2147,7 @@ function AlertGameFunctionError(Message) {
 		"Active characters: \"" + Game.Status.Player.CharacterCard[Game.Status.Player.ActiveCharacter].ID + "\", \"" + Game.Status.Opponent.CharacterCard[Game.Status.Opponent.ActiveCharacter].ID + "\"\n" +
 		"Turn statuses: \"" + Game.Status.Player.Turn + "\", \"" + Game.Status.Opponent.Turn + "\"\n" +
 		"Action queue: \"" + JSON.stringify(Game.Status.Action.Queue) + "\"\n" +
-		"Master: \"" + JSON.stringify(Game0.Master) + "\"");
+		"Master: \"" + JSON.stringify(Game.Status.Master) + "\"");
 	ShowDialog("Game_GameFunctionError",
 		"Error",
 		"抱歉，发生了游戏函数错误。这可能是由于某张卡牌有 bug。若为卡牌问题，请向卡牌作者提供反馈。<br />" +
