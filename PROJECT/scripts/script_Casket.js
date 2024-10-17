@@ -327,7 +327,8 @@
 				Casket.Deck[Looper].Properties.Description.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true ||
 				CharacterIDsAndNames.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true) {
 					Show("Ctrl_CasketDeck" + Looper);
-					Counter++; Counter2++;
+					Counter++;
+					Counter2++;
 				} else {
 					Hide("Ctrl_CasketDeck" + Looper);
 					Counter2++;
@@ -341,7 +342,8 @@
 			}
 
 			// Character cards
-			Counter = 0; Counter2 = 0;
+			Counter = 0;
+			Counter2 = 0;
 			let Counter3 = 0, IsAnyHiddenCardSelected = false;
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
@@ -395,7 +397,10 @@
 			}
 
 			// Action cards
-			Counter = 0; Counter2 = 0; Counter3 = 0; IsAnyHiddenCardSelected = false;
+			Counter = 0;
+			Counter2 = 0;
+			Counter3 = 0;
+			IsAnyHiddenCardSelected = false;
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				switch(Casket.Card[Looper].BasicProperties.Type) {
 					case "CharacterCard":

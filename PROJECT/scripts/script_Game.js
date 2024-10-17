@@ -2168,9 +2168,13 @@
 				AlertSystemError("The value of InHandCardQuantity.Opponent \"" + InHandCardQuantity.Opponent + "\" in function RefreshGame is invalid.");
 			}
 			if(window.innerWidth > 830) {
-				CenterPosition = "50%"; CardWidth = 112; CardSeparation = 40;
+				CenterPosition = "50%";
+				CardWidth = 112;
+				CardSeparation = 40;
 			} else {
-				CenterPosition = "141px"; CardWidth = 84; CardSeparation = 22;
+				CenterPosition = "141px";
+				CardWidth = 84;
+				CardSeparation = 22;
 			}
 
 			// Player

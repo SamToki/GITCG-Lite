@@ -68,8 +68,16 @@
 			CardNumber: 0
 		};
 		Interaction.Deletion = 0;
-		Automation.ClockGame = null; Automation.RollDice = null; Automation.RefreshAction = null; Automation.FlashOnHighDamage = null;
-		Automation.FadeNameOnCards = null; Automation.FadeSpokenLine = {Player: null, Opponent: null}; Automation.RecommendAction = null; Automation.HideInfoWindow = null;
+		Automation.ClockGame = null;
+		Automation.RollDice = null;
+		Automation.RefreshAction = null;
+		Automation.FlashOnHighDamage = null;
+		Automation.RecommendAction = null;
+		Automation.FadeNameOnCards = null;
+		Automation.FadeSpokenLine = {
+			Player: null, Opponent: null
+		};
+		Automation.HideInfoWindow = null;
 
 		// Saved
 		var Subsystem = {
