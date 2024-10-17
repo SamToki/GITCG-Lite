@@ -4047,7 +4047,7 @@
 					StartTime: Date.now(),
 					Progress: 0
 				};
-				window.location.replace("#Game");
+				ScrollIntoView("Game");
 				ChangeAnim("Label_Versus", "none");
 				ChangeScale("Label_Versus", 3);
 				ChangeText("Label_GameLoadingPrompt", "正在载入...");

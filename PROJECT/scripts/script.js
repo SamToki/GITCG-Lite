@@ -1075,7 +1075,7 @@
 		function LoadSavedGame() {
 			if(ReadValue("Combobox_SettingsSelectSavedGame") > 0) {
 				Game.Status = Game.SavedGames[ReadValue("Combobox_SettingsSelectSavedGame")].Data;
-				window.location.replace("#Game");
+				ScrollIntoView("Game");
 				RefreshGame();
 			} else {
 				AlertSystemError("No saved game was selected when trying to load a saved game.");
@@ -1298,7 +1298,7 @@
 			case "System_Error":
 				switch(Selector) {
 					case 2:
-						window.location.replace("#Item_SettingsUserData");
+						ScrollIntoView("Item_SettingsUserData");
 						ShowIAmHere("Item_SettingsUserData");
 						break;
 					case 3:
@@ -1313,7 +1313,7 @@
 			case "Subsystem_ConfirmGoToTutorial":
 				switch(Selector) {
 					case 2:
-						window.location.replace("#Item_HelpTutorial");
+						ScrollIntoView("Item_HelpTutorial");
 						ShowIAmHere("Item_HelpTutorial");
 						break;
 					case 3:

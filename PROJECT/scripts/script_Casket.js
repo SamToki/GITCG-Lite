@@ -629,8 +629,8 @@
 		}
 		function EditCard(CardNumber) {
 			ChangeValue("Textbox_EditorOpen", Casket.Card[CardNumber].BasicProperties.ID);
+			ScrollIntoView("Editor");
 			RefreshEditor();
-			window.location.replace("#Editor");
 		}
 		function DuplicateCard(CardNumber) {
 			let NewCardID = Casket.Card[CardNumber].BasicProperties.ID + "(Copy)";
