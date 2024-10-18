@@ -1072,13 +1072,7 @@
 			if(System.Display.Anim > 0) {
 				for(let Looper = 1; Looper <= 3; Looper++) {
 					Game0.Stats.Player.HPDisplay[Looper] += (Game.Status.Player.CharacterCard[Looper].HP - Game0.Stats.Player.HPDisplay[Looper]) / 5;
-					if(Math.abs(Game.Status.Player.CharacterCard[Looper].HP - Game0.Stats.Player.HPDisplay[Looper]) < 0.1) {
-						Game0.Stats.Player.HPDisplay[Looper] = Game.Status.Player.CharacterCard[Looper].HP;
-					}
 					Game0.Stats.Opponent.HPDisplay[Looper] += (Game.Status.Opponent.CharacterCard[Looper].HP - Game0.Stats.Opponent.HPDisplay[Looper]) / 5;
-					if(Math.abs(Game.Status.Opponent.CharacterCard[Looper].HP - Game0.Stats.Opponent.HPDisplay[Looper]) < 0.1) {
-						Game0.Stats.Opponent.HPDisplay[Looper] = Game.Status.Opponent.CharacterCard[Looper].HP;
-					}
 				}
 			} else {
 				for(let Looper = 1; Looper <= 3; Looper++) {

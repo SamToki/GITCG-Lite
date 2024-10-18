@@ -1390,7 +1390,7 @@
 				width: calc(100% - 82px);
 			}
 			#CtrlGroup_CasketDecksList .ListItemName {
-				max-width: 125px;
+				max-width: 124px;
 			}
 
 			/* Cards */
@@ -1398,10 +1398,10 @@
 				width: calc(100% - 106px);
 			}
 			#CtrlGroup_CasketCharacterCardsList .ListItemName {
-				max-width: 160px; margin: 0 0 0 1px;
+				max-width: 157px; margin: 0 0 0 1px;
 			}
 			#CtrlGroup_CasketActionCardsList .ListItemName {
-				max-width: 160px;
+				max-width: 178px;
 			}
 			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
 				margin: 0 0 0 10px;

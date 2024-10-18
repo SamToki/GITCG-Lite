@@ -328,11 +328,10 @@
 				CharacterIDsAndNames.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true) {
 					Show("Ctrl_CasketDeck" + Looper);
 					Counter++;
-					Counter2++;
 				} else {
 					Hide("Ctrl_CasketDeck" + Looper);
-					Counter2++;
 				}
+				Counter2++;
 			}
 			ChangeText("Label_CasketDecksItemCount", "显示 " + Counter + "/" + Counter2);
 			if(Counter > 0) {
