@@ -2161,7 +2161,7 @@
 			if(InHandCardQuantity.Opponent > 10) {
 				AlertSystemError("The value of InHandCardQuantity.Opponent \"" + InHandCardQuantity.Opponent + "\" in function RefreshGame is invalid.");
 			}
-			if(window.innerWidth > 830) {
+			if(IsMobileLayout() == false) {
 				CenterPosition = "50%";
 				CardWidth = 112;
 				CardSeparation = 40;
