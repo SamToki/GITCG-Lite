@@ -940,8 +940,6 @@
 						"成功导入" + Counter + "个对象。" + Counter2 + "个对象的 JSON 字符串不合法，无法导入。",
 						"", "", "", "确定");
 				}
-				RefreshGame();
-				RefreshEditor();
 			} else {
 				if(ReadValue("Textbox_CasketImport") != "") {
 					ShowDialog("Casket_ImportFailed",
@@ -956,6 +954,8 @@
 				}
 			}
 			ChangeValue("Textbox_CasketImport", "");
+			RefreshGame();
+			RefreshEditor();
 		}
 		function ExportDeckLibrary() {
 			navigator.clipboard.writeText(JSON.stringify(Casket.Deck));
