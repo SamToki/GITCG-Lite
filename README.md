@@ -20,7 +20,7 @@ GITCG Lite is a *Genshin Impact* Doujin game. It is lightweight and highly custo
 
 # 立即游玩 Play Now
 
-https://SamToki.github.io/GITCGLite
+https://SamToki.github.io/#ToyStore
 
 # 教程 Tutorial
 
