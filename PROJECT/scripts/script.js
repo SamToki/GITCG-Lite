@@ -880,16 +880,10 @@
 					ChangeCursorOverall("");
 					break;
 				case "BTRAhoge":
-					ChangeCursorOverall("url(../cursors/BTRAhoge.cur), auto");
-					break;
 				case "Genshin":
-					ChangeCursorOverall("url(../cursors/Genshin.cur), auto");
-					break;
-				case "GenshinNahida":
-					ChangeCursorOverall("url(../cursors/GenshinNahida.cur), auto");
-					break;
 				case "GenshinFurina":
-					ChangeCursorOverall("url(../cursors/GenshinFurina.cur), auto");
+				case "GenshinNahida":
+					ChangeCursorOverall("url(../cursors/" + System.Display.Cursor + ".cur), auto");
 					break;
 				default:
 					AlertSystemError("The value of System.Display.Cursor \"" + System.Display.Cursor + "\" in function RefreshSystem is invalid.");
@@ -963,9 +957,6 @@
 			// User data
 			ChangeValue("Textbox_SettingsUserDataImport", "");
 
-		// Save user data
-		localStorage.setItem("System", JSON.stringify(System));
-
 		// Fullscreen
 		if(IsFullscreen() == false) {
 			ChangeText("Dropbtn_GameToggleFullscreen", "全屏");
@@ -976,6 +967,9 @@
 			Hide("Dropctrl_GameImportExport");
 			Hide("Ctrl_GameConfigureDeck");
 		}
+
+		// Save user data
+		localStorage.setItem("System", JSON.stringify(System));
 	}
 	function RefreshSubsystem() {
 		// Settings

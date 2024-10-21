@@ -550,7 +550,7 @@
 			Interaction.Deletion = DeckNumber;
 			ShowDialog("Casket_ConfirmDeleteDeck",
 				"Caution",
-				"您确认要删除牌组「" + Casket.Deck[DeckNumber].Properties.Name + "」？",
+				"您确认要删除牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」？",
 				"", "", "删除", "取消");
 		}
 		function NewDeck() {
