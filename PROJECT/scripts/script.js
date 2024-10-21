@@ -705,15 +705,12 @@
 		if(localStorage.GITCGLite_Subsystem != undefined) {
 			Subsystem = JSON.parse(localStorage.getItem("GITCGLite_Subsystem"));
 		}
-		RefreshSystem();
-		RefreshSubsystem();
 		if(localStorage.GITCGLite_Game != undefined) {
 			Game = JSON.parse(localStorage.getItem("GITCGLite_Game"));
 			if(Game.Status.Operation == "Loading") {
 				Game.Status.Operation = "Title";
 			}
 		}
-		// RefreshGame(); // There are "Casket" usages in function RefreshGame.
 		if(localStorage.GITCGLite_Casket != undefined) {
 			Casket = JSON.parse(localStorage.getItem("GITCGLite_Casket"));
 		}
@@ -721,11 +718,11 @@
 		ChangeValue("Textbox_CasketCharacterCardsFilter", "");
 		ChangeValue("Textbox_CasketActionCardsFilter", "");
 		ChangeValue("Textbox_CasketImport", "");
-		RefreshGame();
-		if(Game.Status.Operation != "Title") {
-			RefreshCasket();
-		}
 		ChangeValue("Textbox_EditorOpen", "");
+		RefreshSystem();
+		RefreshSubsystem();
+		RefreshGame();
+		RefreshCasket();
 		RefreshEditor();
 		setTimeout(HideToast, 0);
 	}
