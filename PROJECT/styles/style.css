@@ -1370,7 +1370,7 @@
 			overflow: hidden;
 		}
 		#Casket .Cmdbtn.ShownAsLabel {
-			width: 24px; height: 24px; margin: 0;
+			width: 24px; height: 24px;
 			justify-content: center;
 		}
 		.ListItemEdit {
@@ -2192,6 +2192,9 @@
 							}
 							.InfoWindowSubtitle {
 								margin: 0 0 5px 0;
+							}
+							.InfoWindowTags {
+								margin: 5px -5px 0 0;
 							}
 							.InfoWindowTags .Ctrl {
 								height: 25px; margin: 0 5px 5px 0;
