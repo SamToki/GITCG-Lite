@@ -9,25 +9,25 @@ There are some unreadable content below.
 
 ----------
 
-# 简介 Description
+# 简介 ／ Description
 
 七圣召唤 Lite，「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。<br>
 GITCG Lite is a *Genshin Impact* Doujin game. It is lightweight and highly customizable compared to the original game.
 
-# 预览 Preview
+# 预览 ／ Preview
 
 ![预览 Preview](/PREVIEW/Preview.png)
 
-# 立即游玩 Play Now
+# 立即游玩 ／ Play Now
 
 https://SamToki.github.io/#ToyStore
 
-# 教程 Tutorial
+# 教程 ／ Tutorial
 
 [快速入门](/PROJECT/docs/七圣召唤%20Lite%20快速入门.pdf)<br>
 [完整说明文档](/PROJECT/docs/七圣召唤%20Lite%20说明文档.pdf)
 
-# 版权说明 Copyright Info
+# 版权说明 ／ Copyright Info
 
 本站的源代码遵循 [GNU GPL v3 软件开源协议](https://www.gnu.org/licenses/gpl-3.0.en.html)。本站的部分内容为他人作品，版权为原作者所有，本站遵循 [fair use](https://zh.wikipedia.org/wiki/fair_use) 原则使用并于 Credits 标注来源。除上述内容之外，本站所有内容以及排版、美术设计均保留版权。<br>
 The source codes of this website are released under [GNU GPL v3 open source license](https://www.gnu.org/licenses/gpl-3.0.en.html). Some contents in the website are works by other people, and their copyrights belong to the corresponding authors. They are used under the "[fair use](https://en.wikipedia.org/wiki/fair_use)" principle and are credited. Other contents such as the page design are copyrighted.
