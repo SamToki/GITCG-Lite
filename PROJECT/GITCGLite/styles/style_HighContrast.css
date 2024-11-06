@@ -191,14 +191,14 @@
 							border-bottom: 1px solid #FFFFFF;
 						}
 						.InfoWindowTags .Ctrl.Box {
-							background-color: #000000;
+							background-color: #202020;
 						}
 						.InfoWindowContent i {
 							opacity: unset;
 						}
 
 /* Responsive web design */
-@media (max-width: 830px) {
+@media (max-width: 900px) {
 	/* Area specific */
 		/* Main */
 			/* Game */

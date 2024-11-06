@@ -181,3 +181,6 @@
 						.InfoWindowContent {
 							border-bottom: 1px solid #FFFFFF40;
 						}
+						.InfoWindowTags .Ctrl.Box {
+							background-color: #303030;
+						}

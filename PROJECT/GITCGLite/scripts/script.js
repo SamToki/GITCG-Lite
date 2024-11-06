@@ -888,15 +888,9 @@
 			}
 			ChangeChecked("Checkbox_SettingsBlurBgImage", System.Display.BlurBgImage);
 			if(System.Display.BlurBgImage == true) {
-				ChangeFilter("Ctnr_BgImage", "blur(20px)");
+				ChangeFilter("Ctnr_BgImage", "blur(10px)");
 			} else {
 				ChangeFilter("Ctnr_BgImage", "");
-			}
-			ChangeChecked("Checkbox_SettingsShowTopbar", System.Display.ShowTopbar);
-			if(System.Display.ShowTopbar == true && IsFullscreen() == false) {
-				Show("Topbar");
-			} else {
-				Hide("Topbar");
 			}
 			ChangeValue("Combobox_SettingsHotkeyIndicators", System.Display.HotkeyIndicators);
 			switch(System.Display.HotkeyIndicators) {
@@ -956,13 +950,15 @@
 
 		// Fullscreen
 		if(IsFullscreen() == false) {
+			Show("Topbar");
+			Show("Ctrl_GameConfigureDeck");
 			ChangeText("Dropbtn_GameToggleFullscreen", "全屏");
 			Show("Dropctrl_GameImportExport");
-			Show("Ctrl_GameConfigureDeck");
 		} else {
+			Hide("Topbar");
+			Hide("Ctrl_GameConfigureDeck");
 			ChangeText("Dropbtn_GameToggleFullscreen", "退出全屏");
 			Hide("Dropctrl_GameImportExport");
-			Hide("Ctrl_GameConfigureDeck");
 		}
 
 		// Save user data
@@ -991,6 +987,10 @@
 					break;
 			}
 			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
+			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
+			if(Subsystem.Display.ShowSpokenLines == false) {
+				FadeByClass("SpokenLine");
+			}
 			ChangeValue("Combobox_SettingsInfoWindow", Subsystem.Display.InfoWindow);
 			switch(Subsystem.Display.InfoWindow) {
 				case "Disabled":
@@ -1016,10 +1016,6 @@
 			ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
-			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
-			if(Subsystem.Display.ShowSpokenLines == false) {
-				FadeByClass("SpokenLine");
-			}
 			ChangeChecked("Checkbox_SettingsFlashOnHighDamage", Subsystem.Display.FlashOnHighDamage);
 
 			// Audio
@@ -1147,6 +1143,10 @@
 			}
 			RefreshSubsystem();
 		}
+		function SetShowSpokenLines() {
+			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
+			RefreshSubsystem();
+		}
 		function SetInfoWindow() {
 			Subsystem.Display.InfoWindow = ReadValue("Combobox_SettingsInfoWindow");
 			RefreshSubsystem();
@@ -1166,10 +1166,6 @@
 		}
 		function SetSkillIndicator() {
 			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
-			RefreshSubsystem();
-		}
-		function SetShowSpokenLines() {
-			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
 			RefreshSubsystem();
 		}
 		function SetFlashOnHighDamage() {
