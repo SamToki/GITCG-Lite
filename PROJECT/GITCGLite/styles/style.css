@@ -1153,10 +1153,10 @@
 				}
 				#DropctrlGroup_GameMenu {
 					top: 0; right: 0;
-					height: 160px;
+					height: 162px;
 				}
 				body:fullscreen #DropctrlGroup_GameMenu {
-					height: 120px;
+					height: 122px;
 				}
 
 			/* Floating ctrls */
@@ -1441,11 +1441,11 @@
 		}
 
 /* Responsive web design */
-@media (max-width: 900px) {
+@media (max-width: 880px) {
 	/* Area specific */
 		/* Header */
 		#CtrlGroup_Nav {
-			height: 200px;
+			height: 202px;
 		}
 
 		/* Main */
@@ -2204,7 +2204,7 @@
 								margin: 0 -1px;
 							}
 }
-@media (min-width: 900px) { /* Optimization for long fieldsets far exceeding 600px height. */
+@media (min-width: 830px) { /* Optimization for long fieldsets far exceeding 600px height. */
 	#Item_SettingsDisplay {
 		width: 800px;
 	}

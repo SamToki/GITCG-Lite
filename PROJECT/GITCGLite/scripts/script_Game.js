@@ -989,13 +989,13 @@
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
 									"不再提示", "", "", "确定");
 								break;
-							case window.innerWidth > 600 && window.innerWidth <= 830:
+							case window.innerWidth > 600 && window.innerWidth <= 880:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在竖版布局下过宽。这可能影响游戏体验。建议您调窄窗口，或调宽至横版布局。",
 									"不再提示", "", "", "确定");
 								break;
-							case window.innerWidth > 830 && window.innerWidth <= 1100:
+							case window.innerWidth > 880 && window.innerWidth <= 1100:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在横板布局下过窄。这可能影响游戏体验。建议您调宽窗口，或调窄至竖版布局。",
