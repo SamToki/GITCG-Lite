@@ -95,9 +95,6 @@
 						.Card .Progbar > .Shape {
 							fill: #404040C0;
 						}
-						.Card.Shadow .HP, .Card.Shadow .Energy, .Card.Shadow .CharacterStatus, .Card.Shadow .Cost, .Card.Shadow .Duration, .Card.Shadow .Counter {
-							filter: drop-shadow(0 0 5px #00000040);
-						}
 
 						/* Character cards */
 							/* Character status */

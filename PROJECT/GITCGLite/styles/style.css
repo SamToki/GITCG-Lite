@@ -124,9 +124,6 @@
 					.Card.Action {
 						z-index: 3;
 					}
-					.Card.OffTable.Shadow {
-						box-shadow: none;
-					}
 					.Card > .CtrlGroup > .Ctrl {
 						position: absolute; top: unset; left: unset;
 					}
@@ -178,9 +175,6 @@
 						/* Indicators on card */
 						.Card .Progbar > .Shape {
 							fill: #C0C0C0C0;
-						}
-						.Card.Shadow .HP, .Card.Shadow .Energy, .Card.Shadow .CharacterStatus, .Card.Shadow .Cost, .Card.Shadow .Duration, .Card.Shadow .Counter {
-							filter: drop-shadow(0 0 5px #00000040);
 						}
 						.Card.Character.OnTitleScreen .HP, .Card.Character.OnTitleScreen .Energy, /* .Card.Character.OnTitleScreen .ElementAndReaction, .Card.Character.OnTitleScreen .CharacterStatus, */
 						.Card.Talent .Duration, .Card.Talent .Counter, .Card.Weapon .Duration, .Card.Weapon .Counter, .Card.Artifact .Duration, .Card.Artifact .Counter,
@@ -2044,7 +2038,7 @@
 
 					/* Operations */
 					.OperationPanel {
-						padding: 0;
+						padding: 15px 0 0 0;
 					}
 					.OperationPanelPrompt {
 						padding: 0 55px;
@@ -2150,6 +2144,7 @@
 					}
 					#Html:has(#Topbar.Hidden) #Window_Game {
 						top: 15px;
+						height: 200px;
 					}
 						/* Sections */
 						#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {

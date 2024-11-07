@@ -82,8 +82,7 @@
 		// Saved
 		var Subsystem = {
 			Display: {
-				ShowCardShadow: false, NameOnCard: "ShowOnHover",
-				HPCautionThreshold: 40,
+				NameOnCard: "ShowOnHover", HPCautionThreshold: 40,
 				InfoWindow: "ShowOnHover", ShowInfoWindowWhenOpponentActs: true, AlsoShowInfoWindowInCasket: true,
 				ColorBlindMode: false,
 				SkillIndicator: "ShowOnElementalBurstOnly", ShowSpokenLines: true,
@@ -967,12 +966,6 @@
 	function RefreshSubsystem() {
 		// Settings
 			// Display
-			ChangeChecked("Checkbox_SettingsShowCardShadow", Subsystem.Display.ShowCardShadow);
-			if(Subsystem.Display.ShowCardShadow == true) {
-				AddClassByClass("Card", "Shadow");
-			} else {
-				RemoveClassByClass("Card", "Shadow");
-			}
 			ChangeValue("Combobox_SettingsNameOnCard", Subsystem.Display.NameOnCard);
 			switch(Subsystem.Display.NameOnCard) {
 				case "Disabled":
@@ -987,10 +980,6 @@
 					break;
 			}
 			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
-			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
-			if(Subsystem.Display.ShowSpokenLines == false) {
-				FadeByClass("SpokenLine");
-			}
 			ChangeValue("Combobox_SettingsInfoWindow", Subsystem.Display.InfoWindow);
 			switch(Subsystem.Display.InfoWindow) {
 				case "Disabled":
@@ -1016,6 +1005,10 @@
 			ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
+			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
+			if(Subsystem.Display.ShowSpokenLines == false) {
+				FadeByClass("SpokenLine");
+			}
 			ChangeChecked("Checkbox_SettingsFlashOnHighDamage", Subsystem.Display.FlashOnHighDamage);
 
 			// Audio
@@ -1125,10 +1118,6 @@
 		}
 
 		// Display
-		function SetShowCardShadow() {
-			Subsystem.Display.ShowCardShadow = IsChecked("Checkbox_SettingsShowCardShadow");
-			RefreshSubsystem();
-		}
 		function SetNameOnCard() {
 			Subsystem.Display.NameOnCard = ReadValue("Combobox_SettingsNameOnCard");
 			RefreshSubsystem();
@@ -1141,10 +1130,6 @@
 			if(Subsystem.Display.HPCautionThreshold > 60) {
 				Subsystem.Display.HPCautionThreshold = 60;
 			}
-			RefreshSubsystem();
-		}
-		function SetShowSpokenLines() {
-			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
 			RefreshSubsystem();
 		}
 		function SetInfoWindow() {
@@ -1166,6 +1151,10 @@
 		}
 		function SetSkillIndicator() {
 			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
+			RefreshSubsystem();
+		}
+		function SetShowSpokenLines() {
+			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
 			RefreshSubsystem();
 		}
 		function SetFlashOnHighDamage() {
