@@ -823,35 +823,35 @@
 					if(Game0.Load.Progress == 488) {
 						ResetPreloadAudio();
 						if(Subsystem.Audio.SoundVolume > 0) {
-							LoadAudio("Audio_Preload1", "../audio/sounds/Beep.mp3");
-							LoadAudio("Audio_Preload2", "audio/sounds/Attack.mp3");
-							LoadAudio("Audio_Preload3", "audio/sounds/Buff.mp3");
-							LoadAudio("Audio_Preload4", "audio/sounds/CardDisappear.mp3");
-							LoadAudio("Audio_Preload5", "audio/sounds/Click.mp3");
-							LoadAudio("Audio_Preload6", "audio/sounds/Counter.mp3");
-							LoadAudio("Audio_Preload7", "audio/sounds/CreateDice.mp3");
-							LoadAudio("Audio_Preload8", "audio/sounds/Defeat.mp3");
-							LoadAudio("Audio_Preload9", "audio/sounds/DrawCard.mp3");
-							LoadAudio("Audio_Preload10", "audio/sounds/Fallen.mp3");
-							LoadAudio("Audio_Preload11", "audio/sounds/Heal.mp3");
-							LoadAudio("Audio_Preload12", "audio/sounds/Invalid.mp3");
-							LoadAudio("Audio_Preload13", "audio/sounds/NewPhase.mp3");
-							LoadAudio("Audio_Preload14", "audio/sounds/NewRound.mp3");
-							LoadAudio("Audio_Preload15", "audio/sounds/PlayCard1.mp3");
-							LoadAudio("Audio_Preload16", "audio/sounds/PlayCard2.mp3");
-							LoadAudio("Audio_Preload17", "audio/sounds/RechargeComplete.mp3");
-							LoadAudio("Audio_Preload18", "audio/sounds/RollDice.mp3");
-							LoadAudio("Audio_Preload19", "audio/sounds/RollPhaseSelectDice.mp3");
-							LoadAudio("Audio_Preload20", "audio/sounds/SelectCard.mp3");
-							LoadAudio("Audio_Preload21", "audio/sounds/SelectSkill.mp3");
-							LoadAudio("Audio_Preload22", "audio/sounds/SkillIndicator.mp3");
-							LoadAudio("Audio_Preload23", "audio/sounds/Start.mp3");
-							LoadAudio("Audio_Preload24", "audio/sounds/SwitchCharacter.mp3");
-							LoadAudio("Audio_Preload25", "audio/sounds/SwitchStartingHand.mp3");
-							LoadAudio("Audio_Preload26", "audio/sounds/TableSelectDice.mp3");
-							LoadAudio("Audio_Preload27", "audio/sounds/Tuning.mp3");
-							LoadAudio("Audio_Preload28", "audio/sounds/Turn.mp3");
-							LoadAudio("Audio_Preload29", "audio/sounds/Victory.mp3");
+							LoadAudio("Audio_Preload1", "../audio/Beep.mp3");
+							LoadAudio("Audio_Preload2", "audio/Attack.mp3");
+							LoadAudio("Audio_Preload3", "audio/Buff.mp3");
+							LoadAudio("Audio_Preload4", "audio/CardDisappear.mp3");
+							LoadAudio("Audio_Preload5", "audio/Click.mp3");
+							LoadAudio("Audio_Preload6", "audio/Counter.mp3");
+							LoadAudio("Audio_Preload7", "audio/CreateDice.mp3");
+							LoadAudio("Audio_Preload8", "audio/Defeat.mp3");
+							LoadAudio("Audio_Preload9", "audio/DrawCard.mp3");
+							LoadAudio("Audio_Preload10", "audio/Fallen.mp3");
+							LoadAudio("Audio_Preload11", "audio/Heal.mp3");
+							LoadAudio("Audio_Preload12", "audio/Invalid.mp3");
+							LoadAudio("Audio_Preload13", "audio/NewPhase.mp3");
+							LoadAudio("Audio_Preload14", "audio/NewRound.mp3");
+							LoadAudio("Audio_Preload15", "audio/PlayCard1.mp3");
+							LoadAudio("Audio_Preload16", "audio/PlayCard2.mp3");
+							LoadAudio("Audio_Preload17", "audio/RechargeComplete.mp3");
+							LoadAudio("Audio_Preload18", "audio/RollDice.mp3");
+							LoadAudio("Audio_Preload19", "audio/RollPhaseSelectDice.mp3");
+							LoadAudio("Audio_Preload20", "audio/SelectCard.mp3");
+							LoadAudio("Audio_Preload21", "audio/SelectSkill.mp3");
+							LoadAudio("Audio_Preload22", "audio/SkillIndicator.mp3");
+							LoadAudio("Audio_Preload23", "audio/Start.mp3");
+							LoadAudio("Audio_Preload24", "audio/SwitchCharacter.mp3");
+							LoadAudio("Audio_Preload25", "audio/SwitchStartingHand.mp3");
+							LoadAudio("Audio_Preload26", "audio/TableSelectDice.mp3");
+							LoadAudio("Audio_Preload27", "audio/Tuning.mp3");
+							LoadAudio("Audio_Preload28", "audio/Turn.mp3");
+							LoadAudio("Audio_Preload29", "audio/Victory.mp3");
 						}
 					}
 					Counter = 0;
@@ -1372,7 +1372,7 @@
 									Game0.RollDice.Progress = 0;
 									clearInterval(Automation.RollDice);
 									Automation.RollDice = setInterval(RollDice, 120);
-									PlayAudio("Audio_Sound", "audio/sounds/RollDice.mp3");
+									PlayAudio("Audio_Sound", "audio/RollDice.mp3");
 								}
 								break;
 							case "BeforeStandby":
@@ -1521,7 +1521,7 @@
 			(Game.Status.Opponent.CharacterCard[1].HP <= 0 && Game.Status.Opponent.CharacterCard[1].PreviousHP > 0) ||
 			(Game.Status.Opponent.CharacterCard[2].HP <= 0 && Game.Status.Opponent.CharacterCard[2].PreviousHP > 0) ||
 			(Game.Status.Opponent.CharacterCard[3].HP <= 0 && Game.Status.Opponent.CharacterCard[3].PreviousHP > 0))) {
-				PlayAudio("Audio_Sound", "audio/sounds/Fallen.mp3");
+				PlayAudio("Audio_Sound", "audio/Fallen.mp3");
 				if(Game.Status.Player.CharacterCard[1].HP <= 0 && Game.Status.Player.CharacterCard[1].PreviousHP > 0 && Game.Status.Player.ActiveCharacter == 1) {
 					Game.Status.Player.ActiveCharacter = 0;
 					Speak("Player", 1, "Fallen");
@@ -3778,7 +3778,7 @@
 												if(Number != Game.Status.Player.ActiveCharacter) {
 													Game0.Selection.Action = [0, "CharacterCard", Number];
 													AutoSelectDice("Player", "CharacterCard", Number);
-													PlayAudio("Audio_Sound", "audio/sounds/SelectCard.mp3");
+													PlayAudio("Audio_Sound", "audio/SelectCard.mp3");
 													RefreshGame();
 												}
 												break;
@@ -3793,7 +3793,7 @@
 										break;
 									default:
 										ShowToast("无效操作");
-										PlayAudio("Audio_Sound", "audio/sounds/Invalid.mp3");
+										PlayAudio("Audio_Sound", "audio/Invalid.mp3");
 										break;
 								}
 								break;
@@ -3807,7 +3807,7 @@
 										break;
 									default:
 										ShowToast("无效操作");
-										PlayAudio("Audio_Sound", "audio/sounds/Invalid.mp3");
+										PlayAudio("Audio_Sound", "audio/Invalid.mp3");
 										break;
 								}
 								break;
@@ -3824,7 +3824,7 @@
 											} else {
 												Game0.Selection.StartingHand[Number] = false;
 											}
-											PlayAudio("Audio_Sound", "audio/sounds/Click.mp3");
+											PlayAudio("Audio_Sound", "audio/Click.mp3");
 											RefreshOperationPanel();
 										} else {
 											AlertSystemError("An action card out of starting hand was clicked when in operation Starting Hand.");
@@ -3838,7 +3838,7 @@
 										break;
 									default:
 										ShowToast("无效操作");
-										PlayAudio("Audio_Sound", "audio/sounds/Invalid.mp3");
+										PlayAudio("Audio_Sound", "audio/Invalid.mp3");
 										break;
 								}
 								break;
@@ -3858,7 +3858,7 @@
 								break;
 							default:
 								ShowToast("无效操作");
-								PlayAudio("Audio_Sound", "audio/sounds/Invalid.mp3");
+								PlayAudio("Audio_Sound", "audio/Invalid.mp3");
 								break;
 						}
 						break;
@@ -3961,11 +3961,11 @@
 							case "Table":
 							case "SwitchCharacter":
 							// ???
-								PlayAudio("Audio_Sound", "audio/sounds/TableSelectDice.mp3");
+								PlayAudio("Audio_Sound", "audio/TableSelectDice.mp3");
 								RefreshTable();
 								break;
 							case "RollPhase":
-								PlayAudio("Audio_Sound", "audio/sounds/RollPhaseSelectDice.mp3");
+								PlayAudio("Audio_Sound", "audio/RollPhaseSelectDice.mp3");
 								RefreshOperationPanel();
 								break;
 							default:
@@ -3979,7 +3979,7 @@
 							RefreshActionSelection();
 						} else {
 							ShowToast("无效操作");
-							PlayAudio("Audio_Sound", "audio/sounds/Invalid.mp3");
+							PlayAudio("Audio_Sound", "audio/Invalid.mp3");
 						}
 						break;
 					default:
@@ -4049,7 +4049,7 @@
 				ChangeAnim("Label_Versus", "none");
 				ChangeScale("Label_Versus", 3);
 				ChangeText("Label_GameLoadingPrompt", "正在载入...");
-				PlayAudio("Audio_Sound", "audio/sounds/Start.mp3");
+				PlayAudio("Audio_Sound", "audio/Start.mp3");
 				setTimeout(function() {
 					ChangeAnim("Label_Versus", "");
 					RefreshGame();
@@ -4068,13 +4068,13 @@
 			// Starting hand
 			function SwitchStartingHand() {
 				Game.Status.Phase[2] = "Working1";
-				PlayAudio("Audio_Sound", "audio/sounds/SwitchStartingHand.mp3");
+				PlayAudio("Audio_Sound", "audio/SwitchStartingHand.mp3");
 				RefreshGame();
 			}
 			function SkipStartingHand() {
 				Game.Status.Phase[2] = "Working1";
 				ResetGameSelection();
-				PlayAudio("Audio_Sound", "audio/sounds/Click.mp3");
+				PlayAudio("Audio_Sound", "audio/Click.mp3");
 				RefreshGame();
 			}
 
@@ -4099,7 +4099,7 @@
 				} else {
 					Game0.Selection.Dice = [0, false, false, false, false, false, false, false, false, false, false, false, false];
 				}
-				PlayAudio("Audio_Sound", "audio/sounds/Click.mp3");
+				PlayAudio("Audio_Sound", "audio/Click.mp3");
 				RefreshDice();
 				RefreshOperationPanel();
 			}
@@ -4126,19 +4126,19 @@
 				} else {
 					Game0.Selection.Dice = [0, false, false, false, false, false, false, false, false, false, false, false, false];
 				}
-				PlayAudio("Audio_Sound", "audio/sounds/Click.mp3");
+				PlayAudio("Audio_Sound", "audio/Click.mp3");
 				RefreshDice();
 				RefreshOperationPanel();
 			}
 			function Reroll() {
 				Game.Status.Phase[2] = "Working1";
-				PlayAudio("Audio_Sound", "audio/sounds/RollDice.mp3");
+				PlayAudio("Audio_Sound", "audio/RollDice.mp3");
 				RefreshGame();
 			}
 			function SkipReroll() {
 				Game.Status.Phase[2] = "Working1";
 				ResetGameSelection();
-				PlayAudio("Audio_Sound", "audio/sounds/Click.mp3");
+				PlayAudio("Audio_Sound", "audio/Click.mp3");
 				RefreshGame();
 			}
 
@@ -4526,7 +4526,7 @@
 		}
 		function ResetPreloadAudio() {
 			for(let Looper = 1; Looper <= 45; Looper++) {
-				LoadAudio("Audio_Preload" + Looper, "../audio/sounds/Beep.mp3");
+				LoadAudio("Audio_Preload" + Looper, "../audio/Beep.mp3");
 			}
 		}
 
@@ -5073,7 +5073,7 @@
 						AlertSystemError("The value of Game.Status.First \"" + Game.Status.First + "\" in function ChangeRound is invalid.");
 						break;
 				}
-				PlayAudio("Audio_Sound", "audio/sounds/NewRound.mp3");
+				PlayAudio("Audio_Sound", "audio/NewRound.mp3");
 			}
 			ChangePhase1("Initialization");
 		}
@@ -5087,27 +5087,27 @@
 					break;
 				case "StartingHand":
 					Game.Status.Phase[2] = "Beginning";
-					PlayAudio("Audio_Sound", "audio/sounds/DrawCard.mp3");
+					PlayAudio("Audio_Sound", "audio/DrawCard.mp3");
 					break;
 				case "InitialCharacter":
 					Game.Status.Phase[2] = "Standby";
 					ShowToast("请选择初始角色");
-					PlayAudio("Audio_Sound", "audio/sounds/NewPhase.mp3");
+					PlayAudio("Audio_Sound", "audio/NewPhase.mp3");
 					break;
 				case "RollPhase":
 					Game.Status.Phase[2] = "Initialization";
 					ShowToast("掷骰阶段");
-					PlayAudio("Audio_Sound", "audio/sounds/NewPhase.mp3");
+					PlayAudio("Audio_Sound", "audio/NewPhase.mp3");
 					break;
 				case "ActionPhase":
 					Game.Status.Phase[2] = "Initialization";
 					ShowToast("行动阶段");
-					PlayAudio("Audio_Sound", "audio/sounds/NewPhase.mp3");
+					PlayAudio("Audio_Sound", "audio/NewPhase.mp3");
 					break;
 				case "EndPhase":
 					Game.Status.Phase[2] = "Initialization";
 					ShowToast("结束阶段");
-					PlayAudio("Audio_Sound", "audio/sounds/NewPhase.mp3");
+					PlayAudio("Audio_Sound", "audio/NewPhase.mp3");
 					break;
 				default:
 					AlertSystemError("The value of Phase1 \"" + Phase1 + "\" in function ChangePhase1 is invalid.");
@@ -5125,14 +5125,14 @@
 								Game.Status.Opponent.Turn = "Standby";
 								Game.Status.Phase[2] = "BeforeStandby";
 								ShowToast("请您行动");
-								PlayAudio("Audio_Sound", "audio/sounds/Turn.mp3");
+								PlayAudio("Audio_Sound", "audio/Turn.mp3");
 								break;
 							case "Opponent":
 								Game.Status.Player.Turn = "Standby";
 								Game.Status.Opponent.Turn = "InTurn";
 								Game.Status.Phase[2] = "BeforeStandby";
 								ShowToast("对手行动");
-								PlayAudio("Audio_Sound", "audio/sounds/Turn.mp3");
+								PlayAudio("Audio_Sound", "audio/Turn.mp3");
 								break;
 							default:
 								AlertSystemError("The value of Game.Status.First \"" + Game.Status.First + "\" in function ChangeTurn is invalid.");
@@ -5538,7 +5538,7 @@
 				ChangeScale("Ctrl_GameSkillIndicatorImage", 3);
 				ChangeRight("Ctrl_GameSkillIndicatorType", "calc(50% - 225px)");
 				ChangeLeft("Ctrl_GameSkillIndicatorName", "calc(50% - 220px)");
-				PlayAudio("Audio_Sound", "audio/sounds/SkillIndicator.mp3");
+				PlayAudio("Audio_Sound", "audio/SkillIndicator.mp3");
 
 				// Phase 2
 				if(System.Display.Anim > 0) {

@@ -1168,14 +1168,14 @@
 			RefreshSubsystem();
 		}
 		function PreviewSoundVolume() {
-			PlayAudio("Audio_Sound", "../audio/sounds/Beep.mp3");
+			PlayAudio("Audio_Sound", "../audio/Beep.mp3");
 		}
 		function SetVoiceVolume() {
 			Subsystem.Audio.VoiceVolume = ReadValue("Slider_SettingsVoiceVolume");
 			RefreshSubsystem();
 		}
 		function PreviewVoiceVolume() {
-			PlayAudio("Audio_VoicePlayer", "audio/voices/PreviewVoiceVolume.mp3");
+			PlayAudio("Audio_VoicePlayer", "audio/PreviewVoiceVolume.mp3");
 		}
 
 		// Dev
