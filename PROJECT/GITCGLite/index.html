@@ -7,14 +7,15 @@
 <html id="Html" lang="zh-CN">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="七圣召唤 Lite，「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。" />
-		<meta name="keywords" content="Sam Toki, SAM TOKI STUDIO, 七圣召唤 Lite, GITCG Lite, 七圣召唤, GITCG, 原神, Genshin Impact" />
-		<meta name="version" content="v0.38 (2024/09/23) Alpha Test. Since 2023/12/02." />
-		<meta name="author" content="Sam Toki" />
-		<meta name="copyright" content="(C) 2024 SAM TOKI STUDIO" />
-		<title>七圣召唤 Lite</title>
 		<link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+		<title>七圣召唤 Lite</title>
+		<meta name="author" content="SAM TOKI STUDIO" />
+		<meta name="version" content="v0.38 (2024/09/23) Alpha Test. Since 2023/12/02." />
+		<meta name="description" content="「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。" />
+		<meta name="keywords" content="Sam Toki, SAM TOKI STUDIO, 七圣召唤 Lite, GITCG Lite, 七圣召唤, GITCG, 原神, Genshin Impact" />
+		<meta name="copyright" content="(C) 2024 SAM TOKI STUDIO" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../styles/common.css" />
 		<link id="ThemeVariant_Common" rel="stylesheet" href="../styles/common_Dark.css" media="(prefers-color-scheme: dark)" />
 		<link id="ThemeVariant_Common_HighContrast" rel="stylesheet" href="../styles/common_HighContrast.css" media="(prefers-contrast: more)" />
@@ -30,10 +31,12 @@
 		<script defer src="scripts/script_Casket.js"></script>
 		<script defer src="scripts/script_Editor.js"></script>
 		<script defer src="scripts/script.js"></script>
+
+		<link rel="manifest" href="manifests/manifest.json">
 	</head>
 
 	<body>
-		<div id="Ctnr_BgImage"></div>
+		<div class="Blur" id="Ctnr_BgImage"></div>
 
 		<header id="Topbar">
 			<ul class="CtrlGroup">
@@ -105,9 +108,9 @@
 					</nav>
 				</li>
 				<li class="Ctrl" id="Ctrl_BackToMainPage">
-					<a class="Linkbtn" id="Linkbtn_BackToMainPage" href="../#ToyStore">
+					<a class="Linkbtn" id="Linkbtn_BackToMainPage" href="..">
 						<svg class="Icon" viewBox="0 0 16 16">
-							<path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+							<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
 						</svg>
 					</a>
 				</li>
@@ -4821,7 +4824,7 @@
 					</div>
 					<div id="Ctnr_GameCtrl">
 						<ul class="CtrlGroup">
-							<li class="Ctrl Width40 Faded" id="Ctrl_GameToggleOperationPanelTransparency" inert="true">
+							<li class="Ctrl Faded" id="Ctrl_GameToggleOperationPanelTransparency" inert="true">
 								<button class="Cmdbtn" id="Cmdbtn_GameToggleOperationPanelTransparency" onpointerenter="ToggleOperationPanelTransparency('True')" onclick="ToggleOperationPanelTransparency('Toggle')" onpointerleave="ToggleOperationPanelTransparency('False')">
 									<svg class="Icon" viewBox="0 0 16 16">
 										<path d="M0 6.5a6.5 6.5 0 0 1 12.346-2.846 6.5 6.5 0 1 1-8.691 8.691A6.5 6.5 0 0 1 0 6.5m5.144 6.358a5.5 5.5 0 1 0 7.714-7.714 6.5 6.5 0 0 1-7.714 7.714m-.733-1.269q.546.226 1.144.33l-1.474-1.474q.104.597.33 1.144m2.614.386a5.5 5.5 0 0 0 1.173-.242L4.374 7.91a6 6 0 0 0-.296 1.118zm2.157-.672q.446-.25.838-.576L5.418 6.126a6 6 0 0 0-.587.826zm1.545-1.284q.325-.39.576-.837L6.953 4.83a6 6 0 0 0-.827.587l4.6 4.602Zm1.006-1.822q.183-.562.242-1.172L9.028 4.078q-.58.096-1.118.296l3.823 3.824Zm.186-2.642a5.5 5.5 0 0 0-.33-1.144 5.5 5.5 0 0 0-1.144-.33z"/>
@@ -4829,7 +4832,7 @@
 								</button>
 								<span class="HotkeyIndicator Faded" inert="true">=</span>
 							</li>
-							<li class="Ctrl Width40">
+							<li class="Ctrl">
 								<button class="Cmdbtn" id="Cmdbtn_GameMenu" onclick="Show('DropctrlGroup_GameMenu')">
 									<svg class="Icon Larger" viewBox="0 0 16 16">
 										<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
@@ -6091,19 +6094,19 @@
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesID">
 										<span>ID：</span>
-										<input class="Textbox Width160" id="Textbox_EditorBasicPropertiesID" type="text" placeholder="例: Keqing" onchange="SetBasicPropertiesID()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesID" type="text" placeholder="例: Keqing" onchange="SetBasicPropertiesID()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorBasicPropertiesName" type="text" placeholder="例: 刻晴" onchange="SetBasicPropertiesName()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesName" type="text" placeholder="例: 刻晴" onchange="SetBasicPropertiesName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorBasicPropertiesImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorBasicPropertiesImage')" onchange="SetBasicPropertiesImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorBasicPropertiesImage')" onchange="SetBasicPropertiesImage()" />
 									</label>
 								</li>
 								<img class="CardImage" id="Image_EditorBasicProperties" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="卡牌图像" />
@@ -6289,9 +6292,9 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width60" id="Textbox_EditorNormalAttackCostQuantity" type="number" min="0" max="8" step="1" value="1" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostQuantity')" onchange="SetNormalAttackCostQuantity()" />
+										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostQuantity" type="number" min="0" max="8" step="1" value="1" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostQuantity')" onchange="SetNormalAttackCostQuantity()" />
 										<span id="Label_EditorNormalAttackCostType">元素类型 +</span>
-										<input class="Textbox Width60" id="Textbox_EditorNormalAttackCostUnaligned" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostUnaligned')" onchange="SetNormalAttackCostUnaligned()" />
+										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostUnaligned" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostUnaligned')" onchange="SetNormalAttackCostUnaligned()" />
 										<span>任意</span>
 									</label>
 								</li>
@@ -6331,13 +6334,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorElementalSkillName" type="text" placeholder="例: 星斗归位" onchange="SetElementalSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalSkillName" type="text" placeholder="例: 星斗归位" onchange="SetElementalSkillName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalSkillImage')" onchange="SetElementalSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalSkillImage')" onchange="SetElementalSkillImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素战技图像" />
@@ -6370,13 +6373,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorSecondaryElementalSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorSecondaryElementalSkillName" type="text" placeholder="例: 所闻遍计・真如" onchange="SetSecondaryElementalSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillName" type="text" placeholder="例: 所闻遍计・真如" onchange="SetSecondaryElementalSkillName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorSecondaryElementalSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorSecondaryElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorSecondaryElementalSkillImage')" onchange="SetSecondaryElementalSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorSecondaryElementalSkillImage')" onchange="SetSecondaryElementalSkillImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorSecondaryElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="第二元素战技图像" />
@@ -6409,13 +6412,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalBurstName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorElementalBurstName" type="text" placeholder="例: 天街巡游" onchange="SetElementalBurstName()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalBurstName" type="text" placeholder="例: 天街巡游" onchange="SetElementalBurstName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalBurstImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorElementalBurstImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalBurstImage')" onchange="SetElementalBurstImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalBurstImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalBurstImage')" onchange="SetElementalBurstImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorElementalBurst" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素爆发图像" />
@@ -6448,13 +6451,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorIntroSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorIntroSkillName" type="text" onchange="SetIntroSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorIntroSkillName" type="text" onchange="SetIntroSkillName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorIntroSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorIntroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorIntroSkillImage')" onchange="SetIntroSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorIntroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorIntroSkillImage')" onchange="SetIntroSkillImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorIntroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="进场技能图像" />
@@ -6480,13 +6483,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorOutroSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorOutroSkillName" type="text" onchange="SetOutroSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorOutroSkillName" type="text" onchange="SetOutroSkillName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorOutroSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorOutroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorOutroSkillImage')" onchange="SetOutroSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorOutroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorOutroSkillImage')" onchange="SetOutroSkillImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorOutroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="退场技能图像" />
@@ -6512,13 +6515,13 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorPassiveSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorPassiveSkillName" type="text" onchange="SetPassiveSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillName" type="text" onchange="SetPassiveSkillName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorPassiveSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorPassiveSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorPassiveSkillImage')" onchange="SetPassiveSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorPassiveSkillImage')" onchange="SetPassiveSkillImage()" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorPassiveSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="被动技能图像" />
@@ -6550,13 +6553,13 @@
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorAffiliatedCardName">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorAffiliatedCardName" type="text" placeholder="例: 雷楔" onchange="SetAffiliatedCardName()" />
+										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardName" type="text" placeholder="例: 雷楔" onchange="SetAffiliatedCardName()" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorAffiliatedCardImage">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorAffiliatedCardImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorAffiliatedCardImage')" onchange="SetAffiliatedCardImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorAffiliatedCardImage')" onchange="SetAffiliatedCardImage()" />
 									</label>
 								</li>
 								<img class="CardImage" id="Image_EditorAffiliatedCardImage" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="附属卡牌图像" />
@@ -6572,8 +6575,8 @@
 								<li class="Ctrl Hidden" id="Ctrl_EditorAffiliatedCardCost" inert="true"> <!-- Only for event cards. -->
 									<label for="Textbox_EditorAffiliatedCardCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorAffiliatedCardCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorAffiliatedCardCostQuantity')" onchange="SetAffiliatedCardCostQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorAffiliatedCardCostType" onchange="SetAffiliatedCardCostType()">
+										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorAffiliatedCardCostQuantity')" onchange="SetAffiliatedCardCostQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorAffiliatedCardCostType" onchange="SetAffiliatedCardCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6613,8 +6616,8 @@
 								<li class="Ctrl" id="Ctrl_EditorAffiliatedCardDuration"> <!-- Only for summons cards. -->
 									<label for="Textbox_EditorAffiliatedCardDurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width80" id="Textbox_EditorAffiliatedCardDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorAffiliatedCardDurationQuantity')" onchange="SetAffiliatedCardDurationQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorAffiliatedCardDurationType" onchange="SetAffiliatedCardDurationType()">
+										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorAffiliatedCardDurationQuantity')" onchange="SetAffiliatedCardDurationQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorAffiliatedCardDurationType" onchange="SetAffiliatedCardDurationType()">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
 										</select>
@@ -6654,8 +6657,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorTalentCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width60" id="Textbox_EditorTalentCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostQuantity')" onchange="SetTalentCardPropertiesCostQuantity()" />
-										<select class="Combobox Width60" id="Combobox_EditorTalentCardPropertiesCostType" onchange="SetTalentCardPropertiesCostType()">
+										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostQuantity')" onchange="SetTalentCardPropertiesCostQuantity()" />
+										<select class="Combobox Width80" id="Combobox_EditorTalentCardPropertiesCostType" onchange="SetTalentCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6667,14 +6670,14 @@
 											<option value="Geo">岩</option>
 										</select>
 										<span id="Label_EditorTalentCardPropertiesCost1">+</span>
-										<input class="Textbox Width60" id="Textbox_EditorTalentCardPropertiesCostUnaligned" type="number" min="0" max="8" step="1" value="0" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostUnaligned')" onchange="SetTalentCardPropertiesCostUnaligned()" />
+										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostUnaligned" type="number" min="0" max="8" step="1" value="0" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostUnaligned')" onchange="SetTalentCardPropertiesCostUnaligned()" />
 										<span id="Label_EditorTalentCardPropertiesCost2">任意</span>
 									</label>
 								</li>
 								<li class="Ctrl" id="Ctrl_EditorTalentCardPropertiesOrientedCharacterCardID">
 									<label for="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID">
 										<span>对应角色牌 ID：</span>
-										<input class="Textbox Width160" id="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID" type="text" placeholder="例: Keqing" onchange="SetTalentCardPropertiesOrientedCharacterCardID()" />
+										<input class="Textbox Width200" id="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID" type="text" placeholder="例: Keqing" onchange="SetTalentCardPropertiesOrientedCharacterCardID()" />
 									</label>
 								</li>
 								<li class="Ctrl" id="Ctrl_EditorTalentCardPropertiesSkillType">
@@ -6699,8 +6702,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorWeaponCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorWeaponCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorWeaponCardPropertiesCostQuantity')" onchange="SetWeaponCardPropertiesCostQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorWeaponCardPropertiesCostType" onchange="SetWeaponCardPropertiesCostType()">
+										<input class="Textbox Width120" id="Textbox_EditorWeaponCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorWeaponCardPropertiesCostQuantity')" onchange="SetWeaponCardPropertiesCostQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorWeaponCardPropertiesCostType" onchange="SetWeaponCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6741,8 +6744,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorArtifactCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorArtifactCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorArtifactCardPropertiesCostQuantity')" onchange="SetArtifactCardPropertiesCostQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorArtifactCardPropertiesCostType" onchange="SetArtifactCardPropertiesCostType()">
+										<input class="Textbox Width120" id="Textbox_EditorArtifactCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorArtifactCardPropertiesCostQuantity')" onchange="SetArtifactCardPropertiesCostQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorArtifactCardPropertiesCostType" onchange="SetArtifactCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6771,8 +6774,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSupportCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorSupportCardPropertiesCostQuantity')" onchange="SetSupportCardPropertiesCostQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorSupportCardPropertiesCostType" onchange="SetSupportCardPropertiesCostType()">
+										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorSupportCardPropertiesCostQuantity')" onchange="SetSupportCardPropertiesCostQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorSupportCardPropertiesCostType" onchange="SetSupportCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6788,8 +6791,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesDurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSupportCardPropertiesDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorSupportCardPropertiesDurationQuantity')" onchange="SetSupportCardPropertiesDurationQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorSupportCardPropertiesDurationType" onchange="SetSupportCardPropertiesDurationType()">
+										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorSupportCardPropertiesDurationQuantity')" onchange="SetSupportCardPropertiesDurationQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorSupportCardPropertiesDurationType" onchange="SetSupportCardPropertiesDurationType()">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
 										</select>
@@ -6823,8 +6826,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorEventCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorEventCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorEventCardPropertiesCostQuantity')" onchange="SetEventCardPropertiesCostQuantity()" />
-										<select class="Combobox Width80" id="Combobox_EditorEventCardPropertiesCostType" onchange="SetEventCardPropertiesCostType()">
+										<input class="Textbox Width120" id="Textbox_EditorEventCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorEventCardPropertiesCostQuantity')" onchange="SetEventCardPropertiesCostQuantity()" />
+										<select class="Combobox Width120" id="Combobox_EditorEventCardPropertiesCostType" onchange="SetEventCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
 											<option value="Pyro">火</option>
@@ -6883,13 +6886,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus1Name">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus1Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(1)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus1Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(1)" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus1Image">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus1Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus1Image')" onchange="SetStatusImage(1)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus1Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus1Image')" onchange="SetStatusImage(1)" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus1Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态1图像" />
@@ -6905,8 +6908,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus1DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width80" id="Textbox_EditorStatus1DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus1DurationQuantity')" onchange="SetStatusDurationQuantity(1)" />
-										<select class="Combobox Width80" id="Combobox_EditorStatus1DurationType" onchange="SetStatusDurationType(1)">
+										<input class="Textbox Width120" id="Textbox_EditorStatus1DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus1DurationQuantity')" onchange="SetStatusDurationQuantity(1)" />
+										<select class="Combobox Width120" id="Combobox_EditorStatus1DurationType" onchange="SetStatusDurationType(1)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
 										</select>
@@ -6934,13 +6937,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus2Name">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus2Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(2)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus2Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(2)" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus2Image">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus2Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus2Image')" onchange="SetStatusImage(2)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus2Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus2Image')" onchange="SetStatusImage(2)" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus2Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态2图像" />
@@ -6956,8 +6959,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus2DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width80" id="Textbox_EditorStatus2DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus2DurationQuantity')" onchange="SetStatusDurationQuantity(2)" />
-										<select class="Combobox Width80" id="Combobox_EditorStatus2DurationType" onchange="SetStatusDurationType(2)">
+										<input class="Textbox Width120" id="Textbox_EditorStatus2DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus2DurationQuantity')" onchange="SetStatusDurationQuantity(2)" />
+										<select class="Combobox Width120" id="Combobox_EditorStatus2DurationType" onchange="SetStatusDurationType(2)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
 										</select>
@@ -6985,13 +6988,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus3Name">
 										<span>名称：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus3Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(3)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus3Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(3)" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus3Image">
 										<span>图像：</span>
-										<input class="Textbox Width160" id="Textbox_EditorStatus3Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus3Image')" onchange="SetStatusImage(3)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus3Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus3Image')" onchange="SetStatusImage(3)" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus3Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态3图像" />
@@ -7007,8 +7010,8 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus3DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width80" id="Textbox_EditorStatus3DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus3DurationQuantity')" onchange="SetStatusDurationQuantity(3)" />
-										<select class="Combobox Width80" id="Combobox_EditorStatus3DurationType" onchange="SetStatusDurationType(3)">
+										<input class="Textbox Width120" id="Textbox_EditorStatus3DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus3DurationQuantity')" onchange="SetStatusDurationQuantity(3)" />
+										<select class="Combobox Width120" id="Combobox_EditorStatus3DurationType" onchange="SetStatusDurationType(3)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
 										</select>
@@ -7083,41 +7086,41 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineBecomingActive1">
 										<span>切换至前台：</span>
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineBecomingActive1" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive1')" onchange="SetSpokenLineBecomingActive(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineBecomingActive2" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive2')" onchange="SetSpokenLineBecomingActive(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineBecomingActive3" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive3')" onchange="SetSpokenLineBecomingActive(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive1" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive1')" onchange="SetSpokenLineBecomingActive(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive2" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive2')" onchange="SetSpokenLineBecomingActive(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive3" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive3')" onchange="SetSpokenLineBecomingActive(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineElementalSkill1">
 										<span>元素战技：</span>
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalSkill1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill1')" onchange="SetSpokenLineElementalSkill(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalSkill2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill2')" onchange="SetSpokenLineElementalSkill(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalSkill3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill3')" onchange="SetSpokenLineElementalSkill(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill1')" onchange="SetSpokenLineElementalSkill(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill2')" onchange="SetSpokenLineElementalSkill(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill3')" onchange="SetSpokenLineElementalSkill(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineElementalBurst1">
 										<span>元素爆发：</span>
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalBurst1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst1')" onchange="SetSpokenLineElementalBurst(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalBurst2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst2')" onchange="SetSpokenLineElementalBurst(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineElementalBurst3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst3')" onchange="SetSpokenLineElementalBurst(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst1')" onchange="SetSpokenLineElementalBurst(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst2')" onchange="SetSpokenLineElementalBurst(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst3')" onchange="SetSpokenLineElementalBurst(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineHeavyHitTaken1">
 										<span>重受击：</span>
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken1')" onchange="SetSpokenLineHeavyHitTaken(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken2')" onchange="SetSpokenLineHeavyHitTaken(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken3')" onchange="SetSpokenLineHeavyHitTaken(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken1')" onchange="SetSpokenLineHeavyHitTaken(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken2')" onchange="SetSpokenLineHeavyHitTaken(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken3')" onchange="SetSpokenLineHeavyHitTaken(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineFallen1">
 										<span>倒下：</span>
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineFallen1" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen1')" onchange="SetSpokenLineFallen(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineFallen2" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen2')" onchange="SetSpokenLineFallen(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorSpokenLineFallen3" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen3')" onchange="SetSpokenLineFallen(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen1" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen1')" onchange="SetSpokenLineFallen(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen2" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen2')" onchange="SetSpokenLineFallen(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen3" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen3')" onchange="SetSpokenLineFallen(3)" />
 									</label>
 								</li>
 							</ul>
@@ -7130,41 +7133,41 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverBecomingActive1">
 										<span>切换至前台：</span>
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverBecomingActive1" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive1')" onchange="SetVoiceoverBecomingActive(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverBecomingActive2" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive2')" onchange="SetVoiceoverBecomingActive(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverBecomingActive3" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive3')" onchange="SetVoiceoverBecomingActive(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive1" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive1')" onchange="SetVoiceoverBecomingActive(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive2" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive2')" onchange="SetVoiceoverBecomingActive(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive3" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive3')" onchange="SetVoiceoverBecomingActive(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverElementalSkill1">
 										<span>元素战技：</span>
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalSkill1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill1')" onchange="SetVoiceoverElementalSkill(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalSkill2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill2')" onchange="SetVoiceoverElementalSkill(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalSkill3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill3')" onchange="SetVoiceoverElementalSkill(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill1')" onchange="SetVoiceoverElementalSkill(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill2')" onchange="SetVoiceoverElementalSkill(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill3')" onchange="SetVoiceoverElementalSkill(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverElementalBurst1">
 										<span>元素爆发：</span>
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalBurst1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst1')" onchange="SetVoiceoverElementalBurst(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalBurst2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst2')" onchange="SetVoiceoverElementalBurst(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverElementalBurst3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst3')" onchange="SetVoiceoverElementalBurst(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst1')" onchange="SetVoiceoverElementalBurst(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst2')" onchange="SetVoiceoverElementalBurst(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst3')" onchange="SetVoiceoverElementalBurst(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverHeavyHitTaken1">
 										<span>重受击：</span>
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken1')" onchange="SetVoiceoverHeavyHitTaken(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken2')" onchange="SetVoiceoverHeavyHitTaken(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken3')" onchange="SetVoiceoverHeavyHitTaken(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken1')" onchange="SetVoiceoverHeavyHitTaken(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken2')" onchange="SetVoiceoverHeavyHitTaken(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken3')" onchange="SetVoiceoverHeavyHitTaken(3)" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverFallen1">
 										<span>倒下：</span>
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverFallen1" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen1')" onchange="SetVoiceoverFallen(1)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverFallen2" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen2')" onchange="SetVoiceoverFallen(2)" />
-										<input class="Textbox Width60" id="Textbox_EditorVoiceoverFallen3" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen3')" onchange="SetVoiceoverFallen(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen1" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen1')" onchange="SetVoiceoverFallen(1)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen2" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen2')" onchange="SetVoiceoverFallen(2)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen3" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen3')" onchange="SetVoiceoverFallen(3)" />
 									</label>
 								</li>
 							</ul>
@@ -7190,7 +7193,7 @@
 								<li class="Ctrl">
 									<label for="Combobox_SettingsSelectSavedGame">
 										<span>选择：</span>
-										<select class="Combobox Width200" id="Combobox_SettingsSelectSavedGame" disabled="true">
+										<select class="Combobox" id="Combobox_SettingsSelectSavedGame" disabled="true">
 											<!-- Content will be inserted using script. -->
 										</select>
 									</label>
@@ -7278,7 +7281,7 @@
 								<li class="Ctrl">
 									<label for="Combobox_SettingsHotkeyIndicators">
 										<span>快捷键提示：</span>
-										<select class="Combobox Width200" id="Combobox_SettingsHotkeyIndicators" onchange="SetHotkeyIndicators()">
+										<select class="Combobox" id="Combobox_SettingsHotkeyIndicators" onchange="SetHotkeyIndicators()">
 											<option value="Disabled">禁用</option>
 											<option value="ShowOnWrongKeyPress">按下无关按键时显示</option>
 											<option value="ShowOnAnyKeyPress" selected>按下任意按键时显示</option>
@@ -7300,7 +7303,7 @@
 								<li class="Ctrl">
 									<label for="Combobox_SettingsNameOnCard">
 										<span>牌面卡牌名称：</span>
-										<select class="Combobox Width200" id="Combobox_SettingsNameOnCard" onchange="SetNameOnCard()">
+										<select class="Combobox" id="Combobox_SettingsNameOnCard" onchange="SetNameOnCard()">
 											<option value="Disabled">禁用</option>
 											<option value="ShowOnHover" selected>鼠标滑过卡牌时显示</option>
 											<option value="AlwaysShow">始终显示</option>
@@ -7310,14 +7313,14 @@
 								<li class="Ctrl">
 									<label for="Textbox_SettingsHPCautionThreshold">
 										<span>血量：低于</span>
-										<input class="Textbox Width80" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" placeholder="0~60" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" />
+										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" placeholder="0~60" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" />
 										<span>%时显示红色</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Combobox_SettingsInfoWindow">
 										<span>详情窗口：</span>
-										<select class="Combobox Width200" id="Combobox_SettingsInfoWindow" onchange="SetInfoWindow()">
+										<select class="Combobox" id="Combobox_SettingsInfoWindow" onchange="SetInfoWindow()">
 											<option value="Disabled">禁用 (不推荐)</option>
 											<option value="ShowOnClick">点击控件时显示</option>
 											<option value="ShowOnHover" selected>鼠标滑过控件时显示</option>
@@ -7349,7 +7352,7 @@
 								<li class="Ctrl">
 									<label for="Combobox_SettingsSkillIndicator">
 										<span>技能指示器：</span>
-										<select class="Combobox Width200" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
+										<select class="Combobox" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
 											<option value="Disabled">禁用</option>
 											<option value="ShowOnElementalBurstOnly" selected>仅于元素爆发显示</option>
 											<option value="ShowOnAnySkill">于所有技能显示</option>
@@ -7403,6 +7406,22 @@
 					</li>
 					<li class="Item">
 						<fieldset>
+							<legend>其他</legend>
+							<ul class="CtrlGroup">
+								<li class="Ctrl">
+									<button class="Cmdbtn" id="Cmdbtn_SettingsResetAllDontShowAgainDialogs" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
+								</li>
+							</ul>
+							<p>您可将本网页安装至桌面，以 <a href="https://zh.wikipedia.org/wiki/progressive_web_app">progressive web app</a> (俗称小程序) 的形式更方便地使用。若下面的按钮不可用，请尝试前往浏览器的菜单来安装。</p>
+							<ul class="CtrlGroup BelowParagraph">
+								<li class="Ctrl">
+									<button class="Cmdbtn" id="Cmdbtn_SettingsInstallPWA" disabled="true" onclick="InstallPWA()">安装至桌面</button>
+								</li>
+							</ul>
+						</fieldset>
+					</li>
+					<li class="Item">
+						<fieldset>
 							<legend>开发者选项</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
@@ -7434,16 +7453,6 @@
 										<input class="Checkbox" id="Checkbox_SettingsCheat" type="checkbox" checked="false" onchange="SetCheat()" />
 										<span>作弊</span>
 									</label>
-								</li>
-							</ul>
-						</fieldset>
-					</li>
-					<li class="Item">
-						<fieldset>
-							<legend>其他</legend>
-							<ul class="CtrlGroup">
-								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsResetAllDontShowAgainDialogs" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -7531,7 +7540,7 @@
 					<li class="Item">
 						<fieldset>
 							<legend>隐私权声明</legend>
-							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 Local Storage 功能在本地存储<a href="#Item_SettingsUserData" onclick="ShowIAmHere('Item_SettingsUserData')">用户数据</a>，您可随时手动删除。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
+							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 local storage 功能在本地存储<a href="#Item_SettingsUserData" onclick="ShowIAmHere('Item_SettingsUserData')">用户数据</a>，您可随时手动删除。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
 							<p>出于安全考虑，<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub 的服务器可能会记录您的 IP 地址</a>，但我无法访问这些数据。</p>
 						</fieldset>
 					</li>

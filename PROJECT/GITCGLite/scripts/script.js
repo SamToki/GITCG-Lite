@@ -888,9 +888,9 @@
 			}
 			ChangeChecked("Checkbox_SettingsBlurBgImage", System.Display.BlurBgImage);
 			if(System.Display.BlurBgImage == true) {
-				ChangeFilter("Ctnr_BgImage", "blur(10px)");
+				AddClass("Ctnr_BgImage", "Blur");
 			} else {
-				ChangeFilter("Ctnr_BgImage", "");
+				RemoveClass("Ctnr_BgImage", "Blur");
 			}
 			ChangeValue("Combobox_SettingsHotkeyIndicators", System.Display.HotkeyIndicators);
 			switch(System.Display.HotkeyIndicators) {
@@ -1179,6 +1179,13 @@
 			PlayAudio("Audio_VoicePlayer", "audio/PreviewVoiceVolume.mp3");
 		}
 
+		// Miscellaneous
+		function ResetAllDontShowAgainDialogs() {
+			System.DontShowAgain = [0];
+			RefreshSystem();
+			ShowToast("已重置");
+		}
+
 		// Dev
 		function SetCheat() {
 			Subsystem.Dev.Cheat = IsChecked("Checkbox_SettingsCheat");
@@ -1187,13 +1194,6 @@
 			}
 			RefreshSubsystem();
 			RefreshGame();
-		}
-
-		// Miscellaneous
-		function ResetAllDontShowAgainDialogs() {
-			System.DontShowAgain = [0];
-			RefreshSystem();
-			ShowToast("已重置");
 		}
 
 		// User data

@@ -195,7 +195,7 @@
 								pointer-events: none;
 							}
 							.HP .ProgbarText {
-								position: absolute; bottom: 6px; left: 0;
+								position: absolute; bottom: 8px; left: 0;
 								width: 100%;
 								text-align: center;
 								display: flex; justify-content: center;
@@ -244,8 +244,8 @@
 								width: 100%; height: 100%;
 							}
 							.StatusText {
-								position: absolute; bottom: -4px; right: -4px;
-								width: 16px; height: 16px; border-radius: 8px;
+								position: absolute; bottom: -3px; right: -3px;
+								width: 15px; height: 15px; border-radius: 7.5px;
 								color: #000000; text-shadow: 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF; text-align: center;
 								display: flex; justify-content: center; align-items: center;
 							}
@@ -269,7 +269,7 @@
 								display: flex; justify-content: center; align-items: center;
 							}
 							.DamageIndicator .CtrlGroup .Critical {
-								font-size: 1.25em;
+								font-size: 1.50em;
 							}
 							.DamageIndicator .CtrlGroup .Damage {
 								font-size: 3.00em;
@@ -355,8 +355,8 @@
 							width: 472px; height: 0;
 						}
 						#Ctnr_GameActionCardsIndependentHotkeyIndicator .HotkeyIndicator {
-							left: calc(50% - 30px);
-							width: 60px;
+							left: calc(50% - 25px);
+							width: 50px;
 						}
 
 					/* Dice */
@@ -369,10 +369,10 @@
 						width: 60px; height: 60px;
 					}
 					.Dice .CostIndicatorText {
-						color: currentColor; font-size: 1.60em;
+						color: currentColor; font-size: 1.75em;
 					}
 					.Dice.OnRolling .CostIndicatorText {
-						font-size: 2.00em;
+						font-size: 2.25em;
 					}
 					#Ctnr_GameDiceIndependentHotkeyIndicators {
 						position: absolute; top: calc(50% + 120px); left: calc(100% - 230px); z-index: 4;
@@ -397,7 +397,7 @@
 					/* Particles */
 					.Particle {
 						position: absolute; top: unset; left: unset; z-index: 11;
-						width: 4px; height: 4px; border-radius: 2px;
+						width: 5px; height: 5px; border-radius: 2.5px;
 						background-color: currentColor; box-shadow: 0 0 10px 10px currentColor;
 						transition-timing-function: linear;
 					}
@@ -428,10 +428,10 @@
 
 						/* Off table */
 						.Card.Summons.OffTable {
-							top: calc(50% - 96px); left: calc(100% + 60px);
+							top: calc(50% - 96px); left: calc(100% + 15px);
 						}
 						.Card.Action.OffTable {
-							left: -127px;
+							left: -117px;
 						}
 						.Card.Action.Player.OffTable {
 							top: calc(50% + 90px);
@@ -440,7 +440,7 @@
 							top: calc(50% - 282px);
 						}
 						.Dice.OffTable {
-							top: calc(50% - 20px); left: calc(100% + 60px);
+							top: calc(50% - 25px); left: calc(100% + 15px);
 						}
 
 						/* In starting hand */
@@ -765,7 +765,7 @@
 
 						/* Discarded */
 						.Card.Discarded {
-							top: calc(50% - 96px); left: calc(100% + 60px);
+							top: calc(50% - 96px); left: calc(100% + 15px);
 						}
 
 						/* Party status */
@@ -831,62 +831,62 @@
 
 						/* Particles */
 						.Particle.Player.Position1, .Particle.Player.Position2, .Particle.Player.Position3 {
-							top: calc(50% + 154px);
+							top: calc(50% + 153.5px);
 						}
 						#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) .Particle.Player.Position1,
 						#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) .Particle.Player.Position2,
 						#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) .Particle.Player.Position3 {
-							top: calc(50% + 124px);
+							top: calc(50% + 123.5px);
 						}
 						.Particle.Player.Position1 {
-							left: calc(50% - 144px);
+							left: calc(50% - 144.5px);
 						}
 						.Particle.Player.Position2 {
-							left: calc(50% - 2px);
+							left: calc(50% - 2.5px);
 						}
 						.Particle.Player.Position3 {
-							left: calc(50% + 140px);
+							left: calc(50% + 139.5px);
 						}
 						.Particle.Player.Position4 {
-							top: calc(50% + 100px); left: calc(50% + 265px);
+							top: calc(50% + 99.5px); left: calc(50% + 264.5px);
 						}
 						.Particle.Player.Position5 {
-							top: calc(50% + 100px); left: calc(50% + 338px);
+							top: calc(50% + 99.5px); left: calc(50% + 337.5px);
 						}
 						.Particle.Player.Position6 {
-							top: calc(50% + 208px); left: calc(50% + 265px);
+							top: calc(50% + 207.5px); left: calc(50% + 264.5px);
 						}
 						.Particle.Player.Position7 {
-							top: calc(50% + 208px); left: calc(50% + 338px);
+							top: calc(50% + 207.5px); left: calc(50% + 337.5px);
 						}
 						.Particle.Opponent.Position1, .Particle.Opponent.Position2, .Particle.Opponent.Position3 {
-							top: calc(50% - 158px);
+							top: calc(50% - 158.5px);
 						}
 						#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) .Particle.Opponent.Position1,
 						#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) .Particle.Opponent.Position2,
 						#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) .Particle.Opponent.Position3 {
-							top: calc(50% - 128px);
+							top: calc(50% - 128.5px);
 						}
 						.Particle.Opponent.Position1 {
-							left: calc(50% - 144px);
+							left: calc(50% - 144.5px);
 						}
 						.Particle.Opponent.Position2 {
-							left: calc(50% - 2px);
+							left: calc(50% - 2.5px);
 						}
 						.Particle.Opponent.Position3 {
-							left: calc(50% + 140px);
+							left: calc(50% + 139.5px);
 						}
 						.Particle.Opponent.Position4 {
-							top: calc(50% - 212px); left: calc(50% + 265px);
+							top: calc(50% - 212.5px); left: calc(50% + 264.5px);
 						}
 						.Particle.Opponent.Position5 {
-							top: calc(50% - 212px); left: calc(50% + 338px);
+							top: calc(50% - 212.5px); left: calc(50% + 337.5px);
 						}
 						.Particle.Opponent.Position6 {
-							top: calc(50% - 104px); left: calc(50% + 265px);
+							top: calc(50% - 104.5px); left: calc(50% + 264.5px);
 						}
 						.Particle.Opponent.Position7 {
-							top: calc(50% - 104px); left: calc(50% + 338px);
+							top: calc(50% - 104.5px); left: calc(50% + 337.5px);
 						}
 
 				/* Table */
@@ -925,12 +925,12 @@
 						flex-direction: column-reverse; justify-content: center;
 					}
 					#CtrlGroup_GameTotalHPIndicators .Ctrl {
-						width: 40px; margin: 5px 0;
+						width: 40px; height: 40px; margin: 5px 0;
 					}
 					#Ctnr_GameActionCtrl .ProgbarText {
 						position: absolute; bottom: 7px; left: 0;
 						width: 100%;
-						font-size: 0.75em; text-align: center;
+						font-size: 0.85em; text-align: center;
 						display: flex; justify-content: center;
 					}
 					#CtrlGroup_GameActionCtrl {
@@ -952,7 +952,7 @@
 						width: 60px; height: 60px;
 					}
 					#Ctrl_GameEndAction .Icon {
-						width: 2.50em; height: 2.50em;
+						width: 3.00em; height: 3.00em;
 					}
 
 					/* Skill ctrl */
@@ -971,7 +971,7 @@
 						width: 70px; height: 70px;
 					}
 					.SkillImage, .StatusImage {
-						filter: drop-shadow(0 0 3px #000000);
+						filter: drop-shadow(0 0 2.5px #000000);
 					}
 					#Ctnr_GameSkillCtrl .SkillImage {
 						width: 100%; height: 100%;
@@ -1024,7 +1024,7 @@
 					margin: 0 0 20px 0;
 				}
 				.OperationPanelPrompt .Ctrl > * {
-					margin: 0 2px 5px 2px;
+					margin: 0 2.5px 5px 2.5px;
 				}
 				.OperationPanelPrompt .Ctrl.OperationPanelTitle > * {
 					padding: 0; margin: 0;
@@ -1044,20 +1044,20 @@
 				}
 					/* Title screen */
 					#CtrlGroup_GameStart {
-						position: absolute; bottom: calc(50% - 65px); left: calc(50% - 80px);
+						position: absolute; bottom: calc(50% - 57.5px); left: calc(50% - 80px);
 						width: 160px;
 					}
 					body:fullscreen #CtrlGroup_GameStart {
-						bottom: calc(50% - 40px);
+						bottom: calc(50% - 35px);
 					}
 					#Ctrl_GameStart {
-						height: 80px;
+						height: 70px;
 					}
 					#Cmdbtn_GameStart {
 						font-size: 2.00em;
 					}
 					#CtrlGroup_GameYourDeck, #CtrlGroup_GameOpponentDeck {
-						position: absolute; bottom: calc(50% + 126px); left: calc(50% - 476px);
+						position: absolute; bottom: calc(50% + 111px); left: calc(50% - 476px);
 						width: 366px;
 						flex-direction: column; align-items: start;
 					}
@@ -1081,8 +1081,8 @@
 						text-align: end;
 					}
 					#Label_Versus {
-						position: absolute; top: calc(50% - 65px); left: calc(50% - 80px);
-						width: 160px; height: 130px;
+						position: absolute; top: calc(50% - 57.5px); left: calc(50% - 80px);
+						width: 160px; height: 115px;
 						font-size: 5.00em; text-align: center;
 						display: flex; justify-content: center; align-items: center;
 					}
@@ -1130,7 +1130,7 @@
 						justify-content: center;
 					}
 					#CtrlGroup_GameRollPhase label > * {
-						margin: 0 3px;
+						margin: 0 2.5px;
 					}
 
 					/* Play action card */
@@ -1143,14 +1143,17 @@
 					position: absolute; top: 0; right: 0; z-index: 34;
 				}
 				#Ctnr_GameCtrl .CtrlGroup {
-					width: 90px; height: 40px;
+					width: 80px; height: 35px;
+				}
+				#Ctnr_GameCtrl .Ctrl {
+					width: 35px;
 				}
 				#DropctrlGroup_GameMenu {
 					top: 0; right: 0;
-					height: 162px;
+					height: 142px;
 				}
 				body:fullscreen #DropctrlGroup_GameMenu {
-					height: 122px;
+					height: 107px;
 				}
 
 			/* Floating ctrls */
@@ -1237,7 +1240,7 @@
 
 				/* Info window */
 				#Window_Game {
-					position: fixed; top: 130px; left: 30px; z-index: 41;
+					position: fixed; top: 130px; left: 15px; z-index: 41;
 					width: 240px; height: calc(100vh - 200px);
 					overflow: scroll; scroll-padding-top: 15px;
 				}
@@ -1258,7 +1261,7 @@
 					}
 					#Window_Game #CtrlGroup_GameInfoWindowCloseButton .Ctrl {
 						position: absolute; top: 15px; right: 15px;
-						width: 40px; padding: 0;
+						width: 35px; padding: 0;
 					}
 					/* #Cmdbtn_GameInfoWindowCloseButton {
 						backdrop-filter: blur(5px); // Will not work because of "position: sticky".
@@ -1271,7 +1274,7 @@
 					}
 						/* Title */
 						.InfoWindowTitle .Ctrl {
-							width: calc(100% - 55px); height: unset; min-height: 40px;
+							width: calc(100% - 50px); height: unset; min-height: 35px;
 						}
 						.InfoWindowTitle h4 {
 							padding: 0; margin: 0 5px 0 0;
@@ -1354,47 +1357,47 @@
 			display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center;
 		}
 		#Casket .Radiobtn {
-			width: 20px;
+			width: 18px;
 		}
 		#Casket .CardImage {
-			width: 21px; height: 36px;
+			width: 17.5px; height: 30px;
 		}
 		.ListItemName {
 			overflow: hidden;
 		}
 		#Casket .Cmdbtn.ShownAsLabel {
-			width: 24px; height: 24px;
+			width: 22px; height: 22px;
 			justify-content: center;
 		}
 		.ListItemEdit {
-			position: absolute; top: calc(50% - 12px); right: 77px;
+			position: absolute; top: calc(50% - 11px); right: 71px;
 		}
 		.ListItemDuplicate {
-			position: absolute; top: calc(50% - 12px); right: 53px;
+			position: absolute; top: calc(50% - 11px); right: 49px;
 		}
 		.ListItemExport {
-			position: absolute; top: calc(50% - 12px); right: 29px;
+			position: absolute; top: calc(50% - 11px); right: 27px;
 		}
 		.ListItemDelete {
-			position: absolute; top: calc(50% - 12px); right: 5px;
+			position: absolute; top: calc(50% - 11px); right: 5px;
 		}
 			/* Decks */
 			.CasketDeckLabel {
-				width: calc(100% - 82px);
+				width: calc(100% - 76px);
 			}
 			#CtrlGroup_CasketDecksList .ListItemName {
-				max-width: 124px;
+				max-width: 176px;
 			}
 
 			/* Cards */
 			.CasketCardLabel {
-				width: calc(100% - 106px);
+				width: calc(100% - 98px);
 			}
 			#CtrlGroup_CasketCharacterCardsList .ListItemName {
-				max-width: 157px; margin: 0 0 0 1px;
+				max-width: 203px; margin: 0 0 0 1px;
 			}
 			#CtrlGroup_CasketActionCardsList .ListItemName {
-				max-width: 178px;
+				max-width: 221px;
 			}
 			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
 				margin: 0 0 0 10px;
@@ -1402,14 +1405,14 @@
 
 			/* Management */
 			#Ctrl_CasketImport {
-				width: calc(100% - 90px); height: 90px;
+				width: calc(100% - 90px); height: 80px;
 			}
 			#Textbox_CasketImport {
 				width: 100%;
 				white-space: pre;
 			}
 			#Ctrl_CasketImport2 {
-				width: 80px; height: 90px;
+				width: 80px; height: 80px;
 			}
 
 		/* Editor */
@@ -1420,18 +1423,18 @@
 			position: absolute; top: unset; right: 5px;
 		}
 		#Editor .BeforeCardImage {
-			width: calc(100% - 97px);
+			width: calc(100% - 88px);
 		}
 		#Editor .BeforeSkillImage, #Editor .BeforeStatusImage {
-			width: calc(100% - 105px);
+			width: calc(100% - 95px);
 		}
 		#Editor .CardImage {
 			position: absolute; top: 0; right: 5px;
-			width: 82px; height: 140px;
+			width: 73px; height: 125px;
 		}
 		#Editor .SkillImage, #Editor .StatusImage {
 			position: absolute; top: 0; right: 5px;
-			width: 90px; height: 90px;
+			width: 80px; height: 80px;
 		}
 
 /* Responsive web design */
@@ -1439,7 +1442,7 @@
 	/* Area specific */
 		/* Header */
 		#CtrlGroup_Nav {
-			height: 202px;
+			height: 177px;
 		}
 
 		/* Main */
@@ -1463,7 +1466,7 @@
 									font-size: 0.75em;
 								}
 								.HP .ProgbarText {
-									bottom: 5px;
+									bottom: 6px;
 								}
 
 								/* Energy */
@@ -1492,7 +1495,7 @@
 									width: 84px; height: 84px; border-radius: 42px;
 								}
 								.DamageIndicator .CtrlGroup .Critical {
-									font-size: 1.00em;
+									font-size: 1.25em;
 								}
 								.DamageIndicator .CtrlGroup .Damage {
 									font-size: 2.50em;
@@ -1550,7 +1553,7 @@
 							width: 30px; height: 30px;
 						}
 						.Dice .CostIndicatorText {
-							font-size: 1.00em;
+							font-size: 1.15em;
 						}
 						#Ctnr_GameDiceIndependentHotkeyIndicators {
 							top: calc(50% + 65px); left: calc(100% - 125px);
@@ -1580,10 +1583,10 @@
 
 							/* Off table */
 							.Card.Summons.OffTable {
-								top: calc(50% - 72px); left: calc(100% + 30px);
+								top: calc(50% - 72px);
 							}
 							.Card.Action.OffTable {
-								left: -114px;
+								left: -94px;
 							}
 							.Card.Action.Player.OffTable {
 								top: calc(50% + 75px);
@@ -1592,7 +1595,7 @@
 								top: calc(50% - 219px);
 							}
 							.Dice.OffTable {
-								top: calc(50% - 15px); left: calc(100% + 30px);
+								top: calc(50% - 15px);
 							}
 
 							/* In starting hand */
@@ -1879,7 +1882,7 @@
 
 							/* Discarded */
 							.Card.Discarded {
-								top: calc(50% - 72px); left: calc(100% + 30px);
+								top: calc(50% - 72px);
 							}
 
 							/* Party status */
@@ -1909,72 +1912,70 @@
 
 							/* Particles */
 							.Particle.Player.Position1, .Particle.Player.Position2, .Particle.Player.Position3 {
-								top: calc(50% + 120px);
+								top: calc(50% + 119.5px);
 							}
 							#Game:has(#Card_GamePlayerCharacter1.ActiveCharacter) .Particle.Player.Position1,
 							#Game:has(#Card_GamePlayerCharacter2.ActiveCharacter) .Particle.Player.Position2,
 							#Game:has(#Card_GamePlayerCharacter3.ActiveCharacter) .Particle.Player.Position3 {
-								top: calc(50% + 95px);
+								top: calc(50% + 94.5px);
 							}
 							.Particle.Player.Position1 {
-								left: 40px;
+								left: 39.5px;
 							}
 							.Particle.Player.Position2 {
-								left: 139px;
+								left: 138.5px;
 							}
 							.Particle.Player.Position3 {
-								left: 238px;
+								left: 237.5px;
 							}
 							.Particle.Player.Position4 {
-								top: calc(50% + 231px); left: 266px;
+								top: calc(50% + 230.5px); left: 265.5px;
 							}
 							.Particle.Player.Position5 {
-								top: calc(50% + 231px); left: 231px;
+								top: calc(50% + 230.5px); left: 230.5px;
 							}
 							.Particle.Player.Position6 {
-								top: calc(50% + 231px); left: 196px;
+								top: calc(50% + 230.5px); left: 195.5px;
 							}
 							.Particle.Player.Position7 {
-								top: calc(50% + 231px); left: 161px;
+								top: calc(50% + 230.5px); left: 160.5px;
 							}
 							.Particle.Opponent.Position1, .Particle.Opponent.Position2, .Particle.Opponent.Position3 {
-								top: calc(50% - 124px);
+								top: calc(50% - 124.5px);
 							}
 							#Game:has(#Card_GameOpponentCharacter1.ActiveCharacter) .Particle.Opponent.Position1,
 							#Game:has(#Card_GameOpponentCharacter2.ActiveCharacter) .Particle.Opponent.Position2,
 							#Game:has(#Card_GameOpponentCharacter3.ActiveCharacter) .Particle.Opponent.Position3 {
-								top: calc(50% - 99px);
+								top: calc(50% - 99.5px);
 							}
 							.Particle.Opponent.Position1 {
-								left: 40px;
+								left: 39.5px;
 							}
 							.Particle.Opponent.Position2 {
-								left: 139px;
+								left: 138.5px;
 							}
 							.Particle.Opponent.Position3 {
-								left: 238px;
+								left: 237.5px;
 							}
 							.Particle.Opponent.Position4 {
-								top: calc(50% - 235px); left: 266px;
+								top: calc(50% - 235.5px); left: 265.5px;
 							}
 							.Particle.Opponent.Position5 {
-								top: calc(50% - 235px); left: 231px;
+								top: calc(50% - 235.5px); left: 230.5px;
 							}
 							.Particle.Opponent.Position6 {
-								top: calc(50% - 235px); left: 196px;
+								top: calc(50% - 235.5px); left: 195.5px;
 							}
 							.Particle.Opponent.Position7 {
-								top: calc(50% - 235px); left: 161px;
+								top: calc(50% - 235.5px); left: 160.5px;
 							}
 
 					/* Table */
-					#Ctnr_GameTable {
-						font-size: 0.75em;
-					}
 						/* Game status */
 						#Ctnr_GameStatus {
-							top: 100px; right: 0; left: unset;
+							top: 90px; right: 0; left: unset;
 							width: 70px; height: 90px;
+							font-size: 0.75em;
 						}
 						#Ctnr_GameStatus .CtrlGroup {
 							height: 40px;
@@ -2004,6 +2005,7 @@
 						}
 						#Ctnr_GameActionCtrl .ProgbarText {
 							bottom: 5px;
+							font-size: 0.65em;
 						}
 						#CtrlGroup_GameActionCtrl {
 							margin: 0 0 0 5px;
@@ -2018,6 +2020,7 @@
 						/* Skill ctrl */
 						#Ctnr_GameSkillCtrl {
 							width: 50px; height: 230px;
+							font-size: 0.75em;
 						}
 						#Ctnr_GameSkillCtrl .CtrlGroup {
 							flex-direction: column;
@@ -2051,13 +2054,13 @@
 					}
 						/* Title screen */
 						#CtrlGroup_GameStart {
-							bottom: calc(50% - 45px);
+							bottom: calc(50% - 40px);
 						}
 						body:fullscreen #CtrlGroup_GameStart {
-							bottom: calc(50% - 20px);
+							bottom: calc(50% - 17.5px);
 						}
 						#Ctrl_GameStart {
-							height: 40px;
+							height: 35px;
 						}
 						#Cmdbtn_GameStart {
 							font-size: 1.00em;
@@ -2083,8 +2086,8 @@
 							font-size: 1.00em; text-align: center;
 						}
 						#Label_Versus {
-							top: calc(50% - 45px);
-							height: 90px;
+							top: calc(50% - 40px);
+							height: 80px;
 							font-size: 3.00em;
 						}
 
@@ -2113,7 +2116,7 @@
 
 					/* Game ctrl */
 					#Ctnr_GameCtrl .CtrlGroup {
-						width: 40px; height: 90px;
+						width: 35px; height: 80px;
 						flex-direction: column-reverse;
 					}
 
@@ -2199,7 +2202,7 @@
 								margin: 0 -1px;
 							}
 }
-@media (min-width: 830px) { /* Optimization for long fieldsets far exceeding 600px height. */
+@media (min-width: 830px) { /* Optimization for long fieldsets exceeding 600px height. */
 	#Item_SettingsDisplay {
 		width: 800px;
 	}
