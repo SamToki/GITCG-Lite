@@ -14,7 +14,7 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CurrentVersion = 0.38;
+		const CurrentVersion = 0.39;
 		var Game0 = {
 			Options: {
 				TransparentOperationPanel: false
@@ -1093,7 +1093,7 @@
 		}
 		function SaveGame() {
 			Game.SavedGames[Game.SavedGames.length] = {
-				Name: Game.Status.Player.DeckProperties.Name + " vs. " + Game.Status.Opponent.DeckProperties.Name + " (" + new Date(Date.now()).toLocaleString(System.I18n.Language) + ")",
+				Name: Game.Status.Player.DeckProperties.Name + " vs. " + Game.Status.Opponent.DeckProperties.Name + " (" + new Date(Date.now()).toLocaleString(ReadLanguage("Html")) + ")",
 				Data: structuredClone(Game.Status)
 			};
 			ShowToast("已保存");
