@@ -127,16 +127,16 @@
 					.Card > .CtrlGroup > .Ctrl {
 						position: absolute; top: unset; left: unset;
 					}
-						/* Card cmdbtn */
-						.Card .CtrlGroup .CardCmdbtn {
+						/* Card button */
+						.Card .CtrlGroup .CardButton {
 							top: 0; left: 0;
 							width: 100%; height: 100%;
 						}
-						.Card .Cmdbtn {
+						.Card .Button {
 							position: relative;
 							border-radius: 10px;
 						}
-						.Card .Cmdbtn:hover .CardImage {
+						.Card .Button:hover .CardImage {
 							opacity: 0.8;
 						}
 						.Card .CardImage {
@@ -151,7 +151,7 @@
 							overflow: hidden !important;
 							pointer-events: none !important;
 						}
-						.Card.Action:not(.InHand:has(.Cmdbtn:focus)):not(.InHand.InPreview) .HotkeyIndicator { /* .Faded */
+						.Card.Action:not(.InHand:has(.Button:focus)):not(.InHand.InPreview) .HotkeyIndicator { /* .Faded */
 							opacity: 0 !important;
 							pointer-events: none !important;
 						}
@@ -470,13 +470,13 @@
 						.Card.Player.InHand {
 							top: calc(100% - 30px);
 						}
-						.Card.Player.InHand:hover, .Card.Player.InHand:has(.Cmdbtn:focus) {
+						.Card.Player.InHand:hover, .Card.Player.InHand:has(.Button:focus) {
 							top: calc(100% - 90px);
 						}
 						.Card.Opponent.InHand {
 							top: -162px;
 						}
-						.Card.Opponent.InHand:hover, .Card.Opponent.InHand:has(.Cmdbtn:focus) {
+						.Card.Opponent.InHand:hover, .Card.Opponent.InHand:has(.Button:focus) {
 							top: -102px;
 						}
 
@@ -1053,7 +1053,7 @@
 					#Ctrl_GameStart {
 						height: 70px;
 					}
-					#Cmdbtn_GameStart {
+					#Button_GameStart {
 						font-size: 2.00em;
 					}
 					#CtrlGroup_GameYourDeck, #CtrlGroup_GameOpponentDeck {
@@ -1263,7 +1263,7 @@
 						position: absolute; top: 15px; right: 15px;
 						width: 35px; padding: 0;
 					}
-					/* #Cmdbtn_GameInfoWindowCloseButton {
+					/* #Button_GameInfoWindowCloseButton {
 						backdrop-filter: blur(5px); // Will not work because of "position: sticky".
 					} */
 					.InfoWindowSection {
@@ -1365,7 +1365,7 @@
 		.ListItemName {
 			overflow: hidden;
 		}
-		#Casket .Cmdbtn.ShownAsLabel {
+		#Casket .Button.ShownAsLabel {
 			width: 22px; height: 22px;
 			justify-content: center;
 		}
@@ -1441,7 +1441,7 @@
 @media (max-width: 880px) {
 	/* Area specific */
 		/* Header */
-		#CtrlGroup_Nav {
+		#DropctrlGroup_Nav {
 			height: 177px;
 		}
 
@@ -1622,7 +1622,7 @@
 							.Card.Opponent.InHand {
 								top: -114px;
 							}
-							.Card.Opponent.InHand:hover, .Card.Opponent.InHand:has(.Cmdbtn:focus) {
+							.Card.Opponent.InHand:hover, .Card.Opponent.InHand:has(.Button:focus) {
 								top: -54px;
 							}
 
@@ -2062,7 +2062,7 @@
 						#Ctrl_GameStart {
 							height: 35px;
 						}
-						#Cmdbtn_GameStart {
+						#Button_GameStart {
 							font-size: 1.00em;
 						}
 						#CtrlGroup_GameYourDeck, #CtrlGroup_GameOpponentDeck {

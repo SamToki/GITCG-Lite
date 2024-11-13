@@ -1171,14 +1171,14 @@
 					"<option value=" + Looper + ">" + Game.SavedGames[Looper].Name + "</option>");
 			}
 			ChangeDisabled("Combobox_SettingsSelectSavedGame", false);
-			ChangeDisabled("Cmdbtn_SettingsLoadSavedGame", false);
-			ChangeDisabled("Cmdbtn_SettingsExportSavedGame", false);
-			ChangeDisabled("Cmdbtn_SettingsDeleteSavedGame", false);
+			ChangeDisabled("Button_SettingsLoadSavedGame", false);
+			ChangeDisabled("Button_SettingsExportSavedGame", false);
+			ChangeDisabled("Button_SettingsDeleteSavedGame", false);
 		} else {
 			ChangeDisabled("Combobox_SettingsSelectSavedGame", true);
-			ChangeDisabled("Cmdbtn_SettingsLoadSavedGame", true);
-			ChangeDisabled("Cmdbtn_SettingsExportSavedGame", true);
-			ChangeDisabled("Cmdbtn_SettingsDeleteSavedGame", true);
+			ChangeDisabled("Button_SettingsLoadSavedGame", true);
+			ChangeDisabled("Button_SettingsExportSavedGame", true);
+			ChangeDisabled("Button_SettingsDeleteSavedGame", true);
 		}
 		ChangeChecked("Checkbox_SettingsLetOpponentActFirstAtBeginning", Game.Options.LetOpponentActFirstAtBeginning);
 		ChangeChecked("Checkbox_SettingsShowOpponentDiceContent", Game.Options.ShowOpponentDiceContent);
@@ -1570,16 +1570,16 @@
 
 			// Recommend action
 			for(let Looper = 1; Looper <= 3; Looper++) {
-				RemoveClass("Cmdbtn_GamePlayerCharacter" + Looper, "Glow");
+				RemoveClass("Button_GamePlayerCharacter" + Looper, "Glow");
 			}
 			for(let Looper = 1; Looper <= 33; Looper++) {
-				RemoveClass("Cmdbtn_GamePlayerAction" + Looper, "Glow");
+				RemoveClass("Button_GamePlayerAction" + Looper, "Glow");
 			}
-			RemoveClass("Cmdbtn_GameNormalAttack", "Glow");
-			RemoveClass("Cmdbtn_GameElementalSkill", "Glow");
-			RemoveClass("Cmdbtn_GameSecondaryElementalSkill", "Glow");
-			RemoveClass("Cmdbtn_GameElementalBurst", "Glow");
-			RemoveClass("Cmdbtn_GameEndAction", "Glow");
+			RemoveClass("Button_GameNormalAttack", "Glow");
+			RemoveClass("Button_GameElementalSkill", "Glow");
+			RemoveClass("Button_GameSecondaryElementalSkill", "Glow");
+			RemoveClass("Button_GameElementalBurst", "Glow");
+			RemoveClass("Button_GameEndAction", "Glow");
 			clearTimeout(Automation.RecommendAction);
 			if(Game.Options.ShowRecommendedActionAfterIdlingFor30Sec == true) {
 				Automation.RecommendAction = setTimeout(RecommendAction, 30000);
@@ -2314,9 +2314,9 @@
 					ChangeText("CostIndicatorText_GameOpponentDice" + Looper, "");
 				}
 				if(Game0.Selection.Dice[Looper] == true) {
-					AddClass("Cmdbtn_GamePlayerDice" + Looper, "Active");
+					AddClass("Button_GamePlayerDice" + Looper, "Active");
 				} else {
-					RemoveClass("Cmdbtn_GamePlayerDice" + Looper, "Active");
+					RemoveClass("Button_GamePlayerDice" + Looper, "Active");
 				}
 				if(Subsystem.Dev.Cheat == false) {
 					ChangeInert("Dice_GameOpponent" + Looper, true);
@@ -2446,9 +2446,9 @@
 					break;
 			}
 			if(Game.Status.Player.Turn == "InTurn" && Game.Status.Player.ActiveCharacter > 0) {
-				ChangeDisabled("Cmdbtn_GameEndAction", false);
+				ChangeDisabled("Button_GameEndAction", false);
 			} else {
-				ChangeDisabled("Cmdbtn_GameEndAction", true);
+				ChangeDisabled("Button_GameEndAction", true);
 			}
 
 			// Skill ctrl
@@ -2460,9 +2460,9 @@
 				Show("Image_GameNormalAttack");
 				ChangeImage("Image_GameNormalAttack", "images/NormalAttack_" + Casket.Card[CardNumber].CharacterCardProperties.WeaponType + ".png");
 				if(IsSelectedDiceMatchingCost("Player", "NormalAttack", null) == true) {
-					AddClass("Cmdbtn_GameNormalAttack", "Active");
+					AddClass("Button_GameNormalAttack", "Active");
 				} else {
-					RemoveClass("Cmdbtn_GameNormalAttack", "Active");
+					RemoveClass("Button_GameNormalAttack", "Active");
 				}
 				ChangeElement("CostIndicator_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[2]);
 				ChangeText("CostIndicatorText_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[1]);
@@ -2503,9 +2503,9 @@
 				Show("Image_GameElementalSkill");
 				ChangeImage("Image_GameElementalSkill", Casket.Card[CardNumber].ElementalSkill.Image);
 				if(IsSelectedDiceMatchingCost("Player", "ElementalSkill", null) == true) {
-					AddClass("Cmdbtn_GameElementalSkill", "Active");
+					AddClass("Button_GameElementalSkill", "Active");
 				} else {
-					RemoveClass("Cmdbtn_GameElementalSkill", "Active");
+					RemoveClass("Button_GameElementalSkill", "Active");
 				}
 				ChangeElement("CostIndicator_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[1]);
@@ -2528,9 +2528,9 @@
 					Show("Ctrl_GameSecondaryElementalSkill");
 					ChangeImage("Image_GameSecondaryElementalSkill", Casket.Card[CardNumber].SecondaryElementalSkill.Image);
 					if(IsSelectedDiceMatchingCost("Player", "SecondaryElementalSkill", null) == true) {
-						AddClass("Cmdbtn_GameSecondaryElementalSkill", "Active");
+						AddClass("Button_GameSecondaryElementalSkill", "Active");
 					} else {
-						RemoveClass("Cmdbtn_GameSecondaryElementalSkill", "Active");
+						RemoveClass("Button_GameSecondaryElementalSkill", "Active");
 					}
 					ChangeElement("CostIndicator_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[2]);
 					ChangeText("CostIndicatorText_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[1]);
@@ -2555,9 +2555,9 @@
 				Show("Image_GameElementalBurst");
 				ChangeImage("Image_GameElementalBurst", Casket.Card[CardNumber].ElementalBurst.Image);
 				if(IsSelectedDiceMatchingCost("Player", "ElementalBurst", null) == true) {
-					AddClass("Cmdbtn_GameElementalBurst", "Active");
+					AddClass("Button_GameElementalBurst", "Active");
 				} else {
-					RemoveClass("Cmdbtn_GameElementalBurst", "Active");
+					RemoveClass("Button_GameElementalBurst", "Active");
 				}
 				ChangeElement("CostIndicator_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[1]);
@@ -2578,7 +2578,7 @@
 			} else {
 				// Normal attack
 				Fade("Image_GameNormalAttack");
-				RemoveClass("Cmdbtn_GameNormalAttack", "Active");
+				RemoveClass("Button_GameNormalAttack", "Active");
 				ChangeElement("CostIndicator_GameNormalAttack", "Unknown");
 				ChangeText("CostIndicatorText_GameNormalAttack", "?");
 				Show("CostIndicator_GameNormalAttackAdditional");
@@ -2586,7 +2586,7 @@
 
 				// Elemental skill
 				Fade("Image_GameElementalSkill");
-				RemoveClass("Cmdbtn_GameElementalSkill", "Active");
+				RemoveClass("Button_GameElementalSkill", "Active");
 				ChangeElement("CostIndicator_GameElementalSkill", "Unknown");
 				ChangeText("CostIndicatorText_GameElementalSkill", "?");
 
@@ -2595,21 +2595,21 @@
 
 				// Elemental burst
 				Fade("Image_GameElementalBurst");
-				RemoveClass("Cmdbtn_GameElementalBurst", "Active");
+				RemoveClass("Button_GameElementalBurst", "Active");
 				ChangeElement("CostIndicator_GameElementalBurst", "Unknown");
 				ChangeText("CostIndicatorText_GameElementalBurst", "?");
 				ChangeText("CostIndicatorText_GameElementalBurstAdditional", "?");
 			}
 			if(Game.Status.Player.Turn == "InTurn" && Game.Status.Player.ActiveCharacter > 0) {
-				ChangeDisabled("Cmdbtn_GameNormalAttack", false);
-				ChangeDisabled("Cmdbtn_GameElementalSkill", false);
-				ChangeDisabled("Cmdbtn_GameSecondaryElementalSkill", false);
-				ChangeDisabled("Cmdbtn_GameElementalBurst", false);
+				ChangeDisabled("Button_GameNormalAttack", false);
+				ChangeDisabled("Button_GameElementalSkill", false);
+				ChangeDisabled("Button_GameSecondaryElementalSkill", false);
+				ChangeDisabled("Button_GameElementalBurst", false);
 			} else {
-				ChangeDisabled("Cmdbtn_GameNormalAttack", true);
-				ChangeDisabled("Cmdbtn_GameElementalSkill", true);
-				ChangeDisabled("Cmdbtn_GameSecondaryElementalSkill", true);
-				ChangeDisabled("Cmdbtn_GameElementalBurst", true);
+				ChangeDisabled("Button_GameNormalAttack", true);
+				ChangeDisabled("Button_GameElementalSkill", true);
+				ChangeDisabled("Button_GameSecondaryElementalSkill", true);
+				ChangeDisabled("Button_GameElementalBurst", true);
 			}
 		}
 		function RefreshOperationPanel() {
@@ -2730,9 +2730,9 @@
 						Fade("CtrlGroup_GameStartingHand");
 					}
 					if(JSON.stringify(Game0.Selection.StartingHand) != "[0,false,false,false,false,false]") {
-						ChangeDisabled("Cmdbtn_GameSwitchStartingHand", false);
+						ChangeDisabled("Button_GameSwitchStartingHand", false);
 					} else {
-						ChangeDisabled("Cmdbtn_GameSwitchStartingHand", true);
+						ChangeDisabled("Button_GameSwitchStartingHand", true);
 					}
 					for(let Looper = 1; Looper <= 5; Looper++) {
 						ChangeChecked("Checkbox_GameStartingHand" + Looper, Game0.Selection.StartingHand[Looper]);
@@ -2825,9 +2825,9 @@
 
 						// Reroll
 						if(JSON.stringify(Game0.Selection.Dice) != "[0,false,false,false,false,false,false,false,false,false,false,false,false]") {
-							ChangeDisabled("Cmdbtn_GameReroll", false);
+							ChangeDisabled("Button_GameReroll", false);
 						} else {
-							ChangeDisabled("Cmdbtn_GameReroll", true);
+							ChangeDisabled("Button_GameReroll", true);
 						}
 
 					break;
@@ -2865,9 +2865,9 @@
 					}
 					ChangeText("Label_GameSwitchCharacterTarget", ReadCardNameByID(Game.Status.Player.CharacterCard[Game0.Selection.Action[2]].ID));
 					if(IsSelectedDiceMatchingCost("Player", "CharacterCard", null) == true) {
-						ChangeDisabled("Cmdbtn_GameSwitchCharacter", false);
+						ChangeDisabled("Button_GameSwitchCharacter", false);
 					} else {
-						ChangeDisabled("Cmdbtn_GameSwitchCharacter", true);
+						ChangeDisabled("Button_GameSwitchCharacter", true);
 					}
 
 					// Specify in-preview ctrls
@@ -2993,14 +2993,14 @@
 		}
 		function RefreshGameCtrl() {
 			if(Game0.Options.TransparentOperationPanel == true) {
-				AddClass("Cmdbtn_GameToggleOperationPanelTransparency", "Active");
+				AddClass("Button_GameToggleOperationPanelTransparency", "Active");
 				AddClass("ScreenFilter_GameOperationPanel", "Transparent");
 				AddClassByClass("OperationPanel", "Transparent");
 				AddClassByClass("OperationPanelAttribute", "Transparent");
 				AddClassByClass("InStartingHand", "Transparent");
 				AddClassByClass("OnRolling", "Transparent");
 			} else {
-				RemoveClass("Cmdbtn_GameToggleOperationPanelTransparency", "Active");
+				RemoveClass("Button_GameToggleOperationPanelTransparency", "Active");
 				RemoveClass("ScreenFilter_GameOperationPanel", "Transparent");
 				RemoveClassByClass("OperationPanel", "Transparent");
 				RemoveClassByClass("OperationPanelAttribute", "Transparent");
@@ -3008,12 +3008,12 @@
 				RemoveClassByClass("OnRolling", "Transparent");
 			}
 			if(Game.Status.Operation == "Title" || Game.Status.Operation == "Loading") {
-				ChangeDisabled("Dropbtn_GameRestart", true);
+				ChangeDisabled("Button_GameRestart", true);
 			} else {
-				ChangeDisabled("Dropbtn_GameRestart", false);
+				ChangeDisabled("Button_GameRestart", false);
 			}
 			if(Game.Status.Operation == "Title") {
-				ChangeDisabled("Dropbtn_GameExit", true);
+				ChangeDisabled("Button_GameExit", true);
 				ChangeDisabled("Fieldset_CasketDecks", false);
 				ChangeDisabled("Fieldset_CasketCharacterCards", false);
 				ChangeDisabled("Fieldset_CasketActionCards", false);
@@ -3021,7 +3021,7 @@
 				ChangeDisabled("Fieldset_CasketManagement", false);
 				ChangeDisabled("Fieldset_EditorChooseACardToEdit", false);
 			} else {
-				ChangeDisabled("Dropbtn_GameExit", false);
+				ChangeDisabled("Button_GameExit", false);
 				ChangeDisabled("Fieldset_CasketDecks", true);
 				ChangeDisabled("Fieldset_CasketCharacterCards", true);
 				ChangeDisabled("Fieldset_CasketActionCards", true);

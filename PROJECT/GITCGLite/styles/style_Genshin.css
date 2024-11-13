@@ -134,13 +134,13 @@
 						}
 
 					/* Dice */
-					.Dice .Cmdbtn.Shaped:hover .Shape {
+					.Dice .Button.Shaped:hover .Shape {
 						fill: #403026;
 					}
-					.Dice .Cmdbtn.Shaped.Active .Shape {
+					.Dice .Button.Shaped.Active .Shape {
 						fill: #425F0F;
 					}
-					.Dice .Cmdbtn.Shaped:active .Shape {
+					.Dice .Button.Shaped:active .Shape {
 						fill: #554432;
 					}
 					.Dice .CostIndicatorText {
@@ -149,19 +149,19 @@
 
 				/* Table */
 					/* Action ctrl */
-					#Cmdbtn_GameEndAction {
+					#Button_GameEndAction {
 						border-radius: 50%;
 					}
-					#Cmdbtn_GameEndAction:hover {
+					#Button_GameEndAction:hover {
 						box-shadow: 0 0 0 3px inset #DEB76C;
 					}
 
 					/* Skill ctrl */
-					#Ctnr_GameSkillCtrl .Cmdbtn {
+					#Ctnr_GameSkillCtrl .Button {
 						border-radius: 50%;
 						background-color: #403026;
 					}
-					#Ctnr_GameSkillCtrl .Cmdbtn:active {
+					#Ctnr_GameSkillCtrl .Button:active {
 						background-color: #554432;
 					}
 					.SkillImage, .StatusImage {

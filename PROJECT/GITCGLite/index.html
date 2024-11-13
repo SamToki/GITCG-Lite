@@ -10,7 +10,7 @@
 		<link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
 		<title>七圣召唤 Lite</title>
 		<meta name="author" content="SAM TOKI STUDIO" />
-		<meta name="version" content="v0.39 (2024/11/12) Alpha Test. Since 2023/12/02." />
+		<meta name="version" content="v0.40 (2024/11/13) Alpha Test. Since 2023/12/02." />
 		<meta name="description" content="「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。" />
 		<meta name="keywords" content="Sam Toki, SAM TOKI STUDIO, 七圣召唤 Lite, GITCG Lite, 七圣召唤, GITCG, 原神, Genshin Impact" />
 		<meta name="copyright" content="(C) 2024 SAM TOKI STUDIO" />
@@ -48,15 +48,15 @@
 					</a>
 				</li>
 				<li class="Ctrl" id="Ctrl_Nav">
-					<button class="Cmdbtn" id="Cmdbtn_Nav" onclick="Show('CtrlGroup_Nav')">
+					<button class="Button" id="Button_Nav" onclick="Show('DropctrlGroup_Nav')">
 						<svg class="Icon Larger" viewBox="0 0 16 16">
 							<path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
 						</svg>
 					</button>
 					<nav>
-						<ul class="CtrlGroup HiddenOnMobileView" id="CtrlGroup_Nav">
-							<li class="Ctrl Nav" id="Nav_Game">
-								<a class="Linkbtn" id="Linkbtn_Game" href="#Game">
+						<ul class="DropctrlGroup HiddenInMobileLayout" id="DropctrlGroup_Nav">
+							<li class="Dropctrl Nav" id="Nav_Game">
+								<a class="Button" id="Button_Game" href="#Game">
 									<svg class="Icon Larger" viewBox="0 0 512 512">
 										<path d="M510.002,309.835l-0.068-0.326l-0.076-0.334l-26.508-112.721l-0.106-0.417l-0.106-0.418 c-16.668-62.217-73.294-105.666-137.712-105.666H166.579c-64.418,0-121.045,43.449-137.712,105.666l-0.114,0.418l-0.099,0.417 L2.147,309.174l-0.076,0.326l-0.068,0.326c-9.749,46.43,16.926,92.496,62.036,107.168l1.586,0.509 c9.24,3.012,18.89,4.544,28.624,4.544c32.668,0,63.128-17.404,79.758-45.489l22.556-33.343l0.561-0.835l0.509-0.872 c0.796-1.388,2.276-2.253,3.861-2.253h109.02c1.586,0,3.066,0.865,3.862,2.253l0.508,0.872l0.562,0.835l22.555,33.343 c16.63,28.085,47.09,45.489,79.766,45.489c9.734,0,19.384-1.532,28.67-4.56l1.533-0.493 C493.07,402.331,519.737,356.257,510.002,309.835z M439.318,390.397l-1.54,0.501c-6.608,2.154-13.353,3.186-20.014,3.186 c-22.646,0-44.283-11.949-56.088-32.433l-23.064-34.101c-5.788-10.053-16.508-16.258-28.101-16.258h-109.02 c-11.592,0-22.312,6.206-28.101,16.258l-23.063,34.101c-11.804,20.484-33.434,32.433-56.081,32.433 c-6.661,0-13.405-1.032-20.013-3.186l-1.548-0.501c-31.431-10.219-50.102-42.485-43.311-74.819l26.508-112.722 c13.42-50.102,58.826-84.94,110.696-84.94h178.847c51.869,0,97.276,34.838,110.696,84.94l26.508,112.722 C489.413,347.912,470.75,380.178,439.318,390.397z"/>
 										<polygon points="157.453,172.061 123.912,172.061 123.912,210.579 85.387,210.579 85.387,244.105 123.912,244.105 123.912,282.637 157.453,282.637 157.453,244.105 195.978,244.105 195.978,210.579 157.453,210.579"></polygon>
@@ -68,8 +68,8 @@
 									<span class="LabelAfterIcon">游戏</span>
 								</a>
 							</li>
-							<li class="Ctrl Nav" id="Nav_Casket">
-								<a class="Linkbtn" id="Linkbtn_Casket" href="#Casket">
+							<li class="Dropctrl Nav" id="Nav_Casket">
+								<a class="Button" id="Button_Casket" href="#Casket">
 									<svg class="Icon" viewBox="0 0 512 512">
 										<path d="M473.472,40.656l-33.761-2.545c-7.26-13.066-21.779-21.269-37.532-19.674l-34.916,3.488 c-8.422-15.391-26.572-23.524-44.14-18.589l-38.263,10.819C273.828,0.648,254.736-4.066,238.323,3.846L121.372,60.251 l-48.21,23.233L24.67,106.866c-19.092,9.216-27.154,32.229-17.93,51.322l160.077,331.994c9.294,19.163,32.236,27.224,51.399,18.001 l61.489-29.692l31.946-3.19l128.79,9.578c21.198,1.595,39.638-14.3,41.162-35.427L508.97,81.888 C510.566,60.69,494.67,42.25,473.472,40.656z M450.962,384.553l1.454,5.296c2.907,10.378-3.19,21.198-13.576,24.175l-61.269,17.277 l54.3-26.21C440.945,400.738,447.553,393.259,450.962,384.553z M443.993,432.173c7.338-2.105,13.577-6.168,18.299-11.47 l0.071,0.801c1.092,10.741-6.75,20.326-17.568,21.41l-60.545,6.105L443.993,432.173z M376.84,52.339l-3.41-12.052l30.564-3.049 c10.818-1.084,20.404,6.757,21.488,17.498l0.15,1.234l26.423,263.097L376.84,52.339z M304.392,28.312l0.652-0.22l23.162-6.529 c5.806-1.602,11.755-0.44,16.334,2.679c2.68,1.815,4.935,4.289,6.459,7.26c0.582,1.092,1.014,2.325,1.375,3.559l2.035,7.189 l2.396,8.635l74.774,265.132L302.137,47.475l-0.362-0.723l-7.55-15.612L304.392,28.312z M210.014,491.124 c-9.728,4.714-21.418,0.652-26.14-9.075l-3.34-6.898l-11.974-24.899l-14.016-29.039L23.727,149.984 c-4.644-9.727-0.582-21.418,9.146-26.132l33.98-16.412l20.177-9.649l41.02-19.823l3.701-1.815l68.535-33.031l11.471-5.516 l14.229-6.898l15.313-7.33l5.232-2.545c5.226-2.468,10.961-2.468,15.966-0.362c2.688,1.092,5.154,2.758,7.118,5.005 c1.234,1.312,2.248,2.836,3.049,4.502l0.652,1.383l2.396,5.005l4.282,8.792l2.105,4.353l150.712,312.462 c4.65,9.727,0.581,21.418-9.146,26.132l-137.716,66.43l-11.542,5.516l-1.454,0.73l-20.978,10.088l-27.302,13.215L210.014,491.124z M441.817,466.076l-22.141-1.666l27.005-2.687c4.43-0.44,8.571-1.603,12.343-3.418C455.103,463.46,448.786,466.587,441.817,466.076z M471.799,326.758L444.724,57.422l27.366,2.035c10.747,0.794,18.88,10.238,18.078,20.978L471.799,326.758z"/>
 										<path d="M247.384,281.341c13.924,4.445,31.059-2.95,36.88-16.236c8.706-19.886-6.253-39.262-25.608-49.06 c-21.099-10.684-50.812-18.929-62.297-28.507c-0.752-0.617-1.128-0.716-1.382-0.588c-0.206,0.12-0.412,0.475-0.39,1.446 c0.333,14.952-11.719,43.332-16.49,66.494c-4.382,21.248,1.46,45.019,22.431,50.592c14.03,3.722,30.479-5.083,35.682-18.759 c6.302,15.228,11.045,30.478,12.47,44.536l25.778-12.428C264.342,308.956,255.366,295.754,247.384,281.341z"/>
@@ -79,16 +79,16 @@
 									<span class="LabelAfterIcon">牌盒</span>
 								</a>
 							</li>
-							<li class="Ctrl Nav" id="Nav_Editor">
-								<a class="Linkbtn" id="Linkbtn_Editor" href="#Editor">
+							<li class="Dropctrl Nav" id="Nav_Editor">
+								<a class="Button" id="Button_Editor" href="#Editor">
 									<svg class="Icon" viewBox="0 0 16 16">
 										<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
 									</svg>
 									<span class="LabelAfterIcon">编辑器</span>
 								</a>
 							</li>
-							<li class="Ctrl Nav" id="Nav_Settings">
-								<a class="Linkbtn" id="Linkbtn_Settings" href="#Settings">
+							<li class="Dropctrl Nav" id="Nav_Settings">
+								<a class="Button" id="Button_Settings" href="#Settings">
 									<svg class="Icon" viewBox="0 0 16 16">
 										<path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
 										<path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
@@ -96,8 +96,8 @@
 									<span class="LabelAfterIcon">设定</span>
 								</a>
 							</li>
-							<li class="Ctrl Nav" id="Nav_Help">
-								<a class="Linkbtn" id="Linkbtn_Help" href="#Help">
+							<li class="Dropctrl Nav" id="Nav_Help">
+								<a class="Button" id="Button_Help" href="#Help">
 									<svg class="Icon" viewBox="0 0 16 16">
 										<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
 										<path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
@@ -110,7 +110,7 @@
 					</nav>
 				</li>
 				<li class="Ctrl" id="Ctrl_BackToMainPage">
-					<a class="Linkbtn" id="Linkbtn_BackToMainPage" href="..">
+					<a class="Button" id="Button_BackToMainPage" href="..">
 						<svg class="Icon" viewBox="0 0 16 16">
 							<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
 						</svg>
@@ -126,8 +126,8 @@
 					<div id="Ctnr_GameCharacterCards">
 						<div class="Card Player Character OnTitleScreen" id="Card_GamePlayerCharacter1">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerCharacter1" onpointerenter="HoverCard('Player', 'CharacterCard', 1)" onfocus="HoverCard('Player', 'CharacterCard', 1)" onclick="ClickCard('Player', 'CharacterCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerCharacter1" onpointerenter="HoverCard('Player', 'CharacterCard', 1)" onfocus="HoverCard('Player', 'CharacterCard', 1)" onclick="ClickCard('Player', 'CharacterCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerCharacter1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">1</span>
@@ -201,8 +201,8 @@
 						</div>
 						<div class="Card Player Character OnTitleScreen" id="Card_GamePlayerCharacter2">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerCharacter2" onpointerenter="HoverCard('Player', 'CharacterCard', 2)" onfocus="HoverCard('Player', 'CharacterCard', 2)" onclick="ClickCard('Player', 'CharacterCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerCharacter2" onpointerenter="HoverCard('Player', 'CharacterCard', 2)" onfocus="HoverCard('Player', 'CharacterCard', 2)" onclick="ClickCard('Player', 'CharacterCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerCharacter2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">2</span>
@@ -276,8 +276,8 @@
 						</div>
 						<div class="Card Player Character OnTitleScreen" id="Card_GamePlayerCharacter3">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerCharacter3" onpointerenter="HoverCard('Player', 'CharacterCard', 3)" onfocus="HoverCard('Player', 'CharacterCard', 3)" onclick="ClickCard('Player', 'CharacterCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerCharacter3" onpointerenter="HoverCard('Player', 'CharacterCard', 3)" onfocus="HoverCard('Player', 'CharacterCard', 3)" onclick="ClickCard('Player', 'CharacterCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerCharacter3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">3</span>
@@ -351,8 +351,8 @@
 						</div>
 						<div class="Card Opponent Character OnTitleScreen" id="Card_GameOpponentCharacter1">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentCharacter1" onpointerenter="HoverCard('Opponent', 'CharacterCard', 1)" onfocus="HoverCard('Opponent', 'CharacterCard', 1)" onclick="ClickCard('Opponent', 'CharacterCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentCharacter1" onpointerenter="HoverCard('Opponent', 'CharacterCard', 1)" onfocus="HoverCard('Opponent', 'CharacterCard', 1)" onclick="ClickCard('Opponent', 'CharacterCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentCharacter1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">5</span>
@@ -426,8 +426,8 @@
 						</div>
 						<div class="Card Opponent Character OnTitleScreen" id="Card_GameOpponentCharacter2">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentCharacter2" onpointerenter="HoverCard('Opponent', 'CharacterCard', 2)" onfocus="HoverCard('Opponent', 'CharacterCard', 2)" onclick="ClickCard('Opponent', 'CharacterCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentCharacter2" onpointerenter="HoverCard('Opponent', 'CharacterCard', 2)" onfocus="HoverCard('Opponent', 'CharacterCard', 2)" onclick="ClickCard('Opponent', 'CharacterCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentCharacter2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">6</span>
@@ -501,8 +501,8 @@
 						</div>
 						<div class="Card Opponent Character OnTitleScreen" id="Card_GameOpponentCharacter3">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentCharacter3" onpointerenter="HoverCard('Opponent', 'CharacterCard', 3)" onfocus="HoverCard('Opponent', 'CharacterCard', 3)" onclick="ClickCard('Opponent', 'CharacterCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentCharacter3" onpointerenter="HoverCard('Opponent', 'CharacterCard', 3)" onfocus="HoverCard('Opponent', 'CharacterCard', 3)" onclick="ClickCard('Opponent', 'CharacterCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentCharacter3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
 									</button>
 									<span class="HotkeyIndicator Faded" inert="true">7</span>
@@ -634,8 +634,8 @@
 					<div id="Ctnr_GameSummonsCards">
 						<div class="Card Player Summons OffTable Sequence1" id="Card_GamePlayerSummons1" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerSummons1" onpointerenter="HoverCard('Player', 'SummonsCard', 1)" onfocus="HoverCard('Player', 'SummonsCard', 1)" onclick="ClickCard('Player', 'SummonsCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerSummons1" onpointerenter="HoverCard('Player', 'SummonsCard', 1)" onfocus="HoverCard('Player', 'SummonsCard', 1)" onclick="ClickCard('Player', 'SummonsCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerSummons1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -667,8 +667,8 @@
 						</div>
 						<div class="Card Player Summons OffTable Sequence2" id="Card_GamePlayerSummons2" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerSummons2" onpointerenter="HoverCard('Player', 'SummonsCard', 2)" onfocus="HoverCard('Player', 'SummonsCard', 2)" onclick="ClickCard('Player', 'SummonsCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerSummons2" onpointerenter="HoverCard('Player', 'SummonsCard', 2)" onfocus="HoverCard('Player', 'SummonsCard', 2)" onclick="ClickCard('Player', 'SummonsCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerSummons2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -700,8 +700,8 @@
 						</div>
 						<div class="Card Player Summons OffTable Sequence3" id="Card_GamePlayerSummons3" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerSummons3" onpointerenter="HoverCard('Player', 'SummonsCard', 3)" onfocus="HoverCard('Player', 'SummonsCard', 3)" onclick="ClickCard('Player', 'SummonsCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerSummons3" onpointerenter="HoverCard('Player', 'SummonsCard', 3)" onfocus="HoverCard('Player', 'SummonsCard', 3)" onclick="ClickCard('Player', 'SummonsCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerSummons3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -733,8 +733,8 @@
 						</div>
 						<div class="Card Player Summons OffTable Sequence4" id="Card_GamePlayerSummons4" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerSummons4" onpointerenter="HoverCard('Player', 'SummonsCard', 4)" onfocus="HoverCard('Player', 'SummonsCard', 4)" onclick="ClickCard('Player', 'SummonsCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerSummons4" onpointerenter="HoverCard('Player', 'SummonsCard', 4)" onfocus="HoverCard('Player', 'SummonsCard', 4)" onclick="ClickCard('Player', 'SummonsCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerSummons4" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -766,8 +766,8 @@
 						</div>
 						<div class="Card Opponent Summons OffTable Sequence1" id="Card_GameOpponentSummons1" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentSummons1" onpointerenter="HoverCard('Opponent', 'SummonsCard', 1)" onfocus="HoverCard('Opponent', 'SummonsCard', 1)" onclick="ClickCard('Opponent', 'SummonsCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentSummons1" onpointerenter="HoverCard('Opponent', 'SummonsCard', 1)" onfocus="HoverCard('Opponent', 'SummonsCard', 1)" onclick="ClickCard('Opponent', 'SummonsCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentSummons1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -799,8 +799,8 @@
 						</div>
 						<div class="Card Opponent Summons OffTable Sequence2" id="Card_GameOpponentSummons2" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentSummons2" onpointerenter="HoverCard('Opponent', 'SummonsCard', 2)" onfocus="HoverCard('Opponent', 'SummonsCard', 2)" onclick="ClickCard('Opponent', 'SummonsCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentSummons2" onpointerenter="HoverCard('Opponent', 'SummonsCard', 2)" onfocus="HoverCard('Opponent', 'SummonsCard', 2)" onclick="ClickCard('Opponent', 'SummonsCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentSummons2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -832,8 +832,8 @@
 						</div>
 						<div class="Card Opponent Summons OffTable Sequence3" id="Card_GameOpponentSummons3" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentSummons3" onpointerenter="HoverCard('Opponent', 'SummonsCard', 3)" onfocus="HoverCard('Opponent', 'SummonsCard', 3)" onclick="ClickCard('Opponent', 'SummonsCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentSummons3" onpointerenter="HoverCard('Opponent', 'SummonsCard', 3)" onfocus="HoverCard('Opponent', 'SummonsCard', 3)" onclick="ClickCard('Opponent', 'SummonsCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentSummons3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -865,8 +865,8 @@
 						</div>
 						<div class="Card Opponent Summons OffTable Sequence4" id="Card_GameOpponentSummons4" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentSummons4" onpointerenter="HoverCard('Opponent', 'SummonsCard', 4)" onfocus="HoverCard('Opponent', 'SummonsCard', 4)" onclick="ClickCard('Opponent', 'SummonsCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentSummons4" onpointerenter="HoverCard('Opponent', 'SummonsCard', 4)" onfocus="HoverCard('Opponent', 'SummonsCard', 4)" onclick="ClickCard('Opponent', 'SummonsCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentSummons4" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
 									</button>
 								</li>
@@ -900,8 +900,8 @@
 					<div id="Ctnr_GameActionCards">
 						<div class="Card Player Action Talent OffTable Sequence1" id="Card_GamePlayerAction1" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction1" onpointerenter="HoverCard('Player', 'ActionCard', 1)" onfocus="HoverCard('Player', 'ActionCard', 1)" onclick="ClickCard('Player', 'ActionCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction1" onpointerenter="HoverCard('Player', 'ActionCard', 1)" onfocus="HoverCard('Player', 'ActionCard', 1)" onclick="ClickCard('Player', 'ActionCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -949,8 +949,8 @@
 						</div>
 						<div class="Card Player Action Talent OffTable Sequence2" id="Card_GamePlayerAction2" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction2" onpointerenter="HoverCard('Player', 'ActionCard', 2)" onfocus="HoverCard('Player', 'ActionCard', 2)" onclick="ClickCard('Player', 'ActionCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction2" onpointerenter="HoverCard('Player', 'ActionCard', 2)" onfocus="HoverCard('Player', 'ActionCard', 2)" onclick="ClickCard('Player', 'ActionCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -998,8 +998,8 @@
 						</div>
 						<div class="Card Player Action Talent OffTable Sequence3" id="Card_GamePlayerAction3" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction3" onpointerenter="HoverCard('Player', 'ActionCard', 3)" onfocus="HoverCard('Player', 'ActionCard', 3)" onclick="ClickCard('Player', 'ActionCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction3" onpointerenter="HoverCard('Player', 'ActionCard', 3)" onfocus="HoverCard('Player', 'ActionCard', 3)" onclick="ClickCard('Player', 'ActionCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1047,8 +1047,8 @@
 						</div>
 						<div class="Card Player Action Weapon OffTable Sequence1" id="Card_GamePlayerAction4" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction4" onpointerenter="HoverCard('Player', 'ActionCard', 4)" onfocus="HoverCard('Player', 'ActionCard', 4)" onclick="ClickCard('Player', 'ActionCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction4" onpointerenter="HoverCard('Player', 'ActionCard', 4)" onfocus="HoverCard('Player', 'ActionCard', 4)" onclick="ClickCard('Player', 'ActionCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction4" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1096,8 +1096,8 @@
 						</div>
 						<div class="Card Player Action Weapon OffTable Sequence2" id="Card_GamePlayerAction5" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction5" onpointerenter="HoverCard('Player', 'ActionCard', 5)" onfocus="HoverCard('Player', 'ActionCard', 5)" onclick="ClickCard('Player', 'ActionCard', 5)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction5" onpointerenter="HoverCard('Player', 'ActionCard', 5)" onfocus="HoverCard('Player', 'ActionCard', 5)" onclick="ClickCard('Player', 'ActionCard', 5)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction5" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1145,8 +1145,8 @@
 						</div>
 						<div class="Card Player Action Weapon OffTable Sequence3" id="Card_GamePlayerAction6" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction6" onpointerenter="HoverCard('Player', 'ActionCard', 6)" onfocus="HoverCard('Player', 'ActionCard', 6)" onclick="ClickCard('Player', 'ActionCard', 6)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction6" onpointerenter="HoverCard('Player', 'ActionCard', 6)" onfocus="HoverCard('Player', 'ActionCard', 6)" onclick="ClickCard('Player', 'ActionCard', 6)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction6" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1194,8 +1194,8 @@
 						</div>
 						<div class="Card Player Action Artifact OffTable Sequence1" id="Card_GamePlayerAction7" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction7" onpointerenter="HoverCard('Player', 'ActionCard', 7)" onfocus="HoverCard('Player', 'ActionCard', 7)" onclick="ClickCard('Player', 'ActionCard', 7)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction7" onpointerenter="HoverCard('Player', 'ActionCard', 7)" onfocus="HoverCard('Player', 'ActionCard', 7)" onclick="ClickCard('Player', 'ActionCard', 7)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction7" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1243,8 +1243,8 @@
 						</div>
 						<div class="Card Player Action Artifact OffTable Sequence2" id="Card_GamePlayerAction8" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction8" onpointerenter="HoverCard('Player', 'ActionCard', 8)" onfocus="HoverCard('Player', 'ActionCard', 8)" onclick="ClickCard('Player', 'ActionCard', 8)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction8" onpointerenter="HoverCard('Player', 'ActionCard', 8)" onfocus="HoverCard('Player', 'ActionCard', 8)" onclick="ClickCard('Player', 'ActionCard', 8)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction8" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1292,8 +1292,8 @@
 						</div>
 						<div class="Card Player Action Artifact OffTable Sequence3" id="Card_GamePlayerAction9" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction9" onpointerenter="HoverCard('Player', 'ActionCard', 9)" onfocus="HoverCard('Player', 'ActionCard', 9)" onclick="ClickCard('Player', 'ActionCard', 9)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction9" onpointerenter="HoverCard('Player', 'ActionCard', 9)" onfocus="HoverCard('Player', 'ActionCard', 9)" onclick="ClickCard('Player', 'ActionCard', 9)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction9" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1341,8 +1341,8 @@
 						</div>
 						<div class="Card Player Action Support OffTable Sequence1" id="Card_GamePlayerAction10" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction10" onpointerenter="HoverCard('Player', 'ActionCard', 10)" onfocus="HoverCard('Player', 'ActionCard', 10)" onclick="ClickCard('Player', 'ActionCard', 10)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction10" onpointerenter="HoverCard('Player', 'ActionCard', 10)" onfocus="HoverCard('Player', 'ActionCard', 10)" onclick="ClickCard('Player', 'ActionCard', 10)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction10" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1390,8 +1390,8 @@
 						</div>
 						<div class="Card Player Action Support OffTable Sequence2" id="Card_GamePlayerAction11" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction11" onpointerenter="HoverCard('Player', 'ActionCard', 11)" onfocus="HoverCard('Player', 'ActionCard', 11)" onclick="ClickCard('Player', 'ActionCard', 11)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction11" onpointerenter="HoverCard('Player', 'ActionCard', 11)" onfocus="HoverCard('Player', 'ActionCard', 11)" onclick="ClickCard('Player', 'ActionCard', 11)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction11" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1439,8 +1439,8 @@
 						</div>
 						<div class="Card Player Action Support OffTable Sequence3" id="Card_GamePlayerAction12" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction12" onpointerenter="HoverCard('Player', 'ActionCard', 12)" onfocus="HoverCard('Player', 'ActionCard', 12)" onclick="ClickCard('Player', 'ActionCard', 12)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction12" onpointerenter="HoverCard('Player', 'ActionCard', 12)" onfocus="HoverCard('Player', 'ActionCard', 12)" onclick="ClickCard('Player', 'ActionCard', 12)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction12" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1488,8 +1488,8 @@
 						</div>
 						<div class="Card Player Action Support OffTable Sequence4" id="Card_GamePlayerAction13" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction13" onpointerenter="HoverCard('Player', 'ActionCard', 13)" onfocus="HoverCard('Player', 'ActionCard', 13)" onclick="ClickCard('Player', 'ActionCard', 13)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction13" onpointerenter="HoverCard('Player', 'ActionCard', 13)" onfocus="HoverCard('Player', 'ActionCard', 13)" onclick="ClickCard('Player', 'ActionCard', 13)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction13" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1537,8 +1537,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction14" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction14" onpointerenter="HoverCard('Player', 'ActionCard', 14)" onfocus="HoverCard('Player', 'ActionCard', 14)" onclick="ClickCard('Player', 'ActionCard', 14)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction14" onpointerenter="HoverCard('Player', 'ActionCard', 14)" onfocus="HoverCard('Player', 'ActionCard', 14)" onclick="ClickCard('Player', 'ActionCard', 14)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction14" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1586,8 +1586,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction15" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction15" onpointerenter="HoverCard('Player', 'ActionCard', 15)" onfocus="HoverCard('Player', 'ActionCard', 15)" onclick="ClickCard('Player', 'ActionCard', 15)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction15" onpointerenter="HoverCard('Player', 'ActionCard', 15)" onfocus="HoverCard('Player', 'ActionCard', 15)" onclick="ClickCard('Player', 'ActionCard', 15)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction15" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1635,8 +1635,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction16" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction16" onpointerenter="HoverCard('Player', 'ActionCard', 16)" onfocus="HoverCard('Player', 'ActionCard', 16)" onclick="ClickCard('Player', 'ActionCard', 16)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction16" onpointerenter="HoverCard('Player', 'ActionCard', 16)" onfocus="HoverCard('Player', 'ActionCard', 16)" onclick="ClickCard('Player', 'ActionCard', 16)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction16" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1684,8 +1684,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction17" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction17" onpointerenter="HoverCard('Player', 'ActionCard', 17)" onfocus="HoverCard('Player', 'ActionCard', 17)" onclick="ClickCard('Player', 'ActionCard', 17)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction17" onpointerenter="HoverCard('Player', 'ActionCard', 17)" onfocus="HoverCard('Player', 'ActionCard', 17)" onclick="ClickCard('Player', 'ActionCard', 17)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction17" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1733,8 +1733,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction18" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction18" onpointerenter="HoverCard('Player', 'ActionCard', 18)" onfocus="HoverCard('Player', 'ActionCard', 18)" onclick="ClickCard('Player', 'ActionCard', 18)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction18" onpointerenter="HoverCard('Player', 'ActionCard', 18)" onfocus="HoverCard('Player', 'ActionCard', 18)" onclick="ClickCard('Player', 'ActionCard', 18)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction18" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1782,8 +1782,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction19" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction19" onpointerenter="HoverCard('Player', 'ActionCard', 19)" onfocus="HoverCard('Player', 'ActionCard', 19)" onclick="ClickCard('Player', 'ActionCard', 19)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction19" onpointerenter="HoverCard('Player', 'ActionCard', 19)" onfocus="HoverCard('Player', 'ActionCard', 19)" onclick="ClickCard('Player', 'ActionCard', 19)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction19" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1831,8 +1831,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction20" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction20" onpointerenter="HoverCard('Player', 'ActionCard', 20)" onfocus="HoverCard('Player', 'ActionCard', 20)" onclick="ClickCard('Player', 'ActionCard', 20)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction20" onpointerenter="HoverCard('Player', 'ActionCard', 20)" onfocus="HoverCard('Player', 'ActionCard', 20)" onclick="ClickCard('Player', 'ActionCard', 20)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction20" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1880,8 +1880,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction21" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction21" onpointerenter="HoverCard('Player', 'ActionCard', 21)" onfocus="HoverCard('Player', 'ActionCard', 21)" onclick="ClickCard('Player', 'ActionCard', 21)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction21" onpointerenter="HoverCard('Player', 'ActionCard', 21)" onfocus="HoverCard('Player', 'ActionCard', 21)" onclick="ClickCard('Player', 'ActionCard', 21)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction21" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1929,8 +1929,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction22" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction22" onpointerenter="HoverCard('Player', 'ActionCard', 22)" onfocus="HoverCard('Player', 'ActionCard', 22)" onclick="ClickCard('Player', 'ActionCard', 22)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction22" onpointerenter="HoverCard('Player', 'ActionCard', 22)" onfocus="HoverCard('Player', 'ActionCard', 22)" onclick="ClickCard('Player', 'ActionCard', 22)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction22" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -1978,8 +1978,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction23" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction23" onpointerenter="HoverCard('Player', 'ActionCard', 23)" onfocus="HoverCard('Player', 'ActionCard', 23)" onclick="ClickCard('Player', 'ActionCard', 23)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction23" onpointerenter="HoverCard('Player', 'ActionCard', 23)" onfocus="HoverCard('Player', 'ActionCard', 23)" onclick="ClickCard('Player', 'ActionCard', 23)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction23" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2027,8 +2027,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction24" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction24" onpointerenter="HoverCard('Player', 'ActionCard', 24)" onfocus="HoverCard('Player', 'ActionCard', 24)" onclick="ClickCard('Player', 'ActionCard', 24)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction24" onpointerenter="HoverCard('Player', 'ActionCard', 24)" onfocus="HoverCard('Player', 'ActionCard', 24)" onclick="ClickCard('Player', 'ActionCard', 24)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction24" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2076,8 +2076,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction25" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction25" onpointerenter="HoverCard('Player', 'ActionCard', 25)" onfocus="HoverCard('Player', 'ActionCard', 25)" onclick="ClickCard('Player', 'ActionCard', 25)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction25" onpointerenter="HoverCard('Player', 'ActionCard', 25)" onfocus="HoverCard('Player', 'ActionCard', 25)" onclick="ClickCard('Player', 'ActionCard', 25)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction25" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2125,8 +2125,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction26" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction26" onpointerenter="HoverCard('Player', 'ActionCard', 26)" onfocus="HoverCard('Player', 'ActionCard', 26)" onclick="ClickCard('Player', 'ActionCard', 26)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction26" onpointerenter="HoverCard('Player', 'ActionCard', 26)" onfocus="HoverCard('Player', 'ActionCard', 26)" onclick="ClickCard('Player', 'ActionCard', 26)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction26" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2174,8 +2174,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction27" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction27" onpointerenter="HoverCard('Player', 'ActionCard', 27)" onfocus="HoverCard('Player', 'ActionCard', 27)" onclick="ClickCard('Player', 'ActionCard', 27)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction27" onpointerenter="HoverCard('Player', 'ActionCard', 27)" onfocus="HoverCard('Player', 'ActionCard', 27)" onclick="ClickCard('Player', 'ActionCard', 27)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction27" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2223,8 +2223,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction28" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction28" onpointerenter="HoverCard('Player', 'ActionCard', 28)" onfocus="HoverCard('Player', 'ActionCard', 28)" onclick="ClickCard('Player', 'ActionCard', 28)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction28" onpointerenter="HoverCard('Player', 'ActionCard', 28)" onfocus="HoverCard('Player', 'ActionCard', 28)" onclick="ClickCard('Player', 'ActionCard', 28)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction28" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2272,8 +2272,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction29" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction29" onpointerenter="HoverCard('Player', 'ActionCard', 29)" onfocus="HoverCard('Player', 'ActionCard', 29)" onclick="ClickCard('Player', 'ActionCard', 29)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction29" onpointerenter="HoverCard('Player', 'ActionCard', 29)" onfocus="HoverCard('Player', 'ActionCard', 29)" onclick="ClickCard('Player', 'ActionCard', 29)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction29" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2321,8 +2321,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction30" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction30" onpointerenter="HoverCard('Player', 'ActionCard', 30)" onfocus="HoverCard('Player', 'ActionCard', 30)" onclick="ClickCard('Player', 'ActionCard', 30)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction30" onpointerenter="HoverCard('Player', 'ActionCard', 30)" onfocus="HoverCard('Player', 'ActionCard', 30)" onclick="ClickCard('Player', 'ActionCard', 30)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction30" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2370,8 +2370,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction31" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction31" onpointerenter="HoverCard('Player', 'ActionCard', 31)" onfocus="HoverCard('Player', 'ActionCard', 31)" onclick="ClickCard('Player', 'ActionCard', 31)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction31" onpointerenter="HoverCard('Player', 'ActionCard', 31)" onfocus="HoverCard('Player', 'ActionCard', 31)" onclick="ClickCard('Player', 'ActionCard', 31)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction31" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2419,8 +2419,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction32" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction32" onpointerenter="HoverCard('Player', 'ActionCard', 32)" onfocus="HoverCard('Player', 'ActionCard', 32)" onclick="ClickCard('Player', 'ActionCard', 32)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction32" onpointerenter="HoverCard('Player', 'ActionCard', 32)" onfocus="HoverCard('Player', 'ActionCard', 32)" onclick="ClickCard('Player', 'ActionCard', 32)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction32" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2468,8 +2468,8 @@
 						</div>
 						<div class="Card Player Action Event OffTable" id="Card_GamePlayerAction33" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayerAction33" onpointerenter="HoverCard('Player', 'ActionCard', 33)" onfocus="HoverCard('Player', 'ActionCard', 33)" onclick="ClickCard('Player', 'ActionCard', 33)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GamePlayerAction33" onpointerenter="HoverCard('Player', 'ActionCard', 33)" onfocus="HoverCard('Player', 'ActionCard', 33)" onclick="ClickCard('Player', 'ActionCard', 33)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GamePlayerAction33" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2517,8 +2517,8 @@
 						</div>
 						<div class="Card Opponent Action Talent OffTable Sequence1" id="Card_GameOpponentAction1" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction1" onpointerenter="HoverCard('Opponent', 'ActionCard', 1)" onfocus="HoverCard('Opponent', 'ActionCard', 1)" onclick="ClickCard('Opponent', 'ActionCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction1" onpointerenter="HoverCard('Opponent', 'ActionCard', 1)" onfocus="HoverCard('Opponent', 'ActionCard', 1)" onclick="ClickCard('Opponent', 'ActionCard', 1)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction1" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2565,8 +2565,8 @@
 						</div>
 						<div class="Card Opponent Action Talent OffTable Sequence2" id="Card_GameOpponentAction2" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction2" onpointerenter="HoverCard('Opponent', 'ActionCard', 2)" onfocus="HoverCard('Opponent', 'ActionCard', 2)" onclick="ClickCard('Opponent', 'ActionCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction2" onpointerenter="HoverCard('Opponent', 'ActionCard', 2)" onfocus="HoverCard('Opponent', 'ActionCard', 2)" onclick="ClickCard('Opponent', 'ActionCard', 2)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction2" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2613,8 +2613,8 @@
 						</div>
 						<div class="Card Opponent Action Talent OffTable Sequence3" id="Card_GameOpponentAction3" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction3" onpointerenter="HoverCard('Opponent', 'ActionCard', 3)" onfocus="HoverCard('Opponent', 'ActionCard', 3)" onclick="ClickCard('Opponent', 'ActionCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction3" onpointerenter="HoverCard('Opponent', 'ActionCard', 3)" onfocus="HoverCard('Opponent', 'ActionCard', 3)" onclick="ClickCard('Opponent', 'ActionCard', 3)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction3" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2661,8 +2661,8 @@
 						</div>
 						<div class="Card Opponent Action Weapon OffTable Sequence1" id="Card_GameOpponentAction4" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction4" onpointerenter="HoverCard('Opponent', 'ActionCard', 4)" onfocus="HoverCard('Opponent', 'ActionCard', 4)" onclick="ClickCard('Opponent', 'ActionCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction4" onpointerenter="HoverCard('Opponent', 'ActionCard', 4)" onfocus="HoverCard('Opponent', 'ActionCard', 4)" onclick="ClickCard('Opponent', 'ActionCard', 4)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction4" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2709,8 +2709,8 @@
 						</div>
 						<div class="Card Opponent Action Weapon OffTable Sequence2" id="Card_GameOpponentAction5" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction5" onpointerenter="HoverCard('Opponent', 'ActionCard', 5)" onfocus="HoverCard('Opponent', 'ActionCard', 5)" onclick="ClickCard('Opponent', 'ActionCard', 5)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction5" onpointerenter="HoverCard('Opponent', 'ActionCard', 5)" onfocus="HoverCard('Opponent', 'ActionCard', 5)" onclick="ClickCard('Opponent', 'ActionCard', 5)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction5" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2757,8 +2757,8 @@
 						</div>
 						<div class="Card Opponent Action Weapon OffTable Sequence3" id="Card_GameOpponentAction6" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction6" onpointerenter="HoverCard('Opponent', 'ActionCard', 6)" onfocus="HoverCard('Opponent', 'ActionCard', 6)" onclick="ClickCard('Opponent', 'ActionCard', 6)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction6" onpointerenter="HoverCard('Opponent', 'ActionCard', 6)" onfocus="HoverCard('Opponent', 'ActionCard', 6)" onclick="ClickCard('Opponent', 'ActionCard', 6)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction6" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2805,8 +2805,8 @@
 						</div>
 						<div class="Card Opponent Action Artifact OffTable Sequence1" id="Card_GameOpponentAction7" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction7" onpointerenter="HoverCard('Opponent', 'ActionCard', 7)" onfocus="HoverCard('Opponent', 'ActionCard', 7)" onclick="ClickCard('Opponent', 'ActionCard', 7)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction7" onpointerenter="HoverCard('Opponent', 'ActionCard', 7)" onfocus="HoverCard('Opponent', 'ActionCard', 7)" onclick="ClickCard('Opponent', 'ActionCard', 7)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction7" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2853,8 +2853,8 @@
 						</div>
 						<div class="Card Opponent Action Artifact OffTable Sequence2" id="Card_GameOpponentAction8" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction8" onpointerenter="HoverCard('Opponent', 'ActionCard', 8)" onfocus="HoverCard('Opponent', 'ActionCard', 8)" onclick="ClickCard('Opponent', 'ActionCard', 8)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction8" onpointerenter="HoverCard('Opponent', 'ActionCard', 8)" onfocus="HoverCard('Opponent', 'ActionCard', 8)" onclick="ClickCard('Opponent', 'ActionCard', 8)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction8" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2901,8 +2901,8 @@
 						</div>
 						<div class="Card Opponent Action Artifact OffTable Sequence3" id="Card_GameOpponentAction9" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction9" onpointerenter="HoverCard('Opponent', 'ActionCard', 9)" onfocus="HoverCard('Opponent', 'ActionCard', 9)" onclick="ClickCard('Opponent', 'ActionCard', 9)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction9" onpointerenter="HoverCard('Opponent', 'ActionCard', 9)" onfocus="HoverCard('Opponent', 'ActionCard', 9)" onclick="ClickCard('Opponent', 'ActionCard', 9)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction9" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2949,8 +2949,8 @@
 						</div>
 						<div class="Card Opponent Action Support OffTable Sequence1" id="Card_GameOpponentAction10" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction10" onpointerenter="HoverCard('Opponent', 'ActionCard', 10)" onfocus="HoverCard('Opponent', 'ActionCard', 10)" onclick="ClickCard('Opponent', 'ActionCard', 10)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction10" onpointerenter="HoverCard('Opponent', 'ActionCard', 10)" onfocus="HoverCard('Opponent', 'ActionCard', 10)" onclick="ClickCard('Opponent', 'ActionCard', 10)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction10" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -2997,8 +2997,8 @@
 						</div>
 						<div class="Card Opponent Action Support OffTable Sequence2" id="Card_GameOpponentAction11" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction11" onpointerenter="HoverCard('Opponent', 'ActionCard', 11)" onfocus="HoverCard('Opponent', 'ActionCard', 11)" onclick="ClickCard('Opponent', 'ActionCard', 11)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction11" onpointerenter="HoverCard('Opponent', 'ActionCard', 11)" onfocus="HoverCard('Opponent', 'ActionCard', 11)" onclick="ClickCard('Opponent', 'ActionCard', 11)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction11" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3045,8 +3045,8 @@
 						</div>
 						<div class="Card Opponent Action Support OffTable Sequence3" id="Card_GameOpponentAction12" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction12" onpointerenter="HoverCard('Opponent', 'ActionCard', 12)" onfocus="HoverCard('Opponent', 'ActionCard', 12)" onclick="ClickCard('Opponent', 'ActionCard', 12)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction12" onpointerenter="HoverCard('Opponent', 'ActionCard', 12)" onfocus="HoverCard('Opponent', 'ActionCard', 12)" onclick="ClickCard('Opponent', 'ActionCard', 12)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction12" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3093,8 +3093,8 @@
 						</div>
 						<div class="Card Opponent Action Support OffTable Sequence4" id="Card_GameOpponentAction13" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction13" onpointerenter="HoverCard('Opponent', 'ActionCard', 13)" onfocus="HoverCard('Opponent', 'ActionCard', 13)" onclick="ClickCard('Opponent', 'ActionCard', 13)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction13" onpointerenter="HoverCard('Opponent', 'ActionCard', 13)" onfocus="HoverCard('Opponent', 'ActionCard', 13)" onclick="ClickCard('Opponent', 'ActionCard', 13)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction13" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3141,8 +3141,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction14" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction14" onpointerenter="HoverCard('Opponent', 'ActionCard', 14)" onfocus="HoverCard('Opponent', 'ActionCard', 14)" onclick="ClickCard('Opponent', 'ActionCard', 14)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction14" onpointerenter="HoverCard('Opponent', 'ActionCard', 14)" onfocus="HoverCard('Opponent', 'ActionCard', 14)" onclick="ClickCard('Opponent', 'ActionCard', 14)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction14" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3189,8 +3189,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction15" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction15" onpointerenter="HoverCard('Opponent', 'ActionCard', 15)" onfocus="HoverCard('Opponent', 'ActionCard', 15)" onclick="ClickCard('Opponent', 'ActionCard', 15)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction15" onpointerenter="HoverCard('Opponent', 'ActionCard', 15)" onfocus="HoverCard('Opponent', 'ActionCard', 15)" onclick="ClickCard('Opponent', 'ActionCard', 15)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction15" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3237,8 +3237,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction16" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction16" onpointerenter="HoverCard('Opponent', 'ActionCard', 16)" onfocus="HoverCard('Opponent', 'ActionCard', 16)" onclick="ClickCard('Opponent', 'ActionCard', 16)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction16" onpointerenter="HoverCard('Opponent', 'ActionCard', 16)" onfocus="HoverCard('Opponent', 'ActionCard', 16)" onclick="ClickCard('Opponent', 'ActionCard', 16)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction16" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3285,8 +3285,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction17" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction17" onpointerenter="HoverCard('Opponent', 'ActionCard', 17)" onfocus="HoverCard('Opponent', 'ActionCard', 17)" onclick="ClickCard('Opponent', 'ActionCard', 17)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction17" onpointerenter="HoverCard('Opponent', 'ActionCard', 17)" onfocus="HoverCard('Opponent', 'ActionCard', 17)" onclick="ClickCard('Opponent', 'ActionCard', 17)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction17" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3333,8 +3333,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction18" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction18" onpointerenter="HoverCard('Opponent', 'ActionCard', 18)" onfocus="HoverCard('Opponent', 'ActionCard', 18)" onclick="ClickCard('Opponent', 'ActionCard', 18)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction18" onpointerenter="HoverCard('Opponent', 'ActionCard', 18)" onfocus="HoverCard('Opponent', 'ActionCard', 18)" onclick="ClickCard('Opponent', 'ActionCard', 18)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction18" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3381,8 +3381,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction19" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction19" onpointerenter="HoverCard('Opponent', 'ActionCard', 19)" onfocus="HoverCard('Opponent', 'ActionCard', 19)" onclick="ClickCard('Opponent', 'ActionCard', 19)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction19" onpointerenter="HoverCard('Opponent', 'ActionCard', 19)" onfocus="HoverCard('Opponent', 'ActionCard', 19)" onclick="ClickCard('Opponent', 'ActionCard', 19)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction19" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3429,8 +3429,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction20" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction20" onpointerenter="HoverCard('Opponent', 'ActionCard', 20)" onfocus="HoverCard('Opponent', 'ActionCard', 20)" onclick="ClickCard('Opponent', 'ActionCard', 20)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction20" onpointerenter="HoverCard('Opponent', 'ActionCard', 20)" onfocus="HoverCard('Opponent', 'ActionCard', 20)" onclick="ClickCard('Opponent', 'ActionCard', 20)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction20" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3477,8 +3477,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction21" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction21" onpointerenter="HoverCard('Opponent', 'ActionCard', 21)" onfocus="HoverCard('Opponent', 'ActionCard', 21)" onclick="ClickCard('Opponent', 'ActionCard', 21)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction21" onpointerenter="HoverCard('Opponent', 'ActionCard', 21)" onfocus="HoverCard('Opponent', 'ActionCard', 21)" onclick="ClickCard('Opponent', 'ActionCard', 21)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction21" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3525,8 +3525,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction22" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction22" onpointerenter="HoverCard('Opponent', 'ActionCard', 22)" onfocus="HoverCard('Opponent', 'ActionCard', 22)" onclick="ClickCard('Opponent', 'ActionCard', 22)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction22" onpointerenter="HoverCard('Opponent', 'ActionCard', 22)" onfocus="HoverCard('Opponent', 'ActionCard', 22)" onclick="ClickCard('Opponent', 'ActionCard', 22)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction22" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3573,8 +3573,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction23" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction23" onpointerenter="HoverCard('Opponent', 'ActionCard', 23)" onfocus="HoverCard('Opponent', 'ActionCard', 23)" onclick="ClickCard('Opponent', 'ActionCard', 23)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction23" onpointerenter="HoverCard('Opponent', 'ActionCard', 23)" onfocus="HoverCard('Opponent', 'ActionCard', 23)" onclick="ClickCard('Opponent', 'ActionCard', 23)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction23" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3621,8 +3621,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction24" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction24" onpointerenter="HoverCard('Opponent', 'ActionCard', 24)" onfocus="HoverCard('Opponent', 'ActionCard', 24)" onclick="ClickCard('Opponent', 'ActionCard', 24)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction24" onpointerenter="HoverCard('Opponent', 'ActionCard', 24)" onfocus="HoverCard('Opponent', 'ActionCard', 24)" onclick="ClickCard('Opponent', 'ActionCard', 24)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction24" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3669,8 +3669,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction25" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction25" onpointerenter="HoverCard('Opponent', 'ActionCard', 25)" onfocus="HoverCard('Opponent', 'ActionCard', 25)" onclick="ClickCard('Opponent', 'ActionCard', 25)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction25" onpointerenter="HoverCard('Opponent', 'ActionCard', 25)" onfocus="HoverCard('Opponent', 'ActionCard', 25)" onclick="ClickCard('Opponent', 'ActionCard', 25)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction25" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3717,8 +3717,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction26" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction26" onpointerenter="HoverCard('Opponent', 'ActionCard', 26)" onfocus="HoverCard('Opponent', 'ActionCard', 26)" onclick="ClickCard('Opponent', 'ActionCard', 26)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction26" onpointerenter="HoverCard('Opponent', 'ActionCard', 26)" onfocus="HoverCard('Opponent', 'ActionCard', 26)" onclick="ClickCard('Opponent', 'ActionCard', 26)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction26" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3765,8 +3765,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction27" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction27" onpointerenter="HoverCard('Opponent', 'ActionCard', 27)" onfocus="HoverCard('Opponent', 'ActionCard', 27)" onclick="ClickCard('Opponent', 'ActionCard', 27)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction27" onpointerenter="HoverCard('Opponent', 'ActionCard', 27)" onfocus="HoverCard('Opponent', 'ActionCard', 27)" onclick="ClickCard('Opponent', 'ActionCard', 27)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction27" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3813,8 +3813,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction28" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction28" onpointerenter="HoverCard('Opponent', 'ActionCard', 28)" onfocus="HoverCard('Opponent', 'ActionCard', 28)" onclick="ClickCard('Opponent', 'ActionCard', 28)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction28" onpointerenter="HoverCard('Opponent', 'ActionCard', 28)" onfocus="HoverCard('Opponent', 'ActionCard', 28)" onclick="ClickCard('Opponent', 'ActionCard', 28)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction28" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3861,8 +3861,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction29" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction29" onpointerenter="HoverCard('Opponent', 'ActionCard', 29)" onfocus="HoverCard('Opponent', 'ActionCard', 29)" onclick="ClickCard('Opponent', 'ActionCard', 29)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction29" onpointerenter="HoverCard('Opponent', 'ActionCard', 29)" onfocus="HoverCard('Opponent', 'ActionCard', 29)" onclick="ClickCard('Opponent', 'ActionCard', 29)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction29" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3909,8 +3909,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction30" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction30" onpointerenter="HoverCard('Opponent', 'ActionCard', 30)" onfocus="HoverCard('Opponent', 'ActionCard', 30)" onclick="ClickCard('Opponent', 'ActionCard', 30)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction30" onpointerenter="HoverCard('Opponent', 'ActionCard', 30)" onfocus="HoverCard('Opponent', 'ActionCard', 30)" onclick="ClickCard('Opponent', 'ActionCard', 30)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction30" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -3957,8 +3957,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction31" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction31" onpointerenter="HoverCard('Opponent', 'ActionCard', 31)" onfocus="HoverCard('Opponent', 'ActionCard', 31)" onclick="ClickCard('Opponent', 'ActionCard', 31)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction31" onpointerenter="HoverCard('Opponent', 'ActionCard', 31)" onfocus="HoverCard('Opponent', 'ActionCard', 31)" onclick="ClickCard('Opponent', 'ActionCard', 31)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction31" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -4005,8 +4005,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction32" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction32" onpointerenter="HoverCard('Opponent', 'ActionCard', 32)" onfocus="HoverCard('Opponent', 'ActionCard', 32)" onclick="ClickCard('Opponent', 'ActionCard', 32)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction32" onpointerenter="HoverCard('Opponent', 'ActionCard', 32)" onfocus="HoverCard('Opponent', 'ActionCard', 32)" onclick="ClickCard('Opponent', 'ActionCard', 32)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction32" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -4053,8 +4053,8 @@
 						</div>
 						<div class="Card Opponent Action Event OffTable" id="Card_GameOpponentAction33" inert="true">
 							<ul class="CtrlGroup">
-								<li class="Ctrl CardCmdbtn">
-									<button class="Cmdbtn" id="Cmdbtn_GameOpponentAction33" onpointerenter="HoverCard('Opponent', 'ActionCard', 33)" onfocus="HoverCard('Opponent', 'ActionCard', 33)" onclick="ClickCard('Opponent', 'ActionCard', 33)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
+								<li class="Ctrl CardButton">
+									<button class="Button" id="Button_GameOpponentAction33" onpointerenter="HoverCard('Opponent', 'ActionCard', 33)" onfocus="HoverCard('Opponent', 'ActionCard', 33)" onclick="ClickCard('Opponent', 'ActionCard', 33)" onpointerleave="FadeNameOnCards()" onfocusout="FadeNameOnCards()">
 										<img class="CardImage" id="Image_GameOpponentAction33" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="行动牌图像" />
 										<img class="CardImage CardBack" src="images/CardBack.jpg" onerror="this.src='images/CardBack.jpg'" alt="牌背图像" />
 									</button>
@@ -4105,7 +4105,7 @@
 					</div>
 					<div id="Ctnr_GameDice">
 						<div class="Dice Player OffTable Sequence1" id="Dice_GamePlayer1" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice1" onpointerenter="HoverDice('Player', 1)" onclick="ClickDice('Player', 1)">
+							<button class="Button Shaped" id="Button_GamePlayerDice1" onpointerenter="HoverDice('Player', 1)" onclick="ClickDice('Player', 1)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4113,7 +4113,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence2" id="Dice_GamePlayer2" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice2" onpointerenter="HoverDice('Player', 2)" onclick="ClickDice('Player', 2)">
+							<button class="Button Shaped" id="Button_GamePlayerDice2" onpointerenter="HoverDice('Player', 2)" onclick="ClickDice('Player', 2)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4121,7 +4121,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence3" id="Dice_GamePlayer3" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice3" onpointerenter="HoverDice('Player', 3)" onclick="ClickDice('Player', 3)">
+							<button class="Button Shaped" id="Button_GamePlayerDice3" onpointerenter="HoverDice('Player', 3)" onclick="ClickDice('Player', 3)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4129,7 +4129,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence4" id="Dice_GamePlayer4" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice4" onpointerenter="HoverDice('Player', 4)" onclick="ClickDice('Player', 4)">
+							<button class="Button Shaped" id="Button_GamePlayerDice4" onpointerenter="HoverDice('Player', 4)" onclick="ClickDice('Player', 4)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4137,7 +4137,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence5" id="Dice_GamePlayer5" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice5" onpointerenter="HoverDice('Player', 5)" onclick="ClickDice('Player', 5)">
+							<button class="Button Shaped" id="Button_GamePlayerDice5" onpointerenter="HoverDice('Player', 5)" onclick="ClickDice('Player', 5)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4145,7 +4145,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence6" id="Dice_GamePlayer6" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice6" onpointerenter="HoverDice('Player', 6)" onclick="ClickDice('Player', 6)">
+							<button class="Button Shaped" id="Button_GamePlayerDice6" onpointerenter="HoverDice('Player', 6)" onclick="ClickDice('Player', 6)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4153,7 +4153,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence7" id="Dice_GamePlayer7" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice7" onpointerenter="HoverDice('Player', 7)" onclick="ClickDice('Player', 7)">
+							<button class="Button Shaped" id="Button_GamePlayerDice7" onpointerenter="HoverDice('Player', 7)" onclick="ClickDice('Player', 7)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4161,7 +4161,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence8" id="Dice_GamePlayer8" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice8" onpointerenter="HoverDice('Player', 8)" onclick="ClickDice('Player', 8)">
+							<button class="Button Shaped" id="Button_GamePlayerDice8" onpointerenter="HoverDice('Player', 8)" onclick="ClickDice('Player', 8)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4169,7 +4169,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence9" id="Dice_GamePlayer9" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice9" onpointerenter="HoverDice('Player', 9)" onclick="ClickDice('Player', 9)">
+							<button class="Button Shaped" id="Button_GamePlayerDice9" onpointerenter="HoverDice('Player', 9)" onclick="ClickDice('Player', 9)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4177,7 +4177,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence10" id="Dice_GamePlayer10" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice10" onpointerenter="HoverDice('Player', 10)" onclick="ClickDice('Player', 10)">
+							<button class="Button Shaped" id="Button_GamePlayerDice10" onpointerenter="HoverDice('Player', 10)" onclick="ClickDice('Player', 10)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4185,7 +4185,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence11" id="Dice_GamePlayer11" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice11" onpointerenter="HoverDice('Player', 11)" onclick="ClickDice('Player', 11)">
+							<button class="Button Shaped" id="Button_GamePlayerDice11" onpointerenter="HoverDice('Player', 11)" onclick="ClickDice('Player', 11)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4193,7 +4193,7 @@
 							</button>
 						</div>
 						<div class="Dice Player OffTable Sequence12" id="Dice_GamePlayer12" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GamePlayerDice12" onpointerenter="HoverDice('Player', 12)" onclick="ClickDice('Player', 12)">
+							<button class="Button Shaped" id="Button_GamePlayerDice12" onpointerenter="HoverDice('Player', 12)" onclick="ClickDice('Player', 12)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4241,7 +4241,7 @@
 							</ul>
 						</div>
 						<div class="Dice Opponent OffTable Sequence1" id="Dice_GameOpponent1" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice1" onpointerenter="HoverDice('Opponent', 1)" onclick="ClickDice('Opponent', 1)">
+							<button class="Button Shaped" id="Button_GameOpponentDice1" onpointerenter="HoverDice('Opponent', 1)" onclick="ClickDice('Opponent', 1)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4249,7 +4249,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence2" id="Dice_GameOpponent2" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice2" onpointerenter="HoverDice('Opponent', 2)" onclick="ClickDice('Opponent', 2)">
+							<button class="Button Shaped" id="Button_GameOpponentDice2" onpointerenter="HoverDice('Opponent', 2)" onclick="ClickDice('Opponent', 2)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4257,7 +4257,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence3" id="Dice_GameOpponent3" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice3" onpointerenter="HoverDice('Opponent', 3)" onclick="ClickDice('Opponent', 3)">
+							<button class="Button Shaped" id="Button_GameOpponentDice3" onpointerenter="HoverDice('Opponent', 3)" onclick="ClickDice('Opponent', 3)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4265,7 +4265,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence4" id="Dice_GameOpponent4" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice4" onpointerenter="HoverDice('Opponent', 4)" onclick="ClickDice('Opponent', 4)">
+							<button class="Button Shaped" id="Button_GameOpponentDice4" onpointerenter="HoverDice('Opponent', 4)" onclick="ClickDice('Opponent', 4)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4273,7 +4273,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence5" id="Dice_GameOpponent5" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice5" onpointerenter="HoverDice('Opponent', 5)" onclick="ClickDice('Opponent', 5)">
+							<button class="Button Shaped" id="Button_GameOpponentDice5" onpointerenter="HoverDice('Opponent', 5)" onclick="ClickDice('Opponent', 5)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4281,7 +4281,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence6" id="Dice_GameOpponent6" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice6" onpointerenter="HoverDice('Opponent', 6)" onclick="ClickDice('Opponent', 6)">
+							<button class="Button Shaped" id="Button_GameOpponentDice6" onpointerenter="HoverDice('Opponent', 6)" onclick="ClickDice('Opponent', 6)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4289,7 +4289,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence7" id="Dice_GameOpponent7" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice7" onpointerenter="HoverDice('Opponent', 7)" onclick="ClickDice('Opponent', 7)">
+							<button class="Button Shaped" id="Button_GameOpponentDice7" onpointerenter="HoverDice('Opponent', 7)" onclick="ClickDice('Opponent', 7)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4297,7 +4297,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence8" id="Dice_GameOpponent8" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice8" onpointerenter="HoverDice('Opponent', 8)" onclick="ClickDice('Opponent', 8)">
+							<button class="Button Shaped" id="Button_GameOpponentDice8" onpointerenter="HoverDice('Opponent', 8)" onclick="ClickDice('Opponent', 8)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4305,7 +4305,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence9" id="Dice_GameOpponent9" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice9" onpointerenter="HoverDice('Opponent', 9)" onclick="ClickDice('Opponent', 9)">
+							<button class="Button Shaped" id="Button_GameOpponentDice9" onpointerenter="HoverDice('Opponent', 9)" onclick="ClickDice('Opponent', 9)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4313,7 +4313,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence10" id="Dice_GameOpponent10" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice10" onpointerenter="HoverDice('Opponent', 10)" onclick="ClickDice('Opponent', 10)">
+							<button class="Button Shaped" id="Button_GameOpponentDice10" onpointerenter="HoverDice('Opponent', 10)" onclick="ClickDice('Opponent', 10)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4321,7 +4321,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence11" id="Dice_GameOpponent11" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice11" onpointerenter="HoverDice('Opponent', 11)" onclick="ClickDice('Opponent', 11)">
+							<button class="Button Shaped" id="Button_GameOpponentDice11" onpointerenter="HoverDice('Opponent', 11)" onclick="ClickDice('Opponent', 11)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4329,7 +4329,7 @@
 							</button>
 						</div>
 						<div class="Dice Opponent OffTable Sequence12" id="Dice_GameOpponent12" inert="true">
-							<button class="Cmdbtn Shaped" id="Cmdbtn_GameOpponentDice12" onpointerenter="HoverDice('Opponent', 12)" onclick="ClickDice('Opponent', 12)">
+							<button class="Button Shaped" id="Button_GameOpponentDice12" onpointerenter="HoverDice('Opponent', 12)" onclick="ClickDice('Opponent', 12)">
 								<svg class="Shape" viewBox="0 0 16 16">
 									<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
 								</svg>
@@ -4404,7 +4404,7 @@
 								</li>
 								<li class="Ctrl IndicatorLight Off" id="Ctrl_GameTurnIndicatorPlayer"></li>
 								<li class="Ctrl" id="Ctrl_GameEndAction">
-									<button class="Cmdbtn" id="Cmdbtn_GameEndAction" disabled="true" onclick="EndAction()">
+									<button class="Button" id="Button_GameEndAction" disabled="true" onclick="EndAction()">
 										<svg class="Icon" viewBox="0 0 16 16">
 											<path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.713 3.31 4 3.655 4 4.308v7.384c0 .653.713.998 1.233.696L11.5 8.752V12a.5.5 0 0 0 1 0zM5 4.633 10.804 8 5 11.367z"/>
 										</svg>
@@ -4420,7 +4420,7 @@
 						<div id="Ctnr_GameSkillCtrl">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_GameNormalAttack" disabled="true" onpointerenter="HoverSkill('NormalAttack')" onfocus="HoverSkill('NormalAttack')" onclick="ClickSkill('NormalAttack')">
+									<button class="Button" id="Button_GameNormalAttack" disabled="true" onpointerenter="HoverSkill('NormalAttack')" onfocus="HoverSkill('NormalAttack')" onclick="ClickSkill('NormalAttack')">
 										<img class="SkillImage" id="Image_GameNormalAttack" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="普通攻击按钮" />
 									</button>
 									<div class="CostIndicator Additional Unaligned" id="CostIndicator_GameNormalAttackAdditional">
@@ -4438,7 +4438,7 @@
 									<span class="HotkeyIndicator Faded" inert="true">Q</span>
 								</li>
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_GameElementalSkill" disabled="true" onpointerenter="HoverSkill('ElementalSkill')" onfocus="HoverSkill('ElementalSkill')" onclick="ClickSkill('ElementalSkill')">
+									<button class="Button" id="Button_GameElementalSkill" disabled="true" onpointerenter="HoverSkill('ElementalSkill')" onfocus="HoverSkill('ElementalSkill')" onclick="ClickSkill('ElementalSkill')">
 										<img class="SkillImage" id="Image_GameElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素战技按钮" />
 									</button>
 									<div class="CostIndicator" id="CostIndicator_GameElementalSkill">
@@ -4450,7 +4450,7 @@
 									<span class="HotkeyIndicator Faded" inert="true">E</span>
 								</li>
 								<li class="Ctrl HiddenToCorner" id="Ctrl_GameSecondaryElementalSkill" inert="true">
-									<button class="Cmdbtn" id="Cmdbtn_GameSecondaryElementalSkill" disabled="true" onpointerenter="HoverSkill('SecondaryElementalSkill')" onfocus="HoverSkill('SecondaryElementalSkill')" onclick="ClickSkill('SecondaryElementalSkill')">
+									<button class="Button" id="Button_GameSecondaryElementalSkill" disabled="true" onpointerenter="HoverSkill('SecondaryElementalSkill')" onfocus="HoverSkill('SecondaryElementalSkill')" onclick="ClickSkill('SecondaryElementalSkill')">
 										<img class="SkillImage" id="Image_GameSecondaryElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="第二元素战技按钮" />
 									</button>
 									<div class="CostIndicator" id="CostIndicator_GameSecondaryElementalSkill">
@@ -4462,7 +4462,7 @@
 									<span class="HotkeyIndicator Faded" inert="true">4</span>
 								</li>
 								<li class="Ctrl" id="Ctrl_GameElementalBurst">
-									<button class="Cmdbtn" id="Cmdbtn_GameElementalBurst" disabled="true" onpointerenter="HoverSkill('ElementalBurst')" onfocus="HoverSkill('ElementalBurst')" onclick="ClickSkill('ElementalBurst')">
+									<button class="Button" id="Button_GameElementalBurst" disabled="true" onpointerenter="HoverSkill('ElementalBurst')" onfocus="HoverSkill('ElementalBurst')" onclick="ClickSkill('ElementalBurst')">
 										<img class="SkillImage" id="Image_GameElementalBurst" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素爆发按钮" />
 									</button>
 									<div class="CostIndicator Additional Energy" id="CostIndicator_GameElementalBurstAdditional">
@@ -4487,11 +4487,11 @@
 						<div class="OperationPanel" id="OperationPanel_GameTitleScreen">
 							<ul class="CtrlGroup OperationPanelOptions" id="CtrlGroup_GameStart">
 								<li class="Ctrl" id="Ctrl_GameStart">
-									<button class="Cmdbtn Glow" id="Cmdbtn_GameStart" onclick="StartGame()">开始</button>
+									<button class="Button Glow" id="Button_GameStart" onclick="StartGame()">开始</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 								<li class="Ctrl" id="Ctrl_GameConfigureDeck">
-									<a class="Linkbtn" href="#Casket">配置牌组...</a>
+									<a class="Button" href="#Casket">配置牌组...</a>
 									<span class="HotkeyIndicator Faded" inert="true">C</span>
 								</li>
 							</ul>
@@ -4544,11 +4544,11 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions" id="CtrlGroup_GameStartingHand">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameSwitchStartingHand" onclick="SwitchStartingHand()">更换</button>
+									<button class="Button" id="Button_GameSwitchStartingHand" onclick="SwitchStartingHand()">更换</button>
 									<span class="HotkeyIndicator Faded" inert="true">E</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameSkipStartingHand" onclick="SkipStartingHand()">跳过</button>
+									<button class="Button" id="Button_GameSkipStartingHand" onclick="SkipStartingHand()">跳过</button>
 									<span class="HotkeyIndicator Faded" inert="true">R</span>
 								</li>
 							</ul>
@@ -4616,11 +4616,11 @@
 									<span class="HotkeyIndicator Faded" inert="true">3</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2 LargerMargin">
-									<button class="Cmdbtn" id="Cmdbtn_GameReroll" onclick="Reroll()">重掷</button>
+									<button class="Button" id="Button_GameReroll" onclick="Reroll()">重掷</button>
 									<span class="HotkeyIndicator Faded" inert="true">E</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2 LargerMargin">
-									<button class="Cmdbtn" id="Cmdbtn_GameSkipReroll" onclick="SkipReroll()">跳过</button>
+									<button class="Button" id="Button_GameSkipReroll" onclick="SkipReroll()">跳过</button>
 									<span class="HotkeyIndicator Faded" inert="true">R</span>
 								</li>
 							</ul>
@@ -4644,11 +4644,11 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameSwitchCharacter" onclick="SwitchCharacter()">切换</button>
+									<button class="Button" id="Button_GameSwitchCharacter" onclick="SwitchCharacter()">切换</button>
 									<span class="HotkeyIndicator Faded" inert="true">W</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameCancelSwitchCharacter" onclick="CancelOperation()">取消</button>
+									<button class="Button" id="Button_GameCancelSwitchCharacter" onclick="CancelOperation()">取消</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 							</ul>
@@ -4681,11 +4681,11 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameUseSkill" onclick="UseSkill()">发动技能</button>
+									<button class="Button" id="Button_GameUseSkill" onclick="UseSkill()">发动技能</button>
 									<span class="HotkeyIndicator Faded" inert="true">W</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameCancelUseSkill" onclick="CancelOperation()">取消</button>
+									<button class="Button" id="Button_GameCancelUseSkill" onclick="CancelOperation()">取消</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 							</ul>
@@ -4715,19 +4715,19 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions" id="CtrlGroup_GamePlayActionCardOptions">
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayActionCard" onclick="PlayActionCard()">出牌</button>
+									<button class="Button" id="Button_GamePlayActionCard" onclick="PlayActionCard()">出牌</button>
 									<span class="HotkeyIndicator Faded" inert="true">W</span>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_GamePrepareTuning" onclick="PrepareTuning()">调谐...</button>
+									<button class="Button" id="Button_GamePrepareTuning" onclick="PrepareTuning()">调谐...</button>
 									<span class="HotkeyIndicator Faded" inert="true">F</span>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_GamePrepareDiscardHandCard" onclick="PrepareDiscardHandCard()">弃置...</button>
+									<button class="Button" id="Button_GamePrepareDiscardHandCard" onclick="PrepareDiscardHandCard()">弃置...</button>
 									<span class="HotkeyIndicator Faded" inert="true">C</span>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_GameCancelPlayActionCard" onclick="CancelOperation()">取消</button>
+									<button class="Button" id="Button_GameCancelPlayActionCard" onclick="CancelOperation()">取消</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 							</ul>
@@ -4758,19 +4758,19 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions">
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_GamePlayActionCardWithObjectSelection" onclick="SelectActiveCharacterAndPlayActionCard()">选择前台角色并出牌</button>
+									<button class="Button" id="Button_GamePlayActionCardWithObjectSelection" onclick="SelectActiveCharacterAndPlayActionCard()">选择前台角色并出牌</button>
 									<span class="HotkeyIndicator Faded" inert="true">W</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GamePrepareTuning2" onclick="PrepareTuning()">调谐...</button>
+									<button class="Button" id="Button_GamePrepareTuning2" onclick="PrepareTuning()">调谐...</button>
 									<span class="HotkeyIndicator Faded" inert="true">F</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GamePrepareDiscardHandCard2" onclick="PrepareDiscardHandCard()">弃置...</button>
+									<button class="Button" id="Button_GamePrepareDiscardHandCard2" onclick="PrepareDiscardHandCard()">弃置...</button>
 									<span class="HotkeyIndicator Faded" inert="true">C</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameCancelPlayActionCardWithObjectSelection" onclick="CancelOperation()">取消</button>
+									<button class="Button" id="Button_GameCancelPlayActionCardWithObjectSelection" onclick="CancelOperation()">取消</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 							</ul>
@@ -4794,11 +4794,11 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameApplyTuning" onclick="ApplyTuning()">调谐</button>
+									<button class="Button" id="Button_GameApplyTuning" onclick="ApplyTuning()">调谐</button>
 									<span class="HotkeyIndicator Faded" inert="true">F</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameCancelTuning" onclick="CancelOperation()">取消</button>
+									<button class="Button" id="Button_GameCancelTuning" onclick="CancelOperation()">取消</button>
 									<span class="HotkeyIndicator Faded" inert="true">S</span>
 								</li>
 							</ul>
@@ -4814,11 +4814,11 @@
 							</ul>
 							<ul class="CtrlGroup OperationPanelOptions">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameExit" onclick="ExitGame()">退出</button>
+									<button class="Button" id="Button_GameOverExit" onclick="ExitGame()">退出</button>
 									<span class="HotkeyIndicator Faded" inert="true">E</span>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_GameRestart" onclick="RestartGame()">重新开始</button>
+									<button class="Button" id="Button_GameOverRestart" onclick="RestartGame()">重新开始</button>
 									<span class="HotkeyIndicator Faded" inert="true">R</span>
 								</li>
 							</ul>
@@ -4827,7 +4827,7 @@
 					<div id="Ctnr_GameCtrl">
 						<ul class="CtrlGroup">
 							<li class="Ctrl Faded" id="Ctrl_GameToggleOperationPanelTransparency" inert="true">
-								<button class="Cmdbtn" id="Cmdbtn_GameToggleOperationPanelTransparency" onpointerenter="ToggleOperationPanelTransparency('True')" onclick="ToggleOperationPanelTransparency('Toggle')" onpointerleave="ToggleOperationPanelTransparency('False')">
+								<button class="Button" id="Button_GameToggleOperationPanelTransparency" onpointerenter="ToggleOperationPanelTransparency('True')" onclick="ToggleOperationPanelTransparency('Toggle')" onpointerleave="ToggleOperationPanelTransparency('False')">
 									<svg class="Icon" viewBox="0 0 16 16">
 										<path d="M0 6.5a6.5 6.5 0 0 1 12.346-2.846 6.5 6.5 0 1 1-8.691 8.691A6.5 6.5 0 0 1 0 6.5m5.144 6.358a5.5 5.5 0 1 0 7.714-7.714 6.5 6.5 0 0 1-7.714 7.714m-.733-1.269q.546.226 1.144.33l-1.474-1.474q.104.597.33 1.144m2.614.386a5.5 5.5 0 0 0 1.173-.242L4.374 7.91a6 6 0 0 0-.296 1.118zm2.157-.672q.446-.25.838-.576L5.418 6.126a6 6 0 0 0-.587.826zm1.545-1.284q.325-.39.576-.837L6.953 4.83a6 6 0 0 0-.827.587l4.6 4.602Zm1.006-1.822q.183-.562.242-1.172L9.028 4.078q-.58.096-1.118.296l3.823 3.824Zm.186-2.642a5.5 5.5 0 0 0-.33-1.144 5.5 5.5 0 0 0-1.144-.33z"/>
 									</svg>
@@ -4835,23 +4835,23 @@
 								<span class="HotkeyIndicator Faded" inert="true">=</span>
 							</li>
 							<li class="Ctrl">
-								<button class="Cmdbtn" id="Cmdbtn_GameMenu" onclick="Show('DropctrlGroup_GameMenu')">
+								<button class="Button" id="Button_GameMenu" onclick="Show('DropctrlGroup_GameMenu')">
 									<svg class="Icon Larger" viewBox="0 0 16 16">
 										<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
 									</svg>
 								</button>
 								<ul class="DropctrlGroup HiddenToCorner" id="DropctrlGroup_GameMenu" inert="true">
 									<li class="Dropctrl">
-										<button class="Dropbtn" id="Dropbtn_GameToggleFullscreen" onclick="ToggleFullscreen()">全屏</button>
+										<button class="Button" id="Button_GameToggleFullscreen" onclick="ToggleFullscreen()">全屏</button>
 									</li>
 									<li class="Dropctrl" id="Dropctrl_GameImportExport">
-										<a class="Dropbtn" id="Dropbtn_GameImportExport" href="#Item_SettingsSavedGames" onclick="ShowIAmHere('Item_SettingsSavedGames')">存档...</a>
+										<a class="Button" id="Button_GameImportExport" href="#Item_SettingsSavedGames" onclick="ShowIAmHere('Item_SettingsSavedGames')">存档...</a>
 									</li>
 									<li class="Dropctrl">
-										<button class="Dropbtn" id="Dropbtn_GameRestart" disabled="true" onclick="ConfirmRestartGame()">重新开始...</button>
+										<button class="Button" id="Button_GameRestart" disabled="true" onclick="ConfirmRestartGame()">重新开始...</button>
 									</li>
 									<li class="Dropctrl">
-										<button class="Dropbtn" id="Dropbtn_GameExit" disabled="true" onclick="ConfirmExitGame()">退出...</button>
+										<button class="Button" id="Button_GameExit" disabled="true" onclick="ConfirmExitGame()">退出...</button>
 									</li>
 								</ul>
 							</li>
@@ -4878,7 +4878,7 @@
 				<div class="Window HiddenHorizontally" id="Window_Game" inert="true" tabindex="-1" onpointerover="ShowInfoWindow()" onclick="ShowInfoWindow()">
 					<ul class="CtrlGroup" id="CtrlGroup_GameInfoWindowCloseButton">
 						<li class="Ctrl">
-							<button class="Cmdbtn" id="Cmdbtn_GameInfoWindowCloseButton" onclick="ForceHideInfoWindow()">
+							<button class="Button" id="Button_GameInfoWindowCloseButton" onclick="ForceHideInfoWindow()">
 								<svg class="Icon" viewBox="0 0 16 16">
 									<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
 								</svg>
@@ -4889,7 +4889,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterCard" onclick="ToggleInfoWindowCollapse('CharacterCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterCard" onclick="ToggleInfoWindowCollapse('CharacterCard')">
 										<h4>角色牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4933,7 +4933,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowNormalAttack" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowNormalAttack" onclick="ToggleInfoWindowCollapse('NormalAttack')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowNormalAttack" onclick="ToggleInfoWindowCollapse('NormalAttack')">
 										<h4>普通攻击</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4968,7 +4968,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowElementalSkill" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowElementalSkill" onclick="ToggleInfoWindowCollapse('ElementalSkill')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowElementalSkill" onclick="ToggleInfoWindowCollapse('ElementalSkill')">
 										<h4>元素战技</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4997,7 +4997,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSecondaryElementalSkill" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowSecondaryElementalSkill" onclick="ToggleInfoWindowCollapse('SecondaryElementalSkill')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowSecondaryElementalSkill" onclick="ToggleInfoWindowCollapse('SecondaryElementalSkill')">
 										<h4>第二元素战技</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5026,7 +5026,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowElementalBurst" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowElementalBurst" onclick="ToggleInfoWindowCollapse('ElementalBurst')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowElementalBurst" onclick="ToggleInfoWindowCollapse('ElementalBurst')">
 										<h4>元素爆发</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5055,7 +5055,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowIntroSkill" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowIntroSkill" onclick="ToggleInfoWindowCollapse('IntroSkill')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowIntroSkill" onclick="ToggleInfoWindowCollapse('IntroSkill')">
 										<h4>进场技能</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5076,7 +5076,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowOutroSkill" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowOutroSkill" onclick="ToggleInfoWindowCollapse('OutroSkill')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowOutroSkill" onclick="ToggleInfoWindowCollapse('OutroSkill')">
 										<h4>退场技能</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5097,7 +5097,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPassiveSkill" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowPassiveSkill" onclick="ToggleInfoWindowCollapse('PassiveSkill')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowPassiveSkill" onclick="ToggleInfoWindowCollapse('PassiveSkill')">
 										<h4>被动技能</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5118,7 +5118,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowAffiliatedCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowAffiliatedCard" onclick="ToggleInfoWindowCollapse('AffiliatedCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowAffiliatedCard" onclick="ToggleInfoWindowCollapse('AffiliatedCard')">
 										<h4>附属卡牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5153,7 +5153,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSummonsCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowSummonsCard" onclick="ToggleInfoWindowCollapse('SummonsCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowSummonsCard" onclick="ToggleInfoWindowCollapse('SummonsCard')">
 										<h4>召唤物牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5179,7 +5179,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowTalentCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowTalentCard" onclick="ToggleInfoWindowCollapse('TalentCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowTalentCard" onclick="ToggleInfoWindowCollapse('TalentCard')">
 										<h4>天赋牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5220,7 +5220,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowWeaponCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowWeaponCard" onclick="ToggleInfoWindowCollapse('WeaponCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowWeaponCard" onclick="ToggleInfoWindowCollapse('WeaponCard')">
 										<h4>武器牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5252,7 +5252,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowArtifactCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowArtifactCard" onclick="ToggleInfoWindowCollapse('ArtifactCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowArtifactCard" onclick="ToggleInfoWindowCollapse('ArtifactCard')">
 										<h4>圣遗物牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5281,7 +5281,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSupportCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowSupportCard" onclick="ToggleInfoWindowCollapse('SupportCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowSupportCard" onclick="ToggleInfoWindowCollapse('SupportCard')">
 										<h4>支援牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5313,7 +5313,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEventCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowEventCard" onclick="ToggleInfoWindowCollapse('EventCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowEventCard" onclick="ToggleInfoWindowCollapse('EventCard')">
 										<h4>事件牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5342,7 +5342,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus1" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowStatus1" onclick="ToggleInfoWindowCollapse('Status1')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowStatus1" onclick="ToggleInfoWindowCollapse('Status1')">
 										<h4>状态1</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5371,7 +5371,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus2" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowStatus2" onclick="ToggleInfoWindowCollapse('Status2')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowStatus2" onclick="ToggleInfoWindowCollapse('Status2')">
 										<h4>状态2</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5400,7 +5400,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus3" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowStatus3" onclick="ToggleInfoWindowCollapse('Status3')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowStatus3" onclick="ToggleInfoWindowCollapse('Status3')">
 										<h4>状态3</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5429,7 +5429,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterProfile" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterProfile" onclick="ToggleInfoWindowCollapse('CharacterProfile')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterProfile" onclick="ToggleInfoWindowCollapse('CharacterProfile')">
 										<h4>角色资料</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5449,7 +5449,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCredits" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCredits" onclick="ToggleInfoWindowCollapse('Credits')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCredits" onclick="ToggleInfoWindowCollapse('Credits')">
 										<h4>Credits</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5470,7 +5470,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowTechInfo" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowTechInfo" onclick="ToggleInfoWindowCollapse('TechInfo')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowTechInfo" onclick="ToggleInfoWindowCollapse('TechInfo')">
 										<h4>技术信息</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5489,7 +5489,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowBuiltinStatus" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowBuiltinStatus" onclick="ToggleInfoWindowCollapse('BuiltinStatus')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowBuiltinStatus" onclick="ToggleInfoWindowCollapse('BuiltinStatus')">
 										<h4>内置状态</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5520,7 +5520,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedTalentCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowEquippedTalentCard" onclick="ToggleInfoWindowCollapse('EquippedTalentCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowEquippedTalentCard" onclick="ToggleInfoWindowCollapse('EquippedTalentCard')">
 										<h4>装备的天赋牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5561,7 +5561,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedWeaponCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowEquippedWeaponCard" onclick="ToggleInfoWindowCollapse('EquippedWeaponCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowEquippedWeaponCard" onclick="ToggleInfoWindowCollapse('EquippedWeaponCard')">
 										<h4>装备的武器牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5593,7 +5593,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedArtifactCard" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowEquippedArtifactCard" onclick="ToggleInfoWindowCollapse('EquippedArtifactCard')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowEquippedArtifactCard" onclick="ToggleInfoWindowCollapse('EquippedArtifactCard')">
 										<h4>装备的圣遗物牌</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5622,7 +5622,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus1" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterStatus1" onclick="ToggleInfoWindowCollapse('CharacterStatus1')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterStatus1" onclick="ToggleInfoWindowCollapse('CharacterStatus1')">
 										<h4>角色状态1</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5651,7 +5651,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus2" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterStatus2" onclick="ToggleInfoWindowCollapse('CharacterStatus2')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterStatus2" onclick="ToggleInfoWindowCollapse('CharacterStatus2')">
 										<h4>角色状态2</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5680,7 +5680,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus3" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterStatus3" onclick="ToggleInfoWindowCollapse('CharacterStatus3')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterStatus3" onclick="ToggleInfoWindowCollapse('CharacterStatus3')">
 										<h4>角色状态3</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5709,7 +5709,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus4" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowCharacterStatus4" onclick="ToggleInfoWindowCollapse('CharacterStatus4')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowCharacterStatus4" onclick="ToggleInfoWindowCollapse('CharacterStatus4')">
 										<h4>角色状态4</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5738,7 +5738,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus1" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowPartyStatus1" onclick="ToggleInfoWindowCollapse('PartyStatus1')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowPartyStatus1" onclick="ToggleInfoWindowCollapse('PartyStatus1')">
 										<h4>队伍状态1</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5767,7 +5767,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus2" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowPartyStatus2" onclick="ToggleInfoWindowCollapse('PartyStatus2')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowPartyStatus2" onclick="ToggleInfoWindowCollapse('PartyStatus2')">
 										<h4>队伍状态2</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5796,7 +5796,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus3" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowPartyStatus3" onclick="ToggleInfoWindowCollapse('PartyStatus3')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowPartyStatus3" onclick="ToggleInfoWindowCollapse('PartyStatus3')">
 										<h4>队伍状态3</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5825,7 +5825,7 @@
 						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus4" inert="true">
 							<ul class="CtrlGroup InfoWindowTitle">
 								<li class="Ctrl">
-									<button class="Cmdbtn ShownAsLabel" id="Cmdbtn_GameInfoWindowPartyStatus4" onclick="ToggleInfoWindowCollapse('PartyStatus4')">
+									<button class="Button ShownAsLabel" id="Button_GameInfoWindowPartyStatus4" onclick="ToggleInfoWindowCollapse('PartyStatus4')">
 										<h4>队伍状态4</h4>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5892,10 +5892,10 @@
 									</ul>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketDecksNew" onclick="NewDeck()">新建</button>
+									<button class="Button" id="Button_CasketDecksNew" onclick="NewDeck()">新建</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketDecksSortByName" onclick="SortDecksByName()">按名称排序</button>
+									<button class="Button" id="Button_CasketDecksSortByName" onclick="SortDecksByName()">按名称排序</button>
 								</li>
 							</ul>
 							<p>临时牌组具有很强的随机性。这可能导致牌组配置不当，而使游戏难度失衡。敬请留意。</p>
@@ -5926,16 +5926,16 @@
 									</ul>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketCharacterCardsNew" onclick="NewCharacterCard()">新建</button>
+									<button class="Button" id="Button_CasketCharacterCardsNew" onclick="NewCharacterCard()">新建</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketCharacterCardsDelete" onclick="ConfirmDeleteSelectedCharacterCards()">删除选中项...</button>
+									<button class="Button" id="Button_CasketCharacterCardsDelete" onclick="ConfirmDeleteSelectedCharacterCards()">删除选中项...</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketCharacterCardsSortByName" onclick="SortCards('CharacterCard', 'Name')">按名称排序</button>
+									<button class="Button" id="Button_CasketCharacterCardsSortByName" onclick="SortCards('CharacterCard', 'Name')">按名称排序</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketCharacterCardsSortByElementType" onclick="SortCards('CharacterCard', 'ElementType')">按元素类型排序</button>
+									<button class="Button" id="Button_CasketCharacterCardsSortByElementType" onclick="SortCards('CharacterCard', 'ElementType')">按元素类型排序</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -5965,16 +5965,16 @@
 									</ul>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketActionCardsNew" onclick="NewActionCard()">新建</button>
+									<button class="Button" id="Button_CasketActionCardsNew" onclick="NewActionCard()">新建</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketActionCardsDelete" onclick="ConfirmDeleteSelectedActionCards()">删除选中项...</button>
+									<button class="Button" id="Button_CasketActionCardsDelete" onclick="ConfirmDeleteSelectedActionCards()">删除选中项...</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketActionCardsSortByName" onclick="SortCards('ActionCard', 'Name')">按名称排序</button>
+									<button class="Button" id="Button_CasketActionCardsSortByName" onclick="SortCards('ActionCard', 'Name')">按名称排序</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketActionCardsSortByType" onclick="SortCards('ActionCard', 'Type')">按类型排序</button>
+									<button class="Button" id="Button_CasketActionCardsSortByType" onclick="SortCards('ActionCard', 'Type')">按类型排序</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -6025,22 +6025,22 @@
 									<textarea class="Textbox" id="Textbox_CasketImport" placeholder="粘贴 JSON 字符串"></textarea>
 								</li>
 								<li class="Ctrl" id="Ctrl_CasketImport2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketImport" onclick="ImportCasketObjects()">导入</button>
+									<button class="Button" id="Button_CasketImport" onclick="ImportCasketObjects()">导入</button>
 								</li>
 							</ul>
 							<p>若要分享导出的数据，请注意其中是否包含个人信息。分享牌组时请一并提供相关卡牌数据。「重置牌盒」可将牌盒恢复至初始状态，仅有内置牌组与卡牌。重置前建议先备份当前牌盒。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketExportDeckLibrary" onclick="ExportDeckLibrary()">导出牌组库</button>
+									<button class="Button" id="Button_CasketExportDeckLibrary" onclick="ExportDeckLibrary()">导出牌组库</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketExportCardLibrary" onclick="ExportCardLibrary()">导出卡牌库</button>
+									<button class="Button" id="Button_CasketExportCardLibrary" onclick="ExportCardLibrary()">导出卡牌库</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketExportCasket" onclick="ExportCasket()">导出牌盒</button>
+									<button class="Button" id="Button_CasketExportCasket" onclick="ExportCasket()">导出牌盒</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_CasketResetCasket" onclick="ConfirmResetCasket()">重置牌盒...</button>
+									<button class="Button" id="Button_CasketResetCasket" onclick="ConfirmResetCasket()">重置牌盒...</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -6072,19 +6072,19 @@
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_EditorDuplicate" disabled="true" onclick="DuplicateAndEditCard(Editor.CardNumber)">生成副本</button>
+									<button class="Button" id="Button_EditorDuplicate" disabled="true" onclick="DuplicateAndEditCard(Editor.CardNumber)">生成副本</button>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_EditorExport" disabled="true" onclick="ExportCard(Editor.CardNumber)">导出</button>
+									<button class="Button" id="Button_EditorExport" disabled="true" onclick="ExportCard(Editor.CardNumber)">导出</button>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_EditorDelete" disabled="true" onclick="ConfirmDeleteCard(Editor.CardNumber)">删除...</button>
+									<button class="Button" id="Button_EditorDelete" disabled="true" onclick="ConfirmDeleteCard(Editor.CardNumber)">删除...</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_EditorNew" onclick="NewCharacterCard()">新建角色牌</button>
+									<button class="Button" id="Button_EditorNew" onclick="NewCharacterCard()">新建角色牌</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_EditorClose" disabled="true" onclick="CloseCard()">关闭</button>
+									<button class="Button" id="Button_EditorClose" disabled="true" onclick="CloseCard()">关闭</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -7201,16 +7201,16 @@
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsLoadSavedGame" disabled="true" onclick="LoadSavedGame()">载入</button>
+									<button class="Button" id="Button_SettingsLoadSavedGame" disabled="true" onclick="LoadSavedGame()">载入</button>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsExportSavedGame" disabled="true" onclick="ExportSavedGame()">导出</button>
+									<button class="Button" id="Button_SettingsExportSavedGame" disabled="true" onclick="ExportSavedGame()">导出</button>
 								</li>
 								<li class="Ctrl WidthDividedBy3">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsDeleteSavedGame" disabled="true" onclick="ConfirmDeleteSavedGame()">删除...</button>
+									<button class="Button" id="Button_SettingsDeleteSavedGame" disabled="true" onclick="ConfirmDeleteSavedGame()">删除...</button>
 								</li>
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsSaveGame" onclick="SaveGame()">保存新档</button>
+									<button class="Button" id="Button_SettingsSaveGame" onclick="SaveGame()">保存新档</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -7408,16 +7408,25 @@
 					</li>
 					<li class="Item">
 						<fieldset>
+							<legend>PWA</legend>
+							<p>您可将本网页安装至桌面，以 <a href="https://zh.wikipedia.org/wiki/progressive_web_app">PWA</a> (俗称小程序) 的形式更方便地使用。若下面的按钮不可用，请尝试前往浏览器的菜单来安装。</p>
+							<ul class="CtrlGroup BelowParagraph">
+								<li class="Ctrl">
+									<button class="Button" id="Button_SettingsInstallPWA" disabled="true" onclick="InstallPWA()">安装</button>
+								</li>
+							</ul>
+							<h4>状态</h4>
+							<p>PWA 模式：<span id="Label_SettingsPWAMode">未知</span><br />
+								PWA service worker registration：<span id="Label_SettingsPWAServiceWorkerRegistration">未知</span><br />
+								PWA service worker controller：<span id="Label_SettingsPWAServiceWorkerController">未知</span></p>
+						</fieldset>
+					</li>
+					<li class="Item">
+						<fieldset>
 							<legend>其他</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsResetAllDontShowAgainDialogs" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
-								</li>
-							</ul>
-							<p>您可将本网页安装至桌面，以 <a href="https://zh.wikipedia.org/wiki/progressive_web_app">progressive web app</a> (俗称小程序) 的形式更方便地使用。若下面的按钮不可用，请尝试前往浏览器的菜单来安装。</p>
-							<ul class="CtrlGroup BelowParagraph">
-								<li class="Ctrl">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsInstallPWA" disabled="true" onclick="InstallPWA()">安装至桌面</button>
+									<button class="Button" id="Button_SettingsResetAllDontShowAgainDialogs" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -7471,10 +7480,10 @@
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsUserDataExport" onclick="ExportUserData()">导出</button>
+									<button class="Button" id="Button_SettingsUserDataExport" onclick="ExportUserData()">导出</button>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<button class="Cmdbtn" id="Cmdbtn_SettingsUserDataClear" onclick="ConfirmClearUserData()">清空...</button>
+									<button class="Button" id="Button_SettingsUserDataClear" onclick="ConfirmClearUserData()">清空...</button>
 								</li>
 							</ul>
 						</fieldset>
@@ -7497,19 +7506,19 @@
 							<p>本游戏的教程以 PDF 文档的形式提供。这方便您保存至本地，还可以打印出来备用。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="docs/七圣召唤%20Lite%20快速入门.pdf">快速入门</a>
+									<a class="Button" href="docs/七圣召唤%20Lite%20快速入门.pdf">快速入门</a>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="docs/七圣召唤%20Lite%20说明文档.pdf">说明文档</a>
+									<a class="Button" href="docs/七圣召唤%20Lite%20说明文档.pdf">说明文档</a>
 								</li>
 							</ul>
 							<p>您也可以参考原版「七圣召唤」的资料，但请注意本游戏的规则与其有些许差异。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="https://wiki.biligame.com/ys/七圣召唤">中文 Wiki</a>
+									<a class="Button" href="https://wiki.biligame.com/ys/七圣召唤">中文 Wiki</a>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="https://genshin-impact.fandom.com/wiki/Genius_Invokation_TCG">英文 Wiki</a>
+									<a class="Button" href="https://genshin-impact.fandom.com/wiki/Genius_Invokation_TCG">英文 Wiki</a>
 								</li>
 							</ul>
 						</fieldset>
@@ -7517,18 +7526,20 @@
 					<li class="Item" id="Item_HelpGetInvolved">
 						<fieldset>
 							<legend>参与进来</legend>
+							<h4>反馈</h4>
 							<p>您可通过以下渠道向我提供反馈：</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
-									<a class="Linkbtn" href="https://github.com/SamToki/GITCG-Lite/issues">GitHub Issues</a>
+									<a class="Button" href="https://github.com/SamToki/GITCG-Lite/issues">GitHub Issues</a>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="mailto:SamTokiFeedback@outlook.com">电子邮件</a>
+									<a class="Button" href="mailto:SamTokiFeedback@outlook.com">电子邮件</a>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
-									<a class="Linkbtn" href="https://message.bilibili.com/#whisper/mid1557377413">哔哩哔哩 (B站) 私信</a>
+									<a class="Button" href="https://message.bilibili.com/#whisper/mid1557377413">哔哩哔哩 (B站) 私信</a>
 								</li>
 							</ul>
+							<h4>翻译</h4>
 							<p>Help me translate the webpage into your language! Please contact me if you are interested.</p>
 						</fieldset>
 					</li>
@@ -7586,11 +7597,12 @@
 							<legend>关于</legend>
 							<p>七圣召唤 Lite</p>
 							<p>by SAM TOKI STUDIO</p>
-							<p>版本 v0.39 (<time datetime="2024-11-12" pubdate="pubdate">2024/11/12</time>) Alpha Test<br />
+							<p>版本 v0.40 (<time datetime="2024-11-13" pubdate="pubdate">2024/11/13</time>) Alpha Test<br />
 								始于 2023/12/02</p>
+							<p class="EmphasizedText Hidden" id="Label_HelpPWAUpdateReady">新版本已就绪。请重新打开本网页来应用更新 (不要使用刷新按钮)。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
-									<a class="Linkbtn" href="https://github.com/SamToki/GITCG-Lite">查看 GitHub 项目</a>
+									<a class="Button" href="https://github.com/SamToki/GITCG-Lite">查看 GitHub 项目</a>
 								</li>
 							</ul>
 						</fieldset>
@@ -7648,19 +7660,19 @@
 			</ul>
 			<ul class="CtrlGroup" id="CtrlGroup_DialogOptions">
 				<li class="Ctrl HiddenHorizontally" id="Ctrl_DialogOption1" inert="true">
-					<button class="Cmdbtn" id="Cmdbtn_DialogOption1" onclick="AnswerDialog(1)">选项</button>
+					<button class="Button" id="Button_DialogOption1" onclick="AnswerDialog(1)">选项</button>
 				</li>
 				<li class="Ctrl HiddenHorizontally" id="Ctrl_DialogOption2" inert="true">
-					<button class="Cmdbtn" id="Cmdbtn_DialogOption2" onclick="AnswerDialog(2)">选项</button>
+					<button class="Button" id="Button_DialogOption2" onclick="AnswerDialog(2)">选项</button>
 				</li>
 				<li class="Ctrl" id="Ctrl_DialogOption3">
-					<button class="Cmdbtn" id="Cmdbtn_DialogOption3" onclick="AnswerDialog(3)">选项</button>
+					<button class="Button" id="Button_DialogOption3" onclick="AnswerDialog(3)">选项</button>
 				</li>
 			</ul>
 		</div>
 
 		<div class="Watermark" id="Watermark_TestVersion">
-			<span>七圣召唤 Lite　by SAM TOKI STUDIO　v0.39 Alpha Test<br />
+			<span>七圣召唤 Lite　by SAM TOKI STUDIO　v0.40 Alpha Test<br />
 				警告：这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。<br />
 				Warning: This is an early test version which is not indicative of the final content and quality. Many features still don't work. Do not distribute.</span>
 		</div>

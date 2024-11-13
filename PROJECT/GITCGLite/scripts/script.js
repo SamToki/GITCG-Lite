@@ -654,9 +654,10 @@
 		};
 		// Built-in casket initialization is in "script_BuiltinCasket.js".
 
-	// Load user data
+	// Load
 	window.onload = Load();
 	function Load() {
+		// User data
 		if(localStorage.System != undefined) {
 			System = JSON.parse(localStorage.getItem("System"));
 		}
@@ -701,7 +702,6 @@
 		} else {
 			System.Version.GITCGLite = CurrentVersion;
 		}
-		// RefreshSystem(); // There are "Subsystem" usages in function RefreshSystem.
 		if(localStorage.GITCGLite_Subsystem != undefined) {
 			Subsystem = JSON.parse(localStorage.getItem("GITCGLite_Subsystem"));
 		}
@@ -714,6 +714,8 @@
 		if(localStorage.GITCGLite_Casket != undefined) {
 			Casket = JSON.parse(localStorage.getItem("GITCGLite_Casket"));
 		}
+
+		// Refresh
 		ChangeValue("Textbox_CasketDecksFilter", "");
 		ChangeValue("Textbox_CasketCharacterCardsFilter", "");
 		ChangeValue("Textbox_CasketActionCardsFilter", "");
@@ -724,6 +726,50 @@
 		RefreshGame();
 		RefreshCasket();
 		RefreshEditor();
+
+		// PWA
+		navigator.serviceWorker.register("script_ServiceWorker.js").then(function(ServiceWorkerRegistration) {
+			// Detect update (https://stackoverflow.com/a/41896649)
+			ServiceWorkerRegistration.addEventListener("updatefound", function() {
+				const ServiceWorkerInstallation = ServiceWorkerRegistration.installing;
+				ServiceWorkerInstallation.addEventListener("statechange", function() {
+					if(ServiceWorkerInstallation.state == "installed" && navigator.serviceWorker.controller != null) {
+						Show("Label_HelpPWAUpdateReady");
+						ShowDialog("System_PWAUpdateReady",
+							"Info",
+							"新版本已就绪。请重新打开本网页来应用更新 (不要使用刷新按钮)。",
+							"", "", "", "确定");
+					}
+				});
+			});
+
+			// Read service worker status (https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/registration-events/index.html)
+			switch(true) {
+				case ServiceWorkerRegistration.installing != null:
+					ChangeText("Label_SettingsPWAServiceWorkerRegistration", "等待生效");
+					break;
+				case ServiceWorkerRegistration.waiting != null:
+					ChangeText("Label_SettingsPWAServiceWorkerRegistration", "等待更新");
+					Show("Label_HelpPWAUpdateReady");
+					ShowDialog("System_PWAUpdateReady",
+						"Info",
+						"新版本已就绪。请重新打开本网页来应用更新 (不要使用刷新按钮)。",
+						"", "", "", "确定");
+					break;
+				case ServiceWorkerRegistration.active != null:
+					ChangeText("Label_SettingsPWAServiceWorkerRegistration", "已生效");
+					break;
+				default:
+					break;
+			}
+			if(navigator.serviceWorker.controller != null) {
+				ChangeText("Label_SettingsPWAServiceWorkerController", "已生效");
+			} else {
+				ChangeText("Label_SettingsPWAServiceWorkerController", "未生效");
+			}
+		});
+
+		// Ready
 		setTimeout(HideToast, 0);
 	}
 
@@ -815,8 +861,40 @@
 		}
 
 // Refresh
+	// Webpage
+	function RefreshWebpage() {
+		ShowDialog("System_RefreshingWebpage",
+			"Info",
+			"正在刷新网页...",
+			"", "", "", "确定");
+		ChangeCursorOverall("wait");
+		window.location.reload();
+	}
+
 	// System
 	function RefreshSystem() {
+		// Topbar
+		if(IsMobileLayout() == false) {
+			HideHorizontally("Button_Nav");
+			ChangeInert("DropctrlGroup_Nav", false);
+		} else {
+			Show("Button_Nav");
+			ChangeInert("DropctrlGroup_Nav", true);
+		}
+
+		// Fullscreen
+		if(IsFullscreen() == false) {
+			Show("Topbar");
+			Show("Ctrl_GameConfigureDeck");
+			ChangeText("Button_GameToggleFullscreen", "全屏");
+			Show("Dropctrl_GameImportExport");
+		} else {
+			Hide("Topbar");
+			Hide("Ctrl_GameConfigureDeck");
+			ChangeText("Button_GameToggleFullscreen", "退出全屏");
+			Hide("Dropctrl_GameImportExport");
+		}
+
 		// Settings
 			// Display
 			if(window.matchMedia("(prefers-contrast: more)").matches == false) {
@@ -861,9 +939,9 @@
 					AlertSystemError("The value of System.Display.Theme \"" + System.Display.Theme + "\" in function RefreshSystem is invalid.");
 					break;
 			}
-			if(System.Display.Theme != "HighContrast") { // Force color blind mode on high contrast theme.
+			if(System.Display.Theme != "HighContrast") {
 				ChangeDisabled("Checkbox_SettingsColorBlindMode", false);
-			} else {
+			} else { // Force color blind mode on high contrast theme.
 				Subsystem.Display.ColorBlindMode = true;
 				ChangeDisabled("Checkbox_SettingsColorBlindMode", true);
 				setTimeout(function() {
@@ -927,6 +1005,13 @@
 				Hide("Ctrl_SettingsVoiceVolume");
 			}
 
+			// PWA
+			if(window.matchMedia("(display-mode: standalone)").matches == true) {
+				ChangeText("Label_SettingsPWAMode", "是");
+			} else {
+				ChangeText("Label_SettingsPWAMode", "否");
+			}
+
 			// Dev
 			ChangeChecked("Checkbox_SettingsTryToOptimizePerformance", System.Dev.TryToOptimizePerformance);
 			if(System.Dev.TryToOptimizePerformance == true) {
@@ -947,19 +1032,6 @@
 
 			// User data
 			ChangeValue("Textbox_SettingsUserDataImport", "");
-
-		// Fullscreen
-		if(IsFullscreen() == false) {
-			Show("Topbar");
-			Show("Ctrl_GameConfigureDeck");
-			ChangeText("Dropbtn_GameToggleFullscreen", "全屏");
-			Show("Dropctrl_GameImportExport");
-		} else {
-			Hide("Topbar");
-			Hide("Ctrl_GameConfigureDeck");
-			ChangeText("Dropbtn_GameToggleFullscreen", "退出全屏");
-			Hide("Dropctrl_GameImportExport");
-		}
 
 		// Save user data
 		localStorage.setItem("System", JSON.stringify(System));
@@ -1204,8 +1276,7 @@
 					Object.keys(Objects).forEach(function(ObjectName) {
 						localStorage.setItem(ObjectName, JSON.stringify(Objects[ObjectName]));
 					});
-					ChangeCursorOverall("wait");
-					window.location.reload();
+					RefreshWebpage();
 				} else {
 					ShowDialog("System_JSONStringInvalid",
 						"Error",
@@ -1239,6 +1310,8 @@
 		switch(Interaction.DialogEvent) {
 			case "System_LanguageUnsupported":
 			case "System_MajorUpdateDetected":
+			case "System_PWAUpdateReady":
+			case "System_RefreshingWebpage":
 			case "System_JSONStringInvalid":
 			case "System_UserDataExported":
 			case "Game_LoadingError":
@@ -1268,8 +1341,7 @@
 				switch(Selector) {
 					case 2:
 						localStorage.clear();
-						ChangeCursorOverall("wait");
-						window.location.reload();
+						RefreshWebpage();
 						break;
 					case 3:
 						break;
@@ -1556,8 +1628,7 @@
 				switch(Selector) {
 					case 2:
 						localStorage.removeItem("GITCGLite_Casket");
-						ChangeCursorOverall("wait");
-						window.location.reload();
+						RefreshWebpage();
 						break;
 					case 3:
 						break;
@@ -1775,7 +1846,8 @@
 						ShowHotkeyIndicators();
 					}
 					break;
-				case "*": // Undocumented easter egg: wish simulator.
+				case "*":
+					// Undocumented easter egg: Wish simulator
 					let Pity = 0, Pity2 = 0, Is5050Won = false, CharacterName = "",
 					Threshold = 0, LotteryNumber = 0;
 					for(Pity = 1; Pity <= 90; Pity++) {
@@ -1798,7 +1870,7 @@
 									"您于第" + Pity + "发抽中了限定五星角色。",
 									"", "", "", "确定");
 							} else {
-								// When miHoYo will simply suck my dick
+								// When miHoYo will simply suck my ass
 								Is5050Won = false;
 								LotteryNumber = Randomize(1, 7);
 								switch(LotteryNumber) {
