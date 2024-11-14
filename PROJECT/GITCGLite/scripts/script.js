@@ -887,12 +887,12 @@
 			Show("Topbar");
 			Show("Ctrl_GameConfigureDeck");
 			ChangeText("Button_GameToggleFullscreen", "全屏");
-			Show("Dropctrl_GameImportExport");
+			Show("Dropctrl_GameSavedGames");
 		} else {
 			Hide("Topbar");
 			Hide("Ctrl_GameConfigureDeck");
 			ChangeText("Button_GameToggleFullscreen", "退出全屏");
-			Hide("Dropctrl_GameImportExport");
+			Hide("Dropctrl_GameSavedGames");
 		}
 
 		// Settings
