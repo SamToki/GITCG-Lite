@@ -256,14 +256,14 @@
 				ChangeText("Label_CasketSelectAllActionCards", "不可选择");
 			}
 			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length != 4) {
-				AddClass("Label_CasketSelectAllCharacterCards", "EmphasizedText");
+				AddClass("Label_CasketSelectAllCharacterCards", "RedText");
 			} else {
-				RemoveClass("Label_CasketSelectAllCharacterCards", "EmphasizedText");
+				RemoveClass("Label_CasketSelectAllCharacterCards", "RedText");
 			}
 			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length != 31) {
-				AddClass("Label_CasketSelectAllActionCards", "EmphasizedText");
+				AddClass("Label_CasketSelectAllActionCards", "RedText");
 			} else {
-				RemoveClass("Label_CasketSelectAllActionCards", "EmphasizedText");
+				RemoveClass("Label_CasketSelectAllActionCards", "RedText");
 			}
 			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length > 1) {
 				ChangeDisabled("Button_CasketCharacterCardsDelete", false);
