@@ -102,7 +102,7 @@
 								color: #FFFFFF; text-shadow: 0 0 5px #000000, 0 0 5px #000000;
 							}
 							.StatusText.DurationInRounds {
-								color: #FFFF00;
+								color: #D090F0;
 							}
 
 							/* Damage indicators */
@@ -131,7 +131,7 @@
 				/* Table */
 					/* Skill ctrl */
 					.SkillImage, .StatusImage {
-						filter: drop-shadow(0 0 3px #FFFFFF40);
+						filter: drop-shadow(0 0 2.5px #FFFFFF80);
 					}
 					.CostIndicatorText {
 						color: #FFFFFF;
@@ -139,9 +139,6 @@
 
 			/* Floating ctrls */
 				/* Flash on high damage */
-				#ScreenFilter_GameFlashOnHighDamage.Flash {
-					background-color: #FFFFFF !important;
-				}
 				#ScreenFilter_GameFlashOnHighDamage.Physical {
 					background-color: #80808080;
 				}

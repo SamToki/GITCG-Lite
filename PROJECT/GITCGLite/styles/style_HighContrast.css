@@ -20,7 +20,7 @@
 			color: #FFFF00;
 		}
 		.Energy .Shape {
-			fill: #808000;
+			fill: #202020;
 		}
 		.ProgbarFg.Shaped.Energy .Shape {
 			fill: #808000;
@@ -29,10 +29,10 @@
 			filter: none;
 		}
 		.Matching .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Unaligned .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Omni, .Physical {
 			color: unset;
@@ -41,43 +41,43 @@
 			color: unset;
 		}
 		.Pyro .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Hydro {
 			color: unset;
 		}
 		.Hydro .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Anemo {
 			color: unset;
 		}
 		.Anemo .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Electro {
 			color: unset;
 		}
 		.Electro .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Dendro {
 			color: unset;
 		}
 		.Dendro .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Cryo {
 			color: unset;
 		}
 		.Cryo .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 		.Geo {
 			color: unset;
 		}
 		.Geo .Shape {
-			fill: #000000;
+			fill: #202020;
 		}
 
 /* Area specific */
@@ -100,7 +100,7 @@
 						/* Character cards */
 							/* Character status */
 							.StatusText {
-								background-color: #000000;
+								background-color: #202020;
 								color: #FFFFFF; text-shadow: none;
 							}
 							.StatusText.DurationInRounds {
@@ -128,7 +128,7 @@
 
 						/* Action cards */
 						.Card .CtrlGroup .Counter .Shape {
-							fill: #000000;
+							fill: #202020;
 						}
 
 				/* Table */
@@ -142,9 +142,6 @@
 
 			/* Floating ctrls */
 				/* Flash on high damage */
-				#ScreenFilter_GameFlashOnHighDamage.Flash {
-					background-color: #FFFFFF !important;
-				}
 				#ScreenFilter_GameFlashOnHighDamage.Physical {
 					background-color: #80808080;
 				}

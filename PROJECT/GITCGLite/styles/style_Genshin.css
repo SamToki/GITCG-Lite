@@ -166,7 +166,7 @@
 					}
 					.SkillImage, .StatusImage {
 						border-radius: 50%;
-						filter: drop-shadow(0 0 3px #FFFFFF40);
+						filter: drop-shadow(0 0 2.5px #FFFFFF80);
 					}
 					.CostIndicatorText {
 						color: #FFFFFF;
@@ -174,9 +174,6 @@
 
 			/* Floating ctrls */
 				/* Flash on high damage */
-				#ScreenFilter_GameFlashOnHighDamage.Flash {
-					background-color: #FFFFFF !important;
-				}
 				#ScreenFilter_GameFlashOnHighDamage.Physical {
 					background-color: #80808080;
 				}

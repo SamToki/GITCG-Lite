@@ -250,7 +250,7 @@
 								display: flex; justify-content: center; align-items: center;
 							}
 							.StatusText.DurationInRounds {
-								color: #FFFF00;
+								color: #8040A0;
 							}
 
 							/* Damage indicators */
@@ -1057,7 +1057,7 @@
 						font-size: 2.00em;
 					}
 					#CtrlGroup_GameYourDeck, #CtrlGroup_GameOpponentDeck {
-						position: absolute; bottom: calc(50% + 111px); left: calc(50% - 476px);
+						position: absolute; bottom: calc(50% + 126px); left: calc(50% - 476px);
 						width: 366px;
 						flex-direction: column; align-items: start;
 					}
@@ -2066,12 +2066,12 @@
 							font-size: 1.00em;
 						}
 						#CtrlGroup_GameYourDeck, #CtrlGroup_GameOpponentDeck {
-							top: calc(50% + 209px); bottom: unset; left: calc(50% - 136px);
+							top: calc(50% + 224px); bottom: unset; left: calc(50% - 136px);
 							width: 272px;
 							align-items: center;
 						}
 						#CtrlGroup_GameOpponentDeck {
-							bottom: calc(50% + 209px); top: unset;
+							bottom: calc(50% + 224px); top: unset;
 						}
 						#CtrlGroup_GameYourDeck .Ctrl, #CtrlGroup_GameOpponentDeck .Ctrl {
 							margin: 0;
