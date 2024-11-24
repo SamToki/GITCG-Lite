@@ -944,10 +944,8 @@
 			} else { // Force color blind mode on high contrast theme.
 				Subsystem.Display.ColorBlindMode = true;
 				ChangeDisabled("Checkbox_SettingsColorBlindMode", true);
-				setTimeout(function() {
-					RefreshSubsystem();
-					RefreshGame();
-				}, 0);
+				RefreshSubsystem();
+				RefreshGame();
 			}
 			ChangeValue("Combobox_SettingsCursor", System.Display.Cursor);
 			switch(System.Display.Cursor) {
@@ -1307,7 +1305,10 @@
 
 	// Dialog
 	function AnswerDialog(Selector) {
-		switch(Interaction.Dialog[Interaction.Dialog.length - 1].Event) {
+		let DialogEvent = Interaction.Dialog[Interaction.Dialog.length - 1].Event;
+		Interaction.Dialog.splice(Interaction.Dialog.length - 1, 1);
+		ShowDialog("Previous");
+		switch(DialogEvent) {
 			case "System_LanguageUnsupported":
 			case "System_MajorUpdateDetected":
 			case "System_PWANewVersionReady":
@@ -1332,7 +1333,7 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "System_ConfirmClearUserData":
@@ -1345,7 +1346,7 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "System_Error":
@@ -1358,7 +1359,7 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Subsystem_ConfirmGoToTutorial":
@@ -1371,7 +1372,7 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_LoadingPaused":
@@ -1379,17 +1380,17 @@
 					case 2:
 						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_LoadingPaused";
-							setTimeout(RefreshSystem, 0);
+							RefreshSystem();
 						}
 						Game0.Load.IsPaused = false;
 						Game0.Load.Progress += 2;
 						break;
 					case 3:
-						setTimeout(ExitGame, 0);
+						ExitGame();
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_WindowLayoutImproper":
@@ -1397,12 +1398,12 @@
 					case 3:
 						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_WindowLayoutImproper";
-							setTimeout(RefreshSystem, 0);
+							RefreshSystem();
 						}
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_ConfirmRestartGame":
@@ -1410,7 +1411,7 @@
 					case 2:
 						if(JSON.stringify(Game.InitialStatus).startsWith("{\"Operation\":") == true) {
 							Game.Status = structuredClone(Game.InitialStatus);
-							setTimeout(RefreshGame, 0);
+							RefreshGame();
 						} else {
 							AlertSystemError("The value of Game.InitialStatus \"" + JSON.stringify(Game.InitialStatus) + "\" in function AnswerDialog is unexpectedly empty or corrupted.");
 						}
@@ -1419,19 +1420,19 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_ConfirmExitGame":
 				switch(Selector) {
 					case 2:
-						setTimeout(ExitGame, 0);
+						ExitGame();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_ConfirmKnockDownOpponentCharacterCard":
@@ -1447,13 +1448,13 @@
 				switch(Selector) {
 					case 2:
 						Game.Status = Game.SavedGames[Game.SavedGames.length - 1].Data;
-						setTimeout(RefreshGame, 0);
+						RefreshGame();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Game_ConfirmDeleteSavedGame":
@@ -1461,7 +1462,7 @@
 					case 2:
 						if(ReadValue("Combobox_SettingsSelectSavedGame") > 0) {
 							Game.SavedGames.splice(ReadValue("Combobox_SettingsSelectSavedGame"), 1);
-							setTimeout(RefreshGame, 0);
+							RefreshGame();
 						} else {
 							AlertSystemError("No saved game was selected when trying to delete a saved game.");
 						}
@@ -1470,7 +1471,7 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_DeckExported":
@@ -1480,12 +1481,12 @@
 						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_DeckExported";
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_CardExported";
-							setTimeout(RefreshSystem, 0);
+							RefreshSystem();
 						}
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_ConfirmDeleteDeck":
@@ -1499,13 +1500,13 @@
 						}
 						Casket.Deck.splice(Interaction.Deletion, 1);
 						Interaction.Deletion = 0;
-						setTimeout(RefreshGame, 0);
+						RefreshGame();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_ConfirmDeleteCard":
@@ -1530,16 +1531,14 @@
 						}
 						Casket.Card.splice(Interaction.Deletion, 1);
 						Interaction.Deletion = 0;
-						setTimeout(function() {
-							RefreshGame();
-							RefreshEditor();
-						}, 0);
+						RefreshGame();
+						RefreshEditor();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_ConfirmDeleteSelectedCharacterCards":
@@ -1556,16 +1555,14 @@
 							}
 						}
 						Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection = [0];
-						setTimeout(function() {
-							RefreshGame();
-							RefreshEditor();
-						}, 0);
+						RefreshGame();
+						RefreshEditor();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_ConfirmDeleteSelectedActionCards":
@@ -1582,16 +1579,14 @@
 							}
 						}
 						Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection = [0];
-						setTimeout(function() {
-							RefreshGame();
-							RefreshEditor();
-						}, 0);
+						RefreshGame();
+						RefreshEditor();
 						break;
 					case 3:
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			case "Casket_ConfirmResetCasket":
@@ -1604,15 +1599,13 @@
 						break;
 					default:
 						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						return;
+						break;
 				}
 				break;
 			default:
-				AlertSystemError("The value of Interaction.Dialog[Interaction.Dialog.length - 1].Event \"" + Interaction.Dialog[Interaction.Dialog.length - 1].Event + "\" in function AnswerDialog is invalid.");
-				return;
+				AlertSystemError("The value of DialogEvent \"" + DialogEvent + "\" in function AnswerDialog is invalid.");
+				break;
 		}
-		Interaction.Dialog.splice(Interaction.Dialog.length - 1, 1);
-		ShowDialog("Previous");
 	}
 
 // Listeners
