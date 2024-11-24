@@ -218,7 +218,7 @@
 									ShowDialog("Game_LoadingPaused",
 										"Question",
 										"您的牌组配置不当。行动牌「" + ReadCardNameByID(Game.Status.Player.ActionCard[(Game0.Load.Progress - 16) / 2].ID) + "」不适用于任何角色牌，将无法出牌。是否继续？",
-										"不再询问", "", "继续", "取消");
+										"不再询问", "", "继续", "退出");
 									Game0.Load.IsPaused = true;
 								}
 								break;
@@ -290,7 +290,7 @@
 									ShowDialog("Game_LoadingPaused",
 										"Question",
 										"对手牌组配置不当。行动牌「" + ReadCardNameByID(Game.Status.Opponent.ActionCard[(Game0.Load.Progress - 82) / 2].ID) + "」不适用于任何角色牌，将无法出牌。是否继续？",
-										"不再询问", "", "继续", "取消");
+										"不再询问", "", "继续", "退出");
 									Game0.Load.IsPaused = true;
 								}
 								break;
@@ -344,14 +344,14 @@
 										ShowDialog("Game_LoadingPaused",
 											"Question",
 											"您的牌组配置不当。所有角色均为主力角色，缺乏辅助角色。是否继续？",
-											"不再询问", "", "继续", "取消");
+											"不再询问", "", "继续", "退出");
 										Game0.Load.IsPaused = true;
 										break;
 									case -3:
 										ShowDialog("Game_LoadingPaused",
 											"Question",
 											"您的牌组配置不当。所有角色均为辅助角色，缺乏主力角色。是否继续？",
-											"不再询问", "", "继续", "取消");
+											"不再询问", "", "继续", "退出");
 										Game0.Load.IsPaused = true;
 										break;
 									default:
@@ -371,7 +371,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。所有角色元素类型相同，难以触发元素反应。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -393,7 +393,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。行动牌中没有天赋牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -415,7 +415,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。行动牌中没有武器牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -437,7 +437,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。行动牌中没有圣遗物牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -459,7 +459,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。行动牌中没有支援牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -481,7 +481,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"您的牌组配置不当。行动牌中没有事件牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -512,14 +512,14 @@
 										ShowDialog("Game_LoadingPaused",
 											"Question",
 											"对手牌组配置不当。所有角色均为主力角色，缺乏辅助角色。是否继续？",
-											"不再询问", "", "继续", "取消");
+											"不再询问", "", "继续", "退出");
 										Game0.Load.IsPaused = true;
 										break;
 									case -3:
 										ShowDialog("Game_LoadingPaused",
 											"Question",
 											"对手牌组配置不当。所有角色均为辅助角色，缺乏主力角色。是否继续？",
-											"不再询问", "", "继续", "取消");
+											"不再询问", "", "继续", "退出");
 										Game0.Load.IsPaused = true;
 										break;
 									default:
@@ -539,7 +539,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。所有角色元素类型相同，难以触发元素反应。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -561,7 +561,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。行动牌中没有天赋牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -583,7 +583,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。行动牌中没有武器牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -605,7 +605,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。行动牌中没有圣遗物牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -627,7 +627,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。行动牌中没有支援牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;
@@ -649,7 +649,7 @@
 								ShowDialog("Game_LoadingPaused",
 									"Question",
 									"对手牌组配置不当。行动牌中没有事件牌。是否继续？",
-									"不再询问", "", "继续", "取消");
+									"不再询问", "", "继续", "退出");
 								Game0.Load.IsPaused = true;
 							}
 							break;

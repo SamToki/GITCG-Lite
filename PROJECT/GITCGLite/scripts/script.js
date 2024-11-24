@@ -1307,7 +1307,7 @@
 
 	// Dialog
 	function AnswerDialog(Selector) {
-		switch(Interaction.DialogEvent) {
+		switch(Interaction.Dialog[Interaction.Dialog.length - 1].Event) {
 			case "System_LanguageUnsupported":
 			case "System_MajorUpdateDetected":
 			case "System_PWANewVersionReady":
@@ -1331,10 +1331,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "System_ConfirmClearUserData":
@@ -1346,10 +1344,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "System_Error":
@@ -1361,10 +1357,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Subsystem_ConfirmGoToTutorial":
@@ -1376,10 +1370,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_LoadingPaused":
@@ -1396,10 +1388,8 @@
 						setTimeout(ExitGame, 0);
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_WindowLayoutImproper":
@@ -1411,10 +1401,8 @@
 						}
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_ConfirmRestartGame":
@@ -1430,10 +1418,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_ConfirmExitGame":
@@ -1444,10 +1430,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_ConfirmKnockDownOpponentCharacterCard":
@@ -1468,10 +1452,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Game_ConfirmDeleteSavedGame":
@@ -1487,10 +1469,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_DeckExported":
@@ -1504,10 +1484,8 @@
 						}
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_ConfirmDeleteDeck":
@@ -1526,10 +1504,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_ConfirmDeleteCard":
@@ -1562,10 +1538,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_ConfirmDeleteSelectedCharacterCards":
@@ -1590,10 +1564,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_ConfirmDeleteSelectedActionCards":
@@ -1618,10 +1590,8 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			case "Casket_ConfirmResetCasket":
@@ -1633,19 +1603,16 @@
 					case 3:
 						break;
 					default:
-						setTimeout(function() {
-							AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						}, 0);
-						break;
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						return;
 				}
 				break;
 			default:
-				setTimeout(function() {
-					AlertSystemError("The value of Interaction.DialogEvent \"" + Interaction.DialogEvent + "\" in function AnswerDialog is invalid.");
-				}, 0);
+				AlertSystemError("The value of Interaction.Dialog[Interaction.Dialog.length - 1].Event \"" + Interaction.Dialog[Interaction.Dialog.length - 1].Event + "\" in function AnswerDialog is invalid.");
 				return;
 		}
-		HideDialog();
+		Interaction.Dialog.splice(Interaction.Dialog.length - 1, 1);
+		ShowDialog("Previous");
 	}
 
 // Listeners
@@ -1666,12 +1633,10 @@
 			}
 		}
 		if(Hotkey.key == "F1") {
-			if(Game.Status.Operation != "Loading") { // Prevent wrongly dismissing "loading paused" dialogs.
-				ShowDialog("Subsystem_ConfirmGoToTutorial",
-					"Question",
-					"您按下了 F1 键。是否前往教程？",
-					"", "", "前往", "取消");
-			}
+			ShowDialog("Subsystem_ConfirmGoToTutorial",
+				"Question",
+				"您按下了 F1 键。是否前往教程？",
+				"", "", "前往", "取消");
 			if(System.Display.HotkeyIndicators == "ShowOnAnyKeyPress" || System.Display.HotkeyIndicators == "AlwaysShow") {
 				ShowHotkeyIndicators();
 			}
