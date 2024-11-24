@@ -16,7 +16,7 @@ GITCG Lite is a *Genshin Impact* Doujin game. It is lightweight and highly custo
 
 # 预览 ／ Preview
 
-![预览 Preview](/PREVIEW/Preview.png)
+![预览 Preview](/PREVIEW/预览%20Preview.png)
 
 # 立即游玩 ／ Play Now
 
