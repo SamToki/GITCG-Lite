@@ -565,11 +565,21 @@
 						Casket.Deck[0] = structuredClone(Casket.Deck[Looper2]);
 						Casket.Deck[Looper2] = structuredClone(Casket.Deck[Looper2 + 1]);
 						Casket.Deck[Looper2 + 1] = structuredClone(Casket.Deck[0]);
-						if(Casket.DeckSelection[1] == Looper2) {
-							Casket.DeckSelection[1]++;
+						switch(true) {
+							case Casket.DeckSelection[1] == Looper2:
+								Casket.DeckSelection[1]++;
+								break;
+							case Casket.DeckSelection[1] == Looper2 + 1:
+								Casket.DeckSelection[1]--;
+								break;
 						}
-						if(Casket.DeckSelection[2] == Looper2) {
-							Casket.DeckSelection[2]++;
+						switch(true) {
+							case Casket.DeckSelection[2] == Looper2:
+								Casket.DeckSelection[2]++;
+								break;
+							case Casket.DeckSelection[2] == Looper2 + 1:
+								Casket.DeckSelection[2]--;
+								break;
 						}
 					}
 				}
