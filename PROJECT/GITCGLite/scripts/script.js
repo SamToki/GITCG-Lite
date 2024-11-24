@@ -1121,7 +1121,7 @@
 					ShowDialog("Game_SavedGameImported",
 						"Question",
 						"已导入存档。是否立即载入该存档？",
-						"", "", "载入", "取消");
+						"", "", "载入", "不要载入");
 				} else {
 					ShowDialog("System_JSONStringInvalid",
 						"Error",
@@ -2150,7 +2150,7 @@ function AlertSystemError(Message) {
 		"抱歉，发生了系统错误。这可能是损坏了的用户数据导致的。是否前往用户数据？<br />" +
 		"<br />" +
 		"错误信息：" + Message,
-		"", "", "前往", "取消");
+		"", "", "前往", "关闭");
 }
 function AlertGameFunctionError(Message) {
 	console.error("● 游戏函数错误\n" +
