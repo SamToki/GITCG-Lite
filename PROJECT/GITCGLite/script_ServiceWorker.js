@@ -6,7 +6,7 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CacheName = "GITCGLite_v0.42";
+		const CacheName = "GITCGLite_v0.43";
 
 // Listeners
 	// Service worker (https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/#step-5---add-a-service-worker)
@@ -15,7 +15,7 @@
 			const CacheContent = await caches.open(CacheName);
 			CacheContent.addAll([
 				"index.html",
-				"icons/favicon.ico",
+				"images/Favicon.png",
 				"../styles/common.css",
 				"../styles/common_Dark.css",
 				"../styles/common_Genshin.css",
@@ -34,14 +34,14 @@
 				"scripts/script_Editor.js",
 				"scripts/script.js",
 				"manifests/manifest.json",
-				"../cursors/BTRAhoge.cur",
-				"../cursors/Genshin.cur",
-				"../cursors/GenshinFurina.cur",
-				"../cursors/GenshinNahida.cur",
 				"images/Icon.png",
 				"images/Icon_Large.png",
 				"images/Icon_Maskable.png",
 				"images/Preview.jpg",
+				"../cursors/BTRAhoge.cur",
+				"../cursors/Genshin.cur",
+				"../cursors/GenshinFurina.cur",
+				"../cursors/GenshinNahida.cur",
 				"images/Background.jpg",
 				"images/UnknownCard.jpg",
 				"images/UnknownSkillOrStatus.png",
