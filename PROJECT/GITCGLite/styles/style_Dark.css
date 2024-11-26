@@ -112,7 +112,7 @@
 
 							/* Spoken lines */
 							.SpokenLine {
-								filter: drop-shadow(0 0 1px #FFFFFF) drop-shadow(0 0 1px #FFFFFF);
+								filter: drop-shadow(0 0 0.5px #FFFFFF) drop-shadow(0 0 0.5px #FFFFFF) drop-shadow(0 0 0.5px #FFFFFF) drop-shadow(0 0 0.5px #FFFFFF);
 							}
 							.SpokenLine .Ctrl {
 								background-color: #202020;
