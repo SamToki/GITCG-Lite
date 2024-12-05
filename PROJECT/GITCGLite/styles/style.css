@@ -910,9 +910,6 @@
 					#Label_GameRound {
 						font-size: 1.50em;
 					}
-					#Icon_GameBusy {
-						width: 1.00em; height: 1.00em; min-width: 1.00em; min-height: 1.00em;
-					}
 
 					/* Action ctrl */
 					#Ctnr_GameActionCtrl {
