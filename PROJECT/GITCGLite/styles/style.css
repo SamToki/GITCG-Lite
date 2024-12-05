@@ -1276,8 +1276,9 @@
 						.InfoWindowTitle .Ctrl {
 							width: calc(100% - 50px); height: unset; min-height: 35px;
 						}
-						.InfoWindowTitle h4 {
+						.InfoWindowTitle h3 {
 							padding: 0; margin: 0 5px 0 0;
+							font-size: 1.25em;
 						}
 						.InfoWindowSection:has(.InfoWindowContent.Hidden) .Icon.CollapseCaret {
 							transform: rotate(-90deg);
