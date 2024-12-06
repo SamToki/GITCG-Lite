@@ -18,7 +18,7 @@
 /* General */
 	/* Basics */
 		/* Overall */
-		#Ctnr_BgImage {
+		#BgImage {
 			background-image: url(../images/Background.jpg);
 		}
 
@@ -350,11 +350,11 @@
 						.Card .CtrlGroup .Counter .Shape {
 							fill: #80C0FF;
 						}
-						#Ctnr_GameActionCardsIndependentHotkeyIndicator {
+						#GameActionCardsIndependentHotkeyIndicator {
 							position: absolute; bottom: 0; left: calc(50% - 236px); z-index: 3;
 							width: 472px; height: 0;
 						}
-						#Ctnr_GameActionCardsIndependentHotkeyIndicator .HotkeyIndicator {
+						#GameActionCardsIndependentHotkeyIndicator .HotkeyIndicator {
 							left: calc(50% - 25px);
 							width: 50px;
 						}
@@ -374,23 +374,23 @@
 					.Dice.OnRolling .CostIndicatorText {
 						font-size: 2.25em;
 					}
-					#Ctnr_GameDiceIndependentHotkeyIndicators {
+					#GameDiceIndependentHotkeyIndicators {
 						position: absolute; top: calc(50% + 120px); left: calc(100% - 230px); z-index: 4;
 						width: 230px; height: 120px;
 						pointer-events: none;
 					}
-					#Ctnr_GameDiceIndependentHotkeyIndicators.OnRolling {
+					#GameDiceIndependentHotkeyIndicators.OnRolling {
 						top: calc(50% - 5px); left: calc(50% - 135px); z-index: 33;
 						width: 270px; height: 140px;
 					}
-					#Ctnr_GameDiceIndependentHotkeyIndicators .CtrlGroup {
+					#GameDiceIndependentHotkeyIndicators .CtrlGroup {
 						width: 100%; height: 100%;
 						align-content: space-between;
 					}
-					#Ctnr_GameDiceIndependentHotkeyIndicators .Ctrl {
+					#GameDiceIndependentHotkeyIndicators .Ctrl {
 						width: 50px; height: 0;
 					}
-					#Ctnr_GameDiceIndependentHotkeyIndicators.OnRolling .Ctrl {
+					#GameDiceIndependentHotkeyIndicators.OnRolling .Ctrl {
 						width: 60px;
 					}
 
@@ -1103,22 +1103,22 @@
 					}
 
 					/* Starting hand */
-					#Ctnr_GameStartingHandCheckboxes {
+					#GameStartingHandCheckboxes {
 						top: calc(50% - 96px); left: calc(50% - 330px);
 						width: 660px; height: 0;
 					}
-					#Ctnr_GameStartingHandIndependentHotkeyIndicators {
+					#GameStartingHandIndependentHotkeyIndicators {
 						top: calc(50% + 96px); left: calc(50% - 330px);
 						width: 660px; height: 0;
 					}
-					#Ctnr_GameStartingHandCheckboxes .CtrlGroup, #Ctnr_GameStartingHandIndependentHotkeyIndicators .CtrlGroup {
+					#GameStartingHandCheckboxes .CtrlGroup, #GameStartingHandIndependentHotkeyIndicators .CtrlGroup {
 						width: 100%; height: 100%;
 						justify-content: center; align-content: space-between;
 					}
-					#Ctnr_GameStartingHandCheckboxes .Ctrl, #Ctnr_GameStartingHandIndependentHotkeyIndicators .Ctrl {
+					#GameStartingHandCheckboxes .Ctrl, #GameStartingHandIndependentHotkeyIndicators .Ctrl {
 						width: 112px; height: 0; margin: 0 10px;
 					}
-					#Ctnr_GameStartingHandCheckboxes .Checkbox {
+					#GameStartingHandCheckboxes .Checkbox {
 						position: absolute; top: -2px; right: -2px;
 					}
 
@@ -1541,7 +1541,7 @@
 								width: 20px; height: 20px;
 								font-size: 0.75em;
 							}
-							#Ctnr_GameActionCardsIndependentHotkeyIndicator {
+							#GameActionCardsIndependentHotkeyIndicator {
 								left: 0;
 								width: 282px;
 							}
@@ -1553,11 +1553,11 @@
 						.Dice .CostIndicatorText {
 							font-size: 1.15em;
 						}
-						#Ctnr_GameDiceIndependentHotkeyIndicators {
+						#GameDiceIndependentHotkeyIndicators {
 							top: calc(50% + 65px); left: calc(100% - 125px);
 							width: 30px; height: 275px;
 						}
-						#Ctnr_GameDiceIndependentHotkeyIndicators .Ctrl {
+						#GameDiceIndependentHotkeyIndicators .Ctrl {
 							width: 100%;
 						}
 
@@ -2090,15 +2090,15 @@
 						}
 
 						/* Starting hand */
-						#Ctnr_GameStartingHandCheckboxes {
+						#GameStartingHandCheckboxes {
 							top: calc(50% - 149px); left: calc(50% - 141px);
 							width: 282px; height: 154px;
 						}
-						#Ctnr_GameStartingHandIndependentHotkeyIndicators {
+						#GameStartingHandIndependentHotkeyIndicators {
 							top: calc(50% - 5px); left: calc(50% - 141px);
 							width: 282px; height: 154px;
 						}
-						#Ctnr_GameStartingHandCheckboxes .Ctrl, #Ctnr_GameStartingHandIndependentHotkeyIndicators .Ctrl {
+						#GameStartingHandCheckboxes .Ctrl, #GameStartingHandIndependentHotkeyIndicators .Ctrl {
 							width: 84px; margin: 0 5px;
 						}
 

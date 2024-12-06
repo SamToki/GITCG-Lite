@@ -2175,9 +2175,9 @@
 				}
 			}
 			if(Counter > 0) {
-				Show("Ctnr_GameActionCardsIndependentHotkeyIndicator");
+				Show("GameActionCardsIndependentHotkeyIndicator");
 			} else {
-				Fade("Ctnr_GameActionCardsIndependentHotkeyIndicator");
+				Fade("GameActionCardsIndependentHotkeyIndicator");
 			}
 
 			// Opponent
@@ -2318,9 +2318,9 @@
 				}
 			}
 			if(Game.Status.Player.Dice[1].Position == "OnRolling") {
-				AddClass("Ctnr_GameDiceIndependentHotkeyIndicators", "OnRolling");
+				AddClass("GameDiceIndependentHotkeyIndicators", "OnRolling");
 			} else {
-				RemoveClass("Ctnr_GameDiceIndependentHotkeyIndicators", "OnRolling");
+				RemoveClass("GameDiceIndependentHotkeyIndicators", "OnRolling");
 			}
 		}
 		function RefreshTable() {
@@ -2615,8 +2615,8 @@
 					// Show and fade operation panels
 					Show("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2650,8 +2650,8 @@
 					// Show and fade operation panels
 					Show("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2682,8 +2682,8 @@
 					// Fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2700,11 +2700,11 @@
 					Fade("OperationPanel_GameTitleScreen");
 					Show("OperationPanel_GameStartingHand");
 					if(Game.Status.Phase[2] == "Standby") {
-						Show("Ctnr_GameStartingHandCheckboxes");
-						Show("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+						Show("GameStartingHandCheckboxes");
+						Show("GameStartingHandIndependentHotkeyIndicators");
 					} else {
-						Fade("Ctnr_GameStartingHandCheckboxes");
-						Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+						Fade("GameStartingHandCheckboxes");
+						Fade("GameStartingHandIndependentHotkeyIndicators");
 					}
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
@@ -2741,8 +2741,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Show("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2828,8 +2828,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Show("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2883,8 +2883,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Show("OperationPanel_GameUseSkill");
@@ -2903,8 +2903,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2923,8 +2923,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2943,8 +2943,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
@@ -2963,8 +2963,8 @@
 					// Show and fade operation panels
 					Fade("OperationPanel_GameTitleScreen");
 					Fade("OperationPanel_GameStartingHand");
-					Fade("Ctnr_GameStartingHandCheckboxes");
-					Fade("Ctnr_GameStartingHandIndependentHotkeyIndicators");
+					Fade("GameStartingHandCheckboxes");
+					Fade("GameStartingHandIndependentHotkeyIndicators");
 					Fade("OperationPanel_GameRollPhase");
 					Fade("OperationPanel_GameSwitchCharacter");
 					Fade("OperationPanel_GameUseSkill");
