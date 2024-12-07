@@ -11,8 +11,8 @@ There are some unreadable content below.
 
 # 简介 ／ Description
 
-七圣召唤 Lite，「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。<br>
-GITCG Lite is a *Genshin Impact* Doujin game. It is lightweight and highly customizable compared to the original game.
+七圣召唤 Lite，「[原神](https://zh.moegirl.org.cn/原神)」同人游戏。相比原版「[七圣召唤](https://zh.moegirl.org.cn/七圣召唤)」，具有轻量化、高自由度等特点。<br>
+GITCG Lite is a [*Genshin Impact*](https://genshin-impact.fandom.com/wiki/Genshin_Impact) Doujin game. It is lightweight and highly customizable compared to the original game.
 
 # 预览 ／ Preview
 
