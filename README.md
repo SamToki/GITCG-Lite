@@ -16,7 +16,7 @@ GITCG Lite is a [*Genshin Impact*](https://genshin-impact.fandom.com/wiki/Genshi
 
 # 预览 ／ Preview
 
-![预览 Preview](/PREVIEW/预览%20Preview.png)
+![预览 Preview](/PREVIEW/预览%20Preview.jpg)
 
 # 立即游玩 ／ Play Now
 
