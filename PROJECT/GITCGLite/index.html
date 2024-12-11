@@ -4499,7 +4499,7 @@
 									<span>您的牌组</span>
 								</li>
 								<li class="Ctrl" id="Ctrl_GameYourDeckTextbox">
-									<input class="Textbox ShownAsLabel" id="Textbox_GameYourDeckName" type="text" placeholder="(玩家牌组未命名)" onchange="SetPlayerDeckName()" />
+									<input class="Textbox ShownAsLabel" id="Textbox_GameYourDeckName" type="text" onchange="SetPlayerDeckName()" placeholder="(玩家牌组未命名)" title="玩家牌组名称" />
 								</li>
 							</ul>
 							<ul class="CtrlGroup" id="CtrlGroup_GameOpponentDeck">
@@ -4507,7 +4507,7 @@
 									<span>对手牌组</span>
 								</li>
 								<li class="Ctrl" id="Ctrl_GameOpponentDeckTextbox">
-									<input class="Textbox ShownAsLabel" id="Textbox_GameOpponentDeckName" type="text" placeholder="(对手牌组未命名)" onchange="SetOpponentDeckName()" />
+									<input class="Textbox ShownAsLabel" id="Textbox_GameOpponentDeckName" type="text" onchange="SetOpponentDeckName()" placeholder="(对手牌组未命名)" title="对手牌组名称" />
 								</li>
 							</ul>
 							<span class="Faded" id="Label_Versus" inert="true">VS</span>
@@ -5865,7 +5865,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_CasketDecksFilter">
 										<span>筛选：</span>
-										<input class="Textbox" id="Textbox_CasketDecksFilter" type="text" placeholder="名称/描述/角色" oninput="FilterCasket()" />
+										<input class="Textbox" id="Textbox_CasketDecksFilter" type="text" oninput="FilterCasket()" placeholder="名称/描述/角色" title="名称/描述/角色" />
 									</label>
 								</li>
 								<li class="Ctrl ListHeader">
@@ -5908,7 +5908,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_CasketCharacterCardsFilter">
 										<span>筛选：</span>
-										<input class="Textbox" id="Textbox_CasketCharacterCardsFilter" type="text" placeholder="名称/ID/各种属性" oninput="FilterCasket()" />
+										<input class="Textbox" id="Textbox_CasketCharacterCardsFilter" type="text" oninput="FilterCasket()" placeholder="名称/ID/各种属性" title="名称/ID/各种属性" />
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
@@ -5947,7 +5947,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_CasketActionCardsFilter">
 										<span>筛选：</span>
-										<input class="Textbox" id="Textbox_CasketActionCardsFilter" type="text" placeholder="名称/ID/各种属性" oninput="FilterCasket()" />
+										<input class="Textbox" id="Textbox_CasketActionCardsFilter" type="text" oninput="FilterCasket()" placeholder="名称/ID/各种属性" title="名称/ID/各种属性" />
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
@@ -5992,19 +5992,19 @@
 								<li class="Ctrl">
 									<label for="Textbox_CasketDeckPropertiesDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_CasketDeckPropertiesDescription" placeholder="简要介绍牌组的特色" onchange="SetDeckDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_CasketDeckPropertiesDescription" onchange="SetDeckDescription()" placeholder="简要介绍牌组的特色" title="简要介绍牌组的特色"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_CasketDeckPropertiesBgImage">
 										<span>背景图像：</span>
-										<input class="Textbox" id="Textbox_CasketDeckPropertiesBgImage" type="text" placeholder="粘贴 URL" onclick="SelectText('Textbox_CasketDeckPropertiesBgImage')" onchange="SetDeckBgImage()" />
+										<input class="Textbox" id="Textbox_CasketDeckPropertiesBgImage" type="text" onclick="SelectText('Textbox_CasketDeckPropertiesBgImage')" onchange="SetDeckBgImage()" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_CasketDeckPropertiesCardBackImage">
 										<span>牌背图像：</span>
-										<input class="Textbox" id="Textbox_CasketDeckPropertiesCardBackImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_CasketDeckPropertiesCardBackImage')" onchange="SetDeckCardBackImage()" />
+										<input class="Textbox" id="Textbox_CasketDeckPropertiesCardBackImage" type="text" onclick="SelectText('Textbox_CasketDeckPropertiesCardBackImage')" onchange="SetDeckCardBackImage()" placeholder="粘贴 URL；比例 7:12" title="粘贴 URL；比例 7:12" />
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6022,7 +6022,7 @@
 							<p>使用「导入」功能前请先阅读<a href="#Item_HelpDisclaimer" onclick="ShowIAmHere('Item_HelpDisclaimer')">免责声明</a>。可导入牌组、牌组库、卡牌、卡牌库或整个牌盒。支持批量导入，每行一个对象。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。您可向牌组的发布者索要卡牌。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl" id="Ctrl_CasketImport">
-									<textarea class="Textbox" id="Textbox_CasketImport" placeholder="粘贴 JSON 字符串"></textarea>
+									<textarea class="Textbox" id="Textbox_CasketImport" placeholder="粘贴 JSON 字符串" title="粘贴 JSON 字符串"></textarea>
 								</li>
 								<li class="Ctrl" id="Ctrl_CasketImport2">
 									<button class="Button" onclick="ImportCasketObjects()">导入</button>
@@ -6064,7 +6064,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorOpen">
 										<span>打开：</span>
-										<input class="Textbox" id="Textbox_EditorOpen" type="text" placeholder="卡牌 ID (区分大小写)" list="Datalist_CardIDList" onchange="RefreshEditor()" />
+										<input class="Textbox" id="Textbox_EditorOpen" type="text" list="Datalist_CardIDList" onchange="RefreshEditor()" placeholder="卡牌 ID (区分大小写)" title="卡牌 ID (区分大小写)" />
 										<datalist id="Datalist_CardIDList">
 											<!-- Content will be inserted using script. -->
 										</datalist>
@@ -6096,19 +6096,19 @@
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesID">
 										<span>ID：</span>
-										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesID" type="text" placeholder="例: Keqing" onchange="SetBasicPropertiesID()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesID" type="text" onchange="SetBasicPropertiesID()" placeholder="例：Keqing" title="例：Keqing" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesName" type="text" placeholder="例: 刻晴" onchange="SetBasicPropertiesName()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesName" type="text" onchange="SetBasicPropertiesName()" placeholder="例：刻晴" title="例：刻晴" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorBasicPropertiesImage')" onchange="SetBasicPropertiesImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorBasicPropertiesImage" type="text" onclick="SelectText('Textbox_EditorBasicPropertiesImage')" onchange="SetBasicPropertiesImage()" placeholder="粘贴 URL；比例 7:12" title="粘贴 URL；比例 7:12" />
 									</label>
 								</li>
 								<img class="CardImage" id="Image_EditorBasicProperties" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="卡牌图像" />
@@ -6128,25 +6128,25 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorBasicPropertiesStatusQuantity">
 										<span>状态数量：</span>
-										<input class="Textbox Width120" id="Textbox_EditorBasicPropertiesStatusQuantity" type="number" min="0" max="3" step="1" value="0" placeholder="0~3" onclick="SelectText('Textbox_EditorBasicPropertiesStatusQuantity')" onchange="SetBasicPropertiesStatusQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorBasicPropertiesStatusQuantity" type="number" min="0" max="3" step="1" value="0" onclick="SelectText('Textbox_EditorBasicPropertiesStatusQuantity')" onchange="SetBasicPropertiesStatusQuantity()" placeholder="0~3" title="0~3" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorBasicPropertiesKeywords">
 										<span>关键词：</span>
-										<input class="Textbox" id="Textbox_EditorBasicPropertiesKeywords" type="text" placeholder="例: 角色, 原神, 璃月, ..." onchange="SetBasicPropertiesKeywords()" />
+										<input class="Textbox" id="Textbox_EditorBasicPropertiesKeywords" type="text" onchange="SetBasicPropertiesKeywords()" placeholder="例：璃月, 紫发, 粉瞳, ..." title="例：璃月, 紫发, 粉瞳, ..." />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorBasicPropertiesDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorBasicPropertiesDescription" placeholder="出牌条件/执行内容/故事" onchange="SetBasicPropertiesDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorBasicPropertiesDescription" onchange="SetBasicPropertiesDescription()" placeholder="出牌条件/执行内容/故事" title="出牌条件/执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorBasicPropertiesVersion">
 										<span>版本：</span>
-										<input class="Textbox Width120" id="Textbox_EditorBasicPropertiesVersion" type="number" min="0" step="0.01" value="1.00" placeholder="x.xx" onclick="SelectText('Textbox_EditorBasicPropertiesVersion')" onchange="SetBasicPropertiesVersion()" />
+										<input class="Textbox Width120" id="Textbox_EditorBasicPropertiesVersion" type="number" min="0" step="0.01" value="1.00" onclick="SelectText('Textbox_EditorBasicPropertiesVersion')" onchange="SetBasicPropertiesVersion()" placeholder="x.xx" title="x.xx" />
 									</label>
 								</li>
 							</ul>
@@ -6160,13 +6160,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorCreditsAuthor">
 										<span>作者：</span>
-										<input class="Textbox" id="Textbox_EditorCreditsAuthor" type="text" placeholder="您的昵称" onchange="SetCreditsAuthor()" />
+										<input class="Textbox" id="Textbox_EditorCreditsAuthor" type="text" onchange="SetCreditsAuthor()" placeholder="您的昵称" title="您的昵称" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorCreditsContact">
 										<span>联系方式：</span>
-										<input class="Textbox" id="Textbox_EditorCreditsContact" type="text" placeholder="网址, 社交媒体等" onchange="SetCreditsContact()" />
+										<input class="Textbox" id="Textbox_EditorCreditsContact" type="text" onchange="SetCreditsContact()" placeholder="网址, 社交媒体等" title="网址, 社交媒体等" />
 									</label>
 								</li>
 							</ul>
@@ -6204,13 +6204,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterCardPropertiesMaxHP">
 										<span>最大血量：</span>
-										<input class="Textbox Width120" id="Textbox_EditorCharacterCardPropertiesMaxHP" type="number" min="10" max="300" step="10" value="100" title="" placeholder="10~300" onclick="SelectText('Textbox_EditorCharacterCardPropertiesMaxHP')" onchange="SetCharacterCardPropertiesMaxHP()" />
+										<input class="Textbox Width120" id="Textbox_EditorCharacterCardPropertiesMaxHP" type="number" min="10" max="300" step="10" value="100" onclick="SelectText('Textbox_EditorCharacterCardPropertiesMaxHP')" onchange="SetCharacterCardPropertiesMaxHP()" placeholder="10~300" title="10~300" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterCardPropertiesMaxEnergy">
 										<span>最大能量：</span>
-										<input class="Textbox Width120" id="Textbox_EditorCharacterCardPropertiesMaxEnergy" type="number" min="1" max="5" step="1" value="3" placeholder="1~5" onclick="SelectText('Textbox_EditorCharacterCardPropertiesMaxEnergy')" onchange="SetCharacterCardPropertiesMaxEnergy()" />
+										<input class="Textbox Width120" id="Textbox_EditorCharacterCardPropertiesMaxEnergy" type="number" min="1" max="5" step="1" value="3" onclick="SelectText('Textbox_EditorCharacterCardPropertiesMaxEnergy')" onchange="SetCharacterCardPropertiesMaxEnergy()" placeholder="1~5" title="1~5" />
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6288,42 +6288,42 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackName">
 										<span>名称：</span>
-										<input class="Textbox" id="Textbox_EditorNormalAttackName" type="text" placeholder="例: 云来剑法" onchange="SetNormalAttackName()" />
+										<input class="Textbox" id="Textbox_EditorNormalAttackName" type="text" onchange="SetNormalAttackName()" placeholder="例：云来剑法" title="例：云来剑法" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostQuantity" type="number" min="0" max="8" step="1" value="1" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostQuantity')" onchange="SetNormalAttackCostQuantity()" />
+										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostQuantity" type="number" min="0" max="8" step="1" value="1" onclick="SelectText('Textbox_EditorNormalAttackCostQuantity')" onchange="SetNormalAttackCostQuantity()" placeholder="0~8" title="0~8" />
 										<span id="Label_EditorNormalAttackCostType">元素类型 +</span>
-										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostUnaligned" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorNormalAttackCostUnaligned')" onchange="SetNormalAttackCostUnaligned()" />
+										<input class="Textbox Width100" id="Textbox_EditorNormalAttackCostUnaligned" type="number" min="0" max="8" step="1" value="2" onclick="SelectText('Textbox_EditorNormalAttackCostUnaligned')" onchange="SetNormalAttackCostUnaligned()" placeholder="0~8" title="0~8" />
 										<span>任意</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorNormalAttackDescription" placeholder="执行内容/故事" onchange="SetNormalAttackDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorNormalAttackDescription" onchange="SetNormalAttackDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackExecution" placeholder="编写 JavaScript 程序" onchange="SetNormalAttackExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackExecution" onchange="SetNormalAttackExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackChangedAttackExecution">
 										<span>重击时<br />
 											替代执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackChangedAttackExecution" placeholder="编写 JavaScript 程序;&#10;留空则表示无此机制" onchange="SetNormalAttackChangedAttackExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackChangedAttackExecution" onchange="SetNormalAttackChangedAttackExecution()" placeholder="编写 JavaScript 程序；&#10;留空则表示无此机制" title="编写 JavaScript 程序；&#10;留空则表示无此机制"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackPlungingAttackExecution">
 										<span>下落攻击时<br />
 											替代执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackPlungingAttackExecution" placeholder="编写 JavaScript 程序;&#10;留空则表示无此机制" onchange="SetNormalAttackPlungingAttackExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorNormalAttackPlungingAttackExecution" onchange="SetNormalAttackPlungingAttackExecution()" placeholder="编写 JavaScript 程序；&#10;留空则表示无此机制" title="编写 JavaScript 程序；&#10;留空则表示无此机制"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6336,33 +6336,33 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorElementalSkillName" type="text" placeholder="例: 星斗归位" onchange="SetElementalSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalSkillName" type="text" onchange="SetElementalSkillName()" placeholder="例：星斗归位" title="例：星斗归位" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalSkillImage')" onchange="SetElementalSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalSkillImage" type="text" onclick="SelectText('Textbox_EditorElementalSkillImage')" onchange="SetElementalSkillImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素战技图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalSkillCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorElementalSkillCostQuantity')" onchange="SetElementalSkillCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="3" onclick="SelectText('Textbox_EditorElementalSkillCostQuantity')" onchange="SetElementalSkillCostQuantity()" placeholder="0~8" title="0~8" />
 										<span id="Label_EditorElementalSkillCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalSkillDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorElementalSkillDescription" placeholder="执行内容/故事" onchange="SetElementalSkillDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorElementalSkillDescription" onchange="SetElementalSkillDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalSkillExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorElementalSkillExecution" placeholder="编写 JavaScript 程序" onchange="SetElementalSkillExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorElementalSkillExecution" onchange="SetElementalSkillExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6375,33 +6375,33 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorSecondaryElementalSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillName" type="text" placeholder="例: 所闻遍计・真如" onchange="SetSecondaryElementalSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillName" type="text" onchange="SetSecondaryElementalSkillName()" placeholder="例：所闻遍计・真如" title="例：所闻遍计・真如" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorSecondaryElementalSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorSecondaryElementalSkillImage')" onchange="SetSecondaryElementalSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorSecondaryElementalSkillImage" type="text" onclick="SelectText('Textbox_EditorSecondaryElementalSkillImage')" onchange="SetSecondaryElementalSkillImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorSecondaryElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="第二元素战技图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorSecondaryElementalSkillCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorSecondaryElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="5" placeholder="0~8" onclick="SelectText('Textbox_EditorSecondaryElementalSkillCostQuantity')" onchange="SetSecondaryElementalSkillCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorSecondaryElementalSkillCostQuantity" type="number" min="0" max="8" step="1" value="5" onclick="SelectText('Textbox_EditorSecondaryElementalSkillCostQuantity')" onchange="SetSecondaryElementalSkillCostQuantity()" placeholder="0~8" title="0~8" />
 										<span id="Label_EditorSecondaryElementalSkillCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSecondaryElementalSkillDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorSecondaryElementalSkillDescription" placeholder="执行内容/故事" onchange="SetSecondaryElementalSkillDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorSecondaryElementalSkillDescription" onchange="SetSecondaryElementalSkillDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSecondaryElementalSkillExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorSecondaryElementalSkillExecution" placeholder="编写 JavaScript 程序" onchange="SetSecondaryElementalSkillExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorSecondaryElementalSkillExecution" onchange="SetSecondaryElementalSkillExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6414,33 +6414,33 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalBurstName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorElementalBurstName" type="text" placeholder="例: 天街巡游" onchange="SetElementalBurstName()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalBurstName" type="text" onchange="SetElementalBurstName()" placeholder="例：天街巡游" title="例：天街巡游" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalBurstImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorElementalBurstImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorElementalBurstImage')" onchange="SetElementalBurstImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorElementalBurstImage" type="text" onclick="SelectText('Textbox_EditorElementalBurstImage')" onchange="SetElementalBurstImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorElementalBurst" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素爆发图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalBurstCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorElementalBurstCostQuantity" type="number" min="0" max="8" step="1" value="4" placeholder="0~8" onclick="SelectText('Textbox_EditorElementalBurstCostQuantity')" onchange="SetElementalBurstCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorElementalBurstCostQuantity" type="number" min="0" max="8" step="1" value="4" onclick="SelectText('Textbox_EditorElementalBurstCostQuantity')" onchange="SetElementalBurstCostQuantity()" placeholder="0~8" title="0~8" />
 										<span id="Label_EditorElementalBurstCostType">元素类型</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalBurstDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorElementalBurstDescription" placeholder="执行内容/故事" onchange="SetElementalBurstDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorElementalBurstDescription" onchange="SetElementalBurstDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorElementalBurstExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorElementalBurstExecution" placeholder="编写 JavaScript 程序" onchange="SetElementalBurstExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorElementalBurstExecution" onchange="SetElementalBurstExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6459,20 +6459,20 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorIntroSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorIntroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorIntroSkillImage')" onchange="SetIntroSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorIntroSkillImage" type="text" onclick="SelectText('Textbox_EditorIntroSkillImage')" onchange="SetIntroSkillImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorIntroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="进场技能图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorIntroSkillDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorIntroSkillDescription" placeholder="执行内容/故事" onchange="SetIntroSkillDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorIntroSkillDescription" onchange="SetIntroSkillDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorIntroSkillExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorIntroSkillExecution" placeholder="编写 JavaScript 程序" onchange="SetIntroSkillExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorIntroSkillExecution" onchange="SetIntroSkillExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6491,20 +6491,20 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorOutroSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorOutroSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorOutroSkillImage')" onchange="SetOutroSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorOutroSkillImage" type="text" onclick="SelectText('Textbox_EditorOutroSkillImage')" onchange="SetOutroSkillImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorOutroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="退场技能图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorOutroSkillDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorOutroSkillDescription" placeholder="执行内容/故事" onchange="SetOutroSkillDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorOutroSkillDescription" onchange="SetOutroSkillDescription()" placeholder="执行内容/故事" title="执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorOutroSkillExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorOutroSkillExecution" placeholder="编写 JavaScript 程序" onchange="SetOutroSkillExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorOutroSkillExecution" onchange="SetOutroSkillExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6517,32 +6517,32 @@
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorPassiveSkillName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillName" type="text" onchange="SetPassiveSkillName()" />
+										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillName" type="text" onchange="SetPassiveSkillName()" placeholder="例：玉衡之贵" title="例：玉衡之贵" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorPassiveSkillImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillImage" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorPassiveSkillImage')" onchange="SetPassiveSkillImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorPassiveSkillImage" type="text" onclick="SelectText('Textbox_EditorPassiveSkillImage')" onchange="SetPassiveSkillImage()" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="SkillImage" id="Image_EditorPassiveSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="被动技能图像" />
 								<li class="Ctrl">
 									<label for="Textbox_EditorPassiveSkillDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorPassiveSkillDescription" placeholder="触发器/执行内容/故事" onchange="SetPassiveSkillDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorPassiveSkillDescription" onchange="SetPassiveSkillDescription()" placeholder="触发器/执行内容/故事" title="触发器/执行内容/故事"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorPassiveSkillTrigger">
 										<span>触发器：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorPassiveSkillTrigger" placeholder="编写 JavaScript 程序;&#10;若满足请返回 true,&#10;否则返回 false" onchange="SetPassiveSkillTrigger()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorPassiveSkillTrigger" onchange="SetPassiveSkillTrigger()" placeholder="编写 JavaScript 程序；&#10;若满足请返回 true，否则返回 false" title="编写 JavaScript 程序；&#10;若满足请返回 true，否则返回 false"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorPassiveSkillExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorPassiveSkillExecution" placeholder="编写 JavaScript 程序" onchange="SetPassiveSkillExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorPassiveSkillExecution" onchange="SetPassiveSkillExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6555,13 +6555,13 @@
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorAffiliatedCardName">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardName" type="text" placeholder="例: 雷楔" onchange="SetAffiliatedCardName()" />
+										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardName" type="text" onchange="SetAffiliatedCardName()" placeholder="例：雷楔" title="例：雷楔" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorAffiliatedCardImage">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardImage" type="text" placeholder="粘贴 URL; 比例 7:12" onclick="SelectText('Textbox_EditorAffiliatedCardImage')" onchange="SetAffiliatedCardImage()" />
+										<input class="Textbox Width200" id="Textbox_EditorAffiliatedCardImage" type="text" onclick="SelectText('Textbox_EditorAffiliatedCardImage')" onchange="SetAffiliatedCardImage()" placeholder="粘贴 URL；比例 7:12" title="粘贴 URL；比例 7:12" />
 									</label>
 								</li>
 								<img class="CardImage" id="Image_EditorAffiliatedCardImage" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="附属卡牌图像" />
@@ -6577,7 +6577,7 @@
 								<li class="Ctrl Hidden" id="Ctrl_EditorAffiliatedCardCost" inert="true"> <!-- Only for event cards. -->
 									<label for="Textbox_EditorAffiliatedCardCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorAffiliatedCardCostQuantity')" onchange="SetAffiliatedCardCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardCostQuantity" type="number" min="0" max="8" step="1" value="2" onclick="SelectText('Textbox_EditorAffiliatedCardCostQuantity')" onchange="SetAffiliatedCardCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width120" id="Combobox_EditorAffiliatedCardCostType" onchange="SetAffiliatedCardCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6618,7 +6618,7 @@
 								<li class="Ctrl" id="Ctrl_EditorAffiliatedCardDuration"> <!-- Only for summons cards. -->
 									<label for="Textbox_EditorAffiliatedCardDurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorAffiliatedCardDurationQuantity')" onchange="SetAffiliatedCardDurationQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorAffiliatedCardDurationQuantity" type="number" min="1" max="9" step="1" value="3" onclick="SelectText('Textbox_EditorAffiliatedCardDurationQuantity')" onchange="SetAffiliatedCardDurationQuantity()" placeholder="1~9" title="1~9" />
 										<select class="Combobox Width120" id="Combobox_EditorAffiliatedCardDurationType" onchange="SetAffiliatedCardDurationType()">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
@@ -6634,19 +6634,19 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorAffiliatedCardDescription">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorAffiliatedCardDescription" placeholder="出牌条件/执行内容" onchange="SetAffiliatedCardDescription()"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorAffiliatedCardDescription" onchange="SetAffiliatedCardDescription()" placeholder="出牌条件/执行内容" title="出牌条件/执行内容"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl Hidden" id="Ctrl_EditorAffiliatedCardRequirement" inert="true"> <!-- Only for event cards. -->
 									<label for="Textbox_EditorAffiliatedCardRequirement">
 										<span>出牌条件：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorAffiliatedCardRequirement" placeholder="编写 JavaScript 程序;&#10;若满足请返回 true,&#10;否则返回 false,&#10;并提示不满足的原因" onchange="SetAffiliatedCardRequirement()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorAffiliatedCardRequirement" onchange="SetAffiliatedCardRequirement()" placeholder="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因" title="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorAffiliatedCardExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorAffiliatedCardExecution" placeholder="编写 JavaScript 程序" onchange="SetAffiliatedCardExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorAffiliatedCardExecution" onchange="SetAffiliatedCardExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6659,7 +6659,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorTalentCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostQuantity')" onchange="SetTalentCardPropertiesCostQuantity()" />
+										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostQuantity')" onchange="SetTalentCardPropertiesCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width80" id="Combobox_EditorTalentCardPropertiesCostType" onchange="SetTalentCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6672,14 +6672,14 @@
 											<option value="Geo">岩</option>
 										</select>
 										<span id="Label_EditorTalentCardPropertiesCost1">+</span>
-										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostUnaligned" type="number" min="0" max="8" step="1" value="0" placeholder="0~8" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostUnaligned')" onchange="SetTalentCardPropertiesCostUnaligned()" />
+										<input class="Textbox Width80" id="Textbox_EditorTalentCardPropertiesCostUnaligned" type="number" min="0" max="8" step="1" value="0" onclick="SelectText('Textbox_EditorTalentCardPropertiesCostUnaligned')" onchange="SetTalentCardPropertiesCostUnaligned()" placeholder="0~8" title="0~8" />
 										<span id="Label_EditorTalentCardPropertiesCost2">任意</span>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID">
 										<span>对应角色牌 ID：</span>
-										<input class="Textbox Width200" id="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID" type="text" placeholder="例: Keqing" onchange="SetTalentCardPropertiesOrientedCharacterCardID()" />
+										<input class="Textbox Width200" id="Textbox_EditorTalentCardPropertiesOrientedCharacterCardID" type="text" onchange="SetTalentCardPropertiesOrientedCharacterCardID()" placeholder="例：Keqing" title="例：Keqing" />
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -6704,7 +6704,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorWeaponCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorWeaponCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" placeholder="0~8" onclick="SelectText('Textbox_EditorWeaponCardPropertiesCostQuantity')" onchange="SetWeaponCardPropertiesCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorWeaponCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="3" onclick="SelectText('Textbox_EditorWeaponCardPropertiesCostQuantity')" onchange="SetWeaponCardPropertiesCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width120" id="Combobox_EditorWeaponCardPropertiesCostType" onchange="SetWeaponCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6733,7 +6733,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorWeaponCardPropertiesExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorWeaponCardPropertiesExecution" placeholder="编写 JavaScript 程序" onchange="SetWeaponCardPropertiesExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorWeaponCardPropertiesExecution" onchange="SetWeaponCardPropertiesExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6746,7 +6746,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorArtifactCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorArtifactCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorArtifactCardPropertiesCostQuantity')" onchange="SetArtifactCardPropertiesCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorArtifactCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" onclick="SelectText('Textbox_EditorArtifactCardPropertiesCostQuantity')" onchange="SetArtifactCardPropertiesCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width120" id="Combobox_EditorArtifactCardPropertiesCostType" onchange="SetArtifactCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6763,7 +6763,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorArtifactCardPropertiesExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorArtifactCardPropertiesExecution" placeholder="编写 JavaScript 程序" onchange="SetArtifactCardPropertiesExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorArtifactCardPropertiesExecution" onchange="SetArtifactCardPropertiesExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6776,7 +6776,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorSupportCardPropertiesCostQuantity')" onchange="SetSupportCardPropertiesCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" onclick="SelectText('Textbox_EditorSupportCardPropertiesCostQuantity')" onchange="SetSupportCardPropertiesCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width120" id="Combobox_EditorSupportCardPropertiesCostType" onchange="SetSupportCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6793,7 +6793,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesDurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesDurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorSupportCardPropertiesDurationQuantity')" onchange="SetSupportCardPropertiesDurationQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorSupportCardPropertiesDurationQuantity" type="number" min="1" max="9" step="1" value="3" onclick="SelectText('Textbox_EditorSupportCardPropertiesDurationQuantity')" onchange="SetSupportCardPropertiesDurationQuantity()" placeholder="1~9" title="1~9" />
 										<select class="Combobox Width120" id="Combobox_EditorSupportCardPropertiesDurationType" onchange="SetSupportCardPropertiesDurationType()">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
@@ -6809,13 +6809,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesRequirement">
 										<span>出牌条件：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorSupportCardPropertiesRequirement" placeholder="编写 JavaScript 程序;&#10;若满足请返回 true,&#10;否则返回 false,&#10;并提示不满足的原因" onchange="SetSupportCardPropertiesRequirement()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorSupportCardPropertiesRequirement" onchange="SetSupportCardPropertiesRequirement()" placeholder="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因" title="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorSupportCardPropertiesExecution" placeholder="编写 JavaScript 程序" onchange="SetSupportCardPropertiesExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorSupportCardPropertiesExecution" onchange="SetSupportCardPropertiesExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6828,7 +6828,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorEventCardPropertiesCostQuantity">
 										<span>花费：</span>
-										<input class="Textbox Width120" id="Textbox_EditorEventCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" placeholder="0~8" onclick="SelectText('Textbox_EditorEventCardPropertiesCostQuantity')" onchange="SetEventCardPropertiesCostQuantity()" />
+										<input class="Textbox Width120" id="Textbox_EditorEventCardPropertiesCostQuantity" type="number" min="0" max="8" step="1" value="2" onclick="SelectText('Textbox_EditorEventCardPropertiesCostQuantity')" onchange="SetEventCardPropertiesCostQuantity()" placeholder="0~8" title="0~8" />
 										<select class="Combobox Width120" id="Combobox_EditorEventCardPropertiesCostType" onchange="SetEventCardPropertiesCostType()">
 											<option value="Matching" selected>相同</option>
 											<option value="Unaligned">任意</option>
@@ -6869,13 +6869,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorEventCardPropertiesRequirement">
 										<span>出牌条件：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorEventCardPropertiesRequirement" placeholder="编写 JavaScript 程序;&#10;若满足请返回 true,&#10;否则返回 false,&#10;并提示不满足的原因" onchange="SetEventCardPropertiesRequirement()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorEventCardPropertiesRequirement" onchange="SetEventCardPropertiesRequirement()" placeholder="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因" title="编写 JavaScript 程序；&#10;若满足请返回 true，&#10;否则返回 false 并提示原因"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorEventCardPropertiesExecution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorEventCardPropertiesExecution" placeholder="编写 JavaScript 程序" onchange="SetEventCardPropertiesExecution()"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorEventCardPropertiesExecution" onchange="SetEventCardPropertiesExecution()" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6888,13 +6888,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus1Name">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus1Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(1)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus1Name" type="text" onchange="SetStatusName(1)" placeholder="例：雷元素附魔" title="例：雷元素附魔" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus1Image">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus1Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus1Image')" onchange="SetStatusImage(1)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus1Image" type="text" onclick="SelectText('Textbox_EditorStatus1Image')" onchange="SetStatusImage(1)" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus1Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态1图像" />
@@ -6910,7 +6910,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus1DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width120" id="Textbox_EditorStatus1DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus1DurationQuantity')" onchange="SetStatusDurationQuantity(1)" />
+										<input class="Textbox Width120" id="Textbox_EditorStatus1DurationQuantity" type="number" min="1" max="9" step="1" value="3" onclick="SelectText('Textbox_EditorStatus1DurationQuantity')" onchange="SetStatusDurationQuantity(1)" placeholder="1~9" title="1~9" />
 										<select class="Combobox Width120" id="Combobox_EditorStatus1DurationType" onchange="SetStatusDurationType(1)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
@@ -6920,13 +6920,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus1Description">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorStatus1Description" placeholder="执行内容" onchange="SetStatusDescription(1)"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorStatus1Description" onchange="SetStatusDescription(1)" placeholder="执行内容" title="执行内容"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus1Execution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorStatus1Execution" placeholder="编写 JavaScript 程序" onchange="SetStatusExecution(1)"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorStatus1Execution" onchange="SetStatusExecution(1)" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6939,13 +6939,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus2Name">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus2Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(2)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus2Name" type="text" onchange="SetStatusName(2)" placeholder="例：雷元素附魔" title="例：雷元素附魔" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus2Image">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus2Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus2Image')" onchange="SetStatusImage(2)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus2Image" type="text" onclick="SelectText('Textbox_EditorStatus2Image')" onchange="SetStatusImage(2)" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus2Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态2图像" />
@@ -6961,7 +6961,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus2DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width120" id="Textbox_EditorStatus2DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus2DurationQuantity')" onchange="SetStatusDurationQuantity(2)" />
+										<input class="Textbox Width120" id="Textbox_EditorStatus2DurationQuantity" type="number" min="1" max="9" step="1" value="3" onclick="SelectText('Textbox_EditorStatus2DurationQuantity')" onchange="SetStatusDurationQuantity(2)" placeholder="1~9" title="1~9" />
 										<select class="Combobox Width120" id="Combobox_EditorStatus2DurationType" onchange="SetStatusDurationType(2)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
@@ -6971,13 +6971,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus2Description">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorStatus2Description" placeholder="执行内容" onchange="SetStatusDescription(2)"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorStatus2Description" onchange="SetStatusDescription(2)" placeholder="执行内容" title="执行内容"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus2Execution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorStatus2Execution" placeholder="编写 JavaScript 程序" onchange="SetStatusExecution(2)"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorStatus2Execution" onchange="SetStatusExecution(2)" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -6990,13 +6990,13 @@
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus3Name">
 										<span>名称：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus3Name" type="text" placeholder="例: 雷元素附魔" onchange="SetStatusName(3)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus3Name" type="text" onchange="SetStatusName(3)" placeholder="例：雷元素附魔" title="例：雷元素附魔" />
 									</label>
 								</li>
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus3Image">
 										<span>图像：</span>
-										<input class="Textbox Width200" id="Textbox_EditorStatus3Image" type="text" placeholder="粘贴 URL; 比例 1:1" onclick="SelectText('Textbox_EditorStatus3Image')" onchange="SetStatusImage(3)" />
+										<input class="Textbox Width200" id="Textbox_EditorStatus3Image" type="text" onclick="SelectText('Textbox_EditorStatus3Image')" onchange="SetStatusImage(3)" placeholder="粘贴 URL；比例 1:1" title="粘贴 URL；比例 1:1" />
 									</label>
 								</li>
 								<img class="StatusImage" id="Image_EditorStatus3Image" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态3图像" />
@@ -7012,7 +7012,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus3DurationQuantity">
 										<span>可用：</span>
-										<input class="Textbox Width120" id="Textbox_EditorStatus3DurationQuantity" type="number" min="1" max="9" step="1" value="3" placeholder="1~9" onclick="SelectText('Textbox_EditorStatus3DurationQuantity')" onchange="SetStatusDurationQuantity(3)" />
+										<input class="Textbox Width120" id="Textbox_EditorStatus3DurationQuantity" type="number" min="1" max="9" step="1" value="3" onclick="SelectText('Textbox_EditorStatus3DurationQuantity')" onchange="SetStatusDurationQuantity(3)" placeholder="1~9" title="1~9" />
 										<select class="Combobox Width120" id="Combobox_EditorStatus3DurationType" onchange="SetStatusDurationType(3)">
 											<option value="Usages" selected>次</option>
 											<option value="Rounds">轮</option>
@@ -7022,13 +7022,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus3Description">
 										<span>描述：</span>
-										<textarea class="Textbox" id="Textbox_EditorStatus3Description" placeholder="执行内容" onchange="SetStatusDescription(3)"></textarea>
+										<textarea class="Textbox" id="Textbox_EditorStatus3Description" onchange="SetStatusDescription(3)" placeholder="执行内容" title="执行内容"></textarea>
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorStatus3Execution">
 										<span>执行：</span>
-										<textarea class="Textbox Code" id="Textbox_EditorStatus3Execution" placeholder="编写 JavaScript 程序" onchange="SetStatusExecution(3)"></textarea>
+										<textarea class="Textbox Code" id="Textbox_EditorStatus3Execution" onchange="SetStatusExecution(3)" placeholder="编写 JavaScript 程序" title="编写 JavaScript 程序"></textarea>
 									</label>
 								</li>
 							</ul>
@@ -7041,13 +7041,13 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileFrom">
 										<span>来自：</span>
-										<input class="Textbox" id="Textbox_EditorCharacterProfileFrom" type="text" placeholder="动画/游戏/其他作品名称" onchange="SetCharacterProfileFrom()" />
+										<input class="Textbox" id="Textbox_EditorCharacterProfileFrom" type="text" onchange="SetCharacterProfileFrom()" placeholder="动画/游戏/其他作品名称" title="动画/游戏/其他作品名称" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileVA">
 										<span>声优：</span>
-										<input class="Textbox" id="Textbox_EditorCharacterProfileVA" lang="ja-JP" type="text" placeholder="例: 喜多村英梨" onchange="SetCharacterProfileVA()" />
+										<input class="Textbox" id="Textbox_EditorCharacterProfileVA" lang="ja-JP" type="text" onchange="SetCharacterProfileVA()" placeholder="例：喜多村英梨" title="例：喜多村英梨" />
 									</label>
 								</li>
 							</ul>
@@ -7056,7 +7056,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileLanguage">
 										<span>语言代码：</span>
-										<input class="Textbox" id="Textbox_EditorCharacterProfileLanguage" type="text" value="ja-JP" placeholder="例: ja-JP" onchange="SetCharacterProfileLanguage()" />
+										<input class="Textbox" id="Textbox_EditorCharacterProfileLanguage" type="text" value="ja-JP" onchange="SetCharacterProfileLanguage()" placeholder="例：ja-JP" title="例：ja-JP" />
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -7073,7 +7073,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileBirthday">
 										<span>生日：</span>
-										<input class="Textbox" id="Textbox_EditorCharacterProfileBirthday" type="text" placeholder="MM/DD" onchange="SetCharacterProfileBirthday()" />
+										<input class="Textbox" id="Textbox_EditorCharacterProfileBirthday" type="text" onchange="SetCharacterProfileBirthday()" placeholder="MM/DD" title="MM/DD" />
 									</label>
 								</li>
 							</ul>
@@ -7088,41 +7088,41 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineBecomingActive1">
 										<span>切换至前台：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive1" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive1')" onchange="SetSpokenLineBecomingActive(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive2" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive2')" onchange="SetSpokenLineBecomingActive(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive3" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive3')" onchange="SetSpokenLineBecomingActive(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive1" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive1')" onchange="SetSpokenLineBecomingActive(1)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive2" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive2')" onchange="SetSpokenLineBecomingActive(2)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineBecomingActive3" type="text" onclick="SelectText('Textbox_EditorSpokenLineBecomingActive3')" onchange="SetSpokenLineBecomingActive(3)" placeholder="粘贴台词" title="粘贴台词" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineElementalSkill1">
 										<span>元素战技：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill1')" onchange="SetSpokenLineElementalSkill(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill2')" onchange="SetSpokenLineElementalSkill(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill3')" onchange="SetSpokenLineElementalSkill(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill1')" onchange="SetSpokenLineElementalSkill(1)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill2')" onchange="SetSpokenLineElementalSkill(2)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalSkill3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalSkill3')" onchange="SetSpokenLineElementalSkill(3)" placeholder="粘贴台词" title="粘贴台词" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineElementalBurst1">
 										<span>元素爆发：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst1')" onchange="SetSpokenLineElementalBurst(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst2')" onchange="SetSpokenLineElementalBurst(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst3')" onchange="SetSpokenLineElementalBurst(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst1" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst1')" onchange="SetSpokenLineElementalBurst(1)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst2" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst2')" onchange="SetSpokenLineElementalBurst(2)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineElementalBurst3" type="text" onclick="SelectText('Textbox_EditorSpokenLineElementalBurst3')" onchange="SetSpokenLineElementalBurst(3)" placeholder="粘贴台词" title="粘贴台词" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineHeavyHitTaken1">
 										<span>重受击：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken1')" onchange="SetSpokenLineHeavyHitTaken(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken2')" onchange="SetSpokenLineHeavyHitTaken(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken3')" onchange="SetSpokenLineHeavyHitTaken(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken1')" onchange="SetSpokenLineHeavyHitTaken(1)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken2')" onchange="SetSpokenLineHeavyHitTaken(2)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorSpokenLineHeavyHitTaken3')" onchange="SetSpokenLineHeavyHitTaken(3)" placeholder="粘贴台词" title="粘贴台词" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineFallen1">
 										<span>倒下：</span>
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen1" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen1')" onchange="SetSpokenLineFallen(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen2" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen2')" onchange="SetSpokenLineFallen(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen3" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen3')" onchange="SetSpokenLineFallen(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen1" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen1')" onchange="SetSpokenLineFallen(1)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen2" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen2')" onchange="SetSpokenLineFallen(2)" placeholder="粘贴台词" title="粘贴台词" />
+										<input class="Textbox Width80" id="Textbox_EditorSpokenLineFallen3" type="text" onclick="SelectText('Textbox_EditorSpokenLineFallen3')" onchange="SetSpokenLineFallen(3)" placeholder="粘贴台词" title="粘贴台词" />
 									</label>
 								</li>
 							</ul>
@@ -7135,41 +7135,41 @@
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverBecomingActive1">
 										<span>切换至前台：</span>
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive1" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive1')" onchange="SetVoiceoverBecomingActive(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive2" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive2')" onchange="SetVoiceoverBecomingActive(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive3" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive3')" onchange="SetVoiceoverBecomingActive(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive1" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive1')" onchange="SetVoiceoverBecomingActive(1)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive2" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive2')" onchange="SetVoiceoverBecomingActive(2)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverBecomingActive3" type="text" onclick="SelectText('Textbox_EditorVoiceoverBecomingActive3')" onchange="SetVoiceoverBecomingActive(3)" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverElementalSkill1">
 										<span>元素战技：</span>
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill1')" onchange="SetVoiceoverElementalSkill(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill2')" onchange="SetVoiceoverElementalSkill(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill3')" onchange="SetVoiceoverElementalSkill(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill1')" onchange="SetVoiceoverElementalSkill(1)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill2')" onchange="SetVoiceoverElementalSkill(2)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalSkill3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalSkill3')" onchange="SetVoiceoverElementalSkill(3)" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverElementalBurst1">
 										<span>元素爆发：</span>
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst1')" onchange="SetVoiceoverElementalBurst(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst2')" onchange="SetVoiceoverElementalBurst(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst3')" onchange="SetVoiceoverElementalBurst(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst1" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst1')" onchange="SetVoiceoverElementalBurst(1)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst2" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst2')" onchange="SetVoiceoverElementalBurst(2)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverElementalBurst3" type="text" onclick="SelectText('Textbox_EditorVoiceoverElementalBurst3')" onchange="SetVoiceoverElementalBurst(3)" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverHeavyHitTaken1">
 										<span>重受击：</span>
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken1')" onchange="SetVoiceoverHeavyHitTaken(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken2')" onchange="SetVoiceoverHeavyHitTaken(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken3')" onchange="SetVoiceoverHeavyHitTaken(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken1" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken1')" onchange="SetVoiceoverHeavyHitTaken(1)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken2" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken2')" onchange="SetVoiceoverHeavyHitTaken(2)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverHeavyHitTaken3" type="text" onclick="SelectText('Textbox_EditorVoiceoverHeavyHitTaken3')" onchange="SetVoiceoverHeavyHitTaken(3)" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverFallen1">
 										<span>倒下：</span>
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen1" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen1')" onchange="SetVoiceoverFallen(1)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen2" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen2')" onchange="SetVoiceoverFallen(2)" />
-										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen3" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen3')" onchange="SetVoiceoverFallen(3)" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen1" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen1')" onchange="SetVoiceoverFallen(1)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen2" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen2')" onchange="SetVoiceoverFallen(2)" placeholder="粘贴 URL" title="粘贴 URL" />
+										<input class="Textbox Width80" id="Textbox_EditorVoiceoverFallen3" type="text" onclick="SelectText('Textbox_EditorVoiceoverFallen3')" onchange="SetVoiceoverFallen(3)" placeholder="粘贴 URL" title="粘贴 URL" />
 									</label>
 								</li>
 							</ul>
@@ -7189,7 +7189,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_SettingsImportSavedGame">
 										<span>导入：</span>
-										<input class="Textbox" id="Textbox_SettingsImportSavedGame" type="text" placeholder="粘贴 JSON 字符串" onclick="SelectText('Textbox_SettingsImportSavedGame')" onchange="ImportSavedGame()" />
+										<input class="Textbox" id="Textbox_SettingsImportSavedGame" type="text" onclick="SelectText('Textbox_SettingsImportSavedGame')" onchange="ImportSavedGame()" placeholder="粘贴 JSON 字符串" title="粘贴 JSON 字符串" />
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -7315,7 +7315,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_SettingsHPCautionThreshold">
 										<span>血量：低于</span>
-										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" title="" placeholder="0~60" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" />
+										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" placeholder="0~60" title="0~60" />
 										<span>%时显示红色</span>
 									</label>
 								</li>
@@ -7476,7 +7476,7 @@
 								<li class="Ctrl">
 									<label for="Textbox_SettingsUserDataImport">
 										<span>导入：</span>
-										<input class="Textbox" id="Textbox_SettingsUserDataImport" type="text" placeholder="粘贴 JSON 字符串" onclick="SelectText('Textbox_SettingsUserDataImport')" onchange="ImportUserData()" />
+										<input class="Textbox" id="Textbox_SettingsUserDataImport" type="text" onclick="SelectText('Textbox_SettingsUserDataImport')" onchange="ImportUserData()" placeholder="粘贴 JSON 字符串" title="粘贴 JSON 字符串" />
 									</label>
 								</li>
 								<li class="Ctrl WidthDividedBy2">
