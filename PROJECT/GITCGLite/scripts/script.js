@@ -1306,7 +1306,6 @@
 	// Dialog
 	function AnswerDialog(Selector) {
 		let DialogEvent = Interaction.Dialog[Interaction.Dialog.length - 1].Event;
-		Interaction.Dialog.splice(Interaction.Dialog.length - 1, 1);
 		ShowDialog("Previous");
 		switch(DialogEvent) {
 			case "System_LanguageUnsupported":

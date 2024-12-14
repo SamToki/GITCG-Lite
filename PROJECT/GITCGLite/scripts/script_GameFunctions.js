@@ -177,14 +177,14 @@
 
 		// Action
 		function ReadActionType() {
-			if(Game.Status.Action.Queue.length >= 2) {
+			if(Game.Status.Action.Queue.length > 1) {
 				return Game.Status.Action.Queue[1].Type[1];
 			} else {
 				AlertGameFunctionError("Trying to read action type when the action queue is empty.");
 			}
 		}
 		function ReadActionSubtype() {
-			if(Game.Status.Action.Queue.length >= 2) {
+			if(Game.Status.Action.Queue.length > 1) {
 				return Game.Status.Action.Queue[1].Type[2];
 			} else {
 				AlertGameFunctionError("Trying to read action type when the action queue is empty.");

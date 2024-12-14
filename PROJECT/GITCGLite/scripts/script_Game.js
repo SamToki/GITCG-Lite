@@ -1036,7 +1036,7 @@
 			}
 
 			// Refresh
-			if(Date.now() - Game0.Load.StartTime > 10000) {
+			if(Date.now() - Game0.Load.StartTime >= 10000) {
 				Show("Ctrl_GameCheckNetworkPrompt");
 			} else {
 				Hide("Ctrl_GameCheckNetworkPrompt");
@@ -1165,7 +1165,7 @@
 		// Settings
 		ChangeValue("Textbox_SettingsImportSavedGame", "");
 		ChangeText("Combobox_SettingsSelectSavedGame", "");
-		if(Game.SavedGames.length >= 2) {
+		if(Game.SavedGames.length > 1) {
 			for(let Looper = 1; Looper <= Game.SavedGames.length - 1; Looper++) {
 				AddText("Combobox_SettingsSelectSavedGame",
 					"<option value=" + Looper + ">" + Game.SavedGames[Looper].Name + "</option>");
@@ -3461,7 +3461,7 @@
 						ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
 						setTimeout(function() { // If the info window is initially hidden, the code above will always scroll the info window to top, despite "ScrollToWhereOrBuiltinStatusName". So the code must be executed again right after the info window has come up.
 							ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
-						}, System.Display.Anim);
+						}, System.Display.Anim + 20);
 						Show("CtrlGroup_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
 						break;
 					default:
@@ -3548,7 +3548,7 @@
 				ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
 				setTimeout(function() {
 					ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
-				}, System.Display.Anim);
+				}, System.Display.Anim + 20);
 				Show("CtrlGroup_GameInfoWindowBuiltinStatus");
 
 				break;
@@ -5578,7 +5578,7 @@
 						ChangeScale("Ctrl_GameSkillIndicatorImage", 0.5);
 						ChangeRight("Ctrl_GameSkillIndicatorType", "calc(50% + 175px)");
 						ChangeLeft("Ctrl_GameSkillIndicatorName", "calc(50% + 180px)");
-					}, 40 + System.Display.Anim * 2 + (500 - System.Display.Anim));
+					}, 540 + System.Display.Anim);
 				} else {
 					setTimeout(function() {
 						ChangeAnim("ScreenFilter_GameSkillIndicator", "");
