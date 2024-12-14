@@ -3459,9 +3459,6 @@
 					case "Status2":
 					case "Status3":
 						ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
-						setTimeout(function() { // If the info window is initially hidden, the code above will always scroll the info window to top, despite "ScrollToWhereOrBuiltinStatusName". So the code must be executed again right after the info window has come up.
-							ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
-						}, System.Display.Anim + 20);
 						Show("CtrlGroup_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
 						break;
 					default:
@@ -3546,9 +3543,6 @@
 
 				// Scroll and expand
 				ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
-				setTimeout(function() {
-					ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
-				}, System.Display.Anim + 20);
 				Show("CtrlGroup_GameInfoWindowBuiltinStatus");
 
 				break;
