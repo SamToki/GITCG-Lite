@@ -1253,18 +1253,15 @@
 					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 						width: 240px; padding: 15px 0;
 					}
-					#Window_Game > .CtrlGroup > .Ctrl {
-						width: 100%; padding: 0 15px;
-					}
 					#Window_Game #CtrlGroup_GameInfoWindowCloseButton .Ctrl {
 						position: absolute; top: 15px; right: 15px;
-						width: 35px; padding: 0;
+						width: 35px;
 					}
 					/* #Button_GameInfoWindowCloseButton {
 						backdrop-filter: blur(5px); // Will not work because of "position: sticky".
 					} */
 					.InfoWindowSection {
-						height: unset;
+						width: 100%; height: unset; padding: 0 15px;
 					}
 					.InfoWindowSection.Hidden {
 						padding: 0 15px !important;
