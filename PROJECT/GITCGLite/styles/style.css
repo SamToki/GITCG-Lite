@@ -1340,7 +1340,10 @@
 							width: 1.50em; height: 1.50em; min-width: 1.50em; min-height: 1.50em;
 						}
 
-						/* Character Profile & Credits & About */
+						/* Character Profile & Credits & Tech Info */
+						#CtrlGroup_GameInfoWindowCharacterProfile, #CtrlGroup_GameInfoWindowCredits, #CtrlGroup_GameInfoWindowTechInfo {
+							padding: 10px 0 15px 0;
+						}
 						#CtrlGroup_GameInfoWindowCharacterProfile .Ctrl, #CtrlGroup_GameInfoWindowCredits .Ctrl, #CtrlGroup_GameInfoWindowTechInfo .Ctrl {
 							height: unset;
 						}
