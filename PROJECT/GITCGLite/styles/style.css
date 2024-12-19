@@ -1322,9 +1322,9 @@
 						.InfoWindowContent i { /* .Transparent.Less */
 							opacity: 0.6;
 						}
-					
+
 					/* Area specific */
-						/* Character Card */
+						/* Character card */
 						#Icon_GameInfoWindowCharacterCardMaxHP, #Icon_GameInfoWindowCharacterCardMaxEnergy {
 							fill: none;
 							stroke: currentColor; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round;
@@ -1340,7 +1340,7 @@
 							width: 1.50em; height: 1.50em; min-width: 1.50em; min-height: 1.50em;
 						}
 
-						/* Character Profile & Credits & Tech Info */
+						/* Character profile & Credits & Tech info */
 						#CtrlGroup_GameInfoWindowCharacterProfile, #CtrlGroup_GameInfoWindowCredits, #CtrlGroup_GameInfoWindowTechInfo {
 							padding: 10px 0 15px 0;
 						}
@@ -2192,7 +2192,7 @@
 							}
 
 						/* Area specific */
-							/* Character Card */
+							/* Character card */
 							#Icon_GameInfoWindowCharacterCardMaxHP, #Icon_GameInfoWindowCharacterCardMaxEnergy {
 								stroke-width: 1px;
 							}
