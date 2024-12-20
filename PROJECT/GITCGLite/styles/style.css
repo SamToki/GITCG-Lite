@@ -1253,13 +1253,10 @@
 					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 						width: 240px; padding: 15px 0;
 					}
-					#Window_Game #CtrlGroup_GameInfoWindowCloseButton .Ctrl {
+					#CtrlGroup_GameInfoWindowCloseButton .Ctrl {
 						position: absolute; top: 15px; right: 15px;
 						width: 35px;
 					}
-					/* #Button_GameInfoWindowCloseButton {
-						backdrop-filter: blur(5px); // Will not work because of "position: sticky".
-					} */
 					.InfoWindowSection {
 						width: 100%; height: unset; padding: 0 15px;
 					}

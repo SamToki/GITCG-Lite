@@ -4135,7 +4135,7 @@
 		function ForceHideInfoWindow() {
 			setTimeout(HideInfoWindow, 40); // Because the close button is inside the window, clicking the close button also triggers ShowInfoWindow. So a delay should be set here.
 			if(Subsystem.Display.InfoWindow == "AlwaysShow") {
-				Subsystem.Display.InfoWindow = "ShowOnClick";
+				Subsystem.Display.InfoWindow = "ShowOnHover";
 				RefreshSubsystem();
 			}
 		}
