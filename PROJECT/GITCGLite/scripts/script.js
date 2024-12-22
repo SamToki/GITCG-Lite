@@ -1165,9 +1165,9 @@
 				AlertSystemError("No saved game was selected when trying to delete a saved game.");
 			}
 		}
-		function SaveGame() {
+		function SaveCurrentGame() {
 			Game.SavedGames[Game.SavedGames.length] = {
-				Name: Game.Status.Player.DeckProperties.Name + " vs. " + Game.Status.Opponent.DeckProperties.Name + " (" + new Date(Date.now()).toLocaleString(ReadLanguage("Html")) + ")",
+				Name: ConvertEmptyName(Game.Status.Player.DeckProperties.Name) + " vs. " + ConvertEmptyName(Game.Status.Opponent.DeckProperties.Name) + " (" + new Date(Date.now()).toLocaleString(ReadLanguage("Html")) + ")",
 				Data: structuredClone(Game.Status)
 			};
 			ShowToast("已保存");

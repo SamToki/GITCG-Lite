@@ -1180,6 +1180,11 @@
 			ChangeDisabled("Button_SettingsExportSavedGame", true);
 			ChangeDisabled("Button_SettingsDeleteSavedGame", true);
 		}
+		if(Game.Status.Operation != "Title" && Game.Status.Operation != "Loading") {
+			ChangeDisabled("Button_SettingsSaveCurrentGame", false);
+		} else {
+			ChangeDisabled("Button_SettingsSaveCurrentGame", true);
+		}
 		ChangeChecked("Checkbox_SettingsLetOpponentActFirstAtBeginning", Game.Options.LetOpponentActFirstAtBeginning);
 		ChangeChecked("Checkbox_SettingsShowOpponentDiceContent", Game.Options.ShowOpponentDiceContent);
 		ChangeChecked("Checkbox_SettingsShowRecommendedActionAfterIdlingFor30Sec", Game.Options.ShowRecommendedActionAfterIdlingFor30Sec);
