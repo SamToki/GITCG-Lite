@@ -260,7 +260,7 @@
 							.DamageIndicator {
 								position: absolute; top: unset; left: unset; z-index: 12;
 								width: 112px; height: 112px; border-radius: 56px;
-								text-shadow: 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF; text-align: center;
+								text-shadow: 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF;
 								pointer-events: none;
 							}
 							.DamageIndicator .CtrlGroup {
@@ -269,6 +269,7 @@
 							}
 							.DamageIndicator .CtrlGroup .Ctrl {
 								width: 100%; height: unset; margin: -5px 0;
+								text-align: center;
 								display: flex; justify-content: center; align-items: center;
 							}
 							.DamageIndicator .CtrlGroup .Critical {
