@@ -24,8 +24,7 @@ https://SamToki.github.io/#ToyStore
 
 # 教程 Tutorial
 
-[快速入门](/PROJECT/docs/七圣召唤%20Lite%20快速入门.pdf)<br>
-[完整说明文档](/PROJECT/docs/七圣召唤%20Lite%20说明文档.pdf)
+[快速入门](/PROJECT/docs/七圣召唤%20Lite%20快速入门.pdf)　|　[说明文档](/PROJECT/docs/七圣召唤%20Lite%20说明文档.pdf)
 
 # 版权说明 Copyright Info
 
