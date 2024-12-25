@@ -28,16 +28,10 @@
 		.Progbar.Shaped:has(.Energy.Charged) {
 			filter: none;
 		}
-		.Matching .Shape {
+		.Matching .Shape, .Unaligned .Shape {
 			fill: #202020;
 		}
-		.Unaligned .Shape {
-			fill: #202020;
-		}
-		.Omni, .Physical {
-			color: unset;
-		}
-		.Pyro {
+		.Omni, .Physical, .Pyro {
 			color: unset;
 		}
 		.Pyro .Shape {

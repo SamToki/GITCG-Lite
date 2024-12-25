@@ -2131,10 +2131,7 @@
 						top: calc(50% - 120px); left: calc(50% - 70px);
 						width: 140px; height: 240px;
 					}
-					#Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorType {
-						max-width: 170px;
-					}
-					#Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorName {
+					#Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorType, #Ctnr_GameSkillIndicator #Ctrl_GameSkillIndicatorName {
 						max-width: 170px;
 					}
 					#Label_GameSkillIndicatorType {
