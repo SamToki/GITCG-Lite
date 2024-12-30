@@ -1340,6 +1340,19 @@
 						break;
 				}
 				break;
+			case "System_ConfirmGoToTutorial":
+				switch(Selector) {
+					case 2:
+						ScrollIntoView("Item_HelpTutorial");
+						ShowIAmHere("Item_HelpTutorial");
+						break;
+					case 3:
+						break;
+					default:
+						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
+						break;
+				}
+				break;
 			case "System_ConfirmClearUserData":
 				switch(Selector) {
 					case 2:
@@ -1358,19 +1371,6 @@
 					case 2:
 						ScrollIntoView("Item_SettingsUserData");
 						ShowIAmHere("Item_SettingsUserData");
-						break;
-					case 3:
-						break;
-					default:
-						AlertSystemError("The value of Selector \"" + Selector + "\" in function AnswerDialog is invalid.");
-						break;
-				}
-				break;
-			case "Subsystem_ConfirmGoToTutorial":
-				switch(Selector) {
-					case 2:
-						ScrollIntoView("Item_HelpTutorial");
-						ShowIAmHere("Item_HelpTutorial");
 						break;
 					case 3:
 						break;
@@ -1639,7 +1639,7 @@
 			}
 		}
 		if(Hotkey.key == "F1") {
-			ShowDialog("Subsystem_ConfirmGoToTutorial",
+			ShowDialog("System_ConfirmGoToTutorial",
 				"Question",
 				"您按下了 F1 键。是否前往教程？",
 				"", "", "前往", "取消");
