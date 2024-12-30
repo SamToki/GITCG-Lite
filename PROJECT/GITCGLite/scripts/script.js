@@ -67,6 +67,7 @@
 		Editor = {
 			CardNumber: 0
 		};
+		Interaction.IsPointerDown = false;
 		Interaction.Deletion = 0;
 		Automation.ClockGame = null;
 		Automation.RollDice = null;
@@ -1618,13 +1619,22 @@
 			FadeNameOnCards();
 			HideInfoWindow();
 		}, 0);
+		Interaction.IsPointerDown = false;
+	});
+
+	// On mouse button
+	document.addEventListener("pointerdown", function() {
+		Interaction.IsPointerDown = true;
+	});
+	document.addEventListener("pointerup", function() {
+		Interaction.IsPointerDown = false;
 	});
 
 	// On keyboard
 	document.addEventListener("keydown", function(Hotkey) {
 		if(Hotkey.key == "Escape") {
 			HideInfoWindow();
-			if(Interaction.DialogEvent == "") {
+			if(Interaction.Dialog.length <= 1) {
 				CancelOperation();
 			}
 		}
