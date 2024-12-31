@@ -5535,10 +5535,10 @@
 				// Phase 2
 				if(System.Display.Anim > 0) {
 					setTimeout(function() {
-						ChangeAnim("ScreenFilter_GameSkillIndicator", System.Display.Anim * 2 + "ms");
-						ChangeAnim("Ctrl_GameSkillIndicatorImage", System.Display.Anim * 2 + "ms");
-						ChangeAnim("Ctrl_GameSkillIndicatorType", System.Display.Anim * 2 + "ms");
-						ChangeAnim("Ctrl_GameSkillIndicatorName", System.Display.Anim * 2 + "ms");
+						ChangeAnim("ScreenFilter_GameSkillIndicator", "500ms");
+						ChangeAnim("Ctrl_GameSkillIndicatorImage", "500ms");
+						ChangeAnim("Ctrl_GameSkillIndicatorType", "500ms");
+						ChangeAnim("Ctrl_GameSkillIndicatorName", "500ms");
 						Show("ScreenFilter_GameSkillIndicator");
 						Show("Ctrl_GameSkillIndicatorImage");
 						Show("Ctrl_GameSkillIndicatorType");
@@ -5577,7 +5577,7 @@
 						ChangeScale("Ctrl_GameSkillIndicatorImage", 0.5);
 						ChangeRight("Ctrl_GameSkillIndicatorType", "calc(50% + 175px)");
 						ChangeLeft("Ctrl_GameSkillIndicatorName", "calc(50% + 180px)");
-					}, 540 + System.Display.Anim);
+					}, 790);
 				} else {
 					setTimeout(function() {
 						ChangeAnim("ScreenFilter_GameSkillIndicator", "");
