@@ -3910,15 +3910,13 @@
 
 		// Speak
 		function Speak(PlayerOrOpponent, CharacterNumber, SpokenLineType) {
-			let LotteryNumber = 0;
 			if(Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][1] != "" ||
 			Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][2] != "" ||
 			Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][3] != "") {
+				let LotteryNumber = 0;
 				do {
 					LotteryNumber = Randomize(1, 3);
-				} while(
-					Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][LotteryNumber] == ""
-				);
+				} while(Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][LotteryNumber] == "");
 				if(Subsystem.Display.ShowSpokenLines == true && SpokenLineType != "Fallen") {
 					ChangeText("Label_GameSpokenLine" + PlayerOrOpponent, Casket.Card[ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterNumber].ID)].SpokenLine[SpokenLineType][LotteryNumber]);
 					Show("SpokenLine_Game" + PlayerOrOpponent);
