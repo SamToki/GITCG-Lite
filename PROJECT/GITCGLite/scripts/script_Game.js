@@ -2615,22 +2615,23 @@
 			RemoveClassByClass("InPreview", "InPreview");
 
 			// Operation panel
+			Fade("OperationPanel_GameTitleScreen");
+			Fade("OperationPanel_GameStartingHand");
+			Fade("GameStartingHandCheckboxes");
+			Fade("GameStartingHandIndependentHotkeyIndicators");
+			Fade("OperationPanel_GameRollPhase");
+			Fade("OperationPanel_GameSwitchCharacter");
+			Fade("OperationPanel_GameUseSkill");
+			Fade("OperationPanel_GamePlayActionCard");
+			Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
+			Fade("OperationPanel_GameTuning");
+			Fade("OperationPanel_GameOver");
+			Fade("ScreenFilter_GameOperationPanel");
+			Fade("Ctrl_GameToggleOperationPanelTransparency");
 			switch(Game.Status.Operation) {
 				case "Title":
-					// Show and fade operation panels
+					// Show operation panel
 					Show("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
-					Fade("ScreenFilter_GameOperationPanel");
-					Fade("Ctrl_GameToggleOperationPanelTransparency");
 
 					// Refresh operation panel content
 					Show("CtrlGroup_GameStart");
@@ -2652,20 +2653,8 @@
 
 					break;
 				case "Loading":
-					// Show and fade operation panels
+					// Show operation panel
 					Show("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
-					Fade("ScreenFilter_GameOperationPanel");
-					Fade("Ctrl_GameToggleOperationPanelTransparency");
 
 					// Refresh operation panel content
 					Fade("CtrlGroup_GameStart");
@@ -2680,44 +2669,17 @@
 					} else {
 						Hide("Ctrl_GameEpilepsyWarningPrompt");
 					}
-					// Other ctrls in the loading screen are frequently refreshed in function ClockGame.
 
-					break;
+					break; // Other ctrls in the loading screen are frequently refreshed in function ClockGame.
 				case "Table":
-					// Fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
-					Fade("ScreenFilter_GameOperationPanel");
-					Fade("Ctrl_GameToggleOperationPanelTransparency");
-
 					break;
 				case "StartingHand":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
+					// Show operation panel
 					Show("OperationPanel_GameStartingHand");
 					if(Game.Status.Phase[2] == "Standby") {
 						Show("GameStartingHandCheckboxes");
 						Show("GameStartingHandIndependentHotkeyIndicators");
-					} else {
-						Fade("GameStartingHandCheckboxes");
-						Fade("GameStartingHandIndependentHotkeyIndicators");
 					}
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2743,18 +2705,8 @@
 
 					break;
 				case "RollPhase":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
+					// Show operation panel
 					Show("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2830,18 +2782,8 @@
 
 					break;
 				case "SwitchCharacter":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
+					// Show operation panel
 					Show("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2885,18 +2827,8 @@
 
 					break;
 				case "UseSkill":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
+					// Show operation panel
 					Show("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2905,18 +2837,8 @@
 
 					break;
 				case "PlayActionCard":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
+					// Show operation panel
 					Show("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2925,18 +2847,8 @@
 
 					break;
 				case "PlayActionCardWithObjectSelection":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
+					// Show operation panel
 					Show("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2945,18 +2857,8 @@
 
 					break;
 				case "Tuning":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
+					// Show operation panel
 					Show("OperationPanel_GameTuning");
-					Fade("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
@@ -2965,17 +2867,7 @@
 
 					break;
 				case "GameOver":
-					// Show and fade operation panels
-					Fade("OperationPanel_GameTitleScreen");
-					Fade("OperationPanel_GameStartingHand");
-					Fade("GameStartingHandCheckboxes");
-					Fade("GameStartingHandIndependentHotkeyIndicators");
-					Fade("OperationPanel_GameRollPhase");
-					Fade("OperationPanel_GameSwitchCharacter");
-					Fade("OperationPanel_GameUseSkill");
-					Fade("OperationPanel_GamePlayActionCard");
-					Fade("OperationPanel_GamePlayActionCardWithObjectSelection");
-					Fade("OperationPanel_GameTuning");
+					// Show operation panel
 					Show("OperationPanel_GameOver");
 					Show("ScreenFilter_GameOperationPanel");
 					Show("Ctrl_GameToggleOperationPanelTransparency");
@@ -3034,19 +2926,33 @@
 		}
 
 	function RefreshInfoWindowObjectProperties(CardNumberOrBuiltinStatus, ScrollToWhereOrBuiltinStatusName) {
+		Hide("Ctrl_GameInfoWindowCharacterCard");
+		Hide("Ctrl_GameInfoWindowNormalAttack");
+		Hide("Ctrl_GameInfoWindowElementalSkill");
+		Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
+		Hide("Ctrl_GameInfoWindowElementalBurst");
+		Hide("Ctrl_GameInfoWindowIntroSkill");
+		Hide("Ctrl_GameInfoWindowOutroSkill");
+		Hide("Ctrl_GameInfoWindowPassiveSkill");
+		Hide("Ctrl_GameInfoWindowAffiliatedCard");
+		Hide("Ctrl_GameInfoWindowSummonsCard");
+		Hide("Ctrl_GameInfoWindowTalentCard");
+		Hide("Ctrl_GameInfoWindowWeaponCard");
+		Hide("Ctrl_GameInfoWindowArtifactCard");
+		Hide("Ctrl_GameInfoWindowSupportCard");
+		Hide("Ctrl_GameInfoWindowEventCard");
+		Hide("Ctrl_GameInfoWindowStatus1");
+		Hide("Ctrl_GameInfoWindowStatus2");
+		Hide("Ctrl_GameInfoWindowStatus3");
+		Hide("Ctrl_GameInfoWindowCharacterProfile");
+		Hide("Ctrl_GameInfoWindowCredits");
+		Hide("Ctrl_GameInfoWindowTechInfo");
+		Hide("Ctrl_GameInfoWindowBuiltinStatus");
 		switch(true) {
 			case CardNumberOrBuiltinStatus > 0:
 				// Exclusive properties
 				switch(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type) {
 					case "CharacterCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-
 						// Character Card
 						Show("Ctrl_GameInfoWindowCharacterCard");
 						ChangeImage("Image_GameInfoWindowCharacterCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
@@ -3156,8 +3062,7 @@
 								case "SummonsCard":
 									HideHorizontally("CostIndicator_GameInfoWindowAffiliatedCard");
 									Show("Ctrl_GameInfoWindowAffiliatedCardDuration");
-									ChangeText("Label_GameInfoWindowAffiliatedCardDuration", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[1]);
-									AddText("Label_GameInfoWindowAffiliatedCardDuration", Translate(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[2]));
+									ChangeText("Label_GameInfoWindowAffiliatedCardDuration", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[2]));
 									break;
 								case "EventCard":
 									Show("CostIndicator_GameInfoWindowAffiliatedCard");
@@ -3187,50 +3092,13 @@
 
 						break;
 					case "SummonsCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Summons Card
 						Show("Ctrl_GameInfoWindowSummonsCard");
 						ChangeImage("Image_GameInfoWindowSummonsCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowSummonsCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeText("Label_GameInfoWindowSummonsCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[1]);
-						AddText("Label_GameInfoWindowSummonsCardDuration", Translate(Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[2]));
+						ChangeText("Label_GameInfoWindowSummonsCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[2]));
 						ChangeText("Label_GameInfoWindowSummonsCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "TalentCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Talent Card
 						Show("Ctrl_GameInfoWindowTalentCard");
 						ChangeImage("Image_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowTalentCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
@@ -3257,24 +3125,6 @@
 						ChangeText("Label_GameInfoWindowTalentCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "WeaponCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Weapon Card
 						Show("Ctrl_GameInfoWindowWeaponCard");
 						ChangeImage("Image_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowWeaponCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
@@ -3287,24 +3137,6 @@
 						ChangeText("Label_GameInfoWindowWeaponCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "ArtifactCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Artifact Card
 						Show("Ctrl_GameInfoWindowArtifactCard");
 						ChangeImage("Image_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowArtifactCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
@@ -3316,24 +3148,6 @@
 						ChangeText("Label_GameInfoWindowArtifactCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "SupportCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowEventCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Support Card
 						Show("Ctrl_GameInfoWindowSupportCard");
 						ChangeImage("Image_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowSupportCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
@@ -3342,29 +3156,10 @@
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowSupportCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]) + "</span>");
 						}
-						ChangeText("Label_GameInfoWindowSupportCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[1]);
-						AddText("Label_GameInfoWindowSupportCardDuration", Translate(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[2]));
+						ChangeText("Label_GameInfoWindowSupportCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[2]));
 						ChangeText("Label_GameInfoWindowSupportCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "EventCard":
-						// Hide other exclusive properties
-						Hide("Ctrl_GameInfoWindowCharacterCard");
-						Hide("Ctrl_GameInfoWindowNormalAttack");
-						Hide("Ctrl_GameInfoWindowElementalSkill");
-						Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-						Hide("Ctrl_GameInfoWindowElementalBurst");
-						Hide("Ctrl_GameInfoWindowIntroSkill");
-						Hide("Ctrl_GameInfoWindowOutroSkill");
-						Hide("Ctrl_GameInfoWindowPassiveSkill");
-						Hide("Ctrl_GameInfoWindowAffiliatedCard");
-						Hide("Ctrl_GameInfoWindowSummonsCard");
-						Hide("Ctrl_GameInfoWindowTalentCard");
-						Hide("Ctrl_GameInfoWindowWeaponCard");
-						Hide("Ctrl_GameInfoWindowArtifactCard");
-						Hide("Ctrl_GameInfoWindowSupportCard");
-						Hide("Ctrl_GameInfoWindowCharacterProfile");
-	
-						// Event Card
 						Show("Ctrl_GameInfoWindowEventCard");
 						ChangeImage("Image_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEventCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
@@ -3386,35 +3181,25 @@
 					ChangeImage("Image_GameInfoWindowStatus1", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus1", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Name));
 					ChangeText("Label_GameInfoWindowStatus1Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Type));
-					ChangeText("Label_GameInfoWindowStatus1Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[1]);
-					AddText("Label_GameInfoWindowStatus1Duration", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus1Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[2]));
 					ChangeText("Label_GameInfoWindowStatus1Description", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Description);
-				} else {
-					Hide("Ctrl_GameInfoWindowStatus1");
 				}
 				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 2) {
 					Show("Ctrl_GameInfoWindowStatus2");
 					ChangeImage("Image_GameInfoWindowStatus2", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus2", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Name));
 					ChangeText("Label_GameInfoWindowStatus2Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Type));
-					ChangeText("Label_GameInfoWindowStatus2Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[1]);
-					AddText("Label_GameInfoWindowStatus2Duration", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus2Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[2]));
 					ChangeText("Label_GameInfoWindowStatus2Description", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Description);
-				} else {
-					Hide("Ctrl_GameInfoWindowStatus2");
 				}
 				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 3) {
 					Show("Ctrl_GameInfoWindowStatus3");
 					ChangeImage("Image_GameInfoWindowStatus3", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus3", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Name));
 					ChangeText("Label_GameInfoWindowStatus3Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Type));
-					ChangeText("Label_GameInfoWindowStatus3Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[1]);
-					AddText("Label_GameInfoWindowStatus3Duration", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus3Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[2]));
 					ChangeText("Label_GameInfoWindowStatus3Description", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Description);
-				} else {
-					Hide("Ctrl_GameInfoWindowStatus3");
 				}
-				Hide("Ctrl_GameInfoWindowBuiltinStatus");
 
 				// Credits
 				Show("Ctrl_GameInfoWindowCredits");
@@ -3473,28 +3258,6 @@
 
 				break;
 			case CardNumberOrBuiltinStatus == 0:
-				// Hide other properties
-				Hide("Ctrl_GameInfoWindowNormalAttack");
-				Hide("Ctrl_GameInfoWindowElementalSkill");
-				Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-				Hide("Ctrl_GameInfoWindowElementalBurst");
-				Hide("Ctrl_GameInfoWindowIntroSkill");
-				Hide("Ctrl_GameInfoWindowOutroSkill");
-				Hide("Ctrl_GameInfoWindowPassiveSkill");
-				Hide("Ctrl_GameInfoWindowAffiliatedCard");
-				Hide("Ctrl_GameInfoWindowSummonsCard");
-				Hide("Ctrl_GameInfoWindowTalentCard");
-				Hide("Ctrl_GameInfoWindowWeaponCard");
-				Hide("Ctrl_GameInfoWindowArtifactCard");
-				Hide("Ctrl_GameInfoWindowSupportCard");
-				Hide("Ctrl_GameInfoWindowEventCard");
-				Hide("Ctrl_GameInfoWindowStatus1");
-				Hide("Ctrl_GameInfoWindowStatus2");
-				Hide("Ctrl_GameInfoWindowStatus3");
-				Hide("Ctrl_GameInfoWindowCharacterProfile");
-				Hide("Ctrl_GameInfoWindowCredits");
-				Hide("Ctrl_GameInfoWindowBuiltinStatus");
-
 				// Character Card
 				Show("Ctrl_GameInfoWindowCharacterCard");
 				ChangeImage("Image_GameInfoWindowCharacterCard", Casket0.BuiltinCard.UnknownCard.BasicProperties.Image);
@@ -3514,36 +3277,12 @@
 
 				break;
 			case CardNumberOrBuiltinStatus == "BuiltinStatus":
-				// Hide other properties
-				Hide("Ctrl_GameInfoWindowCharacterCard");
-				Hide("Ctrl_GameInfoWindowNormalAttack");
-				Hide("Ctrl_GameInfoWindowElementalSkill");
-				Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
-				Hide("Ctrl_GameInfoWindowElementalBurst");
-				Hide("Ctrl_GameInfoWindowIntroSkill");
-				Hide("Ctrl_GameInfoWindowOutroSkill");
-				Hide("Ctrl_GameInfoWindowPassiveSkill");
-				Hide("Ctrl_GameInfoWindowAffiliatedCard");
-				Hide("Ctrl_GameInfoWindowSummonsCard");
-				Hide("Ctrl_GameInfoWindowTalentCard");
-				Hide("Ctrl_GameInfoWindowWeaponCard");
-				Hide("Ctrl_GameInfoWindowArtifactCard");
-				Hide("Ctrl_GameInfoWindowSupportCard");
-				Hide("Ctrl_GameInfoWindowEventCard");
-				Hide("Ctrl_GameInfoWindowStatus1");
-				Hide("Ctrl_GameInfoWindowStatus2");
-				Hide("Ctrl_GameInfoWindowStatus3");
-				Hide("Ctrl_GameInfoWindowCharacterProfile");
-				Hide("Ctrl_GameInfoWindowCredits");
-				Hide("Ctrl_GameInfoWindowTechInfo");
-
 				// Built-in Status
 				Show("Ctrl_GameInfoWindowBuiltinStatus");
 				ChangeImage("Image_GameInfoWindowBuiltinStatus", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Image);
 				ChangeText("InfoWindowSubtitle_GameInfoWindowBuiltinStatus", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Name);
 				ChangeText("Label_GameInfoWindowBuiltinStatusType", Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Type));
-				ChangeText("Label_GameInfoWindowBuiltinStatusDuration", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[1]);
-				AddText("Label_GameInfoWindowBuiltinStatusDuration", Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[2]));
+				ChangeText("Label_GameInfoWindowBuiltinStatusDuration", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[1] + Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[2]));
 				ChangeText("Label_GameInfoWindowBuiltinStatusDescription", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Description);
 
 				// Scroll and expand
@@ -3560,6 +3299,7 @@
 		switch(PlayerOrOpponentOrHide) {
 			case "Player":
 			case "Opponent":
+				// Show the section
 				Show("CtrlGroup_GameInfoWindowInGameCharacterProperties");
 
 				// Character equipment and status
@@ -3631,8 +3371,7 @@
 							ChangeImage("Image_GameInfoWindowCharacterStatus" + (Looper - BringForward), Casket.Card[CardNumber].Status[StatusNumber].Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowCharacterStatus" + (Looper - BringForward), ConvertEmptyName(Casket.Card[CardNumber].Status[StatusNumber].Name));
 							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Type", Translate(Casket.Card[CardNumber].Status[StatusNumber].Type));
-							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1]);
-							AddText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Duration", Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
+							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1] + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
 							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Description", Casket.Card[CardNumber].Status[StatusNumber].Description);
 						} else {
 							Hide("Ctrl_GameInfoWindowCharacterStatus" + (Looper - BringForward));
@@ -3661,8 +3400,7 @@
 						ChangeImage("Image_GameInfoWindowPartyStatus" + (Looper - BringForward), Casket.Card[CardNumber].Status[StatusNumber].Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowPartyStatus" + (Looper - BringForward), ConvertEmptyName(Casket.Card[CardNumber].Status[StatusNumber].Name));
 						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Type", Translate(Casket.Card[CardNumber].Status[StatusNumber].Type));
-						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1]);
-						AddText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Duration", Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
+						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1] + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
 						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Description", Casket.Card[CardNumber].Status[StatusNumber].Description);
 					} else {
 						Hide("Ctrl_GameInfoWindowPartyStatus" + (Looper - BringForward));

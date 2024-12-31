@@ -122,14 +122,26 @@
 			}
 
 			// Exclusive properties
+			HideToCorner("Item_EditorCharacterCardProperties");
+			HideToCorner("Item_EditorNormalAttack");
+			HideToCorner("Item_EditorElementalSkill");
+			HideToCorner("Item_EditorSecondaryElementalSkill");
+			HideToCorner("Item_EditorElementalBurst");
+			HideToCorner("Item_EditorIntroSkill");
+			HideToCorner("Item_EditorOutroSkill");
+			HideToCorner("Item_EditorPassiveSkill");
+			HideToCorner("Item_EditorAffiliatedCard");
+			HideToCorner("Item_EditorTalentCardProperties");
+			HideToCorner("Item_EditorWeaponCardProperties");
+			HideToCorner("Item_EditorArtifactCardProperties");
+			HideToCorner("Item_EditorSupportCardProperties");
+			HideToCorner("Item_EditorEventCardProperties");
+			HideToCorner("Item_EditorCharacterProfile");
+			HideToCorner("Item_EditorSpokenLine");
+			HideToCorner("Item_EditorVoiceover");
 			switch(Casket.Card[Editor.CardNumber].BasicProperties.Type) {
 				case "CharacterCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorTalentCardProperties");
-					HideToCorner("Item_EditorWeaponCardProperties");
-					HideToCorner("Item_EditorArtifactCardProperties");
-					HideToCorner("Item_EditorSupportCardProperties");
-					HideToCorner("Item_EditorEventCardProperties");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].TalentCardProperties;
 					delete Casket.Card[Editor.CardNumber].WeaponCardProperties;
 					delete Casket.Card[Editor.CardNumber].ArtifactCardProperties;
@@ -477,23 +489,7 @@
 					}
 					break;
 				case "TalentCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorCharacterCardProperties");
-					HideToCorner("Item_EditorNormalAttack");
-					HideToCorner("Item_EditorElementalSkill");
-					HideToCorner("Item_EditorSecondaryElementalSkill");
-					HideToCorner("Item_EditorElementalBurst");
-					HideToCorner("Item_EditorIntroSkill");
-					HideToCorner("Item_EditorOutroSkill");
-					HideToCorner("Item_EditorPassiveSkill");
-					HideToCorner("Item_EditorAffiliatedCard");
-					HideToCorner("Item_EditorWeaponCardProperties");
-					HideToCorner("Item_EditorArtifactCardProperties");
-					HideToCorner("Item_EditorSupportCardProperties");
-					HideToCorner("Item_EditorEventCardProperties");
-					HideToCorner("Item_EditorCharacterProfile");
-					HideToCorner("Item_EditorSpokenLine");
-					HideToCorner("Item_EditorVoiceover");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].CharacterCardProperties;
 					delete Casket.Card[Editor.CardNumber].NormalAttack;
 					delete Casket.Card[Editor.CardNumber].ElementalSkill;
@@ -532,23 +528,7 @@
 					ChangeValue("Combobox_EditorTalentCardPropertiesSkillType", Casket.Card[Editor.CardNumber].TalentCardProperties.SkillType);
 					break;
 				case "WeaponCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorCharacterCardProperties");
-					HideToCorner("Item_EditorNormalAttack");
-					HideToCorner("Item_EditorElementalSkill");
-					HideToCorner("Item_EditorSecondaryElementalSkill");
-					HideToCorner("Item_EditorElementalBurst");
-					HideToCorner("Item_EditorIntroSkill");
-					HideToCorner("Item_EditorOutroSkill");
-					HideToCorner("Item_EditorPassiveSkill");
-					HideToCorner("Item_EditorAffiliatedCard");
-					HideToCorner("Item_EditorTalentCardProperties");
-					HideToCorner("Item_EditorArtifactCardProperties");
-					HideToCorner("Item_EditorSupportCardProperties");
-					HideToCorner("Item_EditorEventCardProperties");
-					HideToCorner("Item_EditorCharacterProfile");
-					HideToCorner("Item_EditorSpokenLine");
-					HideToCorner("Item_EditorVoiceover");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].CharacterCardProperties;
 					delete Casket.Card[Editor.CardNumber].NormalAttack;
 					delete Casket.Card[Editor.CardNumber].ElementalSkill;
@@ -577,23 +557,7 @@
 					ChangeValue("Textbox_EditorWeaponCardPropertiesExecution", Casket.Card[Editor.CardNumber].WeaponCardProperties.Execution);
 					break;
 				case "ArtifactCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorCharacterCardProperties");
-					HideToCorner("Item_EditorNormalAttack");
-					HideToCorner("Item_EditorElementalSkill");
-					HideToCorner("Item_EditorSecondaryElementalSkill");
-					HideToCorner("Item_EditorElementalBurst");
-					HideToCorner("Item_EditorIntroSkill");
-					HideToCorner("Item_EditorOutroSkill");
-					HideToCorner("Item_EditorPassiveSkill");
-					HideToCorner("Item_EditorAffiliatedCard");
-					HideToCorner("Item_EditorTalentCardProperties");
-					HideToCorner("Item_EditorWeaponCardProperties");
-					HideToCorner("Item_EditorSupportCardProperties");
-					HideToCorner("Item_EditorEventCardProperties");
-					HideToCorner("Item_EditorCharacterProfile");
-					HideToCorner("Item_EditorSpokenLine");
-					HideToCorner("Item_EditorVoiceover");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].CharacterCardProperties;
 					delete Casket.Card[Editor.CardNumber].NormalAttack;
 					delete Casket.Card[Editor.CardNumber].ElementalSkill;
@@ -621,23 +585,7 @@
 					ChangeValue("Textbox_EditorArtifactCardPropertiesExecution", Casket.Card[Editor.CardNumber].ArtifactCardProperties.Execution);
 					break;
 				case "SupportCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorCharacterCardProperties");
-					HideToCorner("Item_EditorNormalAttack");
-					HideToCorner("Item_EditorElementalSkill");
-					HideToCorner("Item_EditorSecondaryElementalSkill");
-					HideToCorner("Item_EditorElementalBurst");
-					HideToCorner("Item_EditorIntroSkill");
-					HideToCorner("Item_EditorOutroSkill");
-					HideToCorner("Item_EditorPassiveSkill");
-					HideToCorner("Item_EditorAffiliatedCard");
-					HideToCorner("Item_EditorTalentCardProperties");
-					HideToCorner("Item_EditorWeaponCardProperties");
-					HideToCorner("Item_EditorArtifactCardProperties");
-					HideToCorner("Item_EditorEventCardProperties");
-					HideToCorner("Item_EditorCharacterProfile");
-					HideToCorner("Item_EditorSpokenLine");
-					HideToCorner("Item_EditorVoiceover");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].CharacterCardProperties;
 					delete Casket.Card[Editor.CardNumber].NormalAttack;
 					delete Casket.Card[Editor.CardNumber].ElementalSkill;
@@ -669,23 +617,7 @@
 					ChangeValue("Textbox_EditorSupportCardPropertiesExecution", Casket.Card[Editor.CardNumber].SupportCardProperties.Execution);
 					break;
 				case "EventCard":
-					// Hide and delete other exclusive properties
-					HideToCorner("Item_EditorCharacterCardProperties");
-					HideToCorner("Item_EditorNormalAttack");
-					HideToCorner("Item_EditorElementalSkill");
-					HideToCorner("Item_EditorSecondaryElementalSkill");
-					HideToCorner("Item_EditorElementalBurst");
-					HideToCorner("Item_EditorIntroSkill");
-					HideToCorner("Item_EditorOutroSkill");
-					HideToCorner("Item_EditorPassiveSkill");
-					HideToCorner("Item_EditorAffiliatedCard");
-					HideToCorner("Item_EditorTalentCardProperties");
-					HideToCorner("Item_EditorWeaponCardProperties");
-					HideToCorner("Item_EditorArtifactCardProperties");
-					HideToCorner("Item_EditorSupportCardProperties");
-					HideToCorner("Item_EditorCharacterProfile");
-					HideToCorner("Item_EditorSpokenLine");
-					HideToCorner("Item_EditorVoiceover");
+					// Delete other exclusive properties
 					delete Casket.Card[Editor.CardNumber].CharacterCardProperties;
 					delete Casket.Card[Editor.CardNumber].NormalAttack;
 					delete Casket.Card[Editor.CardNumber].ElementalSkill;
