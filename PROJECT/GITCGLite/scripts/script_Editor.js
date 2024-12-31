@@ -280,7 +280,6 @@
 						ChangeValue("Textbox_EditorSecondaryElementalSkillDescription", Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Description);
 						ChangeValue("Textbox_EditorSecondaryElementalSkillExecution", Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Execution);
 					} else {
-						HideToCorner("Item_EditorSecondaryElementalSkill");
 						delete Casket.Card[Editor.CardNumber].SecondaryElementalSkill;
 					}
 
@@ -334,7 +333,6 @@
 						ChangeValue("Textbox_EditorIntroSkillDescription", Casket.Card[Editor.CardNumber].IntroSkill.Description);
 						ChangeValue("Textbox_EditorIntroSkillExecution", Casket.Card[Editor.CardNumber].IntroSkill.Execution);
 					} else {
-						HideToCorner("Item_EditorIntroSkill");
 						delete Casket.Card[Editor.CardNumber].IntroSkill;
 					}
 
@@ -350,7 +348,6 @@
 						ChangeValue("Textbox_EditorOutroSkillDescription", Casket.Card[Editor.CardNumber].OutroSkill.Description);
 						ChangeValue("Textbox_EditorOutroSkillExecution", Casket.Card[Editor.CardNumber].OutroSkill.Execution);
 					} else {
-						HideToCorner("Item_EditorOutroSkill");
 						delete Casket.Card[Editor.CardNumber].OutroSkill;
 					}
 
@@ -367,7 +364,6 @@
 						ChangeValue("Textbox_EditorPassiveSkillTrigger", Casket.Card[Editor.CardNumber].PassiveSkill.Trigger);
 						ChangeValue("Textbox_EditorPassiveSkillExecution", Casket.Card[Editor.CardNumber].PassiveSkill.Execution);
 					} else {
-						HideToCorner("Item_EditorPassiveSkill");
 						delete Casket.Card[Editor.CardNumber].PassiveSkill;
 					}
 
@@ -430,7 +426,6 @@
 						ChangeValue("Textbox_EditorAffiliatedCardDescription", Casket.Card[Editor.CardNumber].AffiliatedCard.Description);
 						ChangeValue("Textbox_EditorAffiliatedCardExecution", Casket.Card[Editor.CardNumber].AffiliatedCard.Execution);
 					} else {
-						HideToCorner("Item_EditorAffiliatedCard");
 						delete Casket.Card[Editor.CardNumber].AffiliatedCard;
 					}
 

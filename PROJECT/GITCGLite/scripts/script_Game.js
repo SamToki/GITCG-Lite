@@ -3007,8 +3007,6 @@
 								AddText("CostIndicatorText_GameInfoWindowSecondaryElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
 							}
 							ChangeText("Label_GameInfoWindowSecondaryElementalSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Description);
-						} else {
-							Hide("Ctrl_GameInfoWindowSecondaryElementalSkill");
 						}
 
 						// Elemental Burst
@@ -3028,8 +3026,6 @@
 							ChangeImage("Image_GameInfoWindowIntroSkill", Casket.Card[CardNumberOrBuiltinStatus].IntroSkill.Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowIntroSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].IntroSkill.Name));
 							ChangeText("Label_GameInfoWindowIntroSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].IntroSkill.Description);
-						} else {
-							Hide("Ctrl_GameInfoWindowIntroSkill");
 						}
 
 						// Outro Skill
@@ -3038,8 +3034,6 @@
 							ChangeImage("Image_GameInfoWindowOutroSkill", Casket.Card[CardNumberOrBuiltinStatus].OutroSkill.Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowOutroSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].OutroSkill.Name));
 							ChangeText("Label_GameInfoWindowOutroSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].OutroSkill.Description);
-						} else {
-							Hide("Ctrl_GameInfoWindowOutroSkill");
 						}
 
 						// Passive Skill
@@ -3048,8 +3042,6 @@
 							ChangeImage("Image_GameInfoWindowPassiveSkill", Casket.Card[CardNumberOrBuiltinStatus].PassiveSkill.Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowPassiveSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].PassiveSkill.Name));
 							ChangeText("Label_GameInfoWindowPassiveSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].PassiveSkill.Description);
-						} else {
-							Hide("Ctrl_GameInfoWindowPassiveSkill");
 						}
 
 						// Affiliated Card
@@ -3078,8 +3070,6 @@
 									break;
 							}
 							ChangeText("Label_GameInfoWindowAffiliatedCardDescription", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Description);
-						} else {
-							Hide("Ctrl_GameInfoWindowAffiliatedCard");
 						}
 
 						// Character Profile
