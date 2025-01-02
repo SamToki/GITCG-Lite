@@ -774,7 +774,7 @@
 			RefreshGame();
 		}
 		function SetBasicPropertiesStatusQuantity() {
-			Casket.Card[Editor.CardNumber].BasicProperties.StatusQuantity = parseInt(Number(ReadValue("Textbox_EditorBasicPropertiesStatusQuantity")));
+			Casket.Card[Editor.CardNumber].BasicProperties.StatusQuantity = Math.trunc(ReadValue("Textbox_EditorBasicPropertiesStatusQuantity"));
 			if(Casket.Card[Editor.CardNumber].BasicProperties.StatusQuantity < 0) {
 				Casket.Card[Editor.CardNumber].BasicProperties.StatusQuantity = 0;
 			}
@@ -792,7 +792,7 @@
 			RefreshEditor();
 		}
 		function SetBasicPropertiesVersion() {
-			Casket.Card[Editor.CardNumber].BasicProperties.Version = parseInt(Number(ReadValue("Textbox_EditorBasicPropertiesVersion")) * 100) / 100;
+			Casket.Card[Editor.CardNumber].BasicProperties.Version = Math.trunc(ReadValue("Textbox_EditorBasicPropertiesVersion") * 100) / 100;
 			if(Casket.Card[Editor.CardNumber].BasicProperties.Version < 0) {
 				Casket.Card[Editor.CardNumber].BasicProperties.Version = 0;
 			}
@@ -823,7 +823,7 @@
 
 		// Character Card Properties
 		function SetCharacterCardPropertiesMaxHP() {
-			Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxHP = parseInt(Number(ReadValue("Textbox_EditorCharacterCardPropertiesMaxHP")));
+			Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxHP = Math.trunc(ReadValue("Textbox_EditorCharacterCardPropertiesMaxHP"));
 			if(Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxHP < 10) {
 				Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxHP = 10;
 			}
@@ -833,7 +833,7 @@
 			RefreshEditor();
 		}
 		function SetCharacterCardPropertiesMaxEnergy() {
-			Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxEnergy = parseInt(Number(ReadValue("Textbox_EditorCharacterCardPropertiesMaxEnergy")));
+			Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxEnergy = Math.trunc(ReadValue("Textbox_EditorCharacterCardPropertiesMaxEnergy"));
 			if(Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxEnergy < 1) {
 				Casket.Card[Editor.CardNumber].CharacterCardProperties.MaxEnergy = 1;
 			}
@@ -882,7 +882,7 @@
 			RefreshEditor();
 		}
 		function SetNormalAttackCostQuantity() {
-			Casket.Card[Editor.CardNumber].NormalAttack.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorNormalAttackCostQuantity")));
+			Casket.Card[Editor.CardNumber].NormalAttack.Cost[1] = Math.trunc(ReadValue("Textbox_EditorNormalAttackCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].NormalAttack.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].NormalAttack.Cost[1] = 0;
 			}
@@ -892,7 +892,7 @@
 			RefreshEditor();
 		}
 		function SetNormalAttackCostUnaligned() {
-			Casket.Card[Editor.CardNumber].NormalAttack.Cost[2] = parseInt(Number(ReadValue("Textbox_EditorNormalAttackCostUnaligned")));
+			Casket.Card[Editor.CardNumber].NormalAttack.Cost[2] = Math.trunc(ReadValue("Textbox_EditorNormalAttackCostUnaligned"));
 			if(Casket.Card[Editor.CardNumber].NormalAttack.Cost[2] < 0) {
 				Casket.Card[Editor.CardNumber].NormalAttack.Cost[2] = 0;
 			}
@@ -928,7 +928,7 @@
 			RefreshEditor();
 		}
 		function SetElementalSkillCostQuantity() {
-			Casket.Card[Editor.CardNumber].ElementalSkill.Cost = parseInt(Number(ReadValue("Textbox_EditorElementalSkillCostQuantity")));
+			Casket.Card[Editor.CardNumber].ElementalSkill.Cost = Math.trunc(ReadValue("Textbox_EditorElementalSkillCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].ElementalSkill.Cost < 0) {
 				Casket.Card[Editor.CardNumber].ElementalSkill.Cost = 0;
 			}
@@ -956,7 +956,7 @@
 			RefreshEditor();
 		}
 		function SetSecondaryElementalSkillCostQuantity() {
-			Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Cost = parseInt(Number(ReadValue("Textbox_EditorSecondaryElementalSkillCostQuantity")));
+			Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Cost = Math.trunc(ReadValue("Textbox_EditorSecondaryElementalSkillCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Cost < 0) {
 				Casket.Card[Editor.CardNumber].SecondaryElementalSkill.Cost = 0;
 			}
@@ -984,7 +984,7 @@
 			RefreshEditor();
 		}
 		function SetElementalBurstCostQuantity() {
-			Casket.Card[Editor.CardNumber].ElementalBurst.Cost = parseInt(Number(ReadValue("Textbox_EditorElementalBurstCostQuantity")));
+			Casket.Card[Editor.CardNumber].ElementalBurst.Cost = Math.trunc(ReadValue("Textbox_EditorElementalBurstCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].ElementalBurst.Cost < 0) {
 				Casket.Card[Editor.CardNumber].ElementalBurst.Cost = 0;
 			}
@@ -1074,7 +1074,7 @@
 			RefreshEditor();
 		}
 		function SetAffiliatedCardCostQuantity() {
-			Casket.Card[Editor.CardNumber].AffiliatedCard.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorAffiliatedCardCostQuantity")));
+			Casket.Card[Editor.CardNumber].AffiliatedCard.Cost[1] = Math.trunc(ReadValue("Textbox_EditorAffiliatedCardCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].AffiliatedCard.Cost[1] = 0;
 			}
@@ -1092,7 +1092,7 @@
 			RefreshEditor();
 		}
 		function SetAffiliatedCardDurationQuantity() {
-			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = parseInt(Number(ReadValue("Textbox_EditorAffiliatedCardDurationQuantity")));
+			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = Math.trunc(ReadValue("Textbox_EditorAffiliatedCardDurationQuantity"));
 			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] < 1) {
 				Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = 1;
 			}
@@ -1124,7 +1124,7 @@
 
 		// Talent Card Properties
 		function SetTalentCardPropertiesCostQuantity() {
-			Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorTalentCardPropertiesCostQuantity")));
+			Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[1] = Math.trunc(ReadValue("Textbox_EditorTalentCardPropertiesCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[1] = 0;
 			}
@@ -1141,7 +1141,7 @@
 			RefreshEditor();
 		}
 		function SetTalentCardPropertiesCostUnaligned() {
-			Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[3] = parseInt(Number(ReadValue("Textbox_EditorTalentCardPropertiesCostUnaligned")));
+			Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[3] = Math.trunc(ReadValue("Textbox_EditorTalentCardPropertiesCostUnaligned"));
 			if(Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[3] < 0) {
 				Casket.Card[Editor.CardNumber].TalentCardProperties.Cost[3] = 0;
 			}
@@ -1161,7 +1161,7 @@
 
 		// Weapon Card Properties
 		function SetWeaponCardPropertiesCostQuantity() {
-			Casket.Card[Editor.CardNumber].WeaponCardProperties.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorWeaponCardPropertiesCostQuantity")));
+			Casket.Card[Editor.CardNumber].WeaponCardProperties.Cost[1] = Math.trunc(ReadValue("Textbox_EditorWeaponCardPropertiesCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].WeaponCardProperties.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].WeaponCardProperties.Cost[1] = 0;
 			}
@@ -1185,7 +1185,7 @@
 
 		// Artifact Card Properties
 		function SetArtifactCardPropertiesCostQuantity() {
-			Casket.Card[Editor.CardNumber].ArtifactCardProperties.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorArtifactCardPropertiesCostQuantity")));
+			Casket.Card[Editor.CardNumber].ArtifactCardProperties.Cost[1] = Math.trunc(ReadValue("Textbox_EditorArtifactCardPropertiesCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].ArtifactCardProperties.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].ArtifactCardProperties.Cost[1] = 0;
 			}
@@ -1205,7 +1205,7 @@
 
 		// Support Card Properties
 		function SetSupportCardPropertiesCostQuantity() {
-			Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorSupportCardPropertiesCostQuantity")));
+			Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[1] = Math.trunc(ReadValue("Textbox_EditorSupportCardPropertiesCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[1] = 0;
 			}
@@ -1219,7 +1219,7 @@
 			RefreshEditor();
 		}
 		function SetSupportCardPropertiesDurationQuantity() {
-			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = parseInt(Number(ReadValue("Textbox_EditorSupportCardPropertiesDurationQuantity")));
+			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = Math.trunc(ReadValue("Textbox_EditorSupportCardPropertiesDurationQuantity"));
 			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] < 1) {
 				Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = 1;
 			}
@@ -1247,7 +1247,7 @@
 
 		// Event Card Properties
 		function SetEventCardPropertiesCostQuantity() {
-			Casket.Card[Editor.CardNumber].EventCardProperties.Cost[1] = parseInt(Number(ReadValue("Textbox_EditorEventCardPropertiesCostQuantity")));
+			Casket.Card[Editor.CardNumber].EventCardProperties.Cost[1] = Math.trunc(ReadValue("Textbox_EditorEventCardPropertiesCostQuantity"));
 			if(Casket.Card[Editor.CardNumber].EventCardProperties.Cost[1] < 0) {
 				Casket.Card[Editor.CardNumber].EventCardProperties.Cost[1] = 0;
 			}
@@ -1287,7 +1287,7 @@
 			RefreshEditor();
 		}
 		function SetStatusDurationQuantity(StatusNumber) {
-			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = parseInt(Number(ReadValue("Textbox_EditorStatus" + StatusNumber + "DurationQuantity")));
+			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = Math.trunc(ReadValue("Textbox_EditorStatus" + StatusNumber + "DurationQuantity"));
 			if(Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] < 1) {
 				Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = 1;
 			}

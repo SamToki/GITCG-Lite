@@ -693,7 +693,7 @@
 				break;
 		}
 		if(System.Version.GITCGLite != undefined) {
-			if(Math.floor(CurrentVersion) - Math.floor(System.Version.GITCGLite) >= 1) {
+			if(Math.trunc(CurrentVersion) - Math.trunc(System.Version.GITCGLite) >= 1) {
 				ShowDialog("System_MajorUpdateDetected",
 					"Info",
 					"检测到大版本更新。若您继续使用旧版本的用户数据，则有可能发生兼容性问题。敬请留意。",
@@ -1199,7 +1199,7 @@
 			RefreshSubsystem();
 		}
 		function SetHPCautionThreshold() {
-			Subsystem.Display.HPCautionThreshold = parseInt(Number(ReadValue("Textbox_SettingsHPCautionThreshold"))); // Use parseInt(Number()) to force convert value to integer.
+			Subsystem.Display.HPCautionThreshold = Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold"));
 			if(Subsystem.Display.HPCautionThreshold < 0) {
 				Subsystem.Display.HPCautionThreshold = 0;
 			}
