@@ -1067,18 +1067,20 @@
 				case "ShowOnHover":
 					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
 					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
+					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.ShowInfoWindowWhenOpponentActs);
+					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
 					break;
 				case "AlwaysShow":
 					ShowInfoWindow();
 					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
 					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
+					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.ShowInfoWindowWhenOpponentActs);
+					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
 					break;
 				default:
 					AlertSystemError("The value of Subsystem.Display.InfoWindow \"" + Subsystem.Display.InfoWindow + "\" in function RefreshSubsystem is invalid.");
 					break;
 			}
-			ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.ShowInfoWindowWhenOpponentActs);
-			ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
 			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
