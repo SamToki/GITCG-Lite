@@ -210,7 +210,7 @@
 
 	// Write
 		// Cost
-		function AdjustCost(ActionType, ElementType, Operator, Amount) {
+		function AdjustCost(ActionType, ElementType, Operator, Quantity) {
 			// ???
 		}
 
@@ -257,10 +257,10 @@
 
 		// Fast actions
 			// Card
-			function DrawCard(Amount) {
+			function DrawCard(Quantity) {
 				// ???
 			}
-			function DrawCardByKeyword(Keyword, Amount) {
+			function DrawCardByKeyword(Keyword, Quantity) {
 				// ???
 			}
 			function GetAffiliatedCard() {
@@ -272,7 +272,7 @@
 			function DiscardCardByID(SelfOrEnemy, CardID) {
 				// ???
 			}
-			function AdjustCardDurationByID(SelfOrEnemy, CardID, Operator, Amount) {
+			function AdjustCardDurationByID(SelfOrEnemy, CardID, Operator, Quantity) {
 				// ??? Caution: "(Copy)"
 			}
 
@@ -305,7 +305,7 @@
 			function ClearStatus(SelfOrEnemy, ActiveOrStandbyOrAllOrNumber) {
 				// ???
 			}
-			function AdjustStatusDuration(SelfOrEnemy, ActiveOrStandbyOrAllOrNumber, CardID, Number, Operator, Amount) {
+			function AdjustStatusDuration(SelfOrEnemy, ActiveOrStandbyOrAllOrNumber, CardID, Number, Operator, Quantity) {
 				// ??? Caution: "(Copy)"
 			}
 
@@ -315,10 +315,10 @@
 			}
 
 			// Dice
-			function AddDice(SelfOrEnemy, ElementType, Amount) {
+			function AddDice(SelfOrEnemy, ElementType, Quantity) {
 				// ???
 			}
-			function ConvertDice(SelfOrEnemy, TargetElementType, Amount) {
+			function ConvertDice(SelfOrEnemy, TargetElementType, Quantity) {
 				// ???
 			}
 

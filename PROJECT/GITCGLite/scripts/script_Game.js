@@ -4793,10 +4793,10 @@
 							if(Cost[3] != undefined) {
 								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										break;
 									case "Subtract":
-										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										if(Cost[3] < 0) {
 											Cost[1] += Cost[3];
 											if(Cost[1] < 0) {
@@ -4812,10 +4812,10 @@
 							} else {
 								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										break;
 									case "Subtract":
-										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										if(Cost[1] < 0) {
 											Cost[1] = 0;
 										}
@@ -4830,10 +4830,10 @@
 							if(Cost[3] != undefined && Cost[2] != "Unaligned") {
 								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										break;
 									case "Subtract":
-										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										if(Cost[3] < 0) {
 											Cost[3] = 0;
 										}
@@ -4846,10 +4846,10 @@
 								if(Cost[2] == "Unaligned") {
 									switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 										case "Plus":
-											Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+											Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 											break;
 										case "Subtract":
-											Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+											Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 											if(Cost[1] < 0) {
 												Cost[1] = 0;
 											}
@@ -4871,10 +4871,10 @@
 							if(Cost[2] == Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ElementType) {
 								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										break;
 									case "Subtract":
-										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
+										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Quantity;
 										if(Cost[1] < 0) {
 											Cost[1] = 0;
 										}

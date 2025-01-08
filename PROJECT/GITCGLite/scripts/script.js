@@ -253,7 +253,7 @@
 					},
 					CostAdjustment: [
 						0
-						// {ActionType, ElementType, Operator, Amount}
+						// {ActionType, ElementType, Operator, Quantity}
 						// ActionType: CharacterCard,
 						//             NormalAttack, ElementalSkill, SecondaryElementalSkill, ElementalBurst,
 						//             TalentCard, WeaponCard, ArtifactCard, SupportCard, EventCard.
@@ -1043,7 +1043,7 @@
 			PlayAudio("Audio_VoicePlayer", "audio/PreviewVoiceVolume.mp3");
 		}
 
-		// Miscellaneous
+		// Misc
 		function ResetAllDontShowAgainDialogs() {
 			System.DontShowAgain = [0];
 			RefreshSystem();
