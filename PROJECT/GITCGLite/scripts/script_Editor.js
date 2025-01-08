@@ -386,11 +386,13 @@
 								delete Casket.Card[Editor.CardNumber].AffiliatedCard.AffectedObject;
 								delete Casket.Card[Editor.CardNumber].AffiliatedCard.Requirement;
 								if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration == undefined) {
-									Casket.Card[Editor.CardNumber].AffiliatedCard.Duration = [0, 3, "Usages"];
+									Casket.Card[Editor.CardNumber].AffiliatedCard.Duration = {
+										Quantity: 3, Type: "Usages"
+									};
 								}
 								Show("Ctrl_EditorAffiliatedCardDuration");
-								ChangeValue("Textbox_EditorAffiliatedCardDurationQuantity", Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1]);
-								ChangeValue("Combobox_EditorAffiliatedCardDurationType", Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[2]);
+								ChangeValue("Textbox_EditorAffiliatedCardDurationQuantity", Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity);
+								ChangeValue("Combobox_EditorAffiliatedCardDurationType", Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Type);
 								if(Casket.Card[Editor.CardNumber].AffiliatedCard.HasCounter == undefined) {
 									Casket.Card[Editor.CardNumber].AffiliatedCard.HasCounter = false;
 								}
@@ -605,8 +607,8 @@
 					Show("Item_EditorSupportCardProperties");
 					ChangeValue("Textbox_EditorSupportCardPropertiesCostQuantity", Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[1]);
 					ChangeValue("Combobox_EditorSupportCardPropertiesCostType", Casket.Card[Editor.CardNumber].SupportCardProperties.Cost[2]);
-					ChangeValue("Textbox_EditorSupportCardPropertiesDurationQuantity", Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1]);
-					ChangeValue("Combobox_EditorSupportCardPropertiesDurationType", Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[2]);
+					ChangeValue("Textbox_EditorSupportCardPropertiesDurationQuantity", Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity);
+					ChangeValue("Combobox_EditorSupportCardPropertiesDurationType", Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Type);
 					ChangeChecked("Checkbox_EditorSupportCardPropertiesHasCounter", Casket.Card[Editor.CardNumber].SupportCardProperties.HasCounter);
 					ChangeValue("Textbox_EditorSupportCardPropertiesRequirement", Casket.Card[Editor.CardNumber].SupportCardProperties.Requirement);
 					ChangeValue("Textbox_EditorSupportCardPropertiesExecution", Casket.Card[Editor.CardNumber].SupportCardProperties.Execution);
@@ -659,8 +661,8 @@
 				ChangeValue("Textbox_EditorStatus1Image", Casket.Card[Editor.CardNumber].Status[1].Image);
 				ChangeImage("Image_EditorStatus1Image", Casket.Card[Editor.CardNumber].Status[1].Image);
 				ChangeValue("Combobox_EditorStatus1Type", Casket.Card[Editor.CardNumber].Status[1].Type);
-				ChangeValue("Textbox_EditorStatus1DurationQuantity", Casket.Card[Editor.CardNumber].Status[1].Duration[1]);
-				ChangeValue("Combobox_EditorStatus1DurationType", Casket.Card[Editor.CardNumber].Status[1].Duration[2]);
+				ChangeValue("Textbox_EditorStatus1DurationQuantity", Casket.Card[Editor.CardNumber].Status[1].Duration.Quantity);
+				ChangeValue("Combobox_EditorStatus1DurationType", Casket.Card[Editor.CardNumber].Status[1].Duration.Type);
 				ChangeValue("Textbox_EditorStatus1Description", Casket.Card[Editor.CardNumber].Status[1].Description);
 				ChangeValue("Textbox_EditorStatus1Execution", Casket.Card[Editor.CardNumber].Status[1].Execution);
 			} else {
@@ -676,8 +678,8 @@
 				ChangeValue("Textbox_EditorStatus2Image", Casket.Card[Editor.CardNumber].Status[2].Image);
 				ChangeImage("Image_EditorStatus2Image", Casket.Card[Editor.CardNumber].Status[2].Image);
 				ChangeValue("Combobox_EditorStatus2Type", Casket.Card[Editor.CardNumber].Status[2].Type);
-				ChangeValue("Textbox_EditorStatus2DurationQuantity", Casket.Card[Editor.CardNumber].Status[2].Duration[1]);
-				ChangeValue("Combobox_EditorStatus2DurationType", Casket.Card[Editor.CardNumber].Status[2].Duration[2]);
+				ChangeValue("Textbox_EditorStatus2DurationQuantity", Casket.Card[Editor.CardNumber].Status[2].Duration.Quantity);
+				ChangeValue("Combobox_EditorStatus2DurationType", Casket.Card[Editor.CardNumber].Status[2].Duration.Type);
 				ChangeValue("Textbox_EditorStatus2Description", Casket.Card[Editor.CardNumber].Status[2].Description);
 				ChangeValue("Textbox_EditorStatus2Execution", Casket.Card[Editor.CardNumber].Status[2].Execution);
 			} else {
@@ -696,8 +698,8 @@
 				ChangeValue("Textbox_EditorStatus3Image", Casket.Card[Editor.CardNumber].Status[3].Image);
 				ChangeImage("Image_EditorStatus3Image", Casket.Card[Editor.CardNumber].Status[3].Image);
 				ChangeValue("Combobox_EditorStatus3Type", Casket.Card[Editor.CardNumber].Status[3].Type);
-				ChangeValue("Textbox_EditorStatus3DurationQuantity", Casket.Card[Editor.CardNumber].Status[3].Duration[1]);
-				ChangeValue("Combobox_EditorStatus3DurationType", Casket.Card[Editor.CardNumber].Status[3].Duration[2]);
+				ChangeValue("Textbox_EditorStatus3DurationQuantity", Casket.Card[Editor.CardNumber].Status[3].Duration.Quantity);
+				ChangeValue("Combobox_EditorStatus3DurationType", Casket.Card[Editor.CardNumber].Status[3].Duration.Type);
 				ChangeValue("Textbox_EditorStatus3Description", Casket.Card[Editor.CardNumber].Status[3].Description);
 				ChangeValue("Textbox_EditorStatus3Execution", Casket.Card[Editor.CardNumber].Status[3].Execution);
 			} else {
@@ -1092,17 +1094,17 @@
 			RefreshEditor();
 		}
 		function SetAffiliatedCardDurationQuantity() {
-			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = Math.trunc(ReadValue("Textbox_EditorAffiliatedCardDurationQuantity"));
-			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] < 1) {
-				Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = 1;
+			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity = Math.trunc(ReadValue("Textbox_EditorAffiliatedCardDurationQuantity"));
+			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity < 1) {
+				Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity = 1;
 			}
-			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] > 9) {
-				Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[1] = 9;
+			if(Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity > 9) {
+				Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Quantity = 9;
 			}
 			RefreshEditor();
 		}
 		function SetAffiliatedCardDurationType() {
-			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration[2] = ReadValue("Combobox_EditorAffiliatedCardDurationType");
+			Casket.Card[Editor.CardNumber].AffiliatedCard.Duration.Type = ReadValue("Combobox_EditorAffiliatedCardDurationType");
 			RefreshEditor();
 		}
 		function SetAffiliatedCardHasCounter() {
@@ -1219,17 +1221,17 @@
 			RefreshEditor();
 		}
 		function SetSupportCardPropertiesDurationQuantity() {
-			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = Math.trunc(ReadValue("Textbox_EditorSupportCardPropertiesDurationQuantity"));
-			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] < 1) {
-				Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = 1;
+			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity = Math.trunc(ReadValue("Textbox_EditorSupportCardPropertiesDurationQuantity"));
+			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity < 1) {
+				Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity = 1;
 			}
-			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] > 9) {
-				Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[1] = 9;
+			if(Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity > 9) {
+				Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Quantity = 9;
 			}
 			RefreshEditor();
 		}
 		function SetSupportCardPropertiesDurationType() {
-			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration[2] = ReadValue("Combobox_EditorSupportCardPropertiesDurationType");
+			Casket.Card[Editor.CardNumber].SupportCardProperties.Duration.Type = ReadValue("Combobox_EditorSupportCardPropertiesDurationType");
 			RefreshEditor();
 		}
 		function SetSupportCardPropertiesHasCounter() {
@@ -1287,17 +1289,17 @@
 			RefreshEditor();
 		}
 		function SetStatusDurationQuantity(StatusNumber) {
-			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = Math.trunc(ReadValue("Textbox_EditorStatus" + StatusNumber + "DurationQuantity"));
-			if(Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] < 1) {
-				Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = 1;
+			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Quantity = Math.trunc(ReadValue("Textbox_EditorStatus" + StatusNumber + "DurationQuantity"));
+			if(Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Quantity < 1) {
+				Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Quantity = 1;
 			}
-			if(Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] > 9) {
-				Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[1] = 9;
+			if(Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Quantity > 9) {
+				Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Quantity = 9;
 			}
 			RefreshEditor();
 		}
 		function SetStatusDurationType(StatusNumber) {
-			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration[2] = ReadValue("Combobox_EditorStatus" + StatusNumber + "DurationType");
+			Casket.Card[Editor.CardNumber].Status[StatusNumber].Duration.Type = ReadValue("Combobox_EditorStatus" + StatusNumber + "DurationType");
 			RefreshEditor();
 		}
 		function SetStatusDescription(StatusNumber) {

@@ -16,8 +16,8 @@
 			// ???
 
 			// Display
-			if(Game.Status.Operation == "Table" && Game.Status.Player.Turn == "InTurn" && Game0.Selection.RecommendedAction[1] != "") {
-				AddClass("Button_Game" + Game0.Selection.RecommendedAction[1], "Glow");
+			if(Game.Status.Operation == "Table" && Game.Status.Player.Turn == "InTurn" && Game0.Selection.RecommendedAction.Type != "") {
+				AddClass("Button_Game" + Game0.Selection.RecommendedAction.Type, "Glow");
 			}
 		}
 		function OpponentAct() {

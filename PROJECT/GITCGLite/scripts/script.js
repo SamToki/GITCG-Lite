@@ -14,7 +14,7 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CurrentVersion = 0.44;
+		const CurrentVersion = 0.45;
 		var Game0 = {
 			Options: {
 				TransparentOperationPanel: false
@@ -33,17 +33,22 @@
 				}
 			},
 			Selection: {
-				Action: [0, "", 0], RecommendedAction: [0, "", 0],
-					// 1: CharacterCard, SummonsCard, ActionCard, Tuning,
-					//    NormalAttack, ElementalSkill, SecondaryElementalSkill, ElementalBurst,
-					//    EndAction.
-					// 2: Number.
+				Action: {
+					Type: "", Number: 0
+				},
+				RecommendedAction: {
+					Type: "", Number: 0
+				},
+					// Type: CharacterCard, SummonsCard, ActionCard, Tuning,
+					//       NormalAttack, ElementalSkill, SecondaryElementalSkill, ElementalBurst,
+					//       EndAction.
 				StartingHand: [0, false, false, false, false, false],
 				CardInHand: 0,
 				Dice: [0, false, false, false, false, false, false, false, false, false, false, false, false],
-				DiscardEnemyObject: [0, "", 0]
-					// 1: CharacterCard, SummonsCard, ActionCard, Dice.
-					// 2: Number.
+				DiscardEnemyObject: {
+					Type: "", Number: 0
+				}
+					// Type: CharacterCard, SummonsCard, ActionCard, Dice.
 			},
 			RollDice: {
 				IsRolling: false,
@@ -53,13 +58,23 @@
 				Player: {
 					Element: [0, "", "", ""],
 					Reaction: [0, "", "", ""],
-					Damage: [0, [0, "", 0], [0, "", 0], [0, "", 0]],
+					Damage: [
+						0,
+						{Type: "", Amount: 0},
+						{Type: "", Amount: 0},
+						{Type: "", Amount: 0}
+					],
 					SummonsCard: [0]
 				},
 				Opponent: {
 					Element: [0, "", "", ""],
 					Reaction: [0, "", "", ""],
-					Damage: [0, [0, "", 0], [0, "", 0], [0, "", 0]],
+					Damage: [
+						0,
+						{Type: "", Amount: 0},
+						{Type: "", Amount: 0},
+						{Type: "", Amount: 0}
+					],
 					SummonsCard: [0]
 				}
 			}
@@ -128,229 +143,104 @@
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]] // Card ID, status number, duration.
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						}
 					],
 					ActiveCharacter: 0,
-					PartyStatus: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]],
+					PartyStatus: [
+						0,
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0}
+					],
 					SummonsCard: [
 						0,
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-							// Counter...
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						}
+						{ID: "", Sequence: 1, Duration: 0}, // And more properties such as counter...
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0}
 					],
 					ActionCard: [
 						0,
-						{
-							ID: "",
-							Position: "OffTable"
-							// Sequence, duration, counter, ...
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						}
+						{ID: "", Position: "OffTable"}, // And more properties such as sequence, duration, counter...
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"}
 					],
 					Dice: [
 						0,
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						}
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1}
 					],
 					RerollChance: 0,
 					Turn: "Standby",
@@ -363,7 +253,7 @@
 					},
 					CostAdjustment: [
 						0
-						// [0, ActionType, ElementType, Operator, Amount]
+						// {ActionType, ElementType, Operator, Amount}
 						// ActionType: CharacterCard,
 						//             NormalAttack, ElementalSkill, SecondaryElementalSkill, ElementalBurst,
 						//             TalentCard, WeaponCard, ArtifactCard, SupportCard, EventCard.
@@ -382,227 +272,104 @@
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						}
 					],
 					ActiveCharacter: 0,
-					PartyStatus: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]],
+					PartyStatus: [
+						0,
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0}
+					],
 					SummonsCard: [
 						0,
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						}
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0}
 					],
 					ActionCard: [
 						0,
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						}
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"}
 					],
 					Dice: [
 						0,
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						}
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1}
 					],
 					RerollChance: 0,
 					Turn: "Standby",
@@ -624,7 +391,9 @@
 					Queue: [
 						0
 						/* {
-							Master: [0, "Player", 0],
+							Master: {
+								PlayerOrOpponent: "Player", CardNumber: 0
+							},
 							Type: [0, "", ""],
 								// 1: CharacterCard,
 								//    EnemyCharacterCard,
@@ -648,7 +417,9 @@
 					],
 					CardPlayed: ""
 				},
-				Master: [0, "Player", 0] // 2: Card number.
+				Master: {
+					PlayerOrOpponent: "Player", CardNumber: 0
+				}
 			},
 			InitialStatus: {}
 		};
@@ -997,6 +768,21 @@
 			if(System.Audio.PlayAudio == true) {
 				Show("Ctrl_SettingsSoundVolume");
 				Show("Ctrl_SettingsVoiceVolume");
+				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
+				if(Subsystem.Audio.SoundVolume > 0) {
+					ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
+				} else {
+					ChangeText("Label_SettingsSoundVolume", "禁用");
+				}
+				ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
+				ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
+				if(Subsystem.Audio.VoiceVolume > 0) {
+					ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
+				} else {
+					ChangeText("Label_SettingsVoiceVolume", "禁用");
+				}
+				ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
+				ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
 			} else {
 				StopAllAudio();
 				Hide("Ctrl_SettingsSoundVolume");
@@ -1089,21 +875,23 @@
 			ChangeChecked("Checkbox_SettingsFlashOnHighDamage", Subsystem.Display.FlashOnHighDamage);
 
 			// Audio
-			ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
-			if(Subsystem.Audio.SoundVolume > 0) {
-				ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
-			} else {
-				ChangeText("Label_SettingsSoundVolume", "禁用");
+			if(System.Audio.PlayAudio == true) {
+				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
+				if(Subsystem.Audio.SoundVolume > 0) {
+					ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
+				} else {
+					ChangeText("Label_SettingsSoundVolume", "禁用");
+				}
+				ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
+				ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
+				if(Subsystem.Audio.VoiceVolume > 0) {
+					ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
+				} else {
+					ChangeText("Label_SettingsVoiceVolume", "禁用");
+				}
+				ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
+				ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
 			}
-			ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
-			ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
-			if(Subsystem.Audio.VoiceVolume > 0) {
-				ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
-			} else {
-				ChangeText("Label_SettingsVoiceVolume", "禁用");
-			}
-			ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
-			ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsCheat", Subsystem.Dev.Cheat);
@@ -1497,11 +1285,11 @@
 			case "Casket_ConfirmDeleteDeck":
 				switch(Selector) {
 					case 2:
-						if(Casket.DeckSelection[1] >= Interaction.Deletion && Casket.DeckSelection[1] > 1) {
-							Casket.DeckSelection[1]--;
+						if(Casket.DeckSelection.Player >= Interaction.Deletion && Casket.DeckSelection.Player > 1) {
+							Casket.DeckSelection.Player--;
 						}
-						if(Casket.DeckSelection[2] >= Interaction.Deletion && Casket.DeckSelection[2] > 1) {
-							Casket.DeckSelection[2]--;
+						if(Casket.DeckSelection.Opponent >= Interaction.Deletion && Casket.DeckSelection.Opponent > 1) {
+							Casket.DeckSelection.Opponent--;
 						}
 						Casket.Deck.splice(Interaction.Deletion, 1);
 						Interaction.Deletion = 0;
@@ -1517,16 +1305,16 @@
 			case "Casket_ConfirmDeleteCard":
 				switch(Selector) {
 					case 2:
-						if(Casket.DeckSelection[1] > 0) {
-							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
-									Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.splice(Looper, 1);
+						if(Casket.DeckSelection.Player > 0) {
+							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
+									Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.splice(Looper, 1);
 									break;
 								}
 							}
-							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
-									Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.splice(Looper, 1);
+							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
+									Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper, 1);
 									break;
 								}
 							}
@@ -1549,17 +1337,17 @@
 			case "Casket_ConfirmDeleteSelectedCharacterCards":
 				switch(Selector) {
 					case 2:
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper++) {
-							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper]) == Editor.CardNumber) {
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
+							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper]) == Editor.CardNumber) {
 								CloseCard();
 							}
-							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper]) > 0) {
-								Casket.Card.splice(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper]), 1);
+							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper]) > 0) {
+								Casket.Card.splice(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper]), 1);
 							} else {
-								AlertSystemError("Encountered unexpected card ID \"" + Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] + "\" when batch deleting character cards.");
+								AlertSystemError("Encountered unexpected card ID \"" + Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] + "\" when batch deleting character cards.");
 							}
 						}
-						Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection = [0];
+						Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection = [0];
 						RefreshGame();
 						RefreshEditor();
 						break;
@@ -1573,17 +1361,17 @@
 			case "Casket_ConfirmDeleteSelectedActionCards":
 				switch(Selector) {
 					case 2:
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper++) {
-							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper]) == Editor.CardNumber) {
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
+							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper]) == Editor.CardNumber) {
 								CloseCard();
 							}
-							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper]) > 0) {
-								Casket.Card.splice(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper]), 1);
+							if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper]) > 0) {
+								Casket.Card.splice(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper]), 1);
 							} else {
-								AlertSystemError("Encountered unexpected card ID \"" + Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper] + "\" when batch deleting action cards.");
+								AlertSystemError("Encountered unexpected card ID \"" + Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] + "\" when batch deleting action cards.");
 							}
 						}
-						Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection = [0];
+						Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection = [0];
 						RefreshGame();
 						RefreshEditor();
 						break;

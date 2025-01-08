@@ -105,26 +105,26 @@
 				case Game0.Load.Progress >= 8 && Game0.Load.Progress < 12:
 					ChangeText("Label_GameLoadingPrompt", "正在准备牌组...");
 					switch(true) {
-						case Casket.DeckSelection[1] == -2:
+						case Casket.DeckSelection.Player == -2:
 							GenerateTemporaryDeck("Player");
 							break;
-						case Casket.DeckSelection[1] == -1:
+						case Casket.DeckSelection.Player == -1:
 							RandomlySelectDeck("Player");
 							break;
-						case Casket.DeckSelection[1] > 0:
-							if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length != 4) {
+						case Casket.DeckSelection.Player > 0:
+							if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length != 4) {
 								ShowDialog("Game_LoadingError",
 									"Error",
-									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
+									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
 									"", "", "", "确定");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
 							}
-							if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length != 31) {
+							if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length != 31) {
 								ShowDialog("Game_LoadingError",
 									"Error",
-									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
+									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
 									"", "", "", "确定");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
@@ -133,30 +133,30 @@
 							LoadDeck("Player");
 							break;
 						default:
-							AlertSystemError("The value of Casket.DeckSelection[1] \"" + Casket.DeckSelection[1] + "\" in function ClockGame is invalid.");
+							AlertSystemError("The value of Casket.DeckSelection.Player \"" + Casket.DeckSelection.Player + "\" in function ClockGame is invalid.");
 							break;
 					}
 					switch(true) {
-						case Casket.DeckSelection[2] == -2:
+						case Casket.DeckSelection.Opponent == -2:
 							GenerateTemporaryDeck("Opponent");
 							break;
-						case Casket.DeckSelection[2] == -1:
+						case Casket.DeckSelection.Opponent == -1:
 							RandomlySelectDeck("Opponent");
 							break;
-						case Casket.DeckSelection[2] > 0:
-							if(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection.length != 4) {
+						case Casket.DeckSelection.Opponent > 0:
+							if(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection.length != 4) {
 								ShowDialog("Game_LoadingError",
 									"Error",
-									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
+									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
 									"", "", "", "确定");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
 							}
-							if(Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection.length != 31) {
+							if(Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.length != 31) {
 								ShowDialog("Game_LoadingError",
 									"Error",
-									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
+									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
 									"", "", "", "确定");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
@@ -165,7 +165,7 @@
 							LoadDeck("Opponent");
 							break;
 						default:
-							AlertSystemError("The value of Casket.DeckSelection[2] \"" + Casket.DeckSelection[2] + "\" in function ClockGame is invalid.");
+							AlertSystemError("The value of Casket.DeckSelection.Opponent \"" + Casket.DeckSelection.Opponent + "\" in function ClockGame is invalid.");
 							break;
 					}
 					setTimeout(RefreshGame, 0);
@@ -211,7 +211,7 @@
 						switch(CardValidityMessage) {
 							case "Valid":
 								if(IsCardApplicable("Player", ReadCardNumberByID(Game.Status.Player.ActionCard[(Game0.Load.Progress - 16) / 2].ID)) == true ||
-								Casket.DeckSelection[1] == -2 ||
+								Casket.DeckSelection.Player == -2 ||
 								System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 									Game0.Load.Progress += 2;
 								} else {
@@ -283,7 +283,7 @@
 						switch(CardValidityMessage) {
 							case "Valid":
 								if(IsCardApplicable("Opponent", ReadCardNumberByID(Game.Status.Opponent.ActionCard[(Game0.Load.Progress - 82) / 2].ID)) == true ||
-								Casket.DeckSelection[2] == -2 ||
+								Casket.DeckSelection.Opponent == -2 ||
 								System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 									Game0.Load.Progress += 2;
 								} else {
@@ -336,7 +336,7 @@
 										break;
 								}
 							}
-							if(Casket.DeckSelection[1] == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
+							if(Casket.DeckSelection.Player == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
 								switch(PartyBalance) {
@@ -364,7 +364,7 @@
 							ChangeText("Label_GameLoadingPrompt", "正在检查玩家牌组配置... 2/7");
 							if(Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[1].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[2].ID)].CharacterCardProperties.ElementType ||
 							Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[2].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[3].ID)].CharacterCardProperties.ElementType ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -386,7 +386,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -408,7 +408,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -430,7 +430,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -452,7 +452,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -474,7 +474,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[1] == -2 ||
+							Casket.DeckSelection.Player == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -504,7 +504,7 @@
 										break;
 								}
 							}
-							if(Casket.DeckSelection[2] == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
+							if(Casket.DeckSelection.Opponent == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
 								switch(PartyBalance) {
@@ -532,7 +532,7 @@
 							ChangeText("Label_GameLoadingPrompt", "正在检查对手牌组配置... 2/7");
 							if(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[1].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[2].ID)].CharacterCardProperties.ElementType ||
 							Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[2].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[3].ID)].CharacterCardProperties.ElementType ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -554,7 +554,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -576,7 +576,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -598,7 +598,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -620,7 +620,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -642,7 +642,7 @@
 								}
 							}
 							if(Counter > 0 ||
-							Casket.DeckSelection[2] == -2 ||
+							Casket.DeckSelection.Opponent == -2 ||
 							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused") == true) {
 								Game0.Load.Progress += 2;
 							} else {
@@ -1548,7 +1548,7 @@
 		}
 		function RefreshActionSelection() {
 			// Selected action
-			switch(Game0.Selection.Action[1]) {
+			switch(Game0.Selection.Action.Type) {
 				case "CharacterCard":
 					Game.Status.Operation = "SwitchCharacter";
 					break;
@@ -1559,7 +1559,7 @@
 				case "":
 					break;
 				default:
-					AlertSystemError("The value of Game0.Selection.Action[1] \"" + Game0.Selection.Action[1] + "\" in function RefreshActionSelection is invalid.");
+					AlertSystemError("The value of Game0.Selection.Action.Type \"" + Game0.Selection.Action.Type + "\" in function RefreshActionSelection is invalid.");
 					break;
 			}
 
@@ -1581,8 +1581,8 @@
 			}
 
 			// Cheat: discard enemy object
-			if(Subsystem.Dev.Cheat == true && Game.Status.Operation == "Table" && Game0.Selection.DiscardEnemyObject[1] != "") {
-				let CardType = Game0.Selection.DiscardEnemyObject[1], Number = Game0.Selection.DiscardEnemyObject[2];
+			if(Subsystem.Dev.Cheat == true && Game.Status.Operation == "Table" && Game0.Selection.DiscardEnemyObject.Type != "") {
+				let CardType = Game0.Selection.DiscardEnemyObject.Type, Number = Game0.Selection.DiscardEnemyObject.Number;
 				switch(CardType) {
 					case "CharacterCard":
 						ShowDialog("Game_ConfirmKnockDownOpponentCharacterCard",
@@ -1673,11 +1673,11 @@
 						HideHorizontally("Label_GamePlayerCharacter" + Looper + "ReactionIndicator");
 					}
 					for(let Looper2 = 1; Looper2 <= 4; Looper2++) {
-						if(Game.Status.Player.CharacterCard[Looper].Status[Looper2][1] != "") {
+						if(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID != "") {
 							Show("Ctrl_GamePlayerCharacter" + Looper + "Status" + Looper2);
-							ChangeImage("Image_GamePlayerCharacter" + Looper + "Status" + Looper2, Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2][2]].Image);
-							ChangeText("Label_GamePlayerCharacter" + Looper + "Status" + Looper2, Game.Status.Player.CharacterCard[Looper].Status[Looper2][3]);
-							switch(Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2][2]].Duration[2]) {
+							ChangeImage("Image_GamePlayerCharacter" + Looper + "Status" + Looper2, Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Image);
+							ChangeText("Label_GamePlayerCharacter" + Looper + "Status" + Looper2, Game.Status.Player.CharacterCard[Looper].Status[Looper2].Duration);
+							switch(Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type) {
 								case "Usages":
 									RemoveClass("Label_GamePlayerCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
@@ -1685,7 +1685,7 @@
 									AddClass("Label_GamePlayerCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2][2]].Duration[2] \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2][2]].Duration[2] + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
 									break;
 							}
 						} else {
@@ -1735,11 +1735,11 @@
 						HideHorizontally("Label_GameOpponentCharacter" + Looper + "ReactionIndicator");
 					}
 					for(let Looper2 = 1; Looper2 <= 4; Looper2++) {
-						if(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][1] != "") {
+						if(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID != "") {
 							Show("Ctrl_GameOpponentCharacter" + Looper + "Status" + Looper2);
-							ChangeImage("Image_GameOpponentCharacter" + Looper + "Status" + Looper2, Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][2]].Image);
-							ChangeText("Label_GameOpponentCharacter" + Looper + "Status" + Looper2, Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][3]);
-							switch(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][2]].Duration[2]) {
+							ChangeImage("Image_GameOpponentCharacter" + Looper + "Status" + Looper2, Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Image);
+							ChangeText("Label_GameOpponentCharacter" + Looper + "Status" + Looper2, Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].Duration);
+							switch(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type) {
 								case "Usages":
 									RemoveClass("Label_GameOpponentCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
@@ -1747,7 +1747,7 @@
 									AddClass("Label_GameOpponentCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][2]].Duration[2] \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][1])].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2][2]].Duration[2] + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
 									break;
 							}
 						} else {
@@ -1790,11 +1790,11 @@
 
 			// Party status
 			for(let Looper = 1; Looper <= 4; Looper++) {
-				if(Game.Status.Player.PartyStatus[Looper][1] != "" && ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper][1]) > 0) {
+				if(Game.Status.Player.PartyStatus[Looper].CardID != "" && ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID) > 0) {
 					Show("Ctrl_GamePlayerPartyStatus" + Looper);
-					ChangeImage("Image_GamePlayerPartyStatus" + Looper, Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper][1])].Status[Game.Status.Player.PartyStatus[Looper][2]].Image);
-					ChangeText("Label_GamePlayerPartyStatus" + Looper, Game.Status.Player.PartyStatus[Looper][3]);
-					switch(Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper][1])].Status[Game.Status.Player.PartyStatus[Looper][2]].Duration[2]) {
+					ChangeImage("Image_GamePlayerPartyStatus" + Looper, Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Image);
+					ChangeText("Label_GamePlayerPartyStatus" + Looper, Game.Status.Player.PartyStatus[Looper].Duration);
+					switch(Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type) {
 						case "Usages":
 							RemoveClass("Label_GamePlayerPartyStatus" + Looper, "DurationInRounds");
 							break;
@@ -1802,17 +1802,17 @@
 							AddClass("Label_GamePlayerPartyStatus" + Looper, "DurationInRounds");
 							break;
 						default:
-							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper][1])].Status[Game.Status.Player.PartyStatus[Looper][2]].Duration[2] \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper][1])].Status[Game.Status.Player.PartyStatus[Looper][2]].Duration[2] + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
 							break;
 					}
 				} else {
 					HideHorizontally("Ctrl_GamePlayerPartyStatus" + Looper);
 				}
-				if(Game.Status.Opponent.PartyStatus[Looper][1] != "" && ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper][1]) > 0) {
+				if(Game.Status.Opponent.PartyStatus[Looper].CardID != "" && ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID) > 0) {
 					Show("Ctrl_GameOpponentPartyStatus" + Looper);
-					ChangeImage("Image_GameOpponentPartyStatus" + Looper, Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper][1])].Status[Game.Status.Opponent.PartyStatus[Looper][2]].Image);
-					ChangeText("Label_GameOpponentPartyStatus" + Looper, Game.Status.Opponent.PartyStatus[Looper][3]);
-					switch(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper][1])].Status[Game.Status.Opponent.PartyStatus[Looper][2]].Duration[2]) {
+					ChangeImage("Image_GameOpponentPartyStatus" + Looper, Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Image);
+					ChangeText("Label_GameOpponentPartyStatus" + Looper, Game.Status.Opponent.PartyStatus[Looper].Duration);
+					switch(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type) {
 						case "Usages":
 							RemoveClass("Label_GameOpponentPartyStatus" + Looper, "DurationInRounds");
 							break;
@@ -1820,7 +1820,7 @@
 							AddClass("Label_GameOpponentPartyStatus" + Looper, "DurationInRounds");
 							break;
 						default:
-							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper][1])].Status[Game.Status.Opponent.PartyStatus[Looper][2]].Duration[2] \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper][1])].Status[Game.Status.Opponent.PartyStatus[Looper][2]].Duration[2] + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
 							break;
 					}
 				} else {
@@ -1842,7 +1842,7 @@
 							let CardNumber = ReadCardNumberByID(Game.Status.Player.SummonsCard[Looper].ID);
 							ChangeImage("Image_GamePlayerSummons" + Looper, Casket.Card[CardNumber].AffiliatedCard.Image);
 							ChangeText("Label_GamePlayerSummons" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
-							ChangeShapedProgbar("ProgbarFg_GamePlayerSummons" + Looper + "Duration", "Vertical", Game.Status.Player.SummonsCard[Looper].Duration / Casket.Card[ReadCardNumberByID(Game.Status.Player.SummonsCard[Looper].ID)].AffiliatedCard.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GamePlayerSummons" + Looper + "Duration", "Vertical", Game.Status.Player.SummonsCard[Looper].Duration / Casket.Card[ReadCardNumberByID(Game.Status.Player.SummonsCard[Looper].ID)].AffiliatedCard.Duration.Quantity * 100);
 							if(Game.Status.Player.SummonsCard[Looper].Counter != undefined && Casket.Card[CardNumber].AffiliatedCard.HasCounter == true) {
 								Show("Ctrl_GamePlayerSummons" + Looper + "Counter");
 								ChangeText("ProgbarText_GamePlayerSummons" + Looper + "Counter", Game.Status.Player.SummonsCard[Looper].Counter);
@@ -1856,7 +1856,7 @@
 						Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].BasicProperties.Type == "SummonsCard":
 							ChangeImage("Image_GamePlayerSummons" + Looper, Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].BasicProperties.Image);
 							ChangeText("Label_GamePlayerSummons" + Looper, Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].BasicProperties.Name);
-							ChangeShapedProgbar("ProgbarFg_GamePlayerSummons" + Looper + "Duration", "Vertical", Game.Status.Player.SummonsCard[Looper].Duration / Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].SummonsCardProperties.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GamePlayerSummons" + Looper + "Duration", "Vertical", Game.Status.Player.SummonsCard[Looper].Duration / Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].SummonsCardProperties.Duration.Quantity * 100);
 							if(Game.Status.Player.SummonsCard[Looper].Counter != undefined && Casket0.BuiltinCard[Game.Status.Player.SummonsCard[Looper].ID].SummonsCardProperties.HasCounter == true) {
 								Show("Ctrl_GamePlayerSummons" + Looper + "Counter");
 								ChangeText("ProgbarText_GamePlayerSummons" + Looper + "Counter", Game.Status.Player.SummonsCard[Looper].Counter);
@@ -1886,7 +1886,7 @@
 							let CardNumber = ReadCardNumberByID(Game.Status.Opponent.SummonsCard[Looper].ID);
 							ChangeImage("Image_GameOpponentSummons" + Looper, Casket.Card[CardNumber].AffiliatedCard.Image);
 							ChangeText("Label_GameOpponentSummons" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
-							ChangeShapedProgbar("ProgbarFg_GameOpponentSummons" + Looper + "Duration", "Vertical", Game.Status.Opponent.SummonsCard[Looper].Duration / Casket.Card[ReadCardNumberByID(Game.Status.Opponent.SummonsCard[Looper].ID)].AffiliatedCard.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GameOpponentSummons" + Looper + "Duration", "Vertical", Game.Status.Opponent.SummonsCard[Looper].Duration / Casket.Card[ReadCardNumberByID(Game.Status.Opponent.SummonsCard[Looper].ID)].AffiliatedCard.Duration.Quantity * 100);
 							if(Game.Status.Opponent.SummonsCard[Looper].Counter != undefined && Casket.Card[CardNumber].AffiliatedCard.HasCounter == true) {
 								Show("Ctrl_GameOpponentSummons" + Looper + "Counter");
 								ChangeText("ProgbarText_GameOpponentSummons" + Looper + "Counter", Game.Status.Opponent.SummonsCard[Looper].Counter);
@@ -1900,7 +1900,7 @@
 						Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].BasicProperties.Type == "SummonsCard":
 							ChangeImage("Image_GameOpponentSummons" + Looper, Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].BasicProperties.Image);
 							ChangeText("Label_GameOpponentSummons" + Looper, Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].BasicProperties.Name);
-							ChangeShapedProgbar("ProgbarFg_GameOpponentSummons" + Looper + "Duration", "Vertical", Game.Status.Opponent.SummonsCard[Looper].Duration / Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].SummonsCardProperties.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GameOpponentSummons" + Looper + "Duration", "Vertical", Game.Status.Opponent.SummonsCard[Looper].Duration / Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].SummonsCardProperties.Duration.Quantity * 100);
 							if(Game.Status.Opponent.SummonsCard[Looper].Counter != undefined && Casket0.BuiltinCard[Game.Status.Opponent.SummonsCard[Looper].ID].SummonsCardProperties.HasCounter == true) {
 								Show("Ctrl_GameOpponentSummons" + Looper + "Counter");
 								ChangeText("ProgbarText_GameOpponentSummons" + Looper + "Counter", Game.Status.Opponent.SummonsCard[Looper].Counter);
@@ -1974,9 +1974,9 @@
 							Fade("CostIndicator_GamePlayerAction" + Looper + "Additional");
 						}
 						if(Game.Status.Player.ActionCard[Looper].Duration != undefined && Casket.Card[CardNumber].BasicProperties.Type == "SupportCard") {
-							ChangeShapedProgbar("ProgbarFg_GamePlayerAction" + Looper + "Duration", "Vertical", Game.Status.Player.ActionCard[Looper].Duration / Casket.Card[CardNumber].SupportCardProperties.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GamePlayerAction" + Looper + "Duration", "Vertical", Game.Status.Player.ActionCard[Looper].Duration / Casket.Card[CardNumber].SupportCardProperties.Duration.Quantity * 100);
 							ChangeText("ProgbarText_GamePlayerAction" + Looper + "Duration", Game.Status.Player.ActionCard[Looper].Duration);
-							switch(Casket.Card[CardNumber].SupportCardProperties.Duration[2]) {
+							switch(Casket.Card[CardNumber].SupportCardProperties.Duration.Type) {
 								case "Usages":
 									RemoveClass("ProgbarText_GamePlayerAction" + Looper + "Duration", "DurationInRounds");
 									if(Subsystem.Display.ColorBlindMode == true) {
@@ -1990,7 +1990,7 @@
 									}
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration[2] \"" + Casket.Card[CardNumber].SupportCardProperties.Duration[2] + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshGame is invalid.");
 									break;
 							}
 						}
@@ -2074,9 +2074,9 @@
 							Fade("CostIndicator_GameOpponentAction" + Looper + "Additional");
 						}
 						if(Game.Status.Opponent.ActionCard[Looper].Duration != undefined && Casket.Card[CardNumber].BasicProperties.Type == "SupportCard") {
-							ChangeShapedProgbar("ProgbarFg_GameOpponentAction" + Looper + "Duration", "Vertical", Game.Status.Opponent.ActionCard[Looper].Duration / Casket.Card[CardNumber].SupportCardProperties.Duration[1] * 100);
+							ChangeShapedProgbar("ProgbarFg_GameOpponentAction" + Looper + "Duration", "Vertical", Game.Status.Opponent.ActionCard[Looper].Duration / Casket.Card[CardNumber].SupportCardProperties.Duration.Quantity * 100);
 							ChangeText("ProgbarText_GameOpponentAction" + Looper + "Duration", Game.Status.Opponent.ActionCard[Looper].Duration);
-							switch(Casket.Card[CardNumber].SupportCardProperties.Duration[2]) {
+							switch(Casket.Card[CardNumber].SupportCardProperties.Duration.Type) {
 								case "Usages":
 									RemoveClass("ProgbarText_GameOpponentAction" + Looper + "Duration", "DurationInRounds");
 									if(Subsystem.Display.ColorBlindMode == true) {
@@ -2090,7 +2090,7 @@
 									}
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration[2] \"" + Casket.Card[CardNumber].SupportCardProperties.Duration[2] + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshGame is invalid.");
 									break;
 							}
 						}
@@ -2634,12 +2634,12 @@
 					Show("CtrlGroup_GameStart");
 					ChangeValue("Textbox_GameYourDeckName", Game.Status.Player.DeckProperties.Name);
 					ChangeValue("Textbox_GameOpponentDeckName", Game.Status.Opponent.DeckProperties.Name);
-					if(Casket.DeckSelection[1] > 0) {
+					if(Casket.DeckSelection.Player > 0) {
 						ChangeInert("Textbox_GameYourDeckName", false);
 					} else {
 						ChangeInert("Textbox_GameYourDeckName", true);
 					}
-					if(Casket.DeckSelection[2] > 0) {
+					if(Casket.DeckSelection.Opponent > 0) {
 						ChangeInert("Textbox_GameOpponentDeckName", false);
 					} else {
 						ChangeInert("Textbox_GameOpponentDeckName", true);
@@ -2800,7 +2800,7 @@
 						default:
 							break;
 					}
-					ChangeText("Label_GameSwitchCharacterTarget", ReadCardNameByID(Game.Status.Player.CharacterCard[Game0.Selection.Action[2]].ID));
+					ChangeText("Label_GameSwitchCharacterTarget", ReadCardNameByID(Game.Status.Player.CharacterCard[Game0.Selection.Action.Number].ID));
 					if(IsSelectedDiceMatchingCost("Player", "CharacterCard", null) == true) {
 						ChangeDisabled("Button_GameSwitchCharacter", false);
 					} else {
@@ -2813,8 +2813,8 @@
 					} else {
 						AlertSystemError("The player has no active character when preparing to switch character.");
 					}
-					if(Game0.Selection.Action[1] == "CharacterCard") {
-						AddClass("Card_GamePlayerCharacter" + Game0.Selection.Action[2], "InPreview");
+					if(Game0.Selection.Action.Type == "CharacterCard") {
+						AddClass("Card_GamePlayerCharacter" + Game0.Selection.Action.Number, "InPreview");
 					} else {
 						AlertSystemError("The player's action selection is not \"CharacterCard\" when preparing to switch character.");
 					}
@@ -3051,7 +3051,7 @@
 								case "SummonsCard":
 									HideHorizontally("CostIndicator_GameInfoWindowAffiliatedCard");
 									Show("Ctrl_GameInfoWindowAffiliatedCardDuration");
-									ChangeText("Label_GameInfoWindowAffiliatedCardDuration", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration[2]));
+									ChangeText("Label_GameInfoWindowAffiliatedCardDuration", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Duration.Type));
 									break;
 								case "EventCard":
 									Show("CostIndicator_GameInfoWindowAffiliatedCard");
@@ -3082,7 +3082,7 @@
 						Show("Ctrl_GameInfoWindowSummonsCard");
 						ChangeImage("Image_GameInfoWindowSummonsCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowSummonsCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeText("Label_GameInfoWindowSummonsCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration[2]));
+						ChangeText("Label_GameInfoWindowSummonsCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].SummonsCardProperties.Duration.Type));
 						ChangeText("Label_GameInfoWindowSummonsCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "TalentCard":
@@ -3143,7 +3143,7 @@
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowSupportCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]) + "</span>");
 						}
-						ChangeText("Label_GameInfoWindowSupportCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration[2]));
+						ChangeText("Label_GameInfoWindowSupportCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration.Type));
 						ChangeText("Label_GameInfoWindowSupportCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
 						break;
 					case "EventCard":
@@ -3168,7 +3168,7 @@
 					ChangeImage("Image_GameInfoWindowStatus1", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus1", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Name));
 					ChangeText("Label_GameInfoWindowStatus1Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Type));
-					ChangeText("Label_GameInfoWindowStatus1Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus1Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration.Type));
 					ChangeText("Label_GameInfoWindowStatus1Description", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Description);
 				}
 				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 2) {
@@ -3176,7 +3176,7 @@
 					ChangeImage("Image_GameInfoWindowStatus2", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus2", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Name));
 					ChangeText("Label_GameInfoWindowStatus2Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Type));
-					ChangeText("Label_GameInfoWindowStatus2Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus2Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration.Type));
 					ChangeText("Label_GameInfoWindowStatus2Description", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Description);
 				}
 				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 3) {
@@ -3184,7 +3184,7 @@
 					ChangeImage("Image_GameInfoWindowStatus3", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Image);
 					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus3", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Name));
 					ChangeText("Label_GameInfoWindowStatus3Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Type));
-					ChangeText("Label_GameInfoWindowStatus3Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[1] + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration[2]));
+					ChangeText("Label_GameInfoWindowStatus3Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration.Type));
 					ChangeText("Label_GameInfoWindowStatus3Description", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Description);
 				}
 
@@ -3269,7 +3269,7 @@
 				ChangeImage("Image_GameInfoWindowBuiltinStatus", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Image);
 				ChangeText("InfoWindowSubtitle_GameInfoWindowBuiltinStatus", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Name);
 				ChangeText("Label_GameInfoWindowBuiltinStatusType", Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Type));
-				ChangeText("Label_GameInfoWindowBuiltinStatusDuration", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[1] + Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration[2]));
+				ChangeText("Label_GameInfoWindowBuiltinStatusDuration", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration.Quantity + Translate(Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Duration.Type));
 				ChangeText("Label_GameInfoWindowBuiltinStatusDescription", Casket0.BuiltinStatus[ScrollToWhereOrBuiltinStatusName].Description);
 
 				// Scroll and expand
@@ -3351,14 +3351,14 @@
 					}
 					let BringForward = 0;
 					for(let Looper = 1; Looper <= 4; Looper++) {
-						if(ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper][1]) > 0) {
+						if(ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper].CardID) > 0) {
 							Show("Ctrl_GameInfoWindowCharacterStatus" + (Looper - BringForward));
-							let CardNumber = ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper][1]),
-							StatusNumber = Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper][2];
+							let CardNumber = ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper].CardID),
+							StatusNumber = Game.Status[PlayerOrOpponentOrHide].CharacterCard[Number].Status[Looper].StatusNumber;
 							ChangeImage("Image_GameInfoWindowCharacterStatus" + (Looper - BringForward), Casket.Card[CardNumber].Status[StatusNumber].Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowCharacterStatus" + (Looper - BringForward), ConvertEmptyName(Casket.Card[CardNumber].Status[StatusNumber].Name));
 							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Type", Translate(Casket.Card[CardNumber].Status[StatusNumber].Type));
-							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1] + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
+							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration.Quantity + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration.Type));
 							ChangeText("Label_GameInfoWindowCharacterStatus" + (Looper - BringForward) + "Description", Casket.Card[CardNumber].Status[StatusNumber].Description);
 						} else {
 							Hide("Ctrl_GameInfoWindowCharacterStatus" + (Looper - BringForward));
@@ -3380,14 +3380,14 @@
 				// Party Status
 				let BringForward = 0;
 				for(let Looper = 1; Looper <= 4; Looper++) {
-					if(ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper][1]) > 0) {
+					if(ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper].CardID) > 0) {
 						Show("Ctrl_GameInfoWindowPartyStatus" + (Looper - BringForward));
-						let CardNumber = ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper][1]),
-						StatusNumber = Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper][2];
+						let CardNumber = ReadCardNumberByID(Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper].CardID),
+						StatusNumber = Game.Status[PlayerOrOpponentOrHide].PartyStatus[Looper].StatusNumber;
 						ChangeImage("Image_GameInfoWindowPartyStatus" + (Looper - BringForward), Casket.Card[CardNumber].Status[StatusNumber].Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowPartyStatus" + (Looper - BringForward), ConvertEmptyName(Casket.Card[CardNumber].Status[StatusNumber].Name));
 						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Type", Translate(Casket.Card[CardNumber].Status[StatusNumber].Type));
-						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration[1] + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration[2]));
+						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Duration", Casket.Card[CardNumber].Status[StatusNumber].Duration.Quantity + Translate(Casket.Card[CardNumber].Status[StatusNumber].Duration.Type));
 						ChangeText("Label_GameInfoWindowPartyStatus" + (Looper - BringForward) + "Description", Casket.Card[CardNumber].Status[StatusNumber].Description);
 					} else {
 						Hide("Ctrl_GameInfoWindowPartyStatus" + (Looper - BringForward));
@@ -3493,7 +3493,9 @@
 											// Prepare to switch character
 											default:
 												if(Number != Game.Status.Player.ActiveCharacter) {
-													Game0.Selection.Action = [0, "CharacterCard", Number];
+													Game0.Selection.Action = {
+														Type: "CharacterCard", Number: Number
+													};
 													AutoSelectDice("Player", "CharacterCard", Number);
 													PlayAudio("Audio_Sound", "audio/SelectCard.mp3");
 													RefreshGame();
@@ -3567,7 +3569,9 @@
 					case "Opponent":
 						switch(Game.Status.Operation) {
 							case "Table":
-								Game0.Selection.DiscardEnemyObject = [0, CardType, Number];
+								Game0.Selection.DiscardEnemyObject = {
+									Type: CardType, Number: Number
+								};
 								RefreshActionSelection();
 								break;
 							case "PlayActionCardWithObjectSelection":
@@ -3609,18 +3613,18 @@
 			if(Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
 				switch(StatusType) {
 					case "CharacterStatus":
-						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1]) > 0) {
-							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1]), "Status" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][2]);
+						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID) > 0) {
+							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID), "Status" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].StatusNumber);
 						} else {
-							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1] + "\".");
+							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID + "\".");
 						}
 						RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, CharacterSequence);
 						break;
 					case "PartyStatus":
-						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1]) > 0) {
-							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1]), "Status" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][2]);
+						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID) > 0) {
+							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID), "Status" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].StatusNumber);
 						} else {
-							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1] + "\".");
+							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID + "\".");
 						}
 						RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, Game.Status[PlayerOrOpponent].ActiveCharacter);
 						break;
@@ -3635,18 +3639,18 @@
 			if(Subsystem.Display.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
 				switch(StatusType) {
 					case "CharacterStatus":
-						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1]) > 0) {
-							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1]), "Status" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][2]);
+						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID) > 0) {
+							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID), "Status" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].StatusNumber);
 						} else {
-							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence][1] + "\".");
+							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID + "\".");
 						}
 						RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, CharacterSequence);
 						break;
 					case "PartyStatus":
-						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1]) > 0) {
-							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1]), "Status" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][2]);
+						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID) > 0) {
+							RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID), "Status" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].StatusNumber);
 						} else {
-							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence][1] + "\".");
+							AlertSystemError("There is a status from an unknown card \"" + Game.Status[PlayerOrOpponent].PartyStatus[StatusSequence].CardID + "\".");
 						}
 						RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, Game.Status[PlayerOrOpponent].ActiveCharacter);
 						break;
@@ -3692,7 +3696,9 @@
 						break;
 					case "Opponent":
 						if(Game.Status.Operation == "Table") {
-							Game0.Selection.DiscardEnemyObject = [0, "Dice", Number];
+							Game0.Selection.DiscardEnemyObject = {
+								Type: "Dice", Number: Number
+							};
 							RefreshActionSelection();
 						} else {
 							ShowToast("无效操作");
@@ -3744,7 +3750,9 @@
 					case "PlayActionCard":
 					case "PlayActionCardWithObjectSelection":
 					case "Tuning":
-						Game0.Selection.Action = [0, "", 0];
+						Game0.Selection.Action = {
+							Type: "", Number: 0
+						};
 						Game0.Selection.Dice = [0, false, false, false, false, false, false, false, false, false, false, false, false];
 						RefreshGame();
 						break;
@@ -3774,11 +3782,11 @@
 				}, 20);
 			}
 			function SetPlayerDeckName() {
-				Casket.Deck[Casket.DeckSelection[1]].Properties.Name = ReadValue("Textbox_GameYourDeckName");
+				Casket.Deck[Casket.DeckSelection.Player].Properties.Name = ReadValue("Textbox_GameYourDeckName");
 				RefreshGame();
 			}
 			function SetOpponentDeckName() {
-				Casket.Deck[Casket.DeckSelection[2]].Properties.Name = ReadValue("Textbox_GameOpponentDeckName");
+				Casket.Deck[Casket.DeckSelection.Opponent].Properties.Name = ReadValue("Textbox_GameOpponentDeckName");
 				RefreshGame();
 			}
 
@@ -3961,34 +3969,34 @@
 		function LoadDeck(PlayerOrOpponent) {
 			switch(PlayerOrOpponent) {
 				case "Player":
-					if(Casket.DeckSelection[1] > 0) {
-						Game.Status.Player.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection[1]].Properties);
+					if(Casket.DeckSelection.Player > 0) {
+						Game.Status.Player.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection.Player].Properties);
 						for(let Looper = 1; Looper <= 3; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] != undefined) {
-								Game.Status.Player.CharacterCard[Looper].ID = Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] != undefined) {
+								Game.Status.Player.CharacterCard[Looper].ID = Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper];
 							} else {
 								Game.Status.Player.CharacterCard[Looper].ID = "";
 							}
 						}
 						for(let Looper = 1; Looper <= 30; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper] != undefined) {
-								Game.Status.Player.ActionCard[Looper].ID = Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] != undefined) {
+								Game.Status.Player.ActionCard[Looper].ID = Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper];
 							} else {
 								Game.Status.Player.ActionCard[Looper].ID = "";
 							}
 						}
 						for(let Looper = 1; Looper <= 3; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] != undefined &&
-							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper])].CharacterCardProperties.HasAffiliatedCard == true &&
-							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper])].AffiliatedCard.Type == "EventCard") {
-								Game.Status.Player.ActionCard[30 + Looper].ID = Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] != undefined &&
+							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper])].CharacterCardProperties.HasAffiliatedCard == true &&
+							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper])].AffiliatedCard.Type == "EventCard") {
+								Game.Status.Player.ActionCard[30 + Looper].ID = Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper];
 							} else {
 								Game.Status.Player.ActionCard[30 + Looper].ID = "";
 							}
 						}
 					} else {
 						Game.Status.Player.DeckProperties = structuredClone(Casket0.BuiltinDeck.EmptyDeck.Properties);
-						switch(Casket.DeckSelection[1]) {
+						switch(Casket.DeckSelection.Player) {
 							case -2:
 								Game.Status.Player.DeckProperties.Name = "(生成临时牌组)";
 								break;
@@ -3996,7 +4004,7 @@
 								Game.Status.Player.DeckProperties.Name = "(随机选择牌组)";
 								break;
 							default:
-								AlertSystemError("The value of Casket.DeckSelection[1] \"" + Casket.DeckSelection[1] + "\" in function LoadDeck is invalid.");
+								AlertSystemError("The value of Casket.DeckSelection.Player \"" + Casket.DeckSelection.Player + "\" in function LoadDeck is invalid.");
 								break;
 						}
 						for(let Looper = 1; Looper <= 3; Looper++) {
@@ -4008,34 +4016,34 @@
 					}
 					break;
 				case "Opponent":
-					if(Casket.DeckSelection[2] > 0) {
-						Game.Status.Opponent.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection[2]].Properties);
+					if(Casket.DeckSelection.Opponent > 0) {
+						Game.Status.Opponent.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection.Opponent].Properties);
 						for(let Looper = 1; Looper <= 3; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper] != undefined) {
-								Game.Status.Opponent.CharacterCard[Looper].ID = Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper] != undefined) {
+								Game.Status.Opponent.CharacterCard[Looper].ID = Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper];
 							} else {
 								Game.Status.Opponent.CharacterCard[Looper].ID = "";
 							}
 						}
 						for(let Looper = 1; Looper <= 30; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection[Looper] != undefined) {
-								Game.Status.Opponent.ActionCard[Looper].ID = Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection[Looper] != undefined) {
+								Game.Status.Opponent.ActionCard[Looper].ID = Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection[Looper];
 							} else {
 								Game.Status.Opponent.ActionCard[Looper].ID = "";
 							}
 						}
 						for(let Looper = 1; Looper <= 3; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper] != undefined &&
-							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper])].CharacterCardProperties.HasAffiliatedCard == true &&
-							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper])].AffiliatedCard.Type == "EventCard") {
-								Game.Status.Opponent.ActionCard[30 + Looper].ID = Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper];
+							if(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper] != undefined &&
+							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper])].CharacterCardProperties.HasAffiliatedCard == true &&
+							Casket.Card[ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper])].AffiliatedCard.Type == "EventCard") {
+								Game.Status.Opponent.ActionCard[30 + Looper].ID = Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper];
 							} else {
 								Game.Status.Opponent.ActionCard[30 + Looper].ID = "";
 							}
 						}
 					} else {
 						Game.Status.Opponent.DeckProperties = structuredClone(Casket0.BuiltinDeck.EmptyDeck.Properties);
-						switch(Casket.DeckSelection[2]) {
+						switch(Casket.DeckSelection.Opponent) {
 							case -2:
 								Game.Status.Opponent.DeckProperties.Name = "(生成临时牌组)";
 								break;
@@ -4043,7 +4051,7 @@
 								Game.Status.Opponent.DeckProperties.Name = "(随机选择牌组)";
 								break;
 							default:
-								AlertSystemError("The value of Casket.DeckSelection[2] \"" + Casket.DeckSelection[2] + "\" in function LoadDeck is invalid.");
+								AlertSystemError("The value of Casket.DeckSelection.Opponent \"" + Casket.DeckSelection.Opponent + "\" in function LoadDeck is invalid.");
 								break;
 						}
 						for(let Looper = 1; Looper <= 3; Looper++) {
@@ -4262,227 +4270,104 @@
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						}
 					],
 					ActiveCharacter: 0,
-					PartyStatus: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]],
+					PartyStatus: [
+						0,
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0}
+					],
 					SummonsCard: [
 						0,
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						}
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0}
 					],
 					ActionCard: [
 						0,
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						}
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"}
 					],
 					Dice: [
 						0,
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						}
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1}
 					],
 					RerollChance: 0,
 					Turn: "Standby",
@@ -4507,227 +4392,104 @@
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						},
 						{
 							ID: "",
 							HP: 0, PreviousHP: 0, Energy: 0,
 							Element: [0, "", "", ""], Reaction: "",
-							Status: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]]
+							Status: [
+								0,
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0},
+								{CardID: "", StatusNumber: 0, Duration: 0}
+							]
 						}
 					],
 					ActiveCharacter: 0,
-					PartyStatus: [0, [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0], [0, "", 0, 0]],
+					PartyStatus: [
+						0,
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0},
+						{CardID: "", StatusNumber: 0, Duration: 0}
+					],
 					SummonsCard: [
 						0,
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						},
-						{
-							ID: "",
-							Sequence: 1, Duration: 0
-						}
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0},
+						{ID: "", Sequence: 1, Duration: 0}
 					],
 					ActionCard: [
 						0,
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						},
-						{
-							ID: "",
-							Position: "OffTable"
-						}
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"},
+						{ID: "", Position: "OffTable"}
 					],
 					Dice: [
 						0,
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						},
-						{
-							Type: "Unknown",
-							Position: "OffTable", Sequence: 1
-						}
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1},
+						{Type: "Unknown", Position: "OffTable", Sequence: 1}
 					],
 					RerollChance: 0,
 					Turn: "Standby",
@@ -4747,7 +4509,9 @@
 					Queue: [0],
 					CardPlayed: ""
 				},
-				Master: [0, "Player", 0]
+				Master: {
+					PlayerOrOpponent: "Player", CardNumber: 0
+				}
 			};
 		}
 		function ResetGameAction() {
@@ -4759,11 +4523,18 @@
 		}
 		function ResetGameSelection() {
 			Game0.Selection = {
-				Action: [0, "", 0], RecommendedAction: [0, "", 0],
+				Action: {
+					Type: "", Number: 0
+				},
+				RecommendedAction: {
+					Type: "", Number: 0
+				},
 				StartingHand: [0, false, false, false, false, false],
 				CardInHand: 0,
 				Dice: [0, false, false, false, false, false, false, false, false, false, false, false, false],
-				DiscardEnemyObject: [0, "", 0]
+				DiscardEnemyObject: {
+					Type: "", Number: 0
+				}
 			};
 		}
 		function ExitGame() {
@@ -5016,16 +4787,16 @@
 				return Cost;
 			}
 			for(let Looper = 1; Looper < Game.Status[PlayerOrOpponent].CostAdjustment.length; Looper++) {
-				if(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][1] == ActionType) {
-					switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][2]) {
+				if(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ActionType == ActionType) {
+					switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ElementType) {
 						case "Any":
 							if(Cost[3] != undefined) {
-								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3]) {
+								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										break;
 									case "Subtract":
-										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										if(Cost[3] < 0) {
 											Cost[1] += Cost[3];
 											if(Cost[1] < 0) {
@@ -5035,56 +4806,56 @@
 										}
 										break;
 									default:
-										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] + "\" in function ReadCost is invalid.");
+										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator + "\" in function ReadCost is invalid.");
 										break;
 								}
 							} else {
-								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3]) {
+								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										break;
 									case "Subtract":
-										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										if(Cost[1] < 0) {
 											Cost[1] = 0;
 										}
 										break;
 									default:
-										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] + "\" in function ReadCost is invalid.");
+										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator + "\" in function ReadCost is invalid.");
 										break;
 								}
 							}
 							break;
 						case "Unaligned":
 							if(Cost[3] != undefined && Cost[2] != "Unaligned") {
-								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3]) {
+								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[3] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										break;
 									case "Subtract":
-										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[3] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										if(Cost[3] < 0) {
 											Cost[3] = 0;
 										}
 										break;
 									default:
-										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] + "\" in function ReadCost is invalid.");
+										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator + "\" in function ReadCost is invalid.");
 										break;
 								}
 							} else {
 								if(Cost[2] == "Unaligned") {
-									switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3]) {
+									switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 										case "Plus":
-											Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+											Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 											break;
 										case "Subtract":
-											Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+											Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 											if(Cost[1] < 0) {
 												Cost[1] = 0;
 											}
 											break;
 										default:
-											AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] + "\" in function ReadCost is invalid.");
+											AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator + "\" in function ReadCost is invalid.");
 											break;
 									}
 								}
@@ -5097,25 +4868,25 @@
 						case "Dendro":
 						case "Cryo":
 						case "Geo":
-							if(Cost[2] == Game.Status[PlayerOrOpponent].CostAdjustment[Looper][2]) {
-								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3]) {
+							if(Cost[2] == Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ElementType) {
+								switch(Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator) {
 									case "Plus":
-										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[1] += Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										break;
 									case "Subtract":
-										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper][4];
+										Cost[1] -= Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Amount;
 										if(Cost[1] < 0) {
 											Cost[1] = 0;
 										}
 										break;
 									default:
-										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][3] + "\" in function ReadCost is invalid.");
+										AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].Operator + "\" in function ReadCost is invalid.");
 										break;
 								}
 							}
 							break;
 						default:
-							AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper][2] \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper][2] + "\" in function ReadCost is invalid.");
+							AlertSystemError("The value of Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ElementType \"" + Game.Status[PlayerOrOpponent].CostAdjustment[Looper].ElementType + "\" in function ReadCost is invalid.");
 							break;
 					}
 				}

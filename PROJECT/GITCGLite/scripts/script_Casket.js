@@ -36,22 +36,24 @@
 				} else { // It is impossible to randomly select deck when there are no decks.
 					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckPlayer", true);
 					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckOpponent", true);
-					Casket.DeckSelection = [0, -2, -2];
+					Casket.DeckSelection = {
+						Player: -2, Opponent: -2
+					};
 				}
 
 				// Check and fix current decks if corrupted
-				if(Casket.DeckSelection[2] > 0) {
+				if(Casket.DeckSelection.Opponent > 0) {
 					let IsUnrecognizableCardDetected = false;
-					for(let Looper = Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection.length - 1; Looper >= 1; Looper--) { // Using reverse order when deleting multiple items in array.
-						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection[Looper]) == 0) {
+					for(let Looper = Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection.length - 1; Looper >= 1; Looper--) { // Using reverse order when deleting multiple items in array.
+						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection[Looper]) == 0) {
 							IsUnrecognizableCardDetected = true;
-							Casket.Deck[Casket.DeckSelection[2]].CharacterCardSelection.splice(Looper, 1);
+							Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection.splice(Looper, 1);
 						}
 					}
-					for(let Looper = Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection.length - 1; Looper >= 1; Looper--) {
-						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection[Looper]) == 0) {
+					for(let Looper = Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.length - 1; Looper >= 1; Looper--) {
+						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection[Looper]) == 0) {
 							IsUnrecognizableCardDetected = true;
-							Casket.Deck[Casket.DeckSelection[2]].ActionCardSelection.splice(Looper, 1);
+							Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.splice(Looper, 1);
 						}
 					}
 					if(IsUnrecognizableCardDetected == true) {
@@ -61,18 +63,18 @@
 							"", "", "", "确定");
 					}
 				}
-				if(Casket.DeckSelection[1] > 0) {
+				if(Casket.DeckSelection.Player > 0) {
 					let IsUnrecognizableCardDetected = false;
-					for(let Looper = Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length - 1; Looper >= 1; Looper--) {
-						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper]) == 0) {
+					for(let Looper = Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1; Looper >= 1; Looper--) {
+						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper]) == 0) {
 							IsUnrecognizableCardDetected = true;
-							Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.splice(Looper, 1);
+							Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.splice(Looper, 1);
 						}
 					}
-					for(let Looper = Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length - 1; Looper >= 1; Looper--) {
-						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper]) == 0) {
+					for(let Looper = Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1; Looper >= 1; Looper--) {
+						if(ReadCardNumberByID(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper]) == 0) {
 							IsUnrecognizableCardDetected = true;
-							Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.splice(Looper, 1);
+							Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper, 1);
 						}
 					}
 					if(IsUnrecognizableCardDetected == true) {
@@ -191,35 +193,35 @@
 
 		// Selection
 			// Decks
-			if(Casket.DeckSelection[1] == -2) {
+			if(Casket.DeckSelection.Player == -2) {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckPlayer", true);
 			} else {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckPlayer", false);
 			}
-			if(Casket.DeckSelection[2] == -2) {
+			if(Casket.DeckSelection.Opponent == -2) {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckOpponent", true);
 			} else {
 				ChangeChecked("Radiobtn_CasketGenerateTemporaryDeckOpponent", false);
 			}
-			if(Casket.DeckSelection[1] == -1) {
+			if(Casket.DeckSelection.Player == -1) {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckPlayer", true);
 			} else {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckPlayer", false);
 			}
-			if(Casket.DeckSelection[2] == -1) {
+			if(Casket.DeckSelection.Opponent == -1) {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckOpponent", true);
 			} else {
 				ChangeChecked("Radiobtn_CasketRandomlySelectDeckOpponent", false);
 			}
 			for(let Looper = 1; Looper < Casket.Deck.length; Looper++) {
-				if(Casket.DeckSelection[1] == Looper) {
+				if(Casket.DeckSelection.Player == Looper) {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Player", true);
 					AddClass("Label_CasketDeck" + Looper, "Active");
 				} else {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Player", false);
 					RemoveClass("Label_CasketDeck" + Looper, "Active");
 				}
-				if(Casket.DeckSelection[2] == Looper) {
+				if(Casket.DeckSelection.Opponent == Looper) {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Opponent", true);
 				} else {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Opponent", false);
@@ -229,17 +231,17 @@
 			// Cards
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				ChangeChecked("Checkbox_CasketCard" + Looper, false);
-				if(Casket.DeckSelection[1] > 0) {
+				if(Casket.DeckSelection.Player > 0) {
 					ChangeDisabled("Checkbox_CasketCard" + Looper, false);
 					if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
-						for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper2++) {
-							if(Casket.Card[Looper].BasicProperties.ID == Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper2]) {
+						for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper2++) {
+							if(Casket.Card[Looper].BasicProperties.ID == Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper2]) {
 								ChangeChecked("Checkbox_CasketCard" + Looper, true);
 							}
 						}
 					} else {
-						for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper2++) {
-							if(Casket.Card[Looper].BasicProperties.ID == Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper2]) {
+						for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper2++) {
+							if(Casket.Card[Looper].BasicProperties.ID == Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper2]) {
 								ChangeChecked("Checkbox_CasketCard" + Looper, true);
 							}
 						}
@@ -248,29 +250,29 @@
 					ChangeDisabled("Checkbox_CasketCard" + Looper, true);
 				}
 			}
-			if(Casket.DeckSelection[1] > 0) {
-				ChangeText("Label_CasketSelectAllCharacterCards", "已选 " + (Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length - 1));
-				ChangeText("Label_CasketSelectAllActionCards", "已选 " + (Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length - 1));
+			if(Casket.DeckSelection.Player > 0) {
+				ChangeText("Label_CasketSelectAllCharacterCards", "已选 " + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1));
+				ChangeText("Label_CasketSelectAllActionCards", "已选 " + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1));
 			} else {
 				ChangeText("Label_CasketSelectAllCharacterCards", "不可选择");
 				ChangeText("Label_CasketSelectAllActionCards", "不可选择");
 			}
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length != 4) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length != 4) {
 				AddClass("Label_CasketSelectAllCharacterCards", "RedText");
 			} else {
 				RemoveClass("Label_CasketSelectAllCharacterCards", "RedText");
 			}
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length != 31) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length != 31) {
 				AddClass("Label_CasketSelectAllActionCards", "RedText");
 			} else {
 				RemoveClass("Label_CasketSelectAllActionCards", "RedText");
 			}
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length > 1) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length > 1) {
 				ChangeDisabled("Button_CasketCharacterCardsDelete", false);
 			} else {
 				ChangeDisabled("Button_CasketCharacterCardsDelete", true);
 			}
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length > 1) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length > 1) {
 				ChangeDisabled("Button_CasketActionCardsDelete", false);
 			} else {
 				ChangeDisabled("Button_CasketActionCardsDelete", true);
@@ -280,15 +282,15 @@
 		FilterCasket();
 
 		// Deck properties
-		if(Casket.DeckSelection[1] > 0) {
+		if(Casket.DeckSelection.Player > 0) {
 			Show("Item_CasketDeckProperties");
-			ChangeValue("Textbox_CasketDeckPropertiesName", Casket.Deck[Casket.DeckSelection[1]].Properties.Name);
-			ChangeValue("Textbox_CasketDeckPropertiesDescription", Casket.Deck[Casket.DeckSelection[1]].Properties.Description);
-			ChangeValue("Textbox_CasketDeckPropertiesBgImage", Casket.Deck[Casket.DeckSelection[1]].Properties.BgImage);
-			ChangeValue("Textbox_CasketDeckPropertiesCardBackImage", Casket.Deck[Casket.DeckSelection[1]].Properties.CardBackImage);
-			ChangeValue("Textbox_CasketDeckPropertiesImageSource", Casket.Deck[Casket.DeckSelection[1]].Properties.ImageSource);
+			ChangeValue("Textbox_CasketDeckPropertiesName", Casket.Deck[Casket.DeckSelection.Player].Properties.Name);
+			ChangeValue("Textbox_CasketDeckPropertiesDescription", Casket.Deck[Casket.DeckSelection.Player].Properties.Description);
+			ChangeValue("Textbox_CasketDeckPropertiesBgImage", Casket.Deck[Casket.DeckSelection.Player].Properties.BgImage);
+			ChangeValue("Textbox_CasketDeckPropertiesCardBackImage", Casket.Deck[Casket.DeckSelection.Player].Properties.CardBackImage);
+			ChangeValue("Textbox_CasketDeckPropertiesImageSource", Casket.Deck[Casket.DeckSelection.Player].Properties.ImageSource);
 			if(Game.Status.Operation == "Title") {
-				Game.Status.Player.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection[1]].Properties);
+				Game.Status.Player.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection.Player].Properties);
 			}
 		} else {
 			HideToCorner("Item_CasketDeckProperties");
@@ -296,9 +298,9 @@
 				Game.Status.Player.DeckProperties = structuredClone(Casket0.BuiltinDeck.EmptyDeck.Properties);
 			}
 		}
-		if(Casket.DeckSelection[2] > 0) {
+		if(Casket.DeckSelection.Opponent > 0) {
 			if(Game.Status.Operation == "Title") {
-				Game.Status.Opponent.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection[2]].Properties);
+				Game.Status.Opponent.DeckProperties = structuredClone(Casket.Deck[Casket.DeckSelection.Opponent].Properties);
 			}
 		} else {
 			if(Game.Status.Operation == "Title") {
@@ -377,7 +379,7 @@
 				}
 			}
 			ChangeText("Label_CasketCharacterCardsItemCount", "显示 " + Counter + "/" + Counter2);
-			if(Casket.DeckSelection[1] > 0 && Counter > 0) {
+			if(Casket.DeckSelection.Player > 0 && Counter > 0) {
 				ChangeDisabled("Checkbox_CasketSelectAllCharacterCards", false);
 			} else {
 				ChangeDisabled("Checkbox_CasketSelectAllCharacterCards", true);
@@ -481,7 +483,7 @@
 				}
 			}
 			ChangeText("Label_CasketActionCardsItemCount", "显示 " + Counter + "/" + Counter2);
-			if(Casket.DeckSelection[1] > 0 && Counter > 0) {
+			if(Casket.DeckSelection.Player > 0 && Counter > 0) {
 				ChangeDisabled("Checkbox_CasketSelectAllActionCards", false);
 			} else {
 				ChangeDisabled("Checkbox_CasketSelectAllActionCards", true);
@@ -502,36 +504,36 @@
 
 		// Decks
 		function SetPlayerDeckGenerateTemporaryDeck() {
-			Casket.DeckSelection[1] = -2;
+			Casket.DeckSelection.Player = -2;
 			RefreshGame();
 		}
 		function SetOpponentDeckGenerateTemporaryDeck() {
-			Casket.DeckSelection[2] = -2;
+			Casket.DeckSelection.Opponent = -2;
 			RefreshGame();
 		}
 		function SetPlayerDeckRandomlySelectDeck() {
-			Casket.DeckSelection[1] = -1;
+			Casket.DeckSelection.Player = -1;
 			RefreshGame();
 		}
 		function SetOpponentDeckRandomlySelectDeck() {
-			Casket.DeckSelection[2] = -1;
+			Casket.DeckSelection.Opponent = -1;
 			RefreshGame();
 		}
 		function SetPlayerDeck(DeckNumber) {
-			Casket.DeckSelection[1] = DeckNumber;
+			Casket.DeckSelection.Player = DeckNumber;
 			RefreshGame();
 		}
 		function SetOpponentDeck(DeckNumber) {
-			Casket.DeckSelection[2] = DeckNumber;
+			Casket.DeckSelection.Opponent = DeckNumber;
 			RefreshGame();
 		}
 		function DuplicateDeck(DeckNumber) {
 			Casket.Deck.splice(DeckNumber + 1, 0, structuredClone(Casket.Deck[DeckNumber]));
-			if(Casket.DeckSelection[1] > DeckNumber) {
-				Casket.DeckSelection[1]++;
+			if(Casket.DeckSelection.Player > DeckNumber) {
+				Casket.DeckSelection.Player++;
 			}
-			if(Casket.DeckSelection[2] > DeckNumber) {
-				Casket.DeckSelection[2]++;
+			if(Casket.DeckSelection.Opponent > DeckNumber) {
+				Casket.DeckSelection.Opponent++;
 			}
 			RefreshGame();
 		}
@@ -566,19 +568,19 @@
 						Casket.Deck[Looper2] = structuredClone(Casket.Deck[Looper2 + 1]);
 						Casket.Deck[Looper2 + 1] = structuredClone(Swapper);
 						switch(true) {
-							case Casket.DeckSelection[1] == Looper2:
-								Casket.DeckSelection[1]++;
+							case Casket.DeckSelection.Player == Looper2:
+								Casket.DeckSelection.Player++;
 								break;
-							case Casket.DeckSelection[1] == Looper2 + 1:
-								Casket.DeckSelection[1]--;
+							case Casket.DeckSelection.Player == Looper2 + 1:
+								Casket.DeckSelection.Player--;
 								break;
 						}
 						switch(true) {
-							case Casket.DeckSelection[2] == Looper2:
-								Casket.DeckSelection[2]++;
+							case Casket.DeckSelection.Opponent == Looper2:
+								Casket.DeckSelection.Opponent++;
 								break;
-							case Casket.DeckSelection[2] == Looper2 + 1:
-								Casket.DeckSelection[2]--;
+							case Casket.DeckSelection.Opponent == Looper2 + 1:
+								Casket.DeckSelection.Opponent--;
 								break;
 						}
 					}
@@ -589,25 +591,25 @@
 
 		// Cards
 		function SetCard(CardNumber) {
-			if(Casket.DeckSelection[1] > 0) {
+			if(Casket.DeckSelection.Player > 0) {
 				if(Casket.Card[CardNumber].BasicProperties.Type == "CharacterCard") {
 					if(IsChecked("Checkbox_CasketCard" + CardNumber) == true) {
 						// Add selection
 						let IsCardAlreadyInDeck = false;
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
+							if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
 								IsCardAlreadyInDeck = true;
 								break;
 							}
 						}
 						if(IsCardAlreadyInDeck == false) {
-							Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length] = Casket.Card[CardNumber].BasicProperties.ID;
+							Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length] = Casket.Card[CardNumber].BasicProperties.ID;
 						}
 					} else {
 						// Remove selection
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
-								Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.splice(Looper, 1);
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
+							if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
+								Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.splice(Looper, 1);
 								break;
 							}
 						}
@@ -616,20 +618,20 @@
 					if(IsChecked("Checkbox_CasketCard" + CardNumber) == true) {
 						// Add selection
 						let IsCardAlreadyInDeck = false;
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
+							if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
 								IsCardAlreadyInDeck = true;
 								break;
 							}
 						}
 						if(IsCardAlreadyInDeck == false) {
-							Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length] = Casket.Card[CardNumber].BasicProperties.ID;
+							Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length] = Casket.Card[CardNumber].BasicProperties.ID;
 						}
 					} else {
 						// Remove selection
-						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper++) {
-							if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
-								Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.splice(Looper, 1);
+						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
+							if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] == Casket.Card[CardNumber].BasicProperties.ID) {
+								Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper, 1);
 								break;
 							}
 						}
@@ -684,26 +686,26 @@
 			EditCard(Casket.Card.length - 1);
 		}
 		function SetSelectAllCharacterCards() {
-			if(Casket.DeckSelection[1] > 0) {
+			if(Casket.DeckSelection.Player > 0) {
 				for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 					if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
 						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllCharacterCards") == true) {
 							// Add selection
 							let IsCardAlreadyInDeck = false;
-							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper2++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
+							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper2++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
 									IsCardAlreadyInDeck = true;
 									break;
 								}
 							}
 							if(IsCardAlreadyInDeck == false) {
-								Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length] = Casket.Card[Looper].BasicProperties.ID;
+								Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length] = Casket.Card[Looper].BasicProperties.ID;
 							}
 						} else {
 							// Remove selection
-							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length; Looper2++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
-									Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.splice(Looper2, 1);
+							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper2++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
+									Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.splice(Looper2, 1);
 									break;
 								}
 							}
@@ -716,10 +718,10 @@
 			}
 		}
 		function ConfirmDeleteSelectedCharacterCards() {
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length > 1) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length > 1) {
 				ShowDialog("Casket_ConfirmDeleteSelectedCharacterCards",
 					"Caution",
-					"您确认要删除当前牌组选中的所有" + (Casket.Deck[Casket.DeckSelection[1]].CharacterCardSelection.length - 1) + "张角色牌？",
+					"您确认要删除当前牌组选中的所有" + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1) + "张角色牌？",
 					"", "", "删除", "取消");
 			} else {
 				AlertSystemError("Function ConfirmDeleteSelectedCharacterCards was called when no deck is selected or no character cards are selected in the current deck.");
@@ -736,26 +738,26 @@
 			EditCard(Casket.Card.length - 1);
 		}
 		function SetSelectAllActionCards() {
-			if(Casket.DeckSelection[1] > 0) {
+			if(Casket.DeckSelection.Player > 0) {
 				for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 					if(Casket.Card[Looper].BasicProperties.Type != "CharacterCard") {
 						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllActionCards") == true) {
 							// Add selection
 							let IsCardAlreadyInDeck = false;
-							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper2++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
+							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper2++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
 									IsCardAlreadyInDeck = true;
 									break;
 								}
 							}
 							if(IsCardAlreadyInDeck == false) {
-								Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length] = Casket.Card[Looper].BasicProperties.ID;
+								Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length] = Casket.Card[Looper].BasicProperties.ID;
 							}
 						} else {
 							// Remove selection
-							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length; Looper2++) {
-								if(Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
-									Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.splice(Looper2, 1);
+							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper2++) {
+								if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper2] == Casket.Card[Looper].BasicProperties.ID) {
+									Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper2, 1);
 									break;
 								}
 							}
@@ -768,10 +770,10 @@
 			}
 		}
 		function ConfirmDeleteSelectedActionCards() {
-			if(Casket.DeckSelection[1] > 0 && Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length > 1) {
+			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length > 1) {
 				ShowDialog("Casket_ConfirmDeleteSelectedActionCards",
 					"Caution",
-					"您确认要删除当前牌组选中的所有" + (Casket.Deck[Casket.DeckSelection[1]].ActionCardSelection.length - 1) + "张行动牌？",
+					"您确认要删除当前牌组选中的所有" + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1) + "张行动牌？",
 					"", "", "删除", "取消");
 			} else {
 				AlertSystemError("Function ConfirmDeleteSelectedActionCards was called when no deck is selected or no action cards are selected in the current deck.");
@@ -867,23 +869,23 @@
 
 		// Deck properties
 		function SetDeckName() {
-			Casket.Deck[Casket.DeckSelection[1]].Properties.Name = ReadValue("Textbox_CasketDeckPropertiesName");
+			Casket.Deck[Casket.DeckSelection.Player].Properties.Name = ReadValue("Textbox_CasketDeckPropertiesName");
 			RefreshGame();
 		}
 		function SetDeckDescription() {
-			Casket.Deck[Casket.DeckSelection[1]].Properties.Description = ReadValue("Textbox_CasketDeckPropertiesDescription");
+			Casket.Deck[Casket.DeckSelection.Player].Properties.Description = ReadValue("Textbox_CasketDeckPropertiesDescription");
 			RefreshCasket();
 		}
 		function SetDeckBgImage() {
-			Casket.Deck[Casket.DeckSelection[1]].Properties.BgImage = ReadValue("Textbox_CasketDeckPropertiesBgImage");
+			Casket.Deck[Casket.DeckSelection.Player].Properties.BgImage = ReadValue("Textbox_CasketDeckPropertiesBgImage");
 			RefreshGame();
 		}
 		function SetDeckCardBackImage() {
-			Casket.Deck[Casket.DeckSelection[1]].Properties.CardBackImage = ReadValue("Textbox_CasketDeckPropertiesCardBackImage");
+			Casket.Deck[Casket.DeckSelection.Player].Properties.CardBackImage = ReadValue("Textbox_CasketDeckPropertiesCardBackImage");
 			RefreshGame();
 		}
 		function SetDeckImageSource() {
-			Casket.Deck[Casket.DeckSelection[1]].Properties.ImageSource = ReadValue("Textbox_CasketDeckPropertiesImageSource");
+			Casket.Deck[Casket.DeckSelection.Player].Properties.ImageSource = ReadValue("Textbox_CasketDeckPropertiesImageSource");
 			RefreshCasket();
 		}
 

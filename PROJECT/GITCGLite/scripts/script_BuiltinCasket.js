@@ -209,7 +209,9 @@
 						Name: "",
 						Image: "",
 						Type: "SummonsCard",
-						Duration: [0, 3, "Usages"],
+						Duration: {
+							Quantity: 3, Type: "Usages"
+						},
 						Description: "",
 						Requirement: "",
 						Execution: ""
@@ -225,7 +227,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 3, "Usages"],
+						Duration: {
+							Quantity: 3, Type: "Usages"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution: ""
@@ -242,7 +246,9 @@
 							Name: "",
 							Image: "",
 							Type: "CharacterStatus",
-							Duration: [0, 3, "Usages"],
+							Duration: {
+								Quantity: 3, Type: "Usages"
+							},
 							Description: "",
 							Execution: ""
 						}
@@ -257,7 +263,9 @@
 
 		// Saved
 		var Casket = {
-			DeckSelection: [0, 1, 2], // -2 for "generate temporary deck", -1 for "randomly select deck".
+			DeckSelection: {
+				Player: 1, Opponent: 2 // -2 for "generate temporary deck", -1 for "randomly select deck".
+			},
 			Deck: [
 				"DeckLibrary",
 				{ // Built-in deck 1
@@ -421,7 +429,9 @@
 							Name: "雷元素附魔",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/7/7f/Icon_TCG_Electro.png",
 							Type: "CharacterStatus",
-							Duration: [0, 2, "Rounds"],
+							Duration: {
+								Quantity: 2, Type: "Rounds"
+							},
 							Description: "刻晴战斗行动前：给自己施加雷元素附魔，造成的伤害均转变为雷元素伤害。刻晴战斗行动中，且有装备天赋牌：雷元素伤害增加10点。",
 							Execution:
 								"if(IsInTurn() && IsCharacterActiveByID(\"Self\", \"Keqing\")) {\n" +
@@ -579,7 +589,9 @@
 							Name: "雨帘剑",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/c/c4/Icon_TCG_Shield.png",
 							Type: "PartyStatus",
-							Duration: [0, 2, "Usages"],
+							Duration: {
+								Quantity: 2, Type: "Usages"
+							},
 							Description: "受到30以上的伤害时，或受到20以上的伤害且行秋有装备天赋牌时：抵消10点伤害。",
 							Execution:
 								"if(ReadPhase() == \"CombatAction\" && IsInTurn() == false &&\n" +
@@ -592,7 +604,9 @@
 							Name: "虹剑势",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/e7/Rainbow_Bladework_Buff_Icon.png",
 							Type: "PartyStatus",
-							Duration: [0, 3, "Usages"],
+							Duration: {
+								Quantity: 3, Type: "Usages"
+							},
 							Description: "普通攻击后：造成10点水元素伤害。",
 							Execution:
 								"if(ReadPhase() == \"AfterCombatAction\" && IsInTurn() && ReadActionType() == \"NormalAttack\") {\n" +
@@ -737,7 +751,9 @@
 						Name: "暴风之眼",
 						Image: "https://static.wikia.nocookie.net/gensin-impact/images/c/cf/Stormeye_Summon.png",
 						Type: "SummonsCard",
-						Duration: [0, 2, "Usages"],
+						Duration: {
+							Quantity: 2, Type: "Usages"
+						},
 						HasCounter: false,
 						Description: "在结束阶段：造成20点风元素伤害。使敌方切换至离我方前台角色最近的角色。",
 						Execution:
@@ -753,7 +769,9 @@
 							Name: "风域",
 							Image: "https://patchwiki.biligame.com/images/ys/f/fe/hhb16pe3sq5duv4cu299atxbi78k7ae.png",
 							Type: "PartyStatus",
-							Duration: [0, 2, "Usages"],
+							Duration: {
+								Quantity: 2, Type: "Usages"
+							},
 							Description: "轮到我方时：切换角色少花费1个骰子。若温迪有装备天赋牌，普通攻击少花费1个任意骰子。",
 							Execution:
 								"if(ReadPhase() == \"ActionPhase BeforeStandby\" && IsInTurn()) {\n" +
@@ -913,7 +931,9 @@
 							Name: "彼岸蝶舞",
 							Image: "https://patchwiki.biligame.com/images/ys/f/f3/0g43qqxknh3k0v6j7b6q4u6jl5hfbee.png",
 							Type: "CharacterStatus",
-							Duration: [0, 2, "Rounds"],
+							Duration: {
+								Quantity: 2, Type: "Rounds"
+							},
 							Description: "胡桃战斗行动前：给自己施加火元素附魔，造成的伤害均转变为火元素伤害。胡桃战斗行动中：火元素伤害增加10点。若使用重击，给敌方前台角色施加「血梅香」状态。",
 							Execution:
 								"if(IsInTurn() && IsCharacterActiveByID(\"Self\", \"HuTao\")) {\n" +
@@ -934,7 +954,9 @@
 							Name: "血梅香",
 							Image: "",
 							Type: "CharacterStatus",
-							Duration: [0, 1, "Usages"],
+							Duration: {
+								Quantity: 1, Type: "Usages"
+							},
 							Description: "在结束阶段：给自己造成10点火元素伤害。",
 							Execution:
 								"if(ReadPhase() == \"EndPhase\") {\n" +
@@ -1118,7 +1140,9 @@
 							Name: "蕴种印",
 							Image: "https://patchwiki.biligame.com/images/ys/8/8b/hfb5j6xnze5j5e5tmixhieq59y78fwn.png",
 							Type: "CharacterStatus",
-							Duration: [0, 2, "Usages"],
+							Duration: {
+								Quantity: 2, Type: "Usages"
+							},
 							Description: "自己受到元素反应后：给我方所有具有「蕴种印」的角色造成10点穿透伤害。若敌方纳西妲可用，其有装备天赋牌，且敌方具有「摩耶之殿」状态，敌方队伍具有火元素角色，则改为草元素伤害。",
 							Execution:
 								"if(IsReactionTriggered(\"Master\", \"\", \"Any\")) {\n" +
@@ -1145,7 +1169,9 @@
 							Name: "摩耶之殿",
 							Image: "https://patchwiki.biligame.com/images/ys/b/b2/hiqeufp1d8c37jqo8maxpkvjuiu32lq.png",
 							Type: "PartyStatus",
-							Duration: [0, 2, "Rounds"],
+							Duration: {
+								Quantity: 2, Type: "Rounds"
+							},
 							Description: "战斗行动中，敌方任意角色受到元素反应时：伤害增加10点。",
 							Execution:
 								"if(ReadPhase() == \"CombatAction\" && IsReactionTriggered(\"Enemy\", \"All\", \"Any\")) {\n" +
@@ -1716,7 +1742,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 0, "Matching"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1753,7 +1781,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1785,7 +1815,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 2, "Usages"],
+						Duration: {
+							Quantity: 2, Type: "Usages"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1817,7 +1849,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 2, "Usages"],
+						Duration: {
+							Quantity: 2, Type: "Usages"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1849,7 +1883,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 2, "Usages"],
+						Duration: {
+							Quantity: 2, Type: "Usages"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1909,7 +1945,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 1, "Matching"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1941,7 +1979,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 1, "Matching"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -1973,7 +2013,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Unaligned"],
-						Duration: [0, 2, "Usages"],
+						Duration: {
+							Quantity: 2, Type: "Usages"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -2015,7 +2057,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Matching"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -2051,7 +2095,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Unaligned"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -2087,7 +2133,9 @@
 					},
 					SupportCardProperties: {
 						Cost: [0, 2, "Unaligned"],
-						Duration: [0, 9, "Rounds"],
+						Duration: {
+							Quantity: 9, Type: "Rounds"
+						},
 						HasCounter: false,
 						Requirement: "",
 						Execution:
@@ -2221,7 +2269,9 @@
 							Name: "绝云锅巴",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Genius_Invokation_TCG_Food.png",
 							Type: "CharacterStatus",
-							Duration: [0, 1, "Usages"],
+							Duration: {
+								Quantity: 1, Type: "Usages"
+							},
 							Description: "普通攻击时：增加10点伤害。",
 							Execution:
 								"if(ReadPhase() == \"CombatAction\" && IsInTurn() && ReadActionType() == \"NormalAttack\") {\n" +
@@ -2266,7 +2316,9 @@
 							Name: "莲花酥",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Genius_Invokation_TCG_Food.png",
 							Type: "CharacterStatus",
-							Duration: [0, 1, "Usages"],
+							Duration: {
+								Quantity: 1, Type: "Usages"
+							},
 							Description: "受到伤害时：抵消30点伤害。",
 							Execution:
 								"if(ReadPhase() == \"CombatAction\" && IsInTurn() == false && ReadDamage() > 0) {\n" +
@@ -2372,7 +2424,9 @@
 							Name: "烤蘑菇披萨",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Genius_Invokation_TCG_Food.png",
 							Type: "CharacterStatus",
-							Duration: [0, 2, "Rounds"],
+							Duration: {
+								Quantity: 2, Type: "Rounds"
+							},
 							Description: "在结束阶段：给自己治疗10点血量。",
 							Execution:
 								"if(ReadPhase() == \"EndPhase\") {\n" +
@@ -2418,7 +2472,9 @@
 							Name: "烤蘑菇披萨",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Genius_Invokation_TCG_Food.png",
 							Type: "CharacterStatus",
-							Duration: [0, 2, "Rounds"],
+							Duration: {
+								Quantity: 2, Type: "Rounds"
+							},
 							Description: "在结束阶段：给自己治疗10点血量。",
 							Execution:
 								"if(ReadPhase() == \"EndPhase\") {\n" +
@@ -2464,7 +2520,9 @@
 							Name: "松茸酿肉卷",
 							Image: "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Genius_Invokation_TCG_Food.png",
 							Type: "CharacterStatus",
-							Duration: [0, 3, "Rounds"],
+							Duration: {
+								Quantity: 3, Type: "Rounds"
+							},
 							Description: "在结束阶段：给自己治疗10点血量。",
 							Execution:
 								"if(ReadPhase() == \"EndPhase\") {\n" +
