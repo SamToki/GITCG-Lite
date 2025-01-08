@@ -562,9 +562,9 @@
 			for(let Looper = 1; Looper < Casket.Deck.length - 1; Looper++) {
 				for(let Looper2 = 1; Looper2 < Casket.Deck.length - 1; Looper2++) {
 					if(Casket.Deck[Looper2].Properties.Name > Casket.Deck[Looper2 + 1].Properties.Name) {
-						Casket.Deck[0] = structuredClone(Casket.Deck[Looper2]);
+						let Swapper = structuredClone(Casket.Deck[Looper2]);
 						Casket.Deck[Looper2] = structuredClone(Casket.Deck[Looper2 + 1]);
-						Casket.Deck[Looper2 + 1] = structuredClone(Casket.Deck[0]);
+						Casket.Deck[Looper2 + 1] = structuredClone(Swapper);
 						switch(true) {
 							case Casket.DeckSelection[1] == Looper2:
 								Casket.DeckSelection[1]++;
@@ -584,7 +584,6 @@
 					}
 				}
 			}
-			Casket.Deck[0] = "DeckLibrary";
 			RefreshGame();
 		}
 
@@ -783,9 +782,9 @@
 			for(let Looper = 1; Looper < Casket.Card.length - 1; Looper++) {
 				for(let Looper2 = 1; Looper2 < Casket.Card.length - 1; Looper2++) {
 					if(Casket.Card[Looper2].BasicProperties.Type != "CharacterCard" && Casket.Card[Looper2 + 1].BasicProperties.Type == "CharacterCard") {
-						Casket.Card[0] = structuredClone(Casket.Card[Looper2]);
+						let Swapper = structuredClone(Casket.Card[Looper2]);
 						Casket.Card[Looper2] = structuredClone(Casket.Card[Looper2 + 1]);
-						Casket.Card[Looper2 + 1] = structuredClone(Casket.Card[0]);
+						Casket.Card[Looper2 + 1] = structuredClone(Swapper);
 					}
 				}
 			}
@@ -799,9 +798,9 @@
 								for(let Looper2 = 1; Looper2 < Casket.Card.length - 1; Looper2++) {
 									if(Casket.Card[Looper2].BasicProperties.Type == "CharacterCard" && Casket.Card[Looper2 + 1].BasicProperties.Type == "CharacterCard" &&
 									Casket.Card[Looper2].BasicProperties.Name > Casket.Card[Looper2 + 1].BasicProperties.Name) {
-										Casket.Card[0] = structuredClone(Casket.Card[Looper2]);
+										let Swapper = structuredClone(Casket.Card[Looper2]);
 										Casket.Card[Looper2] = structuredClone(Casket.Card[Looper2 + 1]);
-										Casket.Card[Looper2 + 1] = structuredClone(Casket.Card[0]);
+										Casket.Card[Looper2 + 1] = structuredClone(Swapper);
 									}
 								}
 							}
@@ -811,9 +810,9 @@
 								for(let Looper2 = 1; Looper2 < Casket.Card.length - 1; Looper2++) {
 									if(Casket.Card[Looper2].BasicProperties.Type == "CharacterCard" && Casket.Card[Looper2 + 1].BasicProperties.Type == "CharacterCard") {
 										if(ConvertElementTypeToNumber(Casket.Card[Looper2].CharacterCardProperties.ElementType) > ConvertElementTypeToNumber(Casket.Card[Looper2 + 1].CharacterCardProperties.ElementType)) {
-											Casket.Card[0] = structuredClone(Casket.Card[Looper2]);
+											let Swapper = structuredClone(Casket.Card[Looper2]);
 											Casket.Card[Looper2] = structuredClone(Casket.Card[Looper2 + 1]);
-											Casket.Card[Looper2 + 1] = structuredClone(Casket.Card[0]);
+											Casket.Card[Looper2 + 1] = structuredClone(Swapper);
 										}
 									}
 								}
@@ -831,9 +830,9 @@
 								for(let Looper2 = 1; Looper2 < Casket.Card.length - 1; Looper2++) {
 									if(Casket.Card[Looper2].BasicProperties.Type != "CharacterCard" && Casket.Card[Looper2 + 1].BasicProperties.Type != "CharacterCard" &&
 									Casket.Card[Looper2].BasicProperties.Name > Casket.Card[Looper2 + 1].BasicProperties.Name) {
-										Casket.Card[0] = structuredClone(Casket.Card[Looper2]);
+										let Swapper = structuredClone(Casket.Card[Looper2]);
 										Casket.Card[Looper2] = structuredClone(Casket.Card[Looper2 + 1]);
-										Casket.Card[Looper2 + 1] = structuredClone(Casket.Card[0]);
+										Casket.Card[Looper2 + 1] = structuredClone(Swapper);
 									}
 								}
 							}
@@ -843,9 +842,9 @@
 								for(let Looper2 = 1; Looper2 < Casket.Card.length - 1; Looper2++) {
 									if(Casket.Card[Looper2].BasicProperties.Type != "CharacterCard" && Casket.Card[Looper2 + 1].BasicProperties.Type != "CharacterCard") {
 										if(ConvertCardTypeToNumber(Casket.Card[Looper2].BasicProperties.Type) > ConvertCardTypeToNumber(Casket.Card[Looper2 + 1].BasicProperties.Type)) {
-											Casket.Card[0] = structuredClone(Casket.Card[Looper2]);
+											let Swapper = structuredClone(Casket.Card[Looper2]);
 											Casket.Card[Looper2] = structuredClone(Casket.Card[Looper2 + 1]);
-											Casket.Card[Looper2 + 1] = structuredClone(Casket.Card[0]);
+											Casket.Card[Looper2 + 1] = structuredClone(Swapper);
 										}
 									}
 								}
@@ -862,7 +861,6 @@
 			}
 
 			// Refresh
-			Casket.Card[0] = "CardLibrary";
 			RefreshCasket();
 			RefreshEditor();
 		}

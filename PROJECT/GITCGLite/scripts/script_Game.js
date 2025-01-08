@@ -948,19 +948,17 @@
 				case Game0.Load.Progress >= 614 && Game0.Load.Progress < 618:
 					ChangeText("Label_GameLoadingPrompt", "正在洗牌...");
 					for(let Looper = 1; Looper <= 100; Looper++) {
-						let LotteryNumber = Randomize(1, 30), LotteryNumber2 = Randomize(1, 30);
-						Game.Status.Player.ActionCard[0] = structuredClone(Game.Status.Player.ActionCard[LotteryNumber]);
+						let LotteryNumber = Randomize(1, 30), LotteryNumber2 = Randomize(1, 30),
+						Swapper = structuredClone(Game.Status.Player.ActionCard[LotteryNumber]);
 						Game.Status.Player.ActionCard[LotteryNumber] = structuredClone(Game.Status.Player.ActionCard[LotteryNumber2]);
-						Game.Status.Player.ActionCard[LotteryNumber2] = structuredClone(Game.Status.Player.ActionCard[0]);
+						Game.Status.Player.ActionCard[LotteryNumber2] = structuredClone(Swapper);
 					}
-					Game.Status.Player.ActionCard[0] = 0;
 					for(let Looper = 1; Looper <= 100; Looper++) {
-						let LotteryNumber = Randomize(1, 30), LotteryNumber2 = Randomize(1, 30);
-						Game.Status.Opponent.ActionCard[0] = structuredClone(Game.Status.Opponent.ActionCard[LotteryNumber]);
+						let LotteryNumber = Randomize(1, 30), LotteryNumber2 = Randomize(1, 30),
+						Swapper = structuredClone(Game.Status.Opponent.ActionCard[LotteryNumber]);
 						Game.Status.Opponent.ActionCard[LotteryNumber] = structuredClone(Game.Status.Opponent.ActionCard[LotteryNumber2]);
-						Game.Status.Opponent.ActionCard[LotteryNumber2] = structuredClone(Game.Status.Opponent.ActionCard[0]);
+						Game.Status.Opponent.ActionCard[LotteryNumber2] = structuredClone(Swapper);
 					}
-					Game.Status.Opponent.ActionCard[0] = 0;
 					Game0.Load.Progress += 4;
 					break;
 
@@ -1277,15 +1275,14 @@
 								ChangeText("Label_GameStartingHand", "正在更换初始手牌...");
 								for(let Looper = 1; Looper <= 5; Looper++) {
 									if(Game0.Selection.StartingHand[Looper] == true) {
-										Game.Status.Player.ActionCard[0] = Game.Status.Player.ActionCard[Looper].ID;
+										let Swapper = Game.Status.Player.ActionCard[Looper].ID;
 										Game.Status.Player.ActionCard[Looper].ID = Game.Status.Player.ActionCard[6].ID;
 										for(let Looper2 = 6; Looper2 <= 29; Looper2++) {
 											Game.Status.Player.ActionCard[Looper2].ID = Game.Status.Player.ActionCard[Looper2 + 1].ID;
 										}
-										Game.Status.Player.ActionCard[30].ID = Game.Status.Player.ActionCard[0];
+										Game.Status.Player.ActionCard[30].ID = Swapper;
 									}
 								}
-								Game.Status.Player.ActionCard[0] = 0;
 								for(let Looper = 1; Looper <= 5; Looper++) {
 									Game.Status.Player.ActionCard[Looper].Position = "InStartingHand";
 								}
