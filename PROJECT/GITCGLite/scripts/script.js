@@ -20,7 +20,7 @@
 				TransparentOperationPanel: false
 			},
 			Load: {
-				StartTime: 0,
+				ClockTime: 0, StartTime: 0,
 				Progress: 0, // Full is 622.
 				IsPaused: false
 			},

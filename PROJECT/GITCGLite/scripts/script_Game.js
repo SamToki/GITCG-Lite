@@ -27,6 +27,7 @@
 		// Sub-functions
 		function RefreshLoadingScreen() {
 			// Initialization
+			Game0.Load.ClockTime = Date.now();
 			let Counter = 0, CardValidityMessage = "", PartyBalance = 0;
 
 			// Load
@@ -1021,7 +1022,7 @@
 				// Ready
 				case Game0.Load.Progress == 622:
 					ChangeText("Label_GameLoadingPrompt", "就绪");
-					if(Date.now() - Game0.Load.StartTime >= 2000) {
+					if(Game0.Load.ClockTime - Game0.Load.StartTime >= 2000) {
 						Game.Status.Operation = "Table";
 						RefreshGame();
 					}
@@ -1034,7 +1035,7 @@
 			}
 
 			// Refresh
-			if(Date.now() - Game0.Load.StartTime >= 10000) {
+			if(Game0.Load.ClockTime - Game0.Load.StartTime >= 10000) {
 				Show("Ctrl_GameCheckNetworkPrompt");
 			} else {
 				Hide("Ctrl_GameCheckNetworkPrompt");
@@ -3766,9 +3767,9 @@
 				ExitGame();
 				Game.Status.Operation = "Loading";
 				Game0.Load = {
-					IsPaused: false,
-					StartTime: Date.now(),
-					Progress: 0
+					ClockTime: 0, StartTime: Date.now(),
+					Progress: 0,
+					IsPaused: false
 				};
 				ScrollIntoView("Game");
 				ChangeAnim("Label_Versus", "none");
