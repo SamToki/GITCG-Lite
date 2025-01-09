@@ -574,6 +574,8 @@
 							case Casket.DeckSelection.Player == Looper2 + 1:
 								Casket.DeckSelection.Player--;
 								break;
+							default:
+								break;
 						}
 						switch(true) {
 							case Casket.DeckSelection.Opponent == Looper2:
@@ -581,6 +583,8 @@
 								break;
 							case Casket.DeckSelection.Opponent == Looper2 + 1:
 								Casket.DeckSelection.Opponent--;
+								break;
+							default:
 								break;
 						}
 					}
