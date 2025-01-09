@@ -2200,7 +2200,7 @@
 		}
 		function RefreshDice() {
 			if(JSON.stringify(Game.Status.Phase) != "[0,\"RollPhase\",\"Beginning\"]" && JSON.stringify(Game.Status.Phase) != "[0,\"RollPhase\",\"Working1\"]") {
-				// Determine priority (smaller number, higher priority)
+				// Determine priority (Smaller number, higher priority)
 				let Priority = {
 					Player: [0],
 					Opponent: [0]
