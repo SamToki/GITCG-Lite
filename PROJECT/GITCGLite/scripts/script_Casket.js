@@ -1001,14 +1001,14 @@
 
 		// Info window
 		function HoverCardInCasket(CardNumber) {
-			if((Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") && Subsystem.Display.AlsoShowInfoWindowInCasket == true) {
+			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket == true) {
 				RefreshInfoWindowObjectProperties(CardNumber, "BasicProperties");
 				RefreshInfoWindowInGameCharacterProperties("Hide", null);
 				ShowInfoWindow();
 			}
 		}
 		function ClickCardInCasket(CardNumber) {
-			if((Subsystem.Display.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") && Subsystem.Display.AlsoShowInfoWindowInCasket == true) {
+			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket == true) {
 				RefreshInfoWindowObjectProperties(CardNumber, "BasicProperties");
 				RefreshInfoWindowInGameCharacterProperties("Hide", null);
 				ShowInfoWindow();

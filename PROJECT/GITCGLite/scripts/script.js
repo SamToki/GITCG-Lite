@@ -98,7 +98,9 @@
 		var Subsystem = {
 			Display: {
 				NameOnCard: "ShowOnHover", HPCautionThreshold: 40,
-				InfoWindow: "ShowOnHover", ShowInfoWindowWhenOpponentActs: true, AlsoShowInfoWindowInCasket: true,
+				InfoWindow: {
+					InfoWindow: "ShowOnHover", ShowWhenOpponentActs: true, AlsoShowInCasket: true
+				},
 				ColorBlindMode: false,
 				SkillIndicator: "ShowOnElementalBurstOnly", ShowSpokenLines: true,
 				FlashOnHighDamage: false
@@ -841,8 +843,8 @@
 					break;
 			}
 			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
-			ChangeValue("Combobox_SettingsInfoWindow", Subsystem.Display.InfoWindow);
-			switch(Subsystem.Display.InfoWindow) {
+			ChangeValue("Combobox_SettingsInfoWindow", Subsystem.Display.InfoWindow.InfoWindow);
+			switch(Subsystem.Display.InfoWindow.InfoWindow) {
 				case "Disabled":
 					HideInfoWindow();
 					Hide("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
@@ -852,18 +854,18 @@
 				case "ShowOnHover":
 					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
 					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
-					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.ShowInfoWindowWhenOpponentActs);
-					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
+					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
+					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
 					break;
 				case "AlwaysShow":
 					ShowInfoWindow();
 					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
 					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
-					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.ShowInfoWindowWhenOpponentActs);
-					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.AlsoShowInfoWindowInCasket);
+					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
+					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
 					break;
 				default:
-					AlertSystemError("The value of Subsystem.Display.InfoWindow \"" + Subsystem.Display.InfoWindow + "\" in function RefreshSubsystem is invalid.");
+					AlertSystemError("The value of Subsystem.Display.InfoWindow.InfoWindow \"" + Subsystem.Display.InfoWindow.InfoWindow + "\" in function RefreshSubsystem is invalid.");
 					break;
 			}
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
@@ -998,15 +1000,15 @@
 			RefreshSubsystem();
 		}
 		function SetInfoWindow() {
-			Subsystem.Display.InfoWindow = ReadValue("Combobox_SettingsInfoWindow");
+			Subsystem.Display.InfoWindow.InfoWindow = ReadValue("Combobox_SettingsInfoWindow");
 			RefreshSubsystem();
 		}
 		function SetShowInfoWindowWhenOpponentActs() {
-			Subsystem.Display.ShowInfoWindowWhenOpponentActs = IsChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs");
+			Subsystem.Display.InfoWindow.ShowWhenOpponentActs = IsChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs");
 			RefreshSubsystem();
 		}
 		function SetAlsoShowInfoWindowInCasket() {
-			Subsystem.Display.AlsoShowInfoWindowInCasket = IsChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket");
+			Subsystem.Display.InfoWindow.AlsoShowInCasket = IsChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket");
 			RefreshSubsystem();
 		}
 		function SetColorBlindMode() {

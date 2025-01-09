@@ -3454,7 +3454,7 @@
 			}
 
 			// Info window
-			if(Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
+			if(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
 				RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent][CardType][Number].ID), "BasicProperties");
 				if(CardType == "CharacterCard") {
 					RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, Number);
@@ -3600,7 +3600,7 @@
 			}
 
 			// Info window
-			if(Subsystem.Display.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
+			if(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
 				RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status[PlayerOrOpponent][CardType][Number].ID), "BasicProperties");
 				if(CardType == "CharacterCard") {
 					RefreshInfoWindowInGameCharacterProperties(PlayerOrOpponent, Number);
@@ -3611,7 +3611,7 @@
 			}
 		}
 		function HoverStatus(PlayerOrOpponent, StatusType, CharacterSequence, StatusSequence) {
-			if(Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
+			if(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
 				switch(StatusType) {
 					case "CharacterStatus":
 						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID) > 0) {
@@ -3637,7 +3637,7 @@
 			}
 		}
 		function ClickStatus(PlayerOrOpponent, StatusType, CharacterSequence, StatusSequence) {
-			if(Subsystem.Display.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow") {
+			if(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
 				switch(StatusType) {
 					case "CharacterStatus":
 						if(ReadCardNumberByID(Game.Status[PlayerOrOpponent].CharacterCard[CharacterSequence].Status[StatusSequence].CardID) > 0) {
@@ -3723,7 +3723,7 @@
 		}
 		function HoverSkill(SkillType) {
 			if(Game.Status.Player.ActiveCharacter > 0 &&
-			(Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow")) {
+			(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow")) {
 				RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status.Player.CharacterCard[Game.Status.Player.ActiveCharacter].ID), SkillType);
 				RefreshInfoWindowInGameCharacterProperties("Player", Game.Status.Player.ActiveCharacter);
 				ShowInfoWindow();
@@ -3735,7 +3735,7 @@
 
 			// Info window
 			if(Game.Status.Player.ActiveCharacter > 0 &&
-			(Subsystem.Display.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow == "AlwaysShow")) {
+			(Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow")) {
 				RefreshInfoWindowObjectProperties(ReadCardNumberByID(Game.Status.Player.CharacterCard[Game.Status.Player.ActiveCharacter].ID), SkillType);
 				RefreshInfoWindowInGameCharacterProperties("Player", Game.Status.Player.ActiveCharacter);
 				ShowInfoWindow();
@@ -3873,8 +3873,8 @@
 		// Info window
 		function ForceHideInfoWindow() {
 			setTimeout(HideInfoWindow, 40); // Because the close button is inside the window, clicking the close button also triggers ShowInfoWindow. So a delay should be set here.
-			if(Subsystem.Display.InfoWindow == "AlwaysShow") {
-				Subsystem.Display.InfoWindow = "ShowOnHover";
+			if(Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
+				Subsystem.Display.InfoWindow.InfoWindow = "ShowOnHover";
 				RefreshSubsystem();
 			}
 		}
@@ -3941,7 +3941,7 @@
 
 		// Info window
 		function ShowInfoWindow() {
-			switch(Subsystem.Display.InfoWindow) {
+			switch(Subsystem.Display.InfoWindow.InfoWindow) {
 				case "ShowOnClick":
 				case "ShowOnHover":
 					Show("Window_Game");
@@ -3953,12 +3953,12 @@
 					clearTimeout(Automation.HideInfoWindow);
 					break;
 				default:
-					AlertSystemError("The value of Subsystem.Display.InfoWindow \"" + Subsystem.Display.InfoWindow + "\" in function ShowInfoWindow is invalid.");
+					AlertSystemError("The value of Subsystem.Display.InfoWindow.InfoWindow \"" + Subsystem.Display.InfoWindow.InfoWindow + "\" in function ShowInfoWindow is invalid.");
 					break;
 			}
 		}
 		function HideInfoWindow() {
-			if(Subsystem.Display.InfoWindow != "AlwaysShow") {
+			if(Subsystem.Display.InfoWindow.InfoWindow != "AlwaysShow") {
 				HideHorizontally("Window_Game");
 			}
 			if(Interaction.DoNotHide.length <= 1) {
