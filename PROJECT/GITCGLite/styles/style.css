@@ -2205,10 +2205,13 @@
 							}
 }
 @media (min-width: 830px) { /* Optimization for long fieldsets exceeding 600px height. */
-	#Item_SettingsDisplay {
-		width: 800px;
-	}
-	#Item_SettingsDisplay .Ctrl { /* .WidthDividedBy2 */
-		width: calc((100% - 10px) / 2);
-	}
+	/* Area specific */
+		/* Main */
+			/* Settings */
+			#Item_SettingsDisplay {
+				width: 800px;
+			}
+			#Item_SettingsDisplay .Ctrl { /* .WidthDividedBy2 */
+				width: calc((100% - 10px) / 2);
+			}
 }
