@@ -1608,7 +1608,7 @@
 						if(Pity <= 73) {
 							Threshold = 60;
 						} else {
-							Threshold = 60 + (Pity - 73) / 17 * 9940;
+							Threshold = 60 + 9940 * ((Pity - 73) / 17);
 						}
 
 						// Roll
@@ -1662,7 +1662,7 @@
 							if(Pity2 <= 73) {
 								Threshold = 60;
 							} else {
-								Threshold = 60 + (Pity2 - 73) / 17 * 9940;
+								Threshold = 60 + 9940 * ((Pity2 - 73) / 17);
 							}
 
 							// Roll
