@@ -1201,8 +1201,9 @@
 				} else {
 					Game.Status.First = "Opponent";
 				}
-				ChangeRound(-1);
-				return;
+				setTimeout(function() {
+					ChangeRound(-1);
+				}, 0);
 			}
 			if(Game.Status.Round == -1) {
 				switch(Game.Status.Phase[1]) {
@@ -1230,8 +1231,8 @@
 								ResetGameSelection();
 								Scan();
 								Game.Status.Phase[2] = "Standby";
-								RefreshGame();
-								return;
+								setTimeout(RefreshGame, 0);
+								break;
 							case "Standby":
 								Game.Status.Operation = "StartingHand";
 								ChangeText("Label_GameStartingHand", "您可选中并更换暂时不需要的行动牌");
@@ -1379,8 +1380,8 @@
 								ResetGameSelection();
 								Scan();
 								Game.Status.Phase[2] = "Standby";
-								RefreshGame();
-								return;
+								setTimeout(RefreshGame, 0);
+								break;
 							case "Standby":
 								Game.Status.Operation = "RollPhase";
 								ChangeText("Label_GameRollPhase", "您有<span class=\"LargerText\">" + Game.Status.Player.RerollChance + "</span>次重掷的机会");
@@ -1460,13 +1461,13 @@
 							case "Beginning":
 								Game.Status.Operation = "Table";
 								Scan();
-								ChangeTurn();
-								return;
+								setTimeout(ChangeTurn, 0);
+								break;
 							case "BeforeStandby":
 								Game.Status.Operation = "Table";
 								Game.Status.Phase[2] = "Standby";
-								RefreshGame();
-								return;
+								setTimeout(RefreshGame, 0);
+								break;
 							case "Standby":
 								Game.Status.Operation = "Table";
 								// ???
