@@ -4655,7 +4655,7 @@
 							Game0.RollDice.IsRolling = false;
 							clearInterval(Automation.RollDice);
 							Game.Status.Player.RerollChance = 1;
-							Scan(); // Execute reroll chance buffs if exist. Reroll chance buffs should specify the game phase to be "RollPhase Beginning".
+							Scan(); // Execute reroll chance buffs if exist. Reroll chance buffs should specify the game phase as "RollPhase Beginning".
 							if(Game.Status.Player.RerollChance > 0) {
 								Game.Status.Phase[2] = "BeforeStandby";
 							} else {
