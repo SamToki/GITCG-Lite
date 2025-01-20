@@ -253,7 +253,7 @@
 								display: flex; justify-content: center; align-items: center;
 							}
 							.StatusText.DurationInRounds {
-								color: #8040A0;
+								color: #0080C0;
 							}
 
 							/* Damage indicators */
@@ -333,7 +333,7 @@
 							pointer-events: none;
 						}
 						.Card .CtrlGroup .Duration .ProgbarText.DurationInRounds {
-							color: #8040A0;
+							color: #0080C0;
 						}
 
 						/* Action cards */
