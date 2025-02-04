@@ -9,14 +9,17 @@
 // Refresh
 	// Game
 	function ClockGame() {
-		clearInterval(Automation.ClockGame);
+		// Automation
+		clearTimeout(Automation.ClockGame);
 		if(Game.Status.Operation != "Title") {
 			if(Game.Status.Operation == "Loading" && Game0.Load.IsPaused == false) {
-				Automation.ClockGame = setInterval(ClockGame, 0);
+				Automation.ClockGame = setTimeout(ClockGame, 0);
 			} else {
-				Automation.ClockGame = setInterval(ClockGame, 20);
+				Automation.ClockGame = setTimeout(ClockGame, 20);
 			}
 		}
+
+		// Call
 		if(Game.Status.Operation == "Loading" && Game0.Load.IsPaused == false) {
 			RefreshLoadingScreen();
 		}
@@ -1371,8 +1374,7 @@
 									}
 									Game0.RollDice.IsRolling = true;
 									Game0.RollDice.Progress = 0;
-									clearInterval(Automation.RollDice);
-									Automation.RollDice = setInterval(RollDice, 120);
+									RollDice();
 									PlayAudio("Audio_Sound", "audio/RollDice.mp3");
 								}
 								break;
@@ -1404,8 +1406,7 @@
 										}
 										Game0.RollDice.IsRolling = true;
 										Game0.RollDice.Progress = 0;
-										clearInterval(Automation.RollDice);
-										Automation.RollDice = setInterval(RollDice, 120);
+										RollDice();
 									}
 								} else {
 									Game.Status.Operation = "Table";
@@ -4646,6 +4647,11 @@
 		// Roll phase
 		function RollDice() {
 			if(Game0.RollDice.IsRolling == true) {
+				// Automation
+				clearTimeout(Automation.RollDice);
+				Automation.RollDice = setTimeout(RollDice, 120);
+
+				// Main
 				switch(JSON.stringify(Game.Status.Phase)) {
 					case "[0,\"RollPhase\",\"Beginning\"]":
 						if(Game0.RollDice.Progress < 8) {
@@ -4654,7 +4660,6 @@
 							RefreshDice();
 						} else {
 							Game0.RollDice.IsRolling = false;
-							clearInterval(Automation.RollDice);
 							Game.Status.Player.RerollChance = 1;
 							Scan(); // Execute reroll chance buffs if exist. Reroll chance buffs should specify the game phase as "RollPhase Beginning".
 							if(Game.Status.Player.RerollChance > 0) {
@@ -4675,7 +4680,6 @@
 							RefreshDice();
 						} else {
 							Game0.RollDice.IsRolling = false;
-							clearInterval(Automation.RollDice);
 							Game.Status.Player.RerollChance--;
 							if(Game.Status.Player.RerollChance > 0) {
 								Game.Status.Phase[2] = "BeforeStandby";
@@ -4689,8 +4693,6 @@
 						AlertSystemError("The value of Game.Status.Phase \"" + JSON.stringify(Game.Status.Phase) + "\" in function RollDice is invalid.");
 						break;
 				}
-			} else {
-				AlertSystemError("Function RollDice was called when the value of Game0.RollDice.IsRolling is not \"true\".");
 			}
 		}
 

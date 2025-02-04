@@ -494,6 +494,7 @@
 		ChangeValue("Textbox_CasketActionCardsFilter", "");
 		ChangeValue("Textbox_CasketImport", "");
 		ChangeValue("Textbox_EditorOpen", "");
+		HighlightActiveSectionInNav();
 		RefreshSystem();
 		RefreshSubsystem();
 		RefreshGame();
@@ -1165,7 +1166,7 @@
 						break;
 					case 2:
 						Object.keys(Automation).forEach(function(AutomationName) {
-							clearInterval(Automation[AutomationName]);
+							clearTimeout(Automation[AutomationName]);
 						});
 						break;
 					case 3:

@@ -315,14 +315,14 @@
 							}
 							.SpokenLine .BalloonTail {
 								left: 0;
-								width: 100%; height: 50px;
+								width: 100%; height: 60px;
 							}
 							#SpokenLine_GamePlayer .BalloonTail {
 								top: 0;
 								clip-path: polygon(50% 0, 55% 100%, 45% 100%);
 							}
 							#SpokenLine_GameOpponent .BalloonTail {
-								top: 60px;
+								top: 50px;
 								clip-path: polygon(45% 0, 55% 0, 50% 100%);
 							}
 
@@ -1521,7 +1521,7 @@
 									width: 100%;
 								}
 								.BalloonTail {
-									height: 60px;
+									height: 70px;
 								}
 
 							/* Summons cards */
