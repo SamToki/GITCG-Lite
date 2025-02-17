@@ -1246,7 +1246,7 @@
 				#Window_Game {
 					position: fixed; top: 130px; left: 15px; z-index: 41;
 					width: 240px; height: calc(100dvh - 200px);
-					overflow: scroll; scroll-padding-top: 15px;
+					overflow: auto; scroll-padding-top: 15px;
 				}
 				#Html:has(#Topbar.Hidden) #Window_Game {
 					top: 70px;
