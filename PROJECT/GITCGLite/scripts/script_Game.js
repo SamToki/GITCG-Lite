@@ -1049,22 +1049,12 @@
 			// Check and fix HP overflow
 			for(let Looper = 1; Looper <= 3; Looper++) {
 				if(ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID) > 0) {
-					if(Game.Status.Player.CharacterCard[Looper].HP < 0) {
-						Game.Status.Player.CharacterCard[Looper].HP = 0;
-					}
-					if(Game.Status.Player.CharacterCard[Looper].HP > Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP) {
-						Game.Status.Player.CharacterCard[Looper].HP = Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP;
-					}
+					Game.Status.Player.CharacterCard[Looper].HP = CheckRangeAndCorrect(Game.Status.Player.CharacterCard[Looper].HP, 0, Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP);
 				} else {
 					Game.Status.Player.CharacterCard[Looper].HP = 0;
 				}
 				if(ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID) > 0) {
-					if(Game.Status.Opponent.CharacterCard[Looper].HP < 0) {
-						Game.Status.Opponent.CharacterCard[Looper].HP = 0;
-					}
-					if(Game.Status.Opponent.CharacterCard[Looper].HP > Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP) {
-						Game.Status.Opponent.CharacterCard[Looper].HP = Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP;
-					}
+					Game.Status.Opponent.CharacterCard[Looper].HP = CheckRangeAndCorrect(Game.Status.Opponent.CharacterCard[Looper].HP, 0, Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID)].CharacterCardProperties.MaxHP);
 				} else {
 					Game.Status.Opponent.CharacterCard[Looper].HP = 0;
 				}

@@ -996,13 +996,7 @@
 			RefreshSubsystem();
 		}
 		function SetHPCautionThreshold() {
-			Subsystem.Display.HPCautionThreshold = Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold"));
-			if(Subsystem.Display.HPCautionThreshold < 0) {
-				Subsystem.Display.HPCautionThreshold = 0;
-			}
-			if(Subsystem.Display.HPCautionThreshold > 60) {
-				Subsystem.Display.HPCautionThreshold = 60;
-			}
+			Subsystem.Display.HPCautionThreshold = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold")), 0, 60);
 			RefreshSubsystem();
 		}
 		function SetInfoWindow() {
