@@ -622,7 +622,7 @@
 				AlertSystemError("The value of Value \"" + Value + "\" in function ChangeSequence is invalid.");
 			}
 		}
-		function ChangeElement(ID, Value) {
+		function ChangeElementColor(ID, Value) {
 			RemoveClass(ID, "Unknown");
 			RemoveClass(ID, "Matching");
 			RemoveClass(ID, "Unaligned");

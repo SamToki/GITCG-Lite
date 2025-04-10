@@ -1932,7 +1932,7 @@
 						ChangeActionCardType("Card_GamePlayerAction" + Looper, Casket.Card[CardNumber].BasicProperties.Type.replaceAll("Card", ""));
 						ChangeImage("Image_GamePlayerAction" + Looper, Casket.Card[CardNumber].BasicProperties.Image);
 						ChangeText("Label_GamePlayerAction" + Looper, Casket.Card[CardNumber].BasicProperties.Name);
-						ChangeElement("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
+						ChangeElementColor("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
 						ChangeText("CostIndicatorText_GamePlayerAction" + Looper, ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GamePlayerAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]) + "</span>");
@@ -1998,7 +1998,7 @@
 							ChangeActionCardType("Card_GamePlayerAction" + Looper, "Event");
 							ChangeImage("Image_GamePlayerAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Image);
 							ChangeText("Label_GamePlayerAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
-							ChangeElement("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", "EventCard", CardNumber)[2]);
+							ChangeElementColor("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", "EventCard", CardNumber)[2]);
 							ChangeText("CostIndicatorText_GamePlayerAction" + Looper, ReadCost("Player", "EventCard", CardNumber)[1]);
 							if(Subsystem.Display.ColorBlindMode == true) {
 								AddText("CostIndicatorText_GamePlayerAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "EventCard", CardNumber)[2]) + "</span>");
@@ -2021,7 +2021,7 @@
 				} else {
 					ChangeImage("Image_GamePlayerAction" + Looper, Casket0.BuiltinCard.UnknownCard.BasicProperties.Image);
 					ChangeText("Label_GamePlayerAction" + Looper, Casket0.BuiltinCard.UnknownCard.BasicProperties.Name);
-					ChangeElement("CostIndicator_GamePlayerAction" + Looper, "Unknown");
+					ChangeElementColor("CostIndicator_GamePlayerAction" + Looper, "Unknown");
 					ChangeText("CostIndicatorText_GamePlayerAction" + Looper, "?");
 					Fade("CostIndicator_GamePlayerAction" + Looper + "Additional");
 					Fade("Ctrl_GamePlayerAction" + Looper + "Counter");
@@ -2032,7 +2032,7 @@
 						ChangeActionCardType("Card_GameOpponentAction" + Looper, Casket.Card[CardNumber].BasicProperties.Type.replaceAll("Card", ""));
 						ChangeImage("Image_GameOpponentAction" + Looper, Casket.Card[CardNumber].BasicProperties.Image);
 						ChangeText("Label_GameOpponentAction" + Looper, Casket.Card[CardNumber].BasicProperties.Name);
-						ChangeElement("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
+						ChangeElementColor("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
 						ChangeText("CostIndicatorText_GameOpponentAction" + Looper, ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameOpponentAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]) + "</span>");
@@ -2098,7 +2098,7 @@
 							ChangeActionCardType("Card_GameOpponentAction" + Looper, "Event");
 							ChangeImage("Image_GameOpponentAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Image);
 							ChangeText("Label_GameOpponentAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
-							ChangeElement("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", "EventCard", CardNumber)[2]);
+							ChangeElementColor("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", "EventCard", CardNumber)[2]);
 							ChangeText("CostIndicatorText_GameOpponentAction" + Looper, ReadCost("Opponent", "EventCard", CardNumber)[1]);
 							if(Subsystem.Display.ColorBlindMode == true) {
 								AddText("CostIndicatorText_GameOpponentAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Opponent", "EventCard", CardNumber)[2]) + "</span>");
@@ -2122,7 +2122,7 @@
 				} else {
 					ChangeImage("Image_GameOpponentAction" + Looper, Casket0.BuiltinCard.UnknownCard.BasicProperties.Image);
 					ChangeText("Label_GameOpponentAction" + Looper, Casket0.BuiltinCard.UnknownCard.BasicProperties.Name);
-					ChangeElement("CostIndicator_GameOpponentAction" + Looper, "Unknown");
+					ChangeElementColor("CostIndicator_GameOpponentAction" + Looper, "Unknown");
 					ChangeText("CostIndicatorText_GameOpponentAction" + Looper, "?");
 					Fade("CostIndicator_GameOpponentAction" + Looper + "Additional");
 					Fade("Ctrl_GameOpponentAction" + Looper + "Counter");
@@ -2452,7 +2452,7 @@
 				} else {
 					RemoveClass("Button_GameNormalAttack", "Active");
 				}
-				ChangeElement("CostIndicator_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[2]);
+				ChangeElementColor("CostIndicator_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[2]);
 				ChangeText("CostIndicatorText_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[1]);
 				if(Subsystem.Display.ColorBlindMode == true) {
 					AddText("CostIndicatorText_GameNormalAttack", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "NormalAttack", null)[2]) + "</span>");
@@ -2495,7 +2495,7 @@
 				} else {
 					RemoveClass("Button_GameElementalSkill", "Active");
 				}
-				ChangeElement("CostIndicator_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[2]);
+				ChangeElementColor("CostIndicator_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[1]);
 				if(Subsystem.Display.ColorBlindMode == true) {
 					AddText("CostIndicatorText_GameElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "ElementalSkill", null)[2]) + "</span>");
@@ -2520,7 +2520,7 @@
 					} else {
 						RemoveClass("Button_GameSecondaryElementalSkill", "Active");
 					}
-					ChangeElement("CostIndicator_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[2]);
+					ChangeElementColor("CostIndicator_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[2]);
 					ChangeText("CostIndicatorText_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[1]);
 					if(Subsystem.Display.ColorBlindMode == true) {
 						AddText("CostIndicatorText_GameSecondaryElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "SecondaryElementalSkill", null)[2]) + "</span>");
@@ -2547,7 +2547,7 @@
 				} else {
 					RemoveClass("Button_GameElementalBurst", "Active");
 				}
-				ChangeElement("CostIndicator_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[2]);
+				ChangeElementColor("CostIndicator_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[1]);
 				if(Subsystem.Display.ColorBlindMode == true) {
 					AddText("CostIndicatorText_GameElementalBurst", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "ElementalBurst", null)[2]) + "</span>");
@@ -2567,7 +2567,7 @@
 				// Normal attack
 				Fade("Image_GameNormalAttack");
 				RemoveClass("Button_GameNormalAttack", "Active");
-				ChangeElement("CostIndicator_GameNormalAttack", "Unknown");
+				ChangeElementColor("CostIndicator_GameNormalAttack", "Unknown");
 				ChangeText("CostIndicatorText_GameNormalAttack", "?");
 				Show("CostIndicator_GameNormalAttackAdditional");
 				ChangeText("CostIndicatorText_GameNormalAttackAdditional", "?");
@@ -2575,7 +2575,7 @@
 				// Elemental skill
 				Fade("Image_GameElementalSkill");
 				RemoveClass("Button_GameElementalSkill", "Active");
-				ChangeElement("CostIndicator_GameElementalSkill", "Unknown");
+				ChangeElementColor("CostIndicator_GameElementalSkill", "Unknown");
 				ChangeText("CostIndicatorText_GameElementalSkill", "?");
 
 				// Secondary elemental skill
@@ -2584,7 +2584,7 @@
 				// Elemental burst
 				Fade("Image_GameElementalBurst");
 				RemoveClass("Button_GameElementalBurst", "Active");
-				ChangeElement("CostIndicator_GameElementalBurst", "Unknown");
+				ChangeElementColor("CostIndicator_GameElementalBurst", "Unknown");
 				ChangeText("CostIndicatorText_GameElementalBurst", "?");
 				ChangeText("CostIndicatorText_GameElementalBurstAdditional", "?");
 			}
@@ -2778,7 +2778,7 @@
 					Show("Ctrl_GameToggleOperationPanelTransparency");
 
 					// Refresh operation panel content
-					ChangeElement("CostIndicator_GameSwitchCharacter", ReadCost("Player", "CharacterCard", null)[2]);
+					ChangeElementColor("CostIndicator_GameSwitchCharacter", ReadCost("Player", "CharacterCard", null)[2]);
 					ChangeText("CostIndicatorText_GameSwitchCharacter", ReadCost("Player", "CharacterCard", null)[1]);
 					if(Subsystem.Display.ColorBlindMode == true) {
 						AddText("CostIndicatorText_GameSwitchCharacter", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "CharacterCard", null)[2]) + "</span>");
@@ -2959,7 +2959,7 @@
 						Show("Ctrl_GameInfoWindowNormalAttack");
 						ChangeImage("Image_GameInfoWindowNormalAttack", "images/NormalAttack_" + Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.WeaponType + ".png");
 						ChangeText("InfoWindowSubtitle_GameInfoWindowNormalAttack", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Name));
-						ChangeElement("CostIndicator_GameInfoWindowNormalAttack", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
+						ChangeElementColor("CostIndicator_GameInfoWindowNormalAttack", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowNormalAttack", Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowNormalAttack", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
@@ -2979,7 +2979,7 @@
 						Show("Ctrl_GameInfoWindowElementalSkill");
 						ChangeImage("Image_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowElementalSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Name));
-						ChangeElement("CostIndicator_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
+						ChangeElementColor("CostIndicator_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Cost);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
@@ -2991,7 +2991,7 @@
 							Show("Ctrl_GameInfoWindowSecondaryElementalSkill");
 							ChangeImage("Image_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Image);
 							ChangeText("InfoWindowSubtitle_GameInfoWindowSecondaryElementalSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Name));
-							ChangeElement("CostIndicator_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
+							ChangeElementColor("CostIndicator_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 							ChangeText("CostIndicatorText_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Cost);
 							if(Subsystem.Display.ColorBlindMode == true) {
 								AddText("CostIndicatorText_GameInfoWindowSecondaryElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
@@ -3003,7 +3003,7 @@
 						Show("Ctrl_GameInfoWindowElementalBurst");
 						ChangeImage("Image_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowElementalBurst", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Name));
-						ChangeElement("CostIndicator_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
+						ChangeElementColor("CostIndicator_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Cost);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowElementalBurst", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
@@ -3048,7 +3048,7 @@
 									break;
 								case "EventCard":
 									Show("CostIndicator_GameInfoWindowAffiliatedCard");
-									ChangeElement("CostIndicator_GameInfoWindowAffiliatedCard", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[2]);
+									ChangeElementColor("CostIndicator_GameInfoWindowAffiliatedCard", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[2]);
 									ChangeText("CostIndicatorText_GameInfoWindowAffiliatedCard", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[1]);
 									if(Subsystem.Display.ColorBlindMode == true) {
 										AddText("CostIndicatorText_GameInfoWindowAffiliatedCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[2]) + "</span>");
@@ -3082,7 +3082,7 @@
 						Show("Ctrl_GameInfoWindowTalentCard");
 						ChangeImage("Image_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowTalentCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowTalentCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[2]) + "</span>");
@@ -3108,7 +3108,7 @@
 						Show("Ctrl_GameInfoWindowWeaponCard");
 						ChangeImage("Image_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowWeaponCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowWeaponCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[2]) + "</span>");
@@ -3120,7 +3120,7 @@
 						Show("Ctrl_GameInfoWindowArtifactCard");
 						ChangeImage("Image_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowArtifactCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowArtifactCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[2]) + "</span>");
@@ -3131,7 +3131,7 @@
 						Show("Ctrl_GameInfoWindowSupportCard");
 						ChangeImage("Image_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowSupportCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowSupportCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]) + "</span>");
@@ -3143,7 +3143,7 @@
 						Show("Ctrl_GameInfoWindowEventCard");
 						ChangeImage("Image_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEventCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowEventCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[2]) + "</span>");
@@ -3289,7 +3289,7 @@
 						let CardNumber = ReadCardNumberByID(ReadTalentCardID(PlayerOrOpponentOrHide, Number));
 						ChangeImage("Image_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedTalentCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].TalentCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].TalentCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].TalentCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedTalentCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].TalentCardProperties.Cost[2]) + "</span>");
@@ -3318,7 +3318,7 @@
 						let CardNumber = ReadCardNumberByID(ReadWeaponCardID(PlayerOrOpponentOrHide, Number));
 						ChangeImage("Image_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedWeaponCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].WeaponCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].WeaponCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].WeaponCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedWeaponCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].WeaponCardProperties.Cost[2]) + "</span>");
@@ -3333,7 +3333,7 @@
 						let CardNumber = ReadCardNumberByID(ReadArtifactCardID(PlayerOrOpponentOrHide, Number));
 						ChangeImage("Image_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].BasicProperties.Image);
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedArtifactCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
-						ChangeElement("CostIndicator_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].ArtifactCardProperties.Cost[2]);
+						ChangeElementColor("CostIndicator_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].ArtifactCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].ArtifactCardProperties.Cost[1]);
 						if(Subsystem.Display.ColorBlindMode == true) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedArtifactCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].ArtifactCardProperties.Cost[2]) + "</span>");
