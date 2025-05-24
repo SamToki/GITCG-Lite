@@ -369,7 +369,7 @@
 					/* Dice */
 					.Dice {
 						position: absolute; top: unset; left: unset; z-index: 4;
-						width: 50px; height: 50px; border-radius: 5px;
+						width: 50px; height: 50px;
 					}
 					.Dice.OnRolling {
 						z-index: 32;
