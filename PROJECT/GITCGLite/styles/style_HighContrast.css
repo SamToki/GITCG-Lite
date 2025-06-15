@@ -171,7 +171,7 @@
 
 				/* Info window */
 					/* Sections */
-					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+					#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 						width: 238px;
 					}
 						/* Content */
@@ -193,7 +193,7 @@
 				/* Floating ctrls */
 					/* Info window */
 						/* Sections */
-						#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+						#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 							width: 178px;
 						}
 }
