@@ -6,83 +6,78 @@
 
 /* General */
 	/* Basics */
-		/* Shapes */
-		.CostIndicator .Shape, .Dice .Shape {
-			fill: #403026;
-		}
-
 		/* Game */
 		.HP, .Heal {
-			color: #96D722;
+			color: #008000;
 		}
 		.ProgbarFg.Shaped.HP .Shape {
-			fill: #73A41A;
+			fill: #A0FFA0;
 		}
 		.ProgbarFg.Shaped.HP.Low .Shape {
-			fill: #FF5858;
+			fill: #FFA0A0;
 		}
 		.Energy {
-			color: #E0E020;
+			color: #A0A000;
 		}
 		.Energy .Shape {
-			fill: #A0A000;
+			fill: #FFFF40C0;
 		}
 		.ProgbarFg.Shaped.Energy .Shape {
-			fill: #A0A000;
+			fill: #FFFF40;
 		}
 		.Progbar.Shaped:has(.Energy.Charged) {
-			filter: drop-shadow(0 0 5px #A0A000);
+			filter: drop-shadow(0 0 5px #FFFF40);
 		}
 		.Matching .Shape {
-			fill: #CAAA86;
+			fill: #E8DBCCC0;
 		}
 		.Unaligned .Shape {
-			fill: #808080;
+			fill: #A0A0A0C0;
 		}
 		.Omni, .Physical {
-			color: #A0A0A0;
+			color: #808080;
 		}
 		.Pyro {
-			color: #EC8850;
+			color: #E86F2C;
 		}
 		.Pyro .Shape {
-			fill: #E86F2C;
+			fill: #EC8850C0;
 		}
 		.Hydro {
-			color: #4CC2F1;
+			color: #1BAEE9;
 		}
 		.Hydro .Shape {
-			fill: #1BAEE9;
+			fill: #4CC2F1C0;
 		}
 		.Anemo {
-			color: #6CCAAB;
+			color: #58B697;
 		}
 		.Anemo .Shape {
-			fill: #58B697;
+			fill: #6CCAABC0;
 		}
 		.Electro {
-			color: #C89AE2;
+			color: #B47FD1;
 		}
 		.Electro .Shape {
-			fill: #B47FD1;
+			fill: #C89AE2C0;
 		}
 		.Dendro {
-			color: #A5C83B;
+			color: #8EAC30;
 		}
 		.Dendro .Shape {
-			fill: #8EAC30;
+			fill: #A5C83BC0;
 		}
 		.Cryo {
-			color: #95D7E7;
+			color: #61BCD1;
 		}
 		.Cryo .Shape {
-			fill: #61BCD1;
+			fill: #95D7E7C0;
 		}
 		.Geo {
-			color: #F7B635;
+			color: #E79D09;
 		}
 		.Geo .Shape {
-			fill: #E79D09;
+			fill: #F7B635C0;
 		}
 
 /* Area specific */
@@ -93,123 +88,93 @@
 					/* Cards */
 						/* Name on card */
 						.NameOnCard {
-							color: #EEE4D9; text-shadow: 0 0 5px #485267, 0 0 5px #485267;
+							color: #291900; text-shadow: 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1;
 						}
 
 						/* Indicators on card */
 						.Card .Progbar > .Shape {
-							fill: #73603F;
+							fill: #C0C0C0C0;
 						}
 
 						/* Character cards */
 							/* Character status */
 							.StatusText {
-								color: #EEE4D9; text-shadow: 0 0 5px #485267, 0 0 5px #485267;
+								color: #291900; text-shadow: 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1;
 							}
 							.StatusText.DurationInRounds {
-								color: #FFFF00;
+								color: #0080C0;
 							}
 
 							/* Damage indicators */
 							.DamageIndicator {
-								text-shadow: 0 0 5px #485267, 0 0 5px #485267, 0 0 5px #485267, 0 0 5px #485267;
+								text-shadow: 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1;
 							}
 
 							/* Spoken lines */
 							.SpokenLine {
-								filter: drop-shadow(0 0 0.5px #EEE4D9) drop-shadow(0 0 0.5px #EEE4D9) drop-shadow(0 0 0.5px #EEE4D9) drop-shadow(0 0 0.5px #EEE4D9);
+								filter: drop-shadow(0 0 0.5px #291900) drop-shadow(0 0 0.5px #291900) drop-shadow(0 0 0.5px #291900) drop-shadow(0 0 0.5px #291900);
 							}
 							.SpokenLine .Ctrl {
-								background-color: #485267;
+								background-color: #E7DDD1;
 							}
 
 						/* Summons cards */
 						.Card .CtrlGroup .Duration .ProgbarText.DurationInRounds {
-							color: #FFFF00;
+							color: #0080C0;
 						}
 
 						/* Action cards */
 						.Card .CtrlGroup .Counter .Shape {
-							fill: #73603F;
+							fill: #80C0FF;
 						}
 
-					/* Dice */
-					.Dice .Button.Shaped:hover .Shape {
-						fill: #403026;
-					}
-					.Dice .Button.Shaped.Active .Shape {
-						fill: #425F0F;
-					}
-					.Dice .Button.Shaped:active .Shape {
-						fill: #554432;
-					}
-					.Dice .CostIndicatorText {
-						color: #EEE4D9;
-					}
-
 				/* Table */
-					/* Action ctrl */
-					#Button_GameEndAction {
-						border-radius: 50%;
-					}
-					#Button_GameEndAction:hover {
-						box-shadow: 0 0 0 3px inset #DEB76C;
-					}
-
 					/* Skill ctrl */
-					#Ctnr_GameSkillCtrl .Button {
-						border-radius: 50%;
-						background-color: #403026;
-					}
-					#Ctnr_GameSkillCtrl .Button:active {
-						background-color: #554432;
-					}
 					.SkillImage, .StatusImage {
-						border-radius: 50%;
-						filter: drop-shadow(0 0 2.5px #EEE4D980);
+						filter: drop-shadow(0 0 2.5px #291900);
 					}
 					.CostIndicatorText {
-						color: #EEE4D9;
+						color: #291900;
 					}
 
 			/* Floating ctrls */
 				/* Flash on high damage */
 				#ScreenFilter_GameFlashOnHighDamage.Physical {
-					background-color: #80808080;
+					background-color: #A0A0A080;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Pyro {
-					background-color: #E86F2C80;
+					background-color: #EC885080;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Hydro {
-					background-color: #1BAEE980;
+					background-color: #4CC2F180;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Anemo {
-					background-color: #58B69780;
+					background-color: #6CCAAB80;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Electro {
-					background-color: #B47FD180;
+					background-color: #C89AE280;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Dendro {
-					background-color: #8EAC3080;
+					background-color: #A5C83B80;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Cryo {
-					background-color: #61BCD180;
+					background-color: #95D7E780;
 				}
 				#ScreenFilter_GameFlashOnHighDamage.Geo {
-					background-color: #E79D0980;
+					background-color: #F7B63580;
 				}
 
 				/* Skill indicator */
 				#Ctnr_GameSkillIndicator span {
-					color: #EEE4D9; text-shadow: 0 0 5px #485267, 0 0 5px #485267;
+					color: #291900; text-shadow: 0 0 5px #E7DDD1, 0 0 5px #E7DDD1, 0 0 5px #E7DDD1;
 				}
 
 				/* Info window */
 					/* Sections */
 						/* Content */
 						.InfoWindowContent {
-							border-bottom: 1px solid #EEE4D940;
+							border-bottom: 1px solid #29190040;
 						}
 						.InfoWindowTags .Ctrl.Box {
-							background-color: #59667F;
+							background-color: #F7E9E4;
 						}

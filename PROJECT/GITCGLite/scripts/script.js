@@ -702,6 +702,12 @@
 					ChangeLink("ThemeVariant_Style", "styles/style_Dark.css");
 					ChangeMediaCondition("ThemeVariant_Style", "");
 					break;
+				case "AtelierSophie2":
+					ChangeLink("ThemeVariant_Common", "../styles/common_AtelierSophie2.css");
+					ChangeMediaCondition("ThemeVariant_Common", "");
+					ChangeLink("ThemeVariant_Style", "styles/style_AtelierSophie2.css");
+					ChangeMediaCondition("ThemeVariant_Style", "");
+					break;
 				case "Genshin":
 					ChangeLink("ThemeVariant_Common", "../styles/common_Genshin.css");
 					ChangeMediaCondition("ThemeVariant_Common", "");
@@ -1628,7 +1634,7 @@
 									"您于第" + Pity + "发抽中了限定五星角色。",
 									"", "", "", "确定");
 							} else {
-								// When miHoYo will simply suck my ass
+								// When miHoYo will suck my d---
 								Is5050Won = false;
 								LotteryNumber = Randomize(1, 7);
 								switch(LotteryNumber) {
