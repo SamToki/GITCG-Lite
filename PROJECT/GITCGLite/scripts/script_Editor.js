@@ -9,10 +9,14 @@
 // Refresh
 	// Editor
 	function RefreshEditor() {
-		// Card ID list
-		ChangeText("Datalist_CardIDList", "");
+		// Datalists
+		ChangeText("Datalist_CardIDs", "");
+		ChangeText("Datalist_CharacterCardIDs", "");
 		for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
-			AddText("Datalist_CardIDList", "<option value=\"" + Casket.Card[Looper].BasicProperties.ID + "\">");
+			AddText("Datalist_CardIDs", "<option value=\"" + Casket.Card[Looper].BasicProperties.ID + "\">");
+			if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
+				AddText("Datalist_CharacterCardIDs", "<option value=\"" + Casket.Card[Looper].BasicProperties.ID + "\">");
+			}
 		}
 
 		// Identify card and show properties

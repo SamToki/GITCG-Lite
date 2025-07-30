@@ -14,7 +14,7 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CurrentVersion = 0.45;
+		const CurrentVersion = 0.46;
 		var Game0 = {
 			Options: {
 				TransparentOperationPanel: false
