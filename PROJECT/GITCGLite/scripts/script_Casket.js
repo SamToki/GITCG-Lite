@@ -542,7 +542,7 @@
 			if(System.DontShowAgain.includes("GITCGLite_Casket_DeckExported") == false) {
 				ShowDialog("Casket_DeckExported",
 					"Info",
-					"已导出牌组「" + Casket.Deck[DeckNumber].Properties.Name + "」至剪贴板。",
+					"已导出牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」至剪贴板。",
 					"不再弹窗提示", "", "", "确定");
 			} else {
 				ShowToast("已导出牌组");
@@ -925,17 +925,17 @@
 						Casket.Card = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
-					
+
 					// Whole casket
 					case Objects[Looper].startsWith("{\"DeckSelection\":[0,") == true:
 						Casket = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
-					
+
 					// Empty line
 					case Objects[Looper] == "":
 						break;
-					
+
 					// Failed to import
 					default:
 						Counter2++;

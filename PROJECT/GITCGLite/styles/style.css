@@ -1357,7 +1357,6 @@
 
 		/* Casket */
 		#Casket .ListHeader {
-			position: relative;
 			padding: 5px;
 			display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center;
 		}
@@ -1391,7 +1390,7 @@
 				width: calc(100% - 76px);
 			}
 			#CtrlGroup_CasketDecksList .ListItemName {
-				max-width: calc(100% - 128px);
+				max-width: 174px;
 			}
 
 			/* Cards */
@@ -1399,10 +1398,10 @@
 				width: calc(100% - 98px);
 			}
 			#CtrlGroup_CasketCharacterCardsList .ListItemName {
-				max-width: calc(100% - 79px); margin: 0 0 0 1px;
+				max-width: 201px; margin: 0 0 0 1px;
 			}
 			#CtrlGroup_CasketActionCardsList .ListItemName {
-				max-width: calc(100% - 61px);
+				max-width: 219px;
 			}
 			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
 				margin: 0 0 0 10px;

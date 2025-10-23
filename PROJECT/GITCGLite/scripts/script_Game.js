@@ -15,7 +15,7 @@
 			if(Game.Status.Operation == "Loading" && Game0.Load.IsPaused == false) {
 				Automation.ClockGame = setTimeout(ClockGame, 0);
 			} else {
-				Automation.ClockGame = setTimeout(ClockGame, 20);
+				Automation.ClockGame = setTimeout(ClockGame, Automation.ClockRate);
 			}
 		}
 
