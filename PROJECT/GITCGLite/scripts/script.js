@@ -1939,7 +1939,7 @@
 			case "GenshinOfficial":
 				return "原神官方";
 			case "Fanmade":
-				return "二创";
+				return "二次创作";
 			case "Original":
 				return "原创";
 			default:
