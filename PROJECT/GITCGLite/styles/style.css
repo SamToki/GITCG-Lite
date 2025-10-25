@@ -1274,7 +1274,7 @@
 						.InfoWindowTitle .Ctrl {
 							width: calc(100% - 50px); height: unset; min-height: 35px;
 						}
-						.InfoWindowTitle h3 {
+						.InfoWindowTitle h2 {
 							padding: 0;
 							font-size: 1.25em;
 						}
