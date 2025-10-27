@@ -944,7 +944,7 @@
 		}
 		function LoadSavedGame() {
 			if(ReadValue("Combobox_SettingsSelectSavedGame") > 0) {
-				Game.Status = Game.SavedGames[ReadValue("Combobox_SettingsSelectSavedGame")].Data;
+				Game.Status = structuredClone(Game.SavedGames[ReadValue("Combobox_SettingsSelectSavedGame")].Data);
 				ScrollIntoView("Game");
 				RefreshGame();
 			} else {
@@ -1254,7 +1254,7 @@
 			case "Game_SavedGameImported":
 				switch(Selector) {
 					case 2:
-						Game.Status = Game.SavedGames[Game.SavedGames.length - 1].Data;
+						Game.Status = structuredClone(Game.SavedGames[Game.SavedGames.length - 1].Data);
 						RefreshGame();
 						break;
 					case 3:
