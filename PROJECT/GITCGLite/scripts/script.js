@@ -833,7 +833,7 @@
 				ChangeLanguage("Html", "zh-CN");
 			}
 			ChangeValue("Textbox_SettingsFont", System.Dev.Font);
-			ChangeFont("Html", System.Dev.Font);
+			ChangeFontOverall(System.Dev.Font);
 
 			// User data
 			ChangeValue("Textbox_SettingsUserDataImport", "");
