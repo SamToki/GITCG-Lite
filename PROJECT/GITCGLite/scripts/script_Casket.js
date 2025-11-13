@@ -279,7 +279,9 @@
 			}
 
 		// Filter
-		FilterCasket();
+		FilterDecks();
+		FilterCharacterCards();
+		FilterActionCards();
 
 		// Deck properties
 		if(Casket.DeckSelection.Player > 0) {
@@ -314,9 +316,8 @@
 
 // Cmds
 	// Casket
-		// Filter
-		function FilterCasket() {
-			// Decks
+		// Decks
+		function FilterDecks() {
 			let Counter = 0, Counter2 = 0;
 			for(let Looper = 1; Looper < Casket.Deck.length; Looper++) {
 				let CharacterIDsAndNames = "";
@@ -341,11 +342,109 @@
 			} else {
 				ChangeDisabled("Button_CasketDecksSortByName", true);
 			}
+		}
+		function SetPlayerDeckGenerateTemporaryDeck() {
+			Casket.DeckSelection.Player = -2;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SetOpponentDeckGenerateTemporaryDeck() {
+			Casket.DeckSelection.Opponent = -2;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SetPlayerDeckRandomlySelectDeck() {
+			Casket.DeckSelection.Player = -1;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SetOpponentDeckRandomlySelectDeck() {
+			Casket.DeckSelection.Opponent = -1;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SetPlayerDeck(DeckNumber) {
+			Casket.DeckSelection.Player = DeckNumber;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SetOpponentDeck(DeckNumber) {
+			Casket.DeckSelection.Opponent = DeckNumber;
+			RefreshGame();
+			RefreshCasket();
+		}
+		function DuplicateDeck(DeckNumber) {
+			Casket.Deck.splice(DeckNumber + 1, 0, structuredClone(Casket.Deck[DeckNumber]));
+			if(Casket.DeckSelection.Player > DeckNumber) {
+				Casket.DeckSelection.Player++;
+			}
+			if(Casket.DeckSelection.Opponent > DeckNumber) {
+				Casket.DeckSelection.Opponent++;
+			}
+			RefreshGame();
+			RefreshCasket();
+		}
+		function ExportDeck(DeckNumber) {
+			navigator.clipboard.writeText(JSON.stringify(Casket.Deck[DeckNumber]));
+			if(System.DontShowAgain.includes("GITCGLite_Casket_DeckExported") == false) {
+				ShowDialog("Casket_DeckExported",
+					"Info",
+					"已导出牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」至剪贴板。",
+					"不再弹窗提示", "", "", "确定");
+			} else {
+				ShowToast("已导出牌组");
+			}
+		}
+		function ConfirmDeleteDeck(DeckNumber) {
+			Interaction.Deletion = DeckNumber;
+			ShowDialog("Casket_ConfirmDeleteDeck",
+				"Caution",
+				"您确认要删除牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」？",
+				"", "", "删除", "取消");
+		}
+		function NewDeck() {
+			Casket.Deck[Casket.Deck.length] = structuredClone(Casket0.BuiltinDeck.EmptyDeck);
+			SetPlayerDeck(Casket.Deck.length - 1);
+			RefreshGame();
+			RefreshCasket();
+		}
+		function SortDecksByName() {
+			for(let Looper = 1; Looper < Casket.Deck.length - 1; Looper++) {
+				for(let Looper2 = 1; Looper2 < Casket.Deck.length - 1; Looper2++) {
+					if(Casket.Deck[Looper2].Properties.Name > Casket.Deck[Looper2 + 1].Properties.Name) {
+						let Swapper = structuredClone(Casket.Deck[Looper2]);
+						Casket.Deck[Looper2] = structuredClone(Casket.Deck[Looper2 + 1]);
+						Casket.Deck[Looper2 + 1] = structuredClone(Swapper);
+						switch(true) {
+							case Casket.DeckSelection.Player == Looper2:
+								Casket.DeckSelection.Player++;
+								break;
+							case Casket.DeckSelection.Player == Looper2 + 1:
+								Casket.DeckSelection.Player--;
+								break;
+							default:
+								break;
+						}
+						switch(true) {
+							case Casket.DeckSelection.Opponent == Looper2:
+								Casket.DeckSelection.Opponent++;
+								break;
+							case Casket.DeckSelection.Opponent == Looper2 + 1:
+								Casket.DeckSelection.Opponent--;
+								break;
+							default:
+								break;
+						}
+					}
+				}
+			}
+			RefreshGame();
+			RefreshCasket();
+		}
 
-			// Character cards
-			Counter = 0;
-			Counter2 = 0;
-			let Counter3 = 0, IsAnyHiddenCardSelected = false;
+		// Cards
+		function FilterCharacterCards() {
+			let Counter = 0, Counter2 = 0, Counter3 = 0, IsAnyHiddenCardSelected = false;
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
 					if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
@@ -396,12 +495,9 @@
 				ChangeDisabled("Button_CasketCharacterCardsSortByName", true);
 				ChangeDisabled("Button_CasketCharacterCardsSortByElementType", true);
 			}
-
-			// Action cards
-			Counter = 0;
-			Counter2 = 0;
-			Counter3 = 0;
-			IsAnyHiddenCardSelected = false;
+		}
+		function FilterActionCards() {
+			let Counter = 0, Counter2 = 0, Counter3 = 0, IsAnyHiddenCardSelected = false;
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				switch(Casket.Card[Looper].BasicProperties.Type) {
 					case "CharacterCard":
@@ -478,7 +574,7 @@
 						Counter2++;
 						break;
 					default:
-						AlertSystemError("The value of Casket.Card[Looper].BasicProperties.Type \"" + Casket.Card[Looper].BasicProperties.Type + "\" in function FilterCasket is invalid.");
+						AlertSystemError("The value of Casket.Card[Looper].BasicProperties.Type \"" + Casket.Card[Looper].BasicProperties.Type + "\" in function FilterActionCards is invalid.");
 						break;
 				}
 			}
@@ -501,99 +597,6 @@
 				ChangeDisabled("Button_CasketActionCardsSortByType", true);
 			}
 		}
-
-		// Decks
-		function SetPlayerDeckGenerateTemporaryDeck() {
-			Casket.DeckSelection.Player = -2;
-			RefreshGame();
-		}
-		function SetOpponentDeckGenerateTemporaryDeck() {
-			Casket.DeckSelection.Opponent = -2;
-			RefreshGame();
-		}
-		function SetPlayerDeckRandomlySelectDeck() {
-			Casket.DeckSelection.Player = -1;
-			RefreshGame();
-		}
-		function SetOpponentDeckRandomlySelectDeck() {
-			Casket.DeckSelection.Opponent = -1;
-			RefreshGame();
-		}
-		function SetPlayerDeck(DeckNumber) {
-			Casket.DeckSelection.Player = DeckNumber;
-			RefreshGame();
-		}
-		function SetOpponentDeck(DeckNumber) {
-			Casket.DeckSelection.Opponent = DeckNumber;
-			RefreshGame();
-		}
-		function DuplicateDeck(DeckNumber) {
-			Casket.Deck.splice(DeckNumber + 1, 0, structuredClone(Casket.Deck[DeckNumber]));
-			if(Casket.DeckSelection.Player > DeckNumber) {
-				Casket.DeckSelection.Player++;
-			}
-			if(Casket.DeckSelection.Opponent > DeckNumber) {
-				Casket.DeckSelection.Opponent++;
-			}
-			RefreshGame();
-		}
-		function ExportDeck(DeckNumber) {
-			navigator.clipboard.writeText(JSON.stringify(Casket.Deck[DeckNumber]));
-			if(System.DontShowAgain.includes("GITCGLite_Casket_DeckExported") == false) {
-				ShowDialog("Casket_DeckExported",
-					"Info",
-					"已导出牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」至剪贴板。",
-					"不再弹窗提示", "", "", "确定");
-			} else {
-				ShowToast("已导出牌组");
-			}
-		}
-		function ConfirmDeleteDeck(DeckNumber) {
-			Interaction.Deletion = DeckNumber;
-			ShowDialog("Casket_ConfirmDeleteDeck",
-				"Caution",
-				"您确认要删除牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」？",
-				"", "", "删除", "取消");
-		}
-		function NewDeck() {
-			Casket.Deck[Casket.Deck.length] = structuredClone(Casket0.BuiltinDeck.EmptyDeck);
-			SetPlayerDeck(Casket.Deck.length - 1);
-			RefreshGame();
-		}
-		function SortDecksByName() {
-			for(let Looper = 1; Looper < Casket.Deck.length - 1; Looper++) {
-				for(let Looper2 = 1; Looper2 < Casket.Deck.length - 1; Looper2++) {
-					if(Casket.Deck[Looper2].Properties.Name > Casket.Deck[Looper2 + 1].Properties.Name) {
-						let Swapper = structuredClone(Casket.Deck[Looper2]);
-						Casket.Deck[Looper2] = structuredClone(Casket.Deck[Looper2 + 1]);
-						Casket.Deck[Looper2 + 1] = structuredClone(Swapper);
-						switch(true) {
-							case Casket.DeckSelection.Player == Looper2:
-								Casket.DeckSelection.Player++;
-								break;
-							case Casket.DeckSelection.Player == Looper2 + 1:
-								Casket.DeckSelection.Player--;
-								break;
-							default:
-								break;
-						}
-						switch(true) {
-							case Casket.DeckSelection.Opponent == Looper2:
-								Casket.DeckSelection.Opponent++;
-								break;
-							case Casket.DeckSelection.Opponent == Looper2 + 1:
-								Casket.DeckSelection.Opponent--;
-								break;
-							default:
-								break;
-						}
-					}
-				}
-			}
-			RefreshGame();
-		}
-
-		// Cards
 		function SetCard(CardNumber) {
 			if(Casket.DeckSelection.Player > 0) {
 				if(Casket.Card[CardNumber].BasicProperties.Type == "CharacterCard") {
@@ -642,6 +645,7 @@
 					}
 				}
 				RefreshGame();
+				RefreshCasket();
 			} else {
 				AlertSystemError("Function SetCard was called when player deck selection is not a specific deck.");
 			}
@@ -717,8 +721,9 @@
 					}
 				}
 				RefreshGame();
+				RefreshCasket();
 			} else {
-				AlertSystemError("Function SelectAllCharacterCards was called when player deck selection is not a specific deck.");
+				AlertSystemError("Function SetSelectAllCharacterCards was called when player deck selection is not a specific deck.");
 			}
 		}
 		function ConfirmDeleteSelectedCharacterCards() {
@@ -769,8 +774,9 @@
 					}
 				}
 				RefreshGame();
+				RefreshCasket();
 			} else {
-				AlertSystemError("Function SelectAllActionCards was called when player deck selection is not a specific deck.");
+				AlertSystemError("Function SetSelectAllActionCards was called when player deck selection is not a specific deck.");
 			}
 		}
 		function ConfirmDeleteSelectedActionCards() {
@@ -875,6 +881,7 @@
 		function SetDeckName() {
 			Casket.Deck[Casket.DeckSelection.Player].Properties.Name = ReadValue("Textbox_CasketDeckPropertiesName");
 			RefreshGame();
+			RefreshCasket();
 		}
 		function SetDeckDescription() {
 			Casket.Deck[Casket.DeckSelection.Player].Properties.Description = ReadValue("Textbox_CasketDeckPropertiesDescription");
@@ -883,10 +890,12 @@
 		function SetDeckBgImage() {
 			Casket.Deck[Casket.DeckSelection.Player].Properties.BgImage = ReadValue("Textbox_CasketDeckPropertiesBgImage");
 			RefreshGame();
+			RefreshCasket();
 		}
 		function SetDeckCardBackImage() {
 			Casket.Deck[Casket.DeckSelection.Player].Properties.CardBackImage = ReadValue("Textbox_CasketDeckPropertiesCardBackImage");
 			RefreshGame();
+			RefreshCasket();
 		}
 		function SetDeckImageSource() {
 			Casket.Deck[Casket.DeckSelection.Player].Properties.ImageSource = ReadValue("Textbox_CasketDeckPropertiesImageSource");
@@ -969,6 +978,7 @@
 			}
 			ChangeValue("Textbox_CasketImport", "");
 			RefreshGame();
+			RefreshCasket();
 			RefreshEditor();
 		}
 		function ExportDeckLibrary() {

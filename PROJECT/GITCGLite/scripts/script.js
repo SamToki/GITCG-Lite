@@ -14,7 +14,7 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CurrentVersion = 0.46;
+		const CurrentVersion = 0.47;
 		var Game0 = {
 			Options: {
 				TransparentOperationPanel: false
@@ -489,11 +489,6 @@
 		}
 
 		// Refresh
-		ChangeValue("Textbox_CasketDecksFilter", "");
-		ChangeValue("Textbox_CasketCharacterCardsFilter", "");
-		ChangeValue("Textbox_CasketActionCardsFilter", "");
-		ChangeValue("Textbox_CasketImport", "");
-		ChangeValue("Textbox_EditorOpen", "");
 		HighlightActiveSectionInNav();
 		RefreshSystem();
 		RefreshSubsystem();
@@ -522,9 +517,11 @@
 				switch(true) {
 					case ServiceWorkerRegistration.installing != null:
 						ChangeText("Label_SettingsPWAServiceWorkerRegistration", "等待生效");
+						AddClass("Label_SettingsPWAServiceWorkerRegistration", "GreenText");
 						break;
 					case ServiceWorkerRegistration.waiting != null:
 						ChangeText("Label_SettingsPWAServiceWorkerRegistration", "等待更新");
+						AddClass("Label_SettingsPWAServiceWorkerRegistration", "GreenText");
 						Show("Label_HelpPWANewVersionReady");
 						ShowDialog("System_PWANewVersionReady",
 							"Info",
@@ -1169,8 +1166,8 @@
 			case "System_Error":
 				switch(Selector) {
 					case 1:
-						ScrollIntoView("Item_SettingsUserData");
-						ShowIAmHere("Item_SettingsUserData");
+						ScrollIntoView("Item_HelpGetInvolved");
+						ShowIAmHere("Item_HelpGetInvolved");
 						break;
 					case 2:
 						ForceStop();
@@ -1308,6 +1305,7 @@
 						Casket.Deck.splice(Interaction.Deletion, 1);
 						Interaction.Deletion = 0;
 						RefreshGame();
+						RefreshCasket();
 						break;
 					case 3:
 						break;
@@ -1339,6 +1337,7 @@
 						Casket.Card.splice(Interaction.Deletion, 1);
 						Interaction.Deletion = 0;
 						RefreshGame();
+						RefreshCasket();
 						RefreshEditor();
 						break;
 					case 3:
@@ -1363,6 +1362,7 @@
 						}
 						Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection = [0];
 						RefreshGame();
+						RefreshCasket();
 						RefreshEditor();
 						break;
 					case 3:
@@ -1387,6 +1387,7 @@
 						}
 						Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection = [0];
 						RefreshGame();
+						RefreshCasket();
 						RefreshEditor();
 						break;
 					case 3:
@@ -1954,10 +1955,10 @@ function AlertSystemError(Message) {
 		Message);
 	ShowDialog("System_Error",
 		"Error",
-		"抱歉，发生了系统错误。您可尝试清空用户数据来修复错误，或向我提供反馈。若无法关闭对话框，请点击「强制停止」。<br />" +
+		"抱歉，发生了系统错误。若错误持续发生，请前往提供反馈。若无法关闭对话框，请点击「强制停止」。<br />" +
 		"<br />" +
 		"错误信息：" + Message,
-		"", "了解更多", "强制停止", "关闭");
+		"", "前往", "强制停止", "关闭");
 }
 function AlertGameFunctionError(Message) {
 	console.error("● 游戏函数错误\n" +

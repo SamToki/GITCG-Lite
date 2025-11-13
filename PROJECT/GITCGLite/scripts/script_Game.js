@@ -1134,7 +1134,6 @@
 	function RefreshGame() {
 		// Update game status decks and cards when on title screen
 		if(Game.Status.Operation == "Title") {
-			RefreshCasket(); // Section "Game" relies on section "Casket".
 			LoadDeck("Player");
 			LoadDeck("Opponent");
 		}
@@ -1313,7 +1312,7 @@
 								}, System.Display.Anim + 20);
 								break;
 							default:
-								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGame is invalid.");
+								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGameFlow is invalid.");
 								break;
 						}
 						break;
@@ -1321,7 +1320,7 @@
 						Game.Status.Operation = "Table";
 						break;
 					default:
-						AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshGame is invalid.");
+						AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshGameFlow is invalid.");
 						break;
 				}
 			}
@@ -1436,7 +1435,7 @@
 								}, System.Display.Anim + 20);
 								break;
 							default:
-								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGame is invalid.");
+								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGameFlow is invalid.");
 								break;
 						}
 						break;
@@ -1476,7 +1475,7 @@
 								// ???
 								break;
 							default:
-								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGame is invalid.");
+								AlertSystemError("The value of Game.Status.Phase[2] \"" + Game.Status.Phase[2] + "\" in function RefreshGameFlow is invalid.");
 								break;
 						}
 						break;
@@ -1484,7 +1483,7 @@
 						// ???
 						break;
 					default:
-						AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshGame is invalid.");
+						AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshGameFlow is invalid.");
 						break;
 				}
 			}
@@ -1678,7 +1677,7 @@
 									AddClass("Label_GamePlayerCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Player.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshCharacterCards is invalid.");
 									break;
 							}
 						} else {
@@ -1740,7 +1739,7 @@
 									AddClass("Label_GameOpponentCharacter" + Looper + "Status" + Looper2, "DurationInRounds");
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].CardID)].Status[Game.Status.Opponent.CharacterCard[Looper].Status[Looper2].StatusNumber].Duration.Type + "\" in function RefreshCharacterCards is invalid.");
 									break;
 							}
 						} else {
@@ -1765,10 +1764,10 @@
 
 			// Active characters
 			if(Game.Status.Player.ActiveCharacter < 0 || Game.Status.Player.ActiveCharacter > 3) {
-				AlertSystemError("The value of Game.Status.Player.ActiveCharacter \"" + Game.Status.Player.ActiveCharacter + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of Game.Status.Player.ActiveCharacter \"" + Game.Status.Player.ActiveCharacter + "\" in function RefreshCharacterCards is invalid.");
 			}
 			if(Game.Status.Opponent.ActiveCharacter < 0 || Game.Status.Opponent.ActiveCharacter > 3) {
-				AlertSystemError("The value of Game.Status.Opponent.ActiveCharacter \"" + Game.Status.Opponent.ActiveCharacter + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of Game.Status.Opponent.ActiveCharacter \"" + Game.Status.Opponent.ActiveCharacter + "\" in function RefreshCharacterCards is invalid.");
 			}
 			for(let Looper = 1; Looper <= 3; Looper++) {
 				RemoveClass("Card_GamePlayerCharacter" + Looper, "ActiveCharacter");
@@ -1795,7 +1794,7 @@
 							AddClass("Label_GamePlayerPartyStatus" + Looper, "DurationInRounds");
 							break;
 						default:
-							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Player.PartyStatus[Looper].CardID)].Status[Game.Status.Player.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshCharacterCards is invalid.");
 							break;
 					}
 				} else {
@@ -1813,7 +1812,7 @@
 							AddClass("Label_GameOpponentPartyStatus" + Looper, "DurationInRounds");
 							break;
 						default:
-							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type \"" + Casket.Card[ReadCardNumberByID(Game.Status.Opponent.PartyStatus[Looper].CardID)].Status[Game.Status.Opponent.PartyStatus[Looper].StatusNumber].Duration.Type + "\" in function RefreshCharacterCards is invalid.");
 							break;
 					}
 				} else {
@@ -1983,7 +1982,7 @@
 									}
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshActionCards is invalid.");
 									break;
 							}
 						}
@@ -2083,7 +2082,7 @@
 									}
 									break;
 								default:
-									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshGame is invalid.");
+									AlertSystemError("The value of Casket.Card[CardNumber].SupportCardProperties.Duration.Type \"" + Casket.Card[CardNumber].SupportCardProperties.Duration.Type + "\" in function RefreshActionCards is invalid.");
 									break;
 							}
 						}
@@ -2144,10 +2143,10 @@
 				}
 			}
 			if(InHandCardQuantity.Player > 10) {
-				AlertSystemError("The value of InHandCardQuantity.Player \"" + InHandCardQuantity.Player + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of InHandCardQuantity.Player \"" + InHandCardQuantity.Player + "\" in function RefreshCardsInHand is invalid.");
 			}
 			if(InHandCardQuantity.Opponent > 10) {
-				AlertSystemError("The value of InHandCardQuantity.Opponent \"" + InHandCardQuantity.Opponent + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of InHandCardQuantity.Opponent \"" + InHandCardQuantity.Opponent + "\" in function RefreshCardsInHand is invalid.");
 			}
 			if(IsMobileLayout() == false) {
 				CenterPosition = "50%";
@@ -2273,14 +2272,14 @@
 							Sequence.Player++;
 						}
 						if(Sequence.Player > 13) {
-							AlertSystemError("The value of Sequence.Player (Dice) \"" + Sequence.Player + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Sequence.Player (Dice) \"" + Sequence.Player + "\" in function RefreshDice is invalid.");
 						}
 						if(Priority.Opponent[Looper2] == Looper) {
 							Game.Status.Opponent.Dice[Looper2].Sequence = Sequence.Opponent;
 							Sequence.Opponent++;
 						}
 						if(Sequence.Opponent > 13) {
-							AlertSystemError("The value of Sequence.Opponent (Dice) \"" + Sequence.Opponent + "\" in function RefreshGame is invalid.");
+							AlertSystemError("The value of Sequence.Opponent (Dice) \"" + Sequence.Opponent + "\" in function RefreshDice is invalid.");
 						}
 					}
 				}
@@ -2357,7 +2356,7 @@
 					ChangeText("Label_GamePhase", "结束阶段");
 					break;
 				default:
-					AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshGame is invalid.");
+					AlertSystemError("The value of Game.Status.Phase[1] \"" + Game.Status.Phase[1] + "\" in function RefreshTable is invalid.");
 					break;
 			}
 			if(Game.Status.Phase[2] != "" && Game.Status.Phase[2] != "Standby") {
@@ -2377,10 +2376,10 @@
 				}
 			}
 			if(InPileCardQuantity.Player > 30) {
-				AlertSystemError("The value of InPileCardQuantity.Player \"" + InPileCardQuantity.Player + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of InPileCardQuantity.Player \"" + InPileCardQuantity.Player + "\" in function RefreshTable is invalid.");
 			}
 			if(InPileCardQuantity.Opponent > 30) {
-				AlertSystemError("The value of InPileCardQuantity.Opponent \"" + InPileCardQuantity.Opponent + "\" in function RefreshGame is invalid.");
+				AlertSystemError("The value of InPileCardQuantity.Opponent \"" + InPileCardQuantity.Opponent + "\" in function RefreshTable is invalid.");
 			}
 			ChangeText("Label_GameCardPile", InPileCardQuantity.Player + " | " + InPileCardQuantity.Opponent);
 
@@ -2406,7 +2405,7 @@
 					}
 					break;
 				default:
-					AlertSystemError("The value of Game.Status.Player.Turn \"" + Game.Status.Player.Turn + "\" in function RefreshGame is invalid.");
+					AlertSystemError("The value of Game.Status.Player.Turn \"" + Game.Status.Player.Turn + "\" in function RefreshTable is invalid.");
 					break;
 			}
 			ChangeText("Label_GameTurnIndicatorAdditionalTextOpponent", "");
@@ -2430,7 +2429,7 @@
 					}
 					break;
 				default:
-					AlertSystemError("The value of Game.Status.Opponent.Turn \"" + Game.Status.Opponent.Turn + "\" in function RefreshGame is invalid.");
+					AlertSystemError("The value of Game.Status.Opponent.Turn \"" + Game.Status.Opponent.Turn + "\" in function RefreshTable is invalid.");
 					break;
 			}
 			if(Game.Status.Player.Turn == "InTurn" && Game.Status.Player.ActiveCharacter > 0) {
@@ -2867,7 +2866,7 @@
 
 					break;
 				default:
-					AlertSystemError("The value of Game.Status.Operation \"" + Game.Status.Operation + "\" in function RefreshGame is invalid.");
+					AlertSystemError("The value of Game.Status.Operation \"" + Game.Status.Operation + "\" in function RefreshOperationPanel is invalid.");
 					break;
 			}
 		}

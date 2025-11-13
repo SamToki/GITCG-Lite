@@ -758,23 +758,27 @@
 					}
 					break;
 			}
-			RefreshEditor();
 			RefreshGame();
+			RefreshCasket();
+			RefreshEditor();
 		}
 		function SetBasicPropertiesName() {
 			Casket.Card[Editor.CardNumber].BasicProperties.Name = ReadValue("Textbox_EditorBasicPropertiesName");
-			RefreshEditor();
 			RefreshGame();
+			RefreshCasket();
+			RefreshEditor();
 		}
 		function SetBasicPropertiesImage() {
 			Casket.Card[Editor.CardNumber].BasicProperties.Image = ReadValue("Textbox_EditorBasicPropertiesImage");
-			RefreshEditor();
 			RefreshGame();
+			RefreshCasket();
+			RefreshEditor();
 		}
 		function SetBasicPropertiesType() {
 			Casket.Card[Editor.CardNumber].BasicProperties.Type = ReadValue("Combobox_EditorBasicPropertiesType");
-			RefreshEditor();
 			RefreshGame();
+			RefreshCasket();
+			RefreshEditor();
 		}
 		function SetBasicPropertiesStatusQuantity() {
 			Casket.Card[Editor.CardNumber].BasicProperties.StatusQuantity = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_EditorBasicPropertiesStatusQuantity")), 0, 3);
@@ -826,8 +830,8 @@
 		}
 		function SetCharacterCardPropertiesElementType() {
 			Casket.Card[Editor.CardNumber].CharacterCardProperties.ElementType = ReadValue("Combobox_EditorCharacterCardPropertiesElementType");
-			RefreshEditor();
 			RefreshCasket();
+			RefreshEditor();
 		}
 		function SetCharacterCardPropertiesWeaponType() {
 			Casket.Card[Editor.CardNumber].CharacterCardProperties.WeaponType = ReadValue("Combobox_EditorCharacterCardPropertiesWeaponType");
