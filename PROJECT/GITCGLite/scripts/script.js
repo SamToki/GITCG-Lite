@@ -823,8 +823,8 @@
 			} else {
 				RemoveClass("Html", "ShowDebugOutlines");
 			}
-			ChangeChecked("Checkbox_SettingsUseJapaneseGlyph", System.Dev.UseJapaneseGlyph);
-			if(System.Dev.UseJapaneseGlyph == true) {
+			ChangeChecked("Checkbox_SettingsUseJapaneseOrthography", System.Dev.UseJapaneseOrthography);
+			if(System.Dev.UseJapaneseOrthography == true) {
 				ChangeLanguage("Html", "ja-JP");
 			} else {
 				ChangeLanguage("Html", "zh-CN");

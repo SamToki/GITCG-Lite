@@ -1605,24 +1605,24 @@
 		}
 		function RefreshDeckImages() {
 			ChangeBgImage(Game.Status.Player.DeckProperties.BgImage);
-			let Elements = document.querySelectorAll(".Player .CardBack");
+			let CardBackElements = document.querySelectorAll(".Player .CardBack");
 			if(Game.Status.Player.DeckProperties.CardBackImage != "") {
-				for(let Looper = 0; Looper < Elements.length; Looper++) {
-					Elements[Looper].src = Game.Status.Player.DeckProperties.CardBackImage;
+				for(let Looper = 0; Looper < CardBackElements.length; Looper++) {
+					CardBackElements[Looper].src = Game.Status.Player.DeckProperties.CardBackImage;
 				}
 			} else {
-				for(let Looper = 0; Looper < Elements.length; Looper++) {
-					Elements[Looper].src = "images/CardBack.jpg";
+				for(let Looper = 0; Looper < CardBackElements.length; Looper++) {
+					CardBackElements[Looper].src = "images/CardBack.jpg";
 				}
 			}
-			Elements = document.querySelectorAll(".Opponent .CardBack");
+			CardBackElements = document.querySelectorAll(".Opponent .CardBack");
 			if(Game.Status.Opponent.DeckProperties.CardBackImage != "") {
-				for(let Looper = 0; Looper < Elements.length; Looper++) {
-					Elements[Looper].src = Game.Status.Opponent.DeckProperties.CardBackImage;
+				for(let Looper = 0; Looper < CardBackElements.length; Looper++) {
+					CardBackElements[Looper].src = Game.Status.Opponent.DeckProperties.CardBackImage;
 				}
 			} else {
-				for(let Looper = 0; Looper < Elements.length; Looper++) {
-					Elements[Looper].src = "images/CardBack.jpg";
+				for(let Looper = 0; Looper < CardBackElements.length; Looper++) {
+					CardBackElements[Looper].src = "images/CardBack.jpg";
 				}
 			}
 		}
