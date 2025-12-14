@@ -1245,12 +1245,12 @@
 				/* Info window */
 				#Window_Game {
 					position: fixed; top: 130px; left: 15px; z-index: 41;
-					width: 240px; height: calc(100dvh - 200px);
+					width: 240px; height: calc(100vh - 200px); height: calc(100dvh - 200px); /* dvh compatibility fallback */
 					overflow: auto; scroll-padding-top: 15px;
 				}
 				#Html:has(#Topbar.Hidden) #Window_Game {
 					top: 70px;
-					height: calc(100dvh - 140px);
+					height: calc(100vh - 140px); height: calc(100dvh - 140px);
 				}
 					/* Sections */
 					#CtrlGroup_GameInfoWindowCloseButton {
