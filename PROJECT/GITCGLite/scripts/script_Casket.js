@@ -396,7 +396,7 @@
 			}
 		}
 		function ConfirmDeleteDeck(DeckNumber) {
-			Interaction.Deletion = DeckNumber;
+			System0.Deletion = DeckNumber;
 			ShowDialog("Casket_ConfirmDeleteDeck",
 				"Caution",
 				"您确认要删除牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」？",
@@ -677,7 +677,7 @@
 			}
 		}
 		function ConfirmDeleteCard(CardNumber) {
-			Interaction.Deletion = CardNumber;
+			System0.Deletion = CardNumber;
 			ShowDialog("Casket_ConfirmDeleteCard",
 				"Caution",
 				"您确认要删除卡牌「" + ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name) + "」？其 ID 为：" + Casket.Card[CardNumber].BasicProperties.ID,

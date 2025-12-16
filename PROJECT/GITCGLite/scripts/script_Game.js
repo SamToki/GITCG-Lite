@@ -3656,7 +3656,7 @@
 
 		// Dice
 		function HoverDice(PlayerOrOpponent, Number) {
-			if(Interaction.IsPointerDown == true) {
+			if(System0.IsPointerDown == true) {
 				ClickDice(PlayerOrOpponent, Number);
 			}
 		}
@@ -3900,7 +3900,7 @@
 			if(Subsystem.Display.NameOnCard != "AlwaysShow") {
 				FadeByClass("NameOnCard");
 			}
-			if(Interaction.DoNotHide.length <= 1) {
+			if(System0.DoNotHide.length <= 1) {
 				clearTimeout(Automation.FadeNameOnCards);
 			}
 		}
@@ -3952,7 +3952,7 @@
 			if(Subsystem.Display.InfoWindow.InfoWindow != "AlwaysShow") {
 				HideHorizontally("Window_Game");
 			}
-			if(Interaction.DoNotHide.length <= 1) {
+			if(System0.DoNotHide.length <= 1) {
 				clearTimeout(Automation.HideInfoWindow);
 			}
 		}

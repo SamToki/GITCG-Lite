@@ -82,7 +82,7 @@
 		Editor = {
 			CardNumber: 0
 		};
-		Interaction.Deletion = 0;
+		System0.Deletion = 0;
 		Automation.ClockGame = null;
 		Automation.RollDice = null;
 		Automation.RefreshAction = null;
@@ -431,6 +431,7 @@
 	window.onload = Load();
 	function Load() {
 		// User data
+		RepairUserData();
 		if(localStorage.System != undefined) {
 			System = JSON.parse(localStorage.getItem("System"));
 		}
@@ -464,17 +465,16 @@
 				AlertSystemError("The value of System.I18n.Language \"" + System.I18n.Language + "\" in function Load is invalid.");
 				break;
 		}
-		if(System.Version.GITCGLite != undefined) {
-			if(Math.trunc(CurrentVersion) - Math.trunc(System.Version.GITCGLite) >= 1) {
-				ShowDialog("System_MajorUpdateDetected",
-					"Info",
-					"检测到大版本更新。若您继续使用旧版本的用户数据，则有可能发生兼容性问题。敬请留意。",
-					"", "", "", "确定");
-				System.Version.GITCGLite = CurrentVersion;
-			}
-		} else {
-			System.Version.GITCGLite = CurrentVersion;
+		if(System.Version.GITCGLite != undefined && System0.RepairedUserData != "") {
+			ShowDialog("System_MajorUpdateDetected",
+				"Info",
+				"检测到影响用户数据的版本更新。若您继续使用旧版本的用户数据，则有可能发生兼容性问题。敬请留意。<br />" +
+				"<br />" +
+				"版本：v" + System.Version.GITCGLite.toFixed(2) + " → v" + CurrentVersion.toFixed(2) + "<br />" +
+				"已修复用户数据：" + System0.RepairedUserData,
+				"", "", "", "确定");
 		}
+		System.Version.GITCGLite = CurrentVersion;
 		if(localStorage.GITCGLite_Subsystem != undefined) {
 			Subsystem = JSON.parse(localStorage.getItem("GITCGLite_Subsystem"));
 		}
@@ -1099,7 +1099,7 @@
 
 	// Dialog
 	function AnswerDialog(Selector) {
-		let DialogEvent = Interaction.Dialog[Interaction.Dialog.length - 1].Event;
+		let DialogEvent = System0.Dialog[System0.Dialog.length - 1].Event;
 		ShowDialog("Previous");
 		switch(DialogEvent) {
 			case "System_LanguageUnsupported":
@@ -1288,14 +1288,14 @@
 			case "Casket_ConfirmDeleteDeck":
 				switch(Selector) {
 					case 2:
-						if(Casket.DeckSelection.Player >= Interaction.Deletion && Casket.DeckSelection.Player > 1) {
+						if(Casket.DeckSelection.Player >= System0.Deletion && Casket.DeckSelection.Player > 1) {
 							Casket.DeckSelection.Player--;
 						}
-						if(Casket.DeckSelection.Opponent >= Interaction.Deletion && Casket.DeckSelection.Opponent > 1) {
+						if(Casket.DeckSelection.Opponent >= System0.Deletion && Casket.DeckSelection.Opponent > 1) {
 							Casket.DeckSelection.Opponent--;
 						}
-						Casket.Deck.splice(Interaction.Deletion, 1);
-						Interaction.Deletion = 0;
+						Casket.Deck.splice(System0.Deletion, 1);
+						System0.Deletion = 0;
 						RefreshGame();
 						RefreshCasket();
 						break;
@@ -1311,23 +1311,23 @@
 					case 2:
 						if(Casket.DeckSelection.Player > 0) {
 							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
-								if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
+								if(Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper] == Casket.Card[System0.Deletion].BasicProperties.ID) {
 									Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.splice(Looper, 1);
 									break;
 								}
 							}
 							for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
-								if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] == Casket.Card[Interaction.Deletion].BasicProperties.ID) {
+								if(Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection[Looper] == Casket.Card[System0.Deletion].BasicProperties.ID) {
 									Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper, 1);
 									break;
 								}
 							}
 						}
-						if(Editor.CardNumber == Interaction.Deletion) {
+						if(Editor.CardNumber == System0.Deletion) {
 							CloseCard();
 						}
-						Casket.Card.splice(Interaction.Deletion, 1);
-						Interaction.Deletion = 0;
+						Casket.Card.splice(System0.Deletion, 1);
+						System0.Deletion = 0;
 						RefreshGame();
 						RefreshCasket();
 						RefreshEditor();
@@ -1421,7 +1421,7 @@
 	document.addEventListener("keydown", function(Hotkey) {
 		if(Hotkey.key == "Escape") {
 			HideInfoWindow();
-			if(Interaction.Dialog.length <= 1) {
+			if(System0.Dialog.length <= 1) {
 				CancelOperation();
 			}
 		}
