@@ -22,20 +22,18 @@ GITCG Lite is a [*Genshin Impact*](https://genshin-impact.fandom.com/wiki/Genshi
 
 https://SamToki.github.io/#ToyStore
 
-# 教程 Tutorial
+# 了解更多 Learn More
 
-[快速入门](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20快速入门.pdf)<br>
-[Quick Guide](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20快速入门.pdf) (in simplified Chinese)
+[快速入门](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20快速入门.pdf)
 
-[说明文档](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20说明文档.pdf)<br>
-[Documentation](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20说明文档.pdf) (in simplified Chinese)
+[说明文档](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20说明文档.pdf)
 
 # 版权说明 Copyright Info
 
 本站的源代码遵循 [GNU GPL v3 软件开源协议](https://www.gnu.org/licenses/gpl-3.0.en.html)。本站的部分内容为他人作品，版权为原作者所有，本站遵循 [fair use](https://zh.wikipedia.org/wiki/fair_use) 原则使用并于 Credits 标注来源。除上述内容之外，本站所有内容以及排版、美术设计均保留版权。文档保留版权。<br>
 The source codes of this website are released under [GNU GPL v3 open source license](https://www.gnu.org/licenses/gpl-3.0.en.html). Some contents in the website are works by other people, and their copyrights belong to the corresponding authors. They are used under the "[fair use](https://en.wikipedia.org/wiki/fair_use)" principle and are credited. Other contents and the webpage design are copyrighted. The documents are also copyrighted.
 
-「原神」是 miHoYo Inc. 的作品与商标。<br>
-*Genshin Impact* is a trademark of miHoYo Inc.
+「原神」是 [miHoYo](https://zh.moegirl.org.cn/miHoYo) Inc. 的商标。<br>
+*Genshin Impact* is a trademark of [miHoYo](https://genshin-impact.fandom.com/wiki/MiHoYo) Inc.
 
 © 2024 SAM TOKI STUDIO
