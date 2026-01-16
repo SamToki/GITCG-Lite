@@ -97,13 +97,15 @@
 		// Saved
 		var Subsystem = {
 			Display: {
-				NameOnCard: "ShowOnHover", HPCautionThreshold: 40,
+				HPCautionThreshold: 40,
+				ShowSpokenLines: true,
+				SkillIndicator: "ShowOnElementalBurstOnly",
+				NameOnCard: "ShowOnHover",
 				InfoWindow: {
 					InfoWindow: "ShowOnHover", ShowWhenOpponentActs: true, AlsoShowInCasket: true
 				},
-				ColorBlindMode: false,
-				SkillIndicator: "ShowOnElementalBurstOnly", ShowSpokenLines: true,
-				FlashOnHighDamage: false
+				FlashOnHighDamage: false,
+				ColorBlindMode: false
 			},
 			Audio: {
 				SoundVolume: 100, VoiceVolume: 40
@@ -833,6 +835,12 @@
 	function RefreshSubsystem() {
 		// Settings
 			// Display
+			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
+			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
+			if(Subsystem.Display.ShowSpokenLines == false) {
+				FadeByClass("SpokenLine");
+			}
+			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
 			ChangeValue("Combobox_SettingsNameOnCard", Subsystem.Display.NameOnCard);
 			switch(Subsystem.Display.NameOnCard) {
 				case "Disabled":
@@ -846,7 +854,6 @@
 					AlertSystemError("The value of Subsystem.Display.NameOnCard \"" + Subsystem.Display.NameOnCard + "\" in function RefreshSubsystem is invalid.");
 					break;
 			}
-			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
 			ChangeValue("Combobox_SettingsInfoWindow", Subsystem.Display.InfoWindow.InfoWindow);
 			switch(Subsystem.Display.InfoWindow.InfoWindow) {
 				case "Disabled":
@@ -872,13 +879,8 @@
 					AlertSystemError("The value of Subsystem.Display.InfoWindow.InfoWindow \"" + Subsystem.Display.InfoWindow.InfoWindow + "\" in function RefreshSubsystem is invalid.");
 					break;
 			}
-			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
-			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
-			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
-			if(Subsystem.Display.ShowSpokenLines == false) {
-				FadeByClass("SpokenLine");
-			}
 			ChangeChecked("Checkbox_SettingsFlashOnHighDamage", Subsystem.Display.FlashOnHighDamage);
+			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 
 			// Audio
 			if(System.Audio.PlayAudio == true) {
@@ -989,12 +991,20 @@
 		}
 
 		// Display
-		function SetNameOnCard() {
-			Subsystem.Display.NameOnCard = ReadValue("Combobox_SettingsNameOnCard");
-			RefreshSubsystem();
-		}
 		function SetHPCautionThreshold() {
 			Subsystem.Display.HPCautionThreshold = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold")), 0, 60);
+			RefreshSubsystem();
+		}
+		function SetShowSpokenLines() {
+			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
+			RefreshSubsystem();
+		}
+		function SetSkillIndicator() {
+			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
+			RefreshSubsystem();
+		}
+		function SetNameOnCard() {
+			Subsystem.Display.NameOnCard = ReadValue("Combobox_SettingsNameOnCard");
 			RefreshSubsystem();
 		}
 		function SetInfoWindow() {
@@ -1009,22 +1019,14 @@
 			Subsystem.Display.InfoWindow.AlsoShowInCasket = IsChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket");
 			RefreshSubsystem();
 		}
+		function SetFlashOnHighDamage() {
+			Subsystem.Display.FlashOnHighDamage = IsChecked("Checkbox_SettingsFlashOnHighDamage");
+			RefreshSubsystem();
+		}
 		function SetColorBlindMode() {
 			Subsystem.Display.ColorBlindMode = IsChecked("Checkbox_SettingsColorBlindMode");
 			RefreshSubsystem();
 			RefreshGame();
-		}
-		function SetSkillIndicator() {
-			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
-			RefreshSubsystem();
-		}
-		function SetShowSpokenLines() {
-			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
-			RefreshSubsystem();
-		}
-		function SetFlashOnHighDamage() {
-			Subsystem.Display.FlashOnHighDamage = IsChecked("Checkbox_SettingsFlashOnHighDamage");
-			RefreshSubsystem();
 		}
 
 		// Audio

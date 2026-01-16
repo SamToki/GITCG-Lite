@@ -7293,24 +7293,25 @@
 									</label>
 								</li>
 								<li class="Ctrl">
-									<label for="Combobox_SettingsHotkeyIndicators">
-										<span>快捷键提示：</span>
-										<select class="Combobox" id="Combobox_SettingsHotkeyIndicators" onchange="SetHotkeyIndicators()">
-											<option value="Disabled">禁用</option>
-											<option value="ShowOnWrongKeyPress">按下无关按键时显示</option>
-											<option value="ShowOnAnyKeyPress" selected>按下任意按键时显示</option>
-											<option value="AlwaysShow">始终显示</option>
-										</select>
+									<label for="Textbox_SettingsHPCautionThreshold">
+										<span>血量：低于</span>
+										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" placeholder="0~60" title="0~60" />
+										<span>%时显示红色</span>
 									</label>
 								</li>
 								<li class="Ctrl">
-									<label for="Combobox_SettingsAnim">
-										<span>动画：</span>
-										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
-											<option value="0">禁用</option>
-											<option value="100">快速 (100ms)</option>
-											<option value="250" selected>中速 (250ms)</option>
-											<option value="500">慢速 (500ms)</option>
+									<label for="Checkbox_SettingsShowSpokenLines">
+										<input class="Checkbox" id="Checkbox_SettingsShowSpokenLines" type="checkbox" checked="true" onchange="SetShowSpokenLines()" />
+										<span>显示台词</span>
+									</label>
+								</li>
+								<li class="Ctrl">
+									<label for="Combobox_SettingsSkillIndicator">
+										<span>技能指示器：</span>
+										<select class="Combobox" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
+											<option value="Disabled">禁用</option>
+											<option value="ShowOnElementalBurstOnly" selected>仅于元素爆发显示</option>
+											<option value="ShowOnAnySkill">于所有技能显示</option>
 										</select>
 									</label>
 								</li>
@@ -7322,13 +7323,6 @@
 											<option value="ShowOnHover" selected>鼠标滑过卡牌时显示</option>
 											<option value="AlwaysShow">始终显示</option>
 										</select>
-									</label>
-								</li>
-								<li class="Ctrl">
-									<label for="Textbox_SettingsHPCautionThreshold">
-										<span>血量：低于</span>
-										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" placeholder="0~60" title="0~60" />
-										<span>%时显示红色</span>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -7354,6 +7348,26 @@
 										<span>在牌盒界面中也显示详情窗口</span>
 									</label>
 								</li>
+								<li class="Ctrl">
+									<label for="Combobox_SettingsHotkeyIndicators">
+										<span>快捷键提示：</span>
+										<select class="Combobox" id="Combobox_SettingsHotkeyIndicators" onchange="SetHotkeyIndicators()">
+											<option value="Disabled">禁用</option>
+											<option value="ShowOnWrongKeyPress">按下无关按键时显示</option>
+											<option value="ShowOnAnyKeyPress" selected>按下任意按键时显示</option>
+											<option value="AlwaysShow">始终显示</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+							<p><span class="RedText">警告：</span>「打出高额伤害时闪烁画面」可能会诱发<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>。若您在游玩时感到难受，请立即停止游戏并禁用该功能。</p>
+							<ul class="CtrlGroup BelowParagraph">
+								<li class="Ctrl">
+									<label for="Checkbox_SettingsFlashOnHighDamage">
+										<input class="Checkbox" id="Checkbox_SettingsFlashOnHighDamage" type="checkbox" checked="false" onchange="SetFlashOnHighDamage()" />
+										<span>打出高额伤害时闪烁画面</span>
+									</label>
+								</li>
 							</ul>
 							<p>色盲模式会给依赖颜色的 UI 控件 (例如花费指示器) 补充文字，但其颜色保持不变。若您启用色盲模式后仍无法正常使用，请尝试高对比度主题。</p>
 							<ul class="CtrlGroup BelowParagraph">
@@ -7364,28 +7378,14 @@
 									</label>
 								</li>
 								<li class="Ctrl">
-									<label for="Combobox_SettingsSkillIndicator">
-										<span>技能指示器：</span>
-										<select class="Combobox" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
-											<option value="Disabled">禁用</option>
-											<option value="ShowOnElementalBurstOnly" selected>仅于元素爆发显示</option>
-											<option value="ShowOnAnySkill">于所有技能显示</option>
+									<label for="Combobox_SettingsAnim">
+										<span>动画：</span>
+										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
+											<option value="0">禁用</option>
+											<option value="100">快速 (100ms)</option>
+											<option value="250" selected>中速 (250ms)</option>
+											<option value="500">慢速 (500ms)</option>
 										</select>
-									</label>
-								</li>
-								<li class="Ctrl">
-									<label for="Checkbox_SettingsShowSpokenLines">
-										<input class="Checkbox" id="Checkbox_SettingsShowSpokenLines" type="checkbox" checked="true" onchange="SetShowSpokenLines()" />
-										<span>显示台词</span>
-									</label>
-								</li>
-							</ul>
-							<p><span class="RedText">警告：</span>「打出高额伤害时闪烁画面」可能会诱发<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>。若您在游玩时感到难受，请立即停止游戏并禁用该功能。</p>
-							<ul class="CtrlGroup BelowParagraph">
-								<li class="Ctrl">
-									<label for="Checkbox_SettingsFlashOnHighDamage">
-										<input class="Checkbox" id="Checkbox_SettingsFlashOnHighDamage" type="checkbox" checked="false" onchange="SetFlashOnHighDamage()" />
-										<span>打出高额伤害时闪烁画面</span>
 									</label>
 								</li>
 							</ul>
