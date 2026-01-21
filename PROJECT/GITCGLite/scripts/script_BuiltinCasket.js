@@ -1147,7 +1147,7 @@
 							Execution:
 								"if(IsReactionTriggered(\"Master\", \"\", \"Any\")) {\n" +
 								"	for(let Looper = 1; Looper <= 3; Looper++) {\n" +
-								"		if(IsStatusPresent(\"Self\", Looper, \"Nahida\", 1) == true) {\n" +
+								"		if(IsStatusPresent(\"Self\", Looper, \"Nahida\", 1)) {\n" +
 								"			let Value = false;\n" +
 								"			for(let Looper2 = 1; Looper2 <= 3; Looper2++) {\n" +
 								"				if(ReadElementType(\"Enemy\", Looper2) == \"Pyro\") {\n" +

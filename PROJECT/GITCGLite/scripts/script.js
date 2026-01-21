@@ -556,7 +556,7 @@
 		// Class
 		function ReadSequence(ID) {
 			for(let Looper = 1; Looper <= 12; Looper++) {
-				if(IsClassContained(ID, "Sequence" + Looper) == true) {
+				if(IsClassContained(ID, "Sequence" + Looper)) {
 					return Looper;
 				}
 			}
@@ -566,7 +566,7 @@
 	// Write
 		// Class
 		function ChangeActionCardType(ID, Value) {
-			if(IsClassContained(ID, "Card") == true && IsClassContained(ID, "Action") == true) {
+			if(IsClassContained(ID, "Card") && IsClassContained(ID, "Action")) {
 				RemoveClass(ID, "Talent");
 				RemoveClass(ID, "Weapon");
 				RemoveClass(ID, "Artifact");
@@ -578,7 +578,7 @@
 			}
 		}
 		function ChangeCardPosition(ID, Value) {
-			if(IsClassContained(ID, "Card") == true) {
+			if(IsClassContained(ID, "Card")) {
 				RemoveClass(ID, "OnTitleScreen");
 				RemoveClass(ID, "OffTable");
 				RemoveClass(ID, "InStartingHand");
@@ -597,7 +597,7 @@
 			}
 		}
 		function ChangeDicePosition(ID, Value) {
-			if(IsClassContained(ID, "Dice") == true) {
+			if(IsClassContained(ID, "Dice")) {
 				RemoveClass(ID, "OffTable");
 				RemoveClass(ID, "OnRolling");
 				RemoveClass(ID, "OnTable");
@@ -748,7 +748,7 @@
 					break;
 			}
 			ChangeChecked("Checkbox_SettingsBlurBgImage", System.Display.BlurBgImage);
-			if(System.Display.BlurBgImage == true) {
+			if(System.Display.BlurBgImage) {
 				AddClass("BgImage", "Blur");
 			} else {
 				RemoveClass("BgImage", "Blur");
@@ -779,7 +779,7 @@
 
 			// Audio
 			ChangeChecked("Checkbox_SettingsPlayAudio", System.Audio.PlayAudio);
-			if(System.Audio.PlayAudio == true) {
+			if(System.Audio.PlayAudio) {
 				Show("Ctrl_SettingsSoundVolume");
 				Show("Ctrl_SettingsVoiceVolume");
 				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
@@ -804,7 +804,7 @@
 			}
 
 			// PWA
-			if(window.matchMedia("(display-mode: standalone)").matches == true) {
+			if(window.matchMedia("(display-mode: standalone)").matches) {
 				ChangeText("Label_SettingsPWAStandaloneDisplay", "是");
 			} else {
 				ChangeText("Label_SettingsPWAStandaloneDisplay", "否");
@@ -812,7 +812,7 @@
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsTryToOptimizePerformance", System.Dev.TryToOptimizePerformance);
-			if(System.Dev.TryToOptimizePerformance == true) {
+			if(System.Dev.TryToOptimizePerformance) {
 				AddClass("Html", "TryToOptimizePerformance");
 				Automation.ClockRate = 40;
 			} else {
@@ -820,7 +820,7 @@
 				Automation.ClockRate = 20;
 			}
 			ChangeChecked("Checkbox_SettingsShowDebugOutlines", System.Dev.ShowDebugOutlines);
-			if(System.Dev.ShowDebugOutlines == true) {
+			if(System.Dev.ShowDebugOutlines) {
 				AddClass("Html", "ShowDebugOutlines");
 			} else {
 				RemoveClass("Html", "ShowDebugOutlines");
@@ -883,7 +883,7 @@
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 
 			// Audio
-			if(System.Audio.PlayAudio == true) {
+			if(System.Audio.PlayAudio) {
 				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
 				if(Subsystem.Audio.SoundVolume > 0) {
 					ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
@@ -903,7 +903,7 @@
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsCheat", Subsystem.Dev.Cheat);
-			if(Subsystem.Dev.Cheat == true) {
+			if(Subsystem.Dev.Cheat) {
 				AddClass("Html", "Cheat");
 			} else {
 				RemoveClass("Html", "Cheat");
@@ -918,7 +918,7 @@
 		// Saved Games
 		function ImportSavedGame() {
 			if(ReadValue("Textbox_SettingsImportSavedGame") != "") {
-				if(ReadValue("Textbox_SettingsImportSavedGame").startsWith("{\"Name\":") == true) {
+				if(ReadValue("Textbox_SettingsImportSavedGame").startsWith("{\"Name\":")) {
 					Game.SavedGames[Game.SavedGames.length] = JSON.parse(ReadValue("Textbox_SettingsImportSavedGame"));
 					ShowDialog("Game_SavedGameImported",
 						"Question",
@@ -1055,7 +1055,7 @@
 		// Dev
 		function SetCheat() {
 			Subsystem.Dev.Cheat = IsChecked("Checkbox_SettingsCheat");
-			if(Subsystem.Dev.Cheat == true) {
+			if(Subsystem.Dev.Cheat) {
 				ShowToast("You will have order.");
 			}
 			RefreshSubsystem();
@@ -1065,7 +1065,7 @@
 		// User data
 		function ImportUserData() {
 			if(ReadValue("Textbox_SettingsUserDataImport") != "") {
-				if(ReadValue("Textbox_SettingsUserDataImport").startsWith("{\"System\":{\"Display\":{\"Theme\":") == true) {
+				if(ReadValue("Textbox_SettingsUserDataImport").startsWith("{\"System\":{\"Display\":{\"Theme\":")) {
 					let UserData = JSON.parse(ReadValue("Textbox_SettingsUserDataImport"));
 					Object.keys(UserData).forEach(function(SubobjectName) {
 						localStorage.setItem(SubobjectName, JSON.stringify(UserData[SubobjectName]));
@@ -1176,7 +1176,7 @@
 			case "Game_LoadingPaused":
 				switch(Selector) {
 					case 2:
-						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
+						if(IsChecked("Checkbox_DialogCheckboxOption")) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_LoadingPaused";
 							RefreshSystem();
 						}
@@ -1194,7 +1194,7 @@
 			case "Game_WindowLayoutImproper":
 				switch(Selector) {
 					case 3:
-						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
+						if(IsChecked("Checkbox_DialogCheckboxOption")) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_WindowLayoutImproper";
 							RefreshSystem();
 						}
@@ -1207,7 +1207,7 @@
 			case "Game_ConfirmRestartGame":
 				switch(Selector) {
 					case 2:
-						if(JSON.stringify(Game.InitialStatus).startsWith("{\"Operation\":") == true) {
+						if(JSON.stringify(Game.InitialStatus).startsWith("{\"Operation\":")) {
 							Game.Status = structuredClone(Game.InitialStatus);
 							RefreshGame();
 						} else {
@@ -1276,7 +1276,7 @@
 			case "Casket_CardExported":
 				switch(Selector) {
 					case 3:
-						if(IsChecked("Checkbox_DialogCheckboxOption") == true) {
+						if(IsChecked("Checkbox_DialogCheckboxOption")) {
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_DeckExported";
 							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_CardExported";
 							RefreshSystem();

@@ -56,7 +56,7 @@
 							Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.splice(Looper, 1);
 						}
 					}
-					if(IsUnrecognizableCardDetected == true) {
+					if(IsUnrecognizableCardDetected) {
 						ShowDialog("Casket_UnrecognizableCardDetected",
 							"Caution",
 							"对手牌组含有无法识别的卡牌。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。",
@@ -77,7 +77,7 @@
 							Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.splice(Looper, 1);
 						}
 					}
-					if(IsUnrecognizableCardDetected == true) {
+					if(IsUnrecognizableCardDetected) {
 						ShowDialog("Casket_UnrecognizableCardDetected",
 							"Caution",
 							"您的牌组含有无法识别的卡牌。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。",
@@ -326,9 +326,9 @@
 						CharacterIDsAndNames += Casket.Deck[Looper].CharacterCardSelection[Looper2] + ", " + ReadCardNameByID(Casket.Deck[Looper].CharacterCardSelection[Looper2]) + ", ";
 					}
 				}
-				if(Casket.Deck[Looper].Properties.Name.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true ||
-				Casket.Deck[Looper].Properties.Description.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true ||
-				CharacterIDsAndNames.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) == true) {
+				if(Casket.Deck[Looper].Properties.Name.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) ||
+				Casket.Deck[Looper].Properties.Description.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase()) ||
+				CharacterIDsAndNames.toLowerCase().includes(ReadValue("Textbox_CasketDecksFilter").toLowerCase())) {
 					Show("Ctrl_CasketDeck" + Looper);
 					Counter++;
 				} else {
@@ -447,30 +447,30 @@
 			let Counter = 0, Counter2 = 0, Counter3 = 0, IsAnyHiddenCardSelected = false;
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
-					if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterCardProperties.ElementType.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Translate(Casket.Card[Looper].CharacterCardProperties.ElementType).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterCardProperties.WeaponType.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Translate(Casket.Card[Looper].CharacterCardProperties.WeaponType).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterCardProperties.CombatOrientation.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Translate(Casket.Card[Looper].CharacterCardProperties.CombatOrientation).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterProfile.From.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterProfile.VA.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterProfile.Gender.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Translate(Casket.Card[Looper].CharacterProfile.Gender).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) == true ||
-					Casket.Card[Looper].CharacterProfile.Birthday.includes(ReadValue("Textbox_CasketCharacterCardsFilter")) == true) {
+					if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterCardProperties.ElementType.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Translate(Casket.Card[Looper].CharacterCardProperties.ElementType).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterCardProperties.WeaponType.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Translate(Casket.Card[Looper].CharacterCardProperties.WeaponType).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterCardProperties.CombatOrientation.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Translate(Casket.Card[Looper].CharacterCardProperties.CombatOrientation).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterProfile.From.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterProfile.VA.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterProfile.Gender.toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Translate(Casket.Card[Looper].CharacterProfile.Gender).toLowerCase().includes(ReadValue("Textbox_CasketCharacterCardsFilter").toLowerCase()) ||
+					Casket.Card[Looper].CharacterProfile.Birthday.includes(ReadValue("Textbox_CasketCharacterCardsFilter"))) {
 						Show("Ctrl_CasketCard" + Looper);
 						Counter++;
-						if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+						if(IsChecked("Checkbox_CasketCard" + Looper)) {
 							Counter3++;
 						}
 					} else {
 						Hide("Ctrl_CasketCard" + Looper);
-						if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+						if(IsChecked("Checkbox_CasketCard" + Looper)) {
 							IsAnyHiddenCardSelected = true;
 						}
 					}
@@ -503,48 +503,48 @@
 					case "CharacterCard":
 						break;
 					case "TalentCard":
-						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].TalentCardProperties.OrientedCharacterCardID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						ReadCardNameByID(Casket.Card[Looper].TalentCardProperties.OrientedCharacterCardID).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].TalentCardProperties.SkillType.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Translate(Casket.Card[Looper].TalentCardProperties.SkillType).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true) {
+						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].TalentCardProperties.OrientedCharacterCardID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						ReadCardNameByID(Casket.Card[Looper].TalentCardProperties.OrientedCharacterCardID).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].TalentCardProperties.SkillType.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Translate(Casket.Card[Looper].TalentCardProperties.SkillType).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase())) {
 							Show("Ctrl_CasketCard" + Looper);
 							Counter++;
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								Counter3++;
 							}
 						} else {
 							Hide("Ctrl_CasketCard" + Looper);
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								IsAnyHiddenCardSelected = true;
 							}
 						}
 						Counter2++;
 						break;
 					case "WeaponCard":
-						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].WeaponCardProperties.WeaponType.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Translate(Casket.Card[Looper].WeaponCardProperties.WeaponType).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true) {
+						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].WeaponCardProperties.WeaponType.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Translate(Casket.Card[Looper].WeaponCardProperties.WeaponType).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase())) {
 							Show("Ctrl_CasketCard" + Looper);
 							Counter++;
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								Counter3++;
 							}
 						} else {
 							Hide("Ctrl_CasketCard" + Looper);
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								IsAnyHiddenCardSelected = true;
 							}
 						}
@@ -553,21 +553,21 @@
 					case "ArtifactCard":
 					case "SupportCard":
 					case "EventCard":
-						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true ||
-						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) == true) {
+						if(Casket.Card[Looper].BasicProperties.ID.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Name.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Type.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Translate(Casket.Card[Looper].BasicProperties.Type).toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Keywords.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].BasicProperties.Description.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase()) ||
+						Casket.Card[Looper].Credits.Author.toLowerCase().includes(ReadValue("Textbox_CasketActionCardsFilter").toLowerCase())) {
 							Show("Ctrl_CasketCard" + Looper);
 							Counter++;
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								Counter3++;
 							}
 						} else {
 							Hide("Ctrl_CasketCard" + Looper);
-							if(IsChecked("Checkbox_CasketCard" + Looper) == true) {
+							if(IsChecked("Checkbox_CasketCard" + Looper)) {
 								IsAnyHiddenCardSelected = true;
 							}
 						}
@@ -600,7 +600,7 @@
 		function SetCard(CardNumber) {
 			if(Casket.DeckSelection.Player > 0) {
 				if(Casket.Card[CardNumber].BasicProperties.Type == "CharacterCard") {
-					if(IsChecked("Checkbox_CasketCard" + CardNumber) == true) {
+					if(IsChecked("Checkbox_CasketCard" + CardNumber)) {
 						// Add selection
 						let IsCardAlreadyInDeck = false;
 						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper++) {
@@ -622,7 +622,7 @@
 						}
 					}
 				} else {
-					if(IsChecked("Checkbox_CasketCard" + CardNumber) == true) {
+					if(IsChecked("Checkbox_CasketCard" + CardNumber)) {
 						// Add selection
 						let IsCardAlreadyInDeck = false;
 						for(let Looper = 1; Looper < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper++) {
@@ -697,7 +697,7 @@
 			if(Casket.DeckSelection.Player > 0) {
 				for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 					if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
-						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllCharacterCards") == true) {
+						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllCharacterCards")) {
 							// Add selection
 							let IsCardAlreadyInDeck = false;
 							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper2++) {
@@ -750,7 +750,7 @@
 			if(Casket.DeckSelection.Player > 0) {
 				for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 					if(Casket.Card[Looper].BasicProperties.Type != "CharacterCard") {
-						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllActionCards") == true) {
+						if(IsClassContained("Ctrl_CasketCard" + Looper, "Hidden") == false && IsChecked("Checkbox_CasketSelectAllActionCards")) {
 							// Add selection
 							let IsCardAlreadyInDeck = false;
 							for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length; Looper2++) {
@@ -909,19 +909,19 @@
 			for(let Looper = 0; Looper < Objects.length; Looper++) {
 				switch(true) {
 					// Single deck
-					case Objects[Looper].startsWith("{\"Properties\":{\"Name\":") == true:
+					case Objects[Looper].startsWith("{\"Properties\":{\"Name\":"):
 						Casket.Deck[Casket.Deck.length] = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
 
 					// Deck library
-					case Objects[Looper].startsWith("[\"DeckLibrary\",{\"Properties\":{\"Name\":") == true:
+					case Objects[Looper].startsWith("[\"DeckLibrary\",{\"Properties\":{\"Name\":"):
 						Casket.Deck = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
 
 					// Single card
-					case Objects[Looper].startsWith("{\"BasicProperties\":{\"ID\":") == true:
+					case Objects[Looper].startsWith("{\"BasicProperties\":{\"ID\":"):
 						Casket.Card[Casket.Card.length] = JSON.parse(Objects[Looper]);
 						while(ReadCardNumberByID(Casket.Card[Casket.Card.length - 1].BasicProperties.ID) != Casket.Card.length - 1) {
 							Casket.Card[Casket.Card.length - 1].BasicProperties.ID += "(Copy)";
@@ -930,13 +930,13 @@
 						break;
 
 					// Card library
-					case Objects[Looper].startsWith("[\"CardLibrary\",{\"BasicProperties\":{\"ID\":") == true:
+					case Objects[Looper].startsWith("[\"CardLibrary\",{\"BasicProperties\":{\"ID\":"):
 						Casket.Card = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
 
 					// Whole casket
-					case Objects[Looper].startsWith("{\"DeckSelection\":[0,") == true:
+					case Objects[Looper].startsWith("{\"DeckSelection\":[0,"):
 						Casket = JSON.parse(Objects[Looper]);
 						Counter++;
 						break;
@@ -1011,14 +1011,14 @@
 
 		// Info window
 		function HoverCardInCasket(CardNumber) {
-			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket == true) {
+			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket) {
 				RefreshInfoWindowObjectProperties(CardNumber, "BasicProperties");
 				RefreshInfoWindowInGameCharacterProperties("Hide", null);
 				ShowInfoWindow();
 			}
 		}
 		function ClickCardInCasket(CardNumber) {
-			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket == true) {
+			if((Subsystem.Display.InfoWindow.InfoWindow == "ShowOnClick" || Subsystem.Display.InfoWindow.InfoWindow == "ShowOnHover" || Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") && Subsystem.Display.InfoWindow.AlsoShowInCasket) {
 				RefreshInfoWindowObjectProperties(CardNumber, "BasicProperties");
 				RefreshInfoWindowInGameCharacterProperties("Hide", null);
 				ShowInfoWindow();

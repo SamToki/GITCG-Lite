@@ -22,7 +22,7 @@
 					break;
 				case Game.Status.Phase[2] == "Initialization":
 				case Game.Status.Phase[2] == "Standby":
-				case Game.Status.Phase[2].startsWith("Working") == true:
+				case Game.Status.Phase[2].startsWith("Working"):
 					AlertGameFunctionError("Function ReadPhase was called at an improper game phase \"" + Game.Status.Phase[1] + " " + Game.Status.Phase[2] + "\".");
 					break;
 				default:

@@ -182,7 +182,7 @@
 						ChangeValue("Textbox_EditorElementalSkillExecution", Casket.Card[Editor.CardNumber].ElementalSkill.Execution);
 
 						// Secondary Elemental Skill
-						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasSecondaryElementalSkill == true) {
+						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasSecondaryElementalSkill) {
 							if(Casket.Card[Editor.CardNumber].SecondaryElementalSkill == undefined) {
 								Casket.Card[Editor.CardNumber].SecondaryElementalSkill = structuredClone(Casket0.BuiltinCard.EmptyComplementCard.SecondaryElementalSkill);
 							}
@@ -262,7 +262,7 @@
 						ChangeValue("Textbox_EditorElementalBurstExecution", Casket.Card[Editor.CardNumber].ElementalBurst.Execution);
 
 						// Intro Skill
-						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasIntroSkill == true) {
+						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasIntroSkill) {
 							if(Casket.Card[Editor.CardNumber].IntroSkill == undefined) {
 								Casket.Card[Editor.CardNumber].IntroSkill = structuredClone(Casket0.BuiltinCard.EmptyComplementCard.IntroSkill);
 							}
@@ -277,7 +277,7 @@
 						}
 
 						// Outro Skill
-						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasOutroSkill == true) {
+						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasOutroSkill) {
 							if(Casket.Card[Editor.CardNumber].OutroSkill == undefined) {
 								Casket.Card[Editor.CardNumber].OutroSkill = structuredClone(Casket0.BuiltinCard.EmptyComplementCard.OutroSkill);
 							}
@@ -292,7 +292,7 @@
 						}
 
 						// Passive Skill
-						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasPassiveSkill == true) {
+						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasPassiveSkill) {
 							if(Casket.Card[Editor.CardNumber].PassiveSkill == undefined) {
 								Casket.Card[Editor.CardNumber].PassiveSkill = structuredClone(Casket0.BuiltinCard.EmptyComplementCard.PassiveSkill);
 							}
@@ -308,7 +308,7 @@
 						}
 
 						// Affiliated Card
-						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasAffiliatedCard == true) {
+						if(Casket.Card[Editor.CardNumber].CharacterCardProperties.HasAffiliatedCard) {
 							if(Casket.Card[Editor.CardNumber].AffiliatedCard == undefined) {
 								Casket.Card[Editor.CardNumber].AffiliatedCard = structuredClone(Casket0.BuiltinCard.EmptyComplementCard.AffiliatedCard);
 							}
