@@ -14,7 +14,6 @@
 	// Declare variables
 	"use strict";
 		// Unsaved
-		const CurrentVersion = 0.47;
 		var Game0 = {
 			Options: {
 				TransparentOperationPanel: false
@@ -467,16 +466,6 @@
 				AlertSystemError("The value of System.I18n.Language \"" + System.I18n.Language + "\" in function Load is invalid.");
 				break;
 		}
-		if(System.Version.GITCGLite != undefined && System0.RepairedUserData != "") {
-			ShowDialog("System_MajorUpdateDetected",
-				"Info",
-				"检测到影响用户数据的版本更新。若您继续使用旧版本的用户数据，则有可能发生兼容性问题。敬请留意。<br />" +
-				"<br />" +
-				"版本：v" + System.Version.GITCGLite.toFixed(2) + " → v" + CurrentVersion.toFixed(2) + "<br />" +
-				"已修复用户数据：" + System0.RepairedUserData,
-				"", "", "", "确定");
-		}
-		System.Version.GITCGLite = CurrentVersion;
 		if(localStorage.GITCGLite_Subsystem != undefined) {
 			Subsystem = JSON.parse(localStorage.getItem("GITCGLite_Subsystem"));
 		}
@@ -506,8 +495,8 @@
 					const ServiceWorkerInstallation = ServiceWorkerRegistration.installing;
 					ServiceWorkerInstallation.addEventListener("statechange", function() {
 						if(ServiceWorkerInstallation.state == "installed" && navigator.serviceWorker.controller != null) {
-							Show("Label_HelpPWANewVersionReady");
-							ShowDialog("System_PWANewVersionReady",
+							Show("Label_HelpNewVersionReady");
+							ShowDialog("System_NewVersionReady",
 								"Info",
 								"新版本已就绪，将在下次启动时生效。",
 								"", "", "", "确定");
@@ -524,8 +513,8 @@
 					case ServiceWorkerRegistration.waiting != null:
 						ChangeText("Label_SettingsPWAServiceWorkerRegistration", "等待更新");
 						AddClass("Label_SettingsPWAServiceWorkerRegistration", "GreenText");
-						Show("Label_HelpPWANewVersionReady");
-						ShowDialog("System_PWANewVersionReady",
+						Show("Label_HelpNewVersionReady");
+						ShowDialog("System_NewVersionReady",
 							"Info",
 							"新版本已就绪，将在下次启动时生效。",
 							"", "", "", "确定");
@@ -1105,8 +1094,7 @@
 		ShowDialog("Previous");
 		switch(DialogEvent) {
 			case "System_LanguageUnsupported":
-			case "System_MajorUpdateDetected":
-			case "System_PWANewVersionReady":
+			case "System_NewVersionReady":
 			case "System_RefreshingWebpage":
 			case "System_JSONStringInvalid":
 			case "System_UserDataExported":
