@@ -170,29 +170,28 @@
 				}
 
 				/* Info window */
-					/* Sections */
+					/* General */
 					#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 						width: 238px;
 					}
-						/* Content */
-						.InfoWindowContent {
-							border-bottom: 1px solid #FFFFFF;
-						}
-						.InfoWindowTags .Ctrl.Box {
-							background-color: #202020;
-						}
-						.InfoWindowContent i {
-							opacity: unset;
-						}
+					.InfoWindowItem fieldset {
+						border-bottom: 1px solid #FFFFFF;
+					}
+					.InfoWindowTags .Ctrl.Box {
+						background-color: #202020;
+					}
+					.InfoWindowItem i {
+						opacity: unset;
+					}
 
 /* Responsive web design */
-@media (max-width: 880px) {
+@media (max-width: 920px) {
 	/* Area specific */
 		/* Main */
 			/* Game */
 				/* Floating ctrls */
 					/* Info window */
-						/* Sections */
+						/* General */
 						#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
 							width: 178px;
 						}

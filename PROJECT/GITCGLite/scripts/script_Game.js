@@ -991,13 +991,13 @@
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
 									"不再提示", "", "", "确定");
 								break;
-							case window.innerWidth > 600 && window.innerWidth <= 880:
+							case window.innerWidth > 600 && window.innerWidth <= 920:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在竖版布局下过宽。这可能影响游戏体验。建议您调窄窗口，或调宽至横版布局。",
 									"不再提示", "", "", "确定");
 								break;
-							case window.innerWidth > 880 && window.innerWidth <= 1100:
+							case window.innerWidth > 920 && window.innerWidth <= 1100:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在横板布局下过窄。这可能影响游戏体验。建议您调宽窗口，或调窄至竖版布局。",
@@ -3212,7 +3212,9 @@
 							case "SupportCard":
 							case "EventCard":
 								ScrollIntoView("Ctrl_GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type);
-								Show("CtrlGroup_GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type);
+								if(System.CollapsedFieldset.includes("GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type)) {
+									ToggleFieldsetCollapsing("GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type);
+								}
 								break;
 							default:
 								AlertSystemError("The value of Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type \"" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type + "\" in function RefreshInfoWindowObjectProperties is invalid.");
@@ -3228,7 +3230,9 @@
 					case "Status2":
 					case "Status3":
 						ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
-						Show("CtrlGroup_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
+						if(System.CollapsedFieldset.includes("GameInfoWindow" + ScrollToWhereOrBuiltinStatusName)) {
+							ToggleFieldsetCollapsing("GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
+						}
 						break;
 					default:
 						AlertSystemError("The value of ScrollToWhereOrBuiltinStatusName \"" + ScrollToWhereOrBuiltinStatusName + "\" in function RefreshInfoWindowObjectProperties is invalid.");
@@ -3252,7 +3256,9 @@
 
 				// Scroll and expand
 				ScrollIntoView("Ctrl_GameInfoWindowCharacterCard");
-				Show("CtrlGroup_GameInfoWindowCharacterCard");
+				if(System.CollapsedFieldset.includes("GameInfoWindowCharacterCard")) {
+					ToggleFieldsetCollapsing("GameInfoWindowCharacterCard");
+				}
 
 				break;
 			case CardNumberOrBuiltinStatus == "BuiltinStatus":
@@ -3266,7 +3272,9 @@
 
 				// Scroll and expand
 				ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
-				Show("CtrlGroup_GameInfoWindowBuiltinStatus");
+				if(System.CollapsedFieldset.includes("GameInfoWindowBuiltinStatus")) {
+					ToggleFieldsetCollapsing("GameInfoWindowBuiltinStatus");
+				}
 
 				break;
 			default:
@@ -3867,13 +3875,6 @@
 			if(Subsystem.Display.InfoWindow.InfoWindow == "AlwaysShow") {
 				Subsystem.Display.InfoWindow.InfoWindow = "ShowOnHover";
 				RefreshSubsystem();
-			}
-		}
-		function ToggleInfoWindowCollapse(Name) {
-			if(IsClassContained("CtrlGroup_GameInfoWindow" + Name, "Hidden")) {
-				Show("CtrlGroup_GameInfoWindow" + Name);
-			} else {
-				Hide("CtrlGroup_GameInfoWindow" + Name);
 			}
 		}
 

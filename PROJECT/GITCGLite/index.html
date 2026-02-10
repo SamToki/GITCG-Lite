@@ -108,6 +108,13 @@
 						</ul>
 					</nav>
 				</li>
+				<li class="Ctrl" id="Ctrl_CollapseAllFieldsets">
+					<button class="Button" id="Button_CollapseAllFieldsets" onclick="CollapseAllFieldsets()" title="折叠所有 fieldset" aria-label="折叠所有 fieldset">
+						<svg class="Icon Larger" viewBox="0 0 16 16" aria-hidden="true">
+							<path d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"/>
+						</svg>
+					</button>
+				</li>
 				<li class="Ctrl" id="Ctrl_HomePage">
 					<a class="Button" href=".." title="主页" aria-label="主页">
 						<svg class="Icon" viewBox="0 0 16 16" aria-hidden="true">
@@ -4513,7 +4520,7 @@
 							<span class="Faded" id="Label_Versus" inert="true">VS</span>
 							<ul class="CtrlGroup Faded" id="CtrlGroup_GameLoading" inert="true">
 								<li class="Ctrl Box Hidden" id="Ctrl_GameEpilepsyWarningPrompt" inert="true">
-									<span><span class="RedText">警告：</span>若您有<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>病史，请前往<a href="#Item_SettingsDisplay" onclick="ShowIAmHere('Item_SettingsDisplay')">显示设定</a>禁用「打出高额伤害时闪烁画面」。</span>
+									<span><span class="RedText">警告：</span>若您有<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>病史，请前往<a href="#Item_SettingsDisplay" onclick="ShowIAmHere('SettingsDisplay')">显示设定</a>禁用「打出高额伤害时闪烁画面」。</span>
 								</li>
 								<li class="Ctrl Box Hidden" id="Ctrl_GameCheckNetworkPrompt" inert="true">
 									<span>若载入缓慢，请检查网络状态，或尝试更换网络代理。</span>
@@ -4845,7 +4852,7 @@
 										<button class="Button" id="Button_GameToggleFullscreen" onclick="ToggleFullscreen()">全屏</button>
 									</li>
 									<li class="Dropctrl" id="Dropctrl_GameSavedGames">
-										<a class="Button" href="#Item_SettingsSavedGames" onclick="ShowIAmHere('Item_SettingsSavedGames')">存档...</a>
+										<a class="Button" href="#Item_SettingsSavedGames" onclick="ShowIAmHere('SettingsSavedGames')">存档...</a>
 									</li>
 									<li class="Dropctrl">
 										<button class="Button" id="Button_GameRestart" disabled="true" onclick="ConfirmRestartGame()">重新开始...</button>
@@ -4886,10 +4893,10 @@
 						</li>
 					</ul>
 					<ul class="CtrlGroup" id="CtrlGroup_GameInfoWindowObjectProperties">
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterCard')">
 										<h2>角色牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4897,43 +4904,45 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowCharacterCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowCharacterCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterCard">角色牌</span>
-									<ul class="CtrlGroup InfoWindowTags" id="CtrlGroup_GameInfoWindowCharacterCardTags">
-										<li class="Ctrl Box HP" title="最大血量" aria-label="最大血量">
-											<svg class="Icon Smaller" id="Icon_GameInfoWindowCharacterCardMaxHP" viewBox="0 0 512 512" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M256,0C194.5,82.109,82.125,199.438,82.125,338.094C82.125,434.141,159.969,512,256,512s173.875-77.859,173.875-173.906C429.875,199.438,317.469,82.109,256,0z"/>
-											</svg>
-											<span class="LabelAfterIcon" id="Label_GameInfoWindowCharacterCardMaxHP">最大血量</span>
-										</li>
-										<li class="Ctrl Box Energy" title="最大能量" aria-label="最大能量">
-											<svg class="Icon Smaller" id="Icon_GameInfoWindowCharacterCardMaxEnergy" viewBox="0 0 512 512" aria-hidden="true">
-												<polygon vector-effect="non-scaling-stroke" points="403.797,256 481.188,121.953 326.406,121.953 256,0 185.594,121.953 30.813,121.953 108.203,256 30.813,390.047 185.594,390.047 256,512 326.406,390.047 481.188,390.047"></polygon>
-											</svg>
-											<span class="LabelAfterIcon" id="Label_GameInfoWindowCharacterCardMaxEnergy">最大能量</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterCardElementType" title="元素类型" aria-label="元素类型">元素类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterCardCombatOrientation" title="战斗定位" aria-label="战斗定位">战斗定位</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowCharacterCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowCharacterCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="角色牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterCard">角色牌</span>
+										<ul class="CtrlGroup InfoWindowTags" id="CtrlGroup_GameInfoWindowCharacterCardTags">
+											<li class="Ctrl Box HP" title="最大血量" aria-label="最大血量">
+												<svg class="Icon Smaller" id="Icon_GameInfoWindowCharacterCardMaxHP" viewBox="0 0 512 512" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M256,0C194.5,82.109,82.125,199.438,82.125,338.094C82.125,434.141,159.969,512,256,512s173.875-77.859,173.875-173.906C429.875,199.438,317.469,82.109,256,0z"/>
+												</svg>
+												<span class="LabelAfterIcon" id="Label_GameInfoWindowCharacterCardMaxHP">最大血量</span>
+											</li>
+											<li class="Ctrl Box Energy" title="最大能量" aria-label="最大能量">
+												<svg class="Icon Smaller" id="Icon_GameInfoWindowCharacterCardMaxEnergy" viewBox="0 0 512 512" aria-hidden="true">
+													<polygon vector-effect="non-scaling-stroke" points="403.797,256 481.188,121.953 326.406,121.953 256,0 185.594,121.953 30.813,121.953 108.203,256 30.813,390.047 185.594,390.047 256,512 326.406,390.047 481.188,390.047"></polygon>
+												</svg>
+												<span class="LabelAfterIcon" id="Label_GameInfoWindowCharacterCardMaxEnergy">最大能量</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterCardElementType" title="元素类型" aria-label="元素类型">元素类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterCardCombatOrientation" title="战斗定位" aria-label="战斗定位">战斗定位</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowCharacterCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowNormalAttack" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowNormalAttack" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('NormalAttack')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowNormalAttack')">
 										<h2>普通攻击</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4941,34 +4950,36 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowNormalAttack">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowNormalAttack" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="普通攻击图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowNormalAttack">普通攻击</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowNormalAttack" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowNormalAttack">花费</span>
-										</li>
-										<li class="Ctrl CostIndicator Additional Unaligned" id="CostIndicator_GameInfoWindowNormalAttackAdditional" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowNormalAttackAdditional">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowNormalAttackDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowNormalAttack">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowNormalAttack" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="普通攻击图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowNormalAttack">普通攻击</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowNormalAttack" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowNormalAttack">花费</span>
+											</li>
+											<li class="Ctrl CostIndicator Additional Unaligned" id="CostIndicator_GameInfoWindowNormalAttackAdditional" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowNormalAttackAdditional">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowNormalAttackDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowElementalSkill" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowElementalSkill" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('ElementalSkill')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowElementalSkill')">
 										<h2>元素战技</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -4976,28 +4987,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowElementalSkill">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素战技图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowElementalSkill">元素战技</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowElementalSkill" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowElementalSkill">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowElementalSkillDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowElementalSkill">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素战技图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowElementalSkill">元素战技</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowElementalSkill" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowElementalSkill">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowElementalSkillDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSecondaryElementalSkill" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowSecondaryElementalSkill" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('SecondaryElementalSkill')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowSecondaryElementalSkill')">
 										<h2>第二元素战技</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5005,28 +5018,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowSecondaryElementalSkill">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowSecondaryElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="第二元素战技图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSecondaryElementalSkill">第二元素战技</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowSecondaryElementalSkill" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowSecondaryElementalSkill">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowSecondaryElementalSkillDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowSecondaryElementalSkill">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowSecondaryElementalSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="第二元素战技图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSecondaryElementalSkill">第二元素战技</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowSecondaryElementalSkill" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowSecondaryElementalSkill">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowSecondaryElementalSkillDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowElementalBurst" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowElementalBurst" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('ElementalBurst')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowElementalBurst')">
 										<h2>元素爆发</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5034,28 +5049,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowElementalBurst">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowElementalBurst" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素爆发图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowElementalBurst">元素爆发</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowElementalBurst" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowElementalBurst">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowElementalBurstDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowElementalBurst">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowElementalBurst" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="元素爆发图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowElementalBurst">元素爆发</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowElementalBurst" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowElementalBurst">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowElementalBurstDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowIntroSkill" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowIntroSkill" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('IntroSkill')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowIntroSkill')">
 										<h2>进场技能</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5063,20 +5080,22 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowIntroSkill">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowIntroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="进场技能图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowIntroSkill">进场技能</span>
-								</li>
-								<p id="Label_GameInfoWindowIntroSkillDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowIntroSkill">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowIntroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="进场技能图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowIntroSkill">进场技能</span>
+									</li>
+									<p id="Label_GameInfoWindowIntroSkillDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowOutroSkill" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowOutroSkill" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('OutroSkill')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowOutroSkill')">
 										<h2>退场技能</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5084,20 +5103,22 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowOutroSkill">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowOutroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="退场技能图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowOutroSkill">退场技能</span>
-								</li>
-								<p id="Label_GameInfoWindowOutroSkillDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowOutroSkill">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowOutroSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="退场技能图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowOutroSkill">退场技能</span>
+									</li>
+									<p id="Label_GameInfoWindowOutroSkillDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPassiveSkill" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowPassiveSkill" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('PassiveSkill')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowPassiveSkill')">
 										<h2>被动技能</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5105,20 +5126,22 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowPassiveSkill">
-								<li class="Ctrl InfoWindowContentSkillImage">
-									<img class="SkillImage" id="Image_GameInfoWindowPassiveSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="被动技能图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPassiveSkill">被动技能</span>
-								</li>
-								<p id="Label_GameInfoWindowPassiveSkillDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowPassiveSkill">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowSkillImage">
+										<img class="SkillImage" id="Image_GameInfoWindowPassiveSkill" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="被动技能图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPassiveSkill">被动技能</span>
+									</li>
+									<p id="Label_GameInfoWindowPassiveSkillDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowAffiliatedCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowAffiliatedCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('AffiliatedCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowAffiliatedCard')">
 										<h2>附属卡牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5126,34 +5149,36 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowAffiliatedCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowAffiliatedCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="附属卡牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowAffiliatedCard">附属卡牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowAffiliatedCardType" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl CostIndicator HiddenHorizontally" id="CostIndicator_GameInfoWindowAffiliatedCard" inert="true" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowAffiliatedCard">花费</span>
-										</li>
-										<li class="Ctrl Box" id="Ctrl_GameInfoWindowAffiliatedCardDuration">
-											<span id="Label_GameInfoWindowAffiliatedCardDuration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowAffiliatedCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowAffiliatedCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowAffiliatedCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="附属卡牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowAffiliatedCard">附属卡牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowAffiliatedCardType" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl CostIndicator HiddenHorizontally" id="CostIndicator_GameInfoWindowAffiliatedCard" inert="true" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowAffiliatedCard">花费</span>
+											</li>
+											<li class="Ctrl Box" id="Ctrl_GameInfoWindowAffiliatedCardDuration">
+												<span id="Label_GameInfoWindowAffiliatedCardDuration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowAffiliatedCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSummonsCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowSummonsCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('SummonsCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowSummonsCard')">
 										<h2>召唤物牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5161,25 +5186,27 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowSummonsCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowSummonsCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSummonsCard">召唤物牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowSummonsCardDuration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowSummonsCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowSummonsCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowSummonsCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="召唤物牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSummonsCard">召唤物牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowSummonsCardDuration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowSummonsCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowTalentCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowTalentCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('TalentCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowTalentCard')">
 										<h2>天赋牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5187,40 +5214,42 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowTalentCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowTalentCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="天赋牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowTalentCard">天赋牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowTalentCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowTalentCard">花费</span>
-										</li>
-										<li class="Ctrl CostIndicator Additional Unaligned HiddenHorizontally" id="CostIndicator_GameInfoWindowTalentCardAdditional" inert="true" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowTalentCardAdditional">花费</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowTalentCardOrientedCharacterCardName" title="对应角色" aria-label="对应角色">对应角色</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowTalentCardSkillType" title="技能类型" aria-label="技能类型">技能类型</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowTalentCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowTalentCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowTalentCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="天赋牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowTalentCard">天赋牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowTalentCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowTalentCard">花费</span>
+											</li>
+											<li class="Ctrl CostIndicator Additional Unaligned HiddenHorizontally" id="CostIndicator_GameInfoWindowTalentCardAdditional" inert="true" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowTalentCardAdditional">花费</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowTalentCardOrientedCharacterCardName" title="对应角色" aria-label="对应角色">对应角色</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowTalentCardSkillType" title="技能类型" aria-label="技能类型">技能类型</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowTalentCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowWeaponCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowWeaponCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('WeaponCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowWeaponCard')">
 										<h2>武器牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5228,31 +5257,33 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowWeaponCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowWeaponCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="武器牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowWeaponCard">武器牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowWeaponCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowWeaponCard">花费</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowWeaponCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowWeaponCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowWeaponCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowWeaponCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="武器牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowWeaponCard">武器牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowWeaponCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowWeaponCard">花费</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowWeaponCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowWeaponCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowArtifactCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowArtifactCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('ArtifactCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowArtifactCard')">
 										<h2>圣遗物牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5260,28 +5291,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowArtifactCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowArtifactCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="圣遗物牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowArtifactCard">圣遗物牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowArtifactCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowArtifactCard">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowArtifactCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowArtifactCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowArtifactCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="圣遗物牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowArtifactCard">圣遗物牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowArtifactCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowArtifactCard">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowArtifactCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowSupportCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowSupportCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('SupportCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowSupportCard')">
 										<h2>支援牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5289,31 +5322,33 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowSupportCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowSupportCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="支援牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSupportCard">支援牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowSupportCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowSupportCard">花费</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowSupportCardDuration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowSupportCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowSupportCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowSupportCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="支援牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowSupportCard">支援牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowSupportCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowSupportCard">花费</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowSupportCardDuration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowSupportCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEventCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowEventCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('EventCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowEventCard')">
 										<h2>事件牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5321,28 +5356,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowEventCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowEventCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="事件牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEventCard">事件牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEventCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEventCard">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowEventCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowEventCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowEventCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="事件牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEventCard">事件牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEventCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEventCard">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowEventCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus1" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowStatus1" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('Status1')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowStatus1')">
 										<h2>状态1</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5350,28 +5387,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowStatus1">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态1图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus1">状态1</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus1Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowStatus1Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowStatus1">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态1图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus1">状态1</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus1Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowStatus1Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus2" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowStatus2" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('Status2')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowStatus2')">
 										<h2>状态2</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5379,28 +5418,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowStatus2">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态2图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus2">状态2</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus2Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowStatus2Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowStatus2">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态2图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus2">状态2</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus2Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowStatus2Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowStatus3" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowStatus3" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('Status3')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowStatus3')">
 										<h2>状态3</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5408,28 +5449,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowStatus3">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态3图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus3">状态3</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus3Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowStatus3Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowStatus3">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="状态3图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowStatus3">状态3</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus3Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowStatus3Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterProfile" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterProfile" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterProfile')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterProfile')">
 										<h2>角色资料</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5437,19 +5480,21 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent Hidden" id="CtrlGroup_GameInfoWindowCharacterProfile" inert="true">
-								<li class="Ctrl">
-									<p>来自：<span id="Label_GameInfoWindowCharacterProfileFrom">未知</span></p>
-									<p>声优：<span id="Label_GameInfoWindowCharacterProfileVA" lang="ja-JP">未知</span></p>
-									<p>性别：<span id="Label_GameInfoWindowCharacterProfileGender">未知</span></p>
-									<p>生日：<span id="Label_GameInfoWindowCharacterProfileBirthday">未知</span></p>
-								</li>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterProfile">
+								<ul class="CtrlGroup">
+									<li class="Ctrl">
+										<p>来自：<span id="Label_GameInfoWindowCharacterProfileFrom">未知</span></p>
+										<p>声优：<span id="Label_GameInfoWindowCharacterProfileVA" lang="ja-JP">未知</span></p>
+										<p>性别：<span id="Label_GameInfoWindowCharacterProfileGender">未知</span></p>
+										<p>生日：<span id="Label_GameInfoWindowCharacterProfileBirthday">未知</span></p>
+									</li>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCredits" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCredits" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('Credits')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCredits')">
 										<h2>Credits</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5457,20 +5502,22 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent Hidden" id="CtrlGroup_GameInfoWindowCredits" inert="true">
-								<li class="Ctrl">
-									<p>作者：<span id="Label_GameInfoWindowCreditsAuthor">未知</span></p>
-									<p>联系方式：<span id="Label_GameInfoWindowCreditsContact">未知</span></p>
-									<p>卡牌来源：<span id="Label_GameInfoWindowCreditsCardSource">未知</span></p>
-									<p>图像来源：<span id="Label_GameInfoWindowCreditsImageSource">未知</span></p>
-									<p id="Paragraph_GameInfoWindowCreditsVoiceoverSource">语音来源：<span id="Label_GameInfoWindowCreditsVoiceoverSource">未知</span></p>
-								</li>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCredits">
+								<ul class="CtrlGroup">
+									<li class="Ctrl">
+										<p>作者：<span id="Label_GameInfoWindowCreditsAuthor">未知</span></p>
+										<p>联系方式：<span id="Label_GameInfoWindowCreditsContact">未知</span></p>
+										<p>卡牌来源：<span id="Label_GameInfoWindowCreditsCardSource">未知</span></p>
+										<p>图像来源：<span id="Label_GameInfoWindowCreditsImageSource">未知</span></p>
+										<p id="Paragraph_GameInfoWindowCreditsVoiceoverSource">语音来源：<span id="Label_GameInfoWindowCreditsVoiceoverSource">未知</span></p>
+									</li>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowTechInfo" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowTechInfo" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('TechInfo')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowTechInfo')">
 										<h2>技术信息</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5478,18 +5525,20 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent Hidden" id="CtrlGroup_GameInfoWindowTechInfo" inert="true">
-								<li class="Ctrl">
-									<p>ID：<span id="Label_GameInfoWindowTechInfoID">未知</span></p>
-									<p>关键词：<span id="Label_GameInfoWindowTechInfoKeywords">未知</span></p>
-									<p>版本：<span id="Label_GameInfoWindowTechInfoVersion">未知</span></p>
-								</li>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowTechInfo">
+								<ul class="CtrlGroup">
+									<li class="Ctrl">
+										<p>ID：<span id="Label_GameInfoWindowTechInfoID">未知</span></p>
+										<p>关键词：<span id="Label_GameInfoWindowTechInfoKeywords">未知</span></p>
+										<p>版本：<span id="Label_GameInfoWindowTechInfoVersion">未知</span></p>
+									</li>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowBuiltinStatus" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowBuiltinStatus" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('BuiltinStatus')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowBuiltinStatus')">
 										<h2>内置状态</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5497,30 +5546,32 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowBuiltinStatus">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowBuiltinStatus" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="内置状态图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowBuiltinStatus">内置状态</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowBuiltinStatusType" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowBuiltinStatusDuration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowBuiltinStatusDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowBuiltinStatus">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowBuiltinStatus" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="内置状态图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowBuiltinStatus">内置状态</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowBuiltinStatusType" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowBuiltinStatusDuration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowBuiltinStatusDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
 					</ul>
 					<ul class="CtrlGroup" id="CtrlGroup_GameInfoWindowInGameCharacterProperties">
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedTalentCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowEquippedTalentCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('EquippedTalentCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowEquippedTalentCard')">
 										<h2>装备的天赋牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5528,40 +5579,42 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowEquippedTalentCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowEquippedTalentCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的天赋牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedTalentCard">装备的天赋牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedTalentCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedTalentCard">花费</span>
-										</li>
-										<li class="Ctrl CostIndicator Additional Unaligned HiddenHorizontally" id="CostIndicator_GameInfoWindowEquippedTalentCardAdditional" inert="true" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedTalentCardAdditional">花费</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowEquippedTalentCardOrientedCharacterCardName" title="对应角色" aria-label="对应角色">对应角色</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowEquippedTalentCardSkillType" title="技能类型" aria-label="技能类型">技能类型</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowEquippedTalentCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowEquippedTalentCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowEquippedTalentCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的天赋牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedTalentCard">装备的天赋牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedTalentCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedTalentCard">花费</span>
+											</li>
+											<li class="Ctrl CostIndicator Additional Unaligned HiddenHorizontally" id="CostIndicator_GameInfoWindowEquippedTalentCardAdditional" inert="true" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedTalentCardAdditional">花费</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowEquippedTalentCardOrientedCharacterCardName" title="对应角色" aria-label="对应角色">对应角色</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowEquippedTalentCardSkillType" title="技能类型" aria-label="技能类型">技能类型</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowEquippedTalentCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedWeaponCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowEquippedWeaponCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('EquippedWeaponCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowEquippedWeaponCard')">
 										<h2>装备的武器牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5569,31 +5622,33 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowEquippedWeaponCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowEquippedWeaponCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的武器牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedWeaponCard">装备的武器牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedWeaponCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedWeaponCard">花费</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowEquippedWeaponCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowEquippedWeaponCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowEquippedWeaponCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowEquippedWeaponCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的武器牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedWeaponCard">装备的武器牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedWeaponCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedWeaponCard">花费</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowEquippedWeaponCardWeaponType" title="武器类型" aria-label="武器类型">武器类型</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowEquippedWeaponCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowEquippedArtifactCard" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowEquippedArtifactCard" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('EquippedArtifactCard')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowEquippedArtifactCard')">
 										<h2>装备的圣遗物牌</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5601,28 +5656,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowEquippedArtifactCard">
-								<li class="Ctrl InfoWindowContentCardImage">
-									<img class="CardImage" id="Image_GameInfoWindowEquippedArtifactCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的圣遗物牌图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedArtifactCard">装备的圣遗物牌</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedArtifactCard" title="花费" aria-label="花费">
-											<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
-												<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-											</svg>
-											<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedArtifactCard">花费</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowEquippedArtifactCardDescription">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowEquippedArtifactCard">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowCardImage">
+										<img class="CardImage" id="Image_GameInfoWindowEquippedArtifactCard" src="images/UnknownCard.jpg" onerror="this.src='images/UnknownCard.jpg'" alt="装备的圣遗物牌图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowEquippedArtifactCard">装备的圣遗物牌</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl CostIndicator" id="CostIndicator_GameInfoWindowEquippedArtifactCard" title="花费" aria-label="花费">
+												<svg class="Shape" viewBox="0 0 16 16" aria-hidden="true">
+													<path vector-effect="non-scaling-stroke" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+												</svg>
+												<span class="CostIndicatorText" id="CostIndicatorText_GameInfoWindowEquippedArtifactCard">花费</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowEquippedArtifactCardDescription">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus1" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterStatus1" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterStatus1')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterStatus1')">
 										<h2>角色状态1</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5630,28 +5687,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowCharacterStatus1">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态1图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus1">角色状态1</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus1Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowCharacterStatus1Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterStatus1">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态1图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus1">角色状态1</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus1Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowCharacterStatus1Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus2" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterStatus2" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterStatus2')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterStatus2')">
 										<h2>角色状态2</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5659,28 +5718,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowCharacterStatus2">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态2图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus2">角色状态2</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus2Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowCharacterStatus2Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterStatus2">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态2图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus2">角色状态2</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus2Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowCharacterStatus2Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus3" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterStatus3" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterStatus3')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterStatus3')">
 										<h2>角色状态3</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5688,28 +5749,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowCharacterStatus3">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态3图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus3">角色状态3</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus3Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowCharacterStatus3Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterStatus3">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态3图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus3">角色状态3</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus3Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowCharacterStatus3Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowCharacterStatus4" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowCharacterStatus4" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('CharacterStatus4')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowCharacterStatus4')">
 										<h2>角色状态4</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5717,28 +5780,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowCharacterStatus4">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus4" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态4图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus4">角色状态4</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus4Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowCharacterStatus4Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowCharacterStatus4Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowCharacterStatus4">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowCharacterStatus4" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="角色状态4图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowCharacterStatus4">角色状态4</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus4Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowCharacterStatus4Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowCharacterStatus4Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus1" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowPartyStatus1" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('PartyStatus1')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowPartyStatus1')">
 										<h2>队伍状态1</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5746,28 +5811,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowPartyStatus1">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowPartyStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态1图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus1">队伍状态1</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus1Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowPartyStatus1Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowPartyStatus1">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowPartyStatus1" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态1图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus1">队伍状态1</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus1Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus1Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowPartyStatus1Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus2" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowPartyStatus2" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('PartyStatus2')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowPartyStatus2')">
 										<h2>队伍状态2</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5775,28 +5842,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowPartyStatus2">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowPartyStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态2图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus2">队伍状态2</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus2Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowPartyStatus2Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowPartyStatus2">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowPartyStatus2" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态2图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus2">队伍状态2</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus2Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus2Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowPartyStatus2Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus3" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowPartyStatus3" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('PartyStatus3')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowPartyStatus3')">
 										<h2>队伍状态3</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5804,28 +5873,30 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowPartyStatus3">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowPartyStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态3图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus3">队伍状态3</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus3Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowPartyStatus3Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowPartyStatus3">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowPartyStatus3" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态3图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus3">队伍状态3</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus3Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus3Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowPartyStatus3Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
-						<li class="Ctrl InfoWindowSection Hidden" id="Ctrl_GameInfoWindowPartyStatus4" inert="true">
-							<ul class="CtrlGroup InfoWindowTitle">
+						<li class="Ctrl InfoWindowItem Hidden" id="Ctrl_GameInfoWindowPartyStatus4" inert="true">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
-									<button class="Button ShownAsLabel" onclick="ToggleInfoWindowCollapse('PartyStatus4')">
+									<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('GameInfoWindowPartyStatus4')">
 										<h2>队伍状态4</h2>
 										<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 											<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -5833,23 +5904,25 @@
 									</button>
 								</li>
 							</ul>
-							<ul class="CtrlGroup InfoWindowContent" id="CtrlGroup_GameInfoWindowPartyStatus4">
-								<li class="Ctrl InfoWindowContentStatusImage">
-									<img class="StatusImage" id="Image_GameInfoWindowPartyStatus4" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态4图像" />
-								</li>
-								<li class="Ctrl InfoWindowContentDetails">
-									<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus4">队伍状态4</span>
-									<ul class="CtrlGroup InfoWindowTags">
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus4Type" title="类型" aria-label="类型">类型</span>
-										</li>
-										<li class="Ctrl Box">
-											<span id="Label_GameInfoWindowPartyStatus4Duration" title="可用数" aria-label="可用数">可用数</span>
-										</li>
-									</ul>
-								</li>
-								<p id="Label_GameInfoWindowPartyStatus4Description">描述</p>
-							</ul>
+							<fieldset id="Fieldset_GameInfoWindowPartyStatus4">
+								<ul class="CtrlGroup">
+									<li class="Ctrl InfoWindowStatusImage">
+										<img class="StatusImage" id="Image_GameInfoWindowPartyStatus4" src="images/UnknownSkillOrStatus.png" onerror="this.src='images/UnknownSkillOrStatus.png'" alt="队伍状态4图像" />
+									</li>
+									<li class="Ctrl InfoWindowDetails">
+										<span class="InfoWindowSubtitle" id="InfoWindowSubtitle_GameInfoWindowPartyStatus4">队伍状态4</span>
+										<ul class="CtrlGroup InfoWindowTags">
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus4Type" title="类型" aria-label="类型">类型</span>
+											</li>
+											<li class="Ctrl Box">
+												<span id="Label_GameInfoWindowPartyStatus4Duration" title="可用数" aria-label="可用数">可用数</span>
+											</li>
+										</ul>
+									</li>
+									<p id="Label_GameInfoWindowPartyStatus4Description">描述</p>
+								</ul>
+							</fieldset>
 						</li>
 					</ul>
 				</div>
@@ -5859,8 +5932,17 @@
 				<h1 class="SectionTitle">牌盒</h1>
 				<ul class="ItemGroup">
 					<li class="Item">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('CasketDecks')">
+									<h2>牌组</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_CasketDecks">
-							<legend>牌组</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_CasketDecksFilter">
@@ -5902,8 +5984,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('CasketCharacterCards')">
+									<h2>角色牌</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_CasketCharacterCards">
-							<legend>角色牌</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_CasketCharacterCardsFilter">
@@ -5941,8 +6032,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('CasketActionCards')">
+									<h2>行动牌</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_CasketActionCards">
-							<legend>行动牌</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_CasketActionCardsFilter">
@@ -5980,8 +6080,17 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_CasketDeckProperties">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('CasketDeckProperties')">
+									<h2>牌组属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_CasketDeckProperties">
-							<legend>牌组属性</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_CasketDeckPropertiesName">
@@ -6017,9 +6126,18 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_CasketManagement">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('CasketManagement')">
+									<h2>管理</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_CasketManagement">
-							<legend>管理</legend>
-							<p><span class="RedText">注意：</span>使用「导入」功能前请先阅读<a href="#Item_HelpDisclaimer" onclick="ShowIAmHere('Item_HelpDisclaimer')">免责声明</a>。</p>
+							<p><span class="RedText">注意：</span>使用「导入」功能前请先阅读<a href="#Item_HelpDisclaimer" onclick="ShowIAmHere('HelpDisclaimer')">免责声明</a>。</p>
 							<p>可导入牌组、牌组库、卡牌、卡牌库或整个牌盒。支持批量导入，每行一个对象。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。您可向牌组的发布者索要卡牌。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl" id="Ctrl_CasketImport">
@@ -6059,8 +6177,17 @@
 				</ul>
 				<ul class="ItemGroup">
 					<li class="Item">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorChooseACardToEdit')">
+									<h2>选择要编辑的卡牌</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
 						<fieldset id="Fieldset_EditorChooseACardToEdit">
-							<legend>选择要编辑的卡牌</legend>
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorOpen">
@@ -6091,8 +6218,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorBasicProperties" inert="true">
-						<fieldset>
-							<legend>基本属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorBasicProperties')">
+									<h2>基本属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorBasicProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorBasicPropertiesID">
@@ -6154,8 +6290,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorCredits" inert="true">
-						<fieldset>
-							<legend>Credits</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorCredits')">
+									<h2>Credits</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorCredits">
 							<p>请勿填写您的真实姓名、电话号码等个人信息。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
@@ -6199,8 +6344,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorCharacterCardProperties" inert="true">
-						<fieldset>
-							<legend>角色牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorCharacterCardProperties')">
+									<h2>角色牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorCharacterCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterCardPropertiesMaxHP">
@@ -6283,8 +6437,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorNormalAttack" inert="true">
-						<fieldset>
-							<legend>普通攻击</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorNormalAttack')">
+									<h2>普通攻击</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorNormalAttack">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorNormalAttackName">
@@ -6331,8 +6494,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorElementalSkill" inert="true">
-						<fieldset>
-							<legend>元素战技</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorElementalSkill')">
+									<h2>元素战技</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorElementalSkill">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalSkillName">
@@ -6370,8 +6542,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorSecondaryElementalSkill" inert="true">
-						<fieldset>
-							<legend>第二元素战技</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorSecondaryElementalSkill')">
+									<h2>第二元素战技</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorSecondaryElementalSkill">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorSecondaryElementalSkillName">
@@ -6409,8 +6590,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorElementalBurst" inert="true">
-						<fieldset>
-							<legend>元素爆发</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorElementalBurst')">
+									<h2>元素爆发</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorElementalBurst">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorElementalBurstName">
@@ -6448,8 +6638,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorIntroSkill" inert="true">
-						<fieldset>
-							<legend>进场技能</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorIntroSkill')">
+									<h2>进场技能</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorIntroSkill">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorIntroSkillName">
@@ -6480,8 +6679,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorOutroSkill" inert="true">
-						<fieldset>
-							<legend>退场技能</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorOutroSkill')">
+									<h2>退场技能</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorOutroSkill">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorOutroSkillName">
@@ -6512,8 +6720,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorPassiveSkill" inert="true">
-						<fieldset>
-							<legend>被动技能</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorPassiveSkill')">
+									<h2>被动技能</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorPassiveSkill">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeSkillImage">
 									<label for="Textbox_EditorPassiveSkillName">
@@ -6550,8 +6767,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorAffiliatedCard" inert="true">
-						<fieldset>
-							<legend>附属卡牌</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorAffiliatedCard')">
+									<h2>附属卡牌</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorAffiliatedCard">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeCardImage">
 									<label for="Textbox_EditorAffiliatedCardName">
@@ -6654,8 +6880,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorTalentCardProperties" inert="true">
-						<fieldset>
-							<legend>天赋牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorTalentCardProperties')">
+									<h2>天赋牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorTalentCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorTalentCardPropertiesCostQuantity">
@@ -6702,8 +6937,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorWeaponCardProperties" inert="true">
-						<fieldset>
-							<legend>武器牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorWeaponCardProperties')">
+									<h2>武器牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorWeaponCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorWeaponCardPropertiesCostQuantity">
@@ -6744,8 +6988,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorArtifactCardProperties" inert="true">
-						<fieldset>
-							<legend>圣遗物牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorArtifactCardProperties')">
+									<h2>圣遗物牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorArtifactCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorArtifactCardPropertiesCostQuantity">
@@ -6774,8 +7027,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorSupportCardProperties" inert="true">
-						<fieldset>
-							<legend>支援牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorSupportCardProperties')">
+									<h2>支援牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorSupportCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorSupportCardPropertiesCostQuantity">
@@ -6826,8 +7088,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorEventCardProperties" inert="true">
-						<fieldset>
-							<legend>事件牌属性</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorEventCardProperties')">
+									<h2>事件牌属性</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorEventCardProperties">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorEventCardPropertiesCostQuantity">
@@ -6886,8 +7157,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorStatus1" inert="true">
-						<fieldset>
-							<legend>状态1</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorStatus1')">
+									<h2>状态1</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorStatus1">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus1Name">
@@ -6937,8 +7217,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorStatus2" inert="true">
-						<fieldset>
-							<legend>状态2</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorStatus2')">
+									<h2>状态2</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorStatus2">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus2Name">
@@ -6988,8 +7277,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorStatus3" inert="true">
-						<fieldset>
-							<legend>状态3</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorStatus3')">
+									<h2>状态3</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorStatus3">
 							<ul class="CtrlGroup">
 								<li class="Ctrl BeforeStatusImage">
 									<label for="Textbox_EditorStatus3Name">
@@ -7039,8 +7337,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorCharacterProfile" inert="true">
-						<fieldset>
-							<legend>角色资料</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorCharacterProfile')">
+									<h2>角色资料</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorCharacterProfile">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileFrom">
@@ -7090,8 +7397,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorSpokenLine" inert="true">
-						<fieldset>
-							<legend>台词</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorSpokenLine')">
+									<h2>台词</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorSpokenLine">
 							<p>若非国语配音，推荐录入译文。若台词为空，则即使有语音也不会播放。</p>
 							<!-- 在有台词的前提下，角色倒下时不显示台词，只播放语音。后台角色倒下时，既不显示台词，也不播放语音。 -->
 							<ul class="CtrlGroup BelowParagraph">
@@ -7139,8 +7455,17 @@
 						</fieldset>
 					</li>
 					<li class="Item HiddenToCorner" id="Item_EditorVoiceover" inert="true">
-						<fieldset>
-							<legend>语音</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('EditorVoiceover')">
+									<h2>语音</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_EditorVoiceover">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorVoiceoverBecomingActive1">
@@ -7192,8 +7517,17 @@
 				<h1 class="SectionTitle">设定</h1>
 				<ul class="ItemGroup">
 					<li class="Item" id="Item_SettingsSavedGames">
-						<fieldset>
-							<legend>存档</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsSavedGames')">
+									<h2>存档</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsSavedGames">
 							<p>本功能可让您体验残局游玩。导入存档前，请确保其包含的卡牌均已在您的<a href="#Casket">牌盒</a>里。您可向存档的发布者索要卡牌。若要分享导出的存档，请一并提供相关卡牌数据，并且注意其中是否包含个人信息。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
@@ -7226,8 +7560,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>游戏</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsGame')">
+									<h2>游戏</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsGame">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Checkbox_SettingsLetOpponentActFirstAtBeginning">
@@ -7257,8 +7600,17 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_SettingsDisplay">
-						<fieldset>
-							<legend>显示</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsDisplay')">
+									<h2>显示</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsDisplay">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Combobox_SettingsTheme">
@@ -7392,8 +7744,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>声音</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsAudio')">
+									<h2>声音</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsAudio">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Checkbox_SettingsPlayAudio">
@@ -7419,8 +7780,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>PWA</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsPWA')">
+									<h2>PWA</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsPWA">
 							<p>您可将本游戏安装至桌面，以 <a href="https://zh.wikipedia.org/wiki/progressive_web_app">PWA</a> (俗称小程序) 的形式更方便地使用。若下面的按钮不可用，请尝试前往浏览器的菜单来安装。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
@@ -7434,9 +7804,21 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>其他</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsMisc')">
+									<h2>其他</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsMisc">
 							<ul class="CtrlGroup">
+								<li class="Ctrl">
+									<button class="Button" onclick="ResetFieldsetCollapsing()">重置 fieldset 折叠</button>
+								</li>
 								<li class="Ctrl">
 									<button class="Button" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
 								</li>
@@ -7444,8 +7826,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>开发者选项</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsDev')">
+									<h2>开发者选项</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsDev">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Checkbox_SettingsTryToOptimizePerformance">
@@ -7469,8 +7860,17 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_SettingsUserData">
-						<fieldset>
-							<legend>用户数据</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsUserData')">
+									<h2>用户数据</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsUserData">
 							<p>本功能可快速更改整个网站的用户数据。若要分享导出的数据，请注意其中是否包含个人信息。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
@@ -7495,14 +7895,32 @@
 				<h1 class="SectionTitle">帮助</h1>
 				<ul class="ItemGroup">
 					<li class="Item">
-						<fieldset>
-							<legend>简介</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpDescription')">
+									<h2>简介</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpDescription">
 							<p>七圣召唤 Lite，「<a href="https://zh.moegirl.org.cn/原神">原神</a>」同人游戏。相比原版「<a href="https://zh.moegirl.org.cn/七圣召唤">七圣召唤</a>」，具有轻量化、高自由度等特点。</p>
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_HelpTutorial">
-						<fieldset>
-							<legend>教程</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpTutorial')">
+									<h2>教程</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpTutorial">
 							<p>本游戏的教程以 PDF 文档的形式提供。这方便您保存至本地，还可以打印出来备用。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl WidthDividedBy2">
@@ -7524,8 +7942,17 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_HelpGetInvolved">
-						<fieldset>
-							<legend>参与进来</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpGetInvolved')">
+									<h2>参与进来</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpGetInvolved">
 							<h3>反馈</h3>
 							<p>您可通过以下渠道向我提供反馈：</p>
 							<ul class="CtrlGroup BelowParagraph">
@@ -7544,44 +7971,89 @@
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_HelpDisclaimer">
-						<fieldset>
-							<legend>免责声明</legend>
-							<p><a href="#Item_CasketManagement" onclick="ShowIAmHere('Item_CasketManagement')">牌盒管理</a>的「导入」功能允许您使用第三方卡牌，但第三方卡牌可能包含恶意代码。恶意代码可能导致游戏运行异常，或是窃取您的个人信息，甚至诱导您安装恶意软件等。使用第三方卡牌前请仔细甄别。</p>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpDisclaimer')">
+									<h2>免责声明</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpDisclaimer">
+							<p><a href="#Item_CasketManagement" onclick="ShowIAmHere('CasketManagement')">牌盒管理</a>的「导入」功能允许您使用第三方卡牌，但第三方卡牌可能包含恶意代码。恶意代码可能导致游戏运行异常，或是窃取您的个人信息，甚至诱导您安装恶意软件等。使用第三方卡牌前请仔细甄别。</p>
 							<p>「打出高额伤害时闪烁画面」可能会诱发光敏性癫痫。</p>
 							<p>若您不当使用本游戏造成损失，SAM TOKI STUDIO 恕不负责。</p>
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>隐私权声明</legend>
-							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 Local Storage 功能在本地存储<a href="#Item_SettingsUserData" onclick="ShowIAmHere('Item_SettingsUserData')">用户数据</a>。您可随时手动删除。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpPrivacyStatement')">
+									<h2>隐私权声明</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpPrivacyStatement">
+							<p>本站为 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> 静态网站，只使用浏览器的 Local Storage 功能在本地存储<a href="#Item_SettingsUserData" onclick="ShowIAmHere('SettingsUserData')">用户数据</a>。您可随时手动删除。本站不使用 <a href="https://zh.wikipedia.org/wiki/Cookie">Cookies</a>，不收集任何个人信息。</p>
 							<p>出于安全考虑，<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub 的服务器可能会记录您的 IP 地址</a>。SAM TOKI STUDIO 无法访问这些数据。</p>
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>版权说明</legend>
-							<p>本站的源代码遵循 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL v3 软件开源协议</a>。本站的部分内容为他人作品，版权为原作者所有，本站遵循 <a href="https://zh.wikipedia.org/wiki/fair_use">fair use</a> 原则使用并于 <a href="#Item_HelpCredits" onclick="ShowIAmHere('Item_HelpCredits')">Credits</a> 标注来源。</p>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpCopyrightInfo')">
+									<h2>版权说明</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpCopyrightInfo">
+							<p>本站的源代码遵循 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL v3 软件开源协议</a>。本站的部分内容为他人作品，版权为原作者所有，本站遵循 <a href="https://zh.wikipedia.org/wiki/fair_use">fair use</a> 原则使用并于 <a href="#Item_HelpCredits" onclick="ShowIAmHere('HelpCredits')">Credits</a> 标注来源。</p>
 							<p>除上述内容之外，本站所有内容以及排版、美术设计均保留版权。</p>
 							<p>「原神」是 <a href="https://zh.moegirl.org.cn/miHoYo">miHoYo</a> Inc. 的商标。</p>
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>二次创作原则</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpFanmadeContentPrinciples')">
+									<h2>二次创作原则</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpFanmadeContentPrinciples">
 							<p>针对本游戏的公开的二次创作应当：</p>
 							<p>遵循 fair use 原则来使用素材，不得侵犯原作者权利。不得商用。避免政治、宗教、色情、暴力等敏感内容。</p>
 						</fieldset>
 					</li>
 					<li class="Item" id="Item_HelpCredits">
-						<fieldset>
-							<legend>Credits</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpCredits')">
+									<h2>Credits</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpCredits">
 							<h3>卡牌</h3>
 							<p>请见卡牌属性的 Credits 部分。</p>
 							<h3>图像</h3>
 							<p>背景图像：Pixiv ID <a href="https://pixiv.net/en/artworks/85926084">85926084</a> by <a href="https://pixiv.net/en/users/15173067">@ReA</a><br />
 								背景图像会不定期更换。</p>
-							<p>背景图像可被牌组背景图像替换。牌组图像来源请见<a href="#Item_CasketDeckProperties" onclick="ShowIAmHere('Item_CasketDeckProperties')">牌组属性</a>，卡牌图像来源请见卡牌属性的 Credits 部分。</p>
+							<p>背景图像可被牌组背景图像替换。牌组图像来源请见<a href="#Item_CasketDeckProperties" onclick="ShowIAmHere('CasketDeckProperties')">牌组属性</a>，卡牌图像来源请见卡牌属性的 Credits 部分。</p>
 							<h3>图标</h3>
 							<p>UI 图标：<a href="https://icons.getbootstrap.com">Bootstrap Icons</a>, <a href="https://icooon-mono.com">ICOOON MONO</a></p>
 							<p>游戏图标 (元素符号等)：<a href="https://genshin-impact.fandom.com">Genshin Impact Wiki</a>, <a href="https://en.wikipedia.org/wiki/Triquetra">Wikipedia</a></p>
@@ -7594,8 +8066,17 @@
 						</fieldset>
 					</li>
 					<li class="Item">
-						<fieldset>
-							<legend>关于</legend>
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('HelpAbout')">
+									<h2>关于</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_HelpAbout">
 							<p>七圣召唤 Lite</p>
 							<p>by SAM TOKI STUDIO</p>
 							<p>版本 v0.47 (<time datetime="2025-11-12" pubdate="pubdate">2025/11/12</time>) Alpha Test<br />

@@ -150,7 +150,7 @@
 							opacity: 0;
 						}
 						.Card.Player.InStartingHand .CardBack, .Card.Player.InHand .CardBack, #Html.Cheat .Card.Opponent.InHand .CardBack, .Card.InAnnouncement .CardBack, .Card.OnTable .CardBack { /* Reduced .Hidden */
-							height: 0 !important; border: none !important; padding: 0 !important; margin: 0 !important;
+							height: 0 !important; border-top: none !important; border-bottom: none !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important;
 							overflow: hidden !important;
 							pointer-events: none !important;
 						}
@@ -171,7 +171,7 @@
 							align-items: start;
 						}
 						.NameOnCard {
-							max-width: calc(100% - 2px); max-height: calc(100% - 2px); border-radius: 5px; padding: 5px; margin: 5px;
+							max-width: calc(100% - 2px); max-height: calc(100% - 2px); border-radius: 5px; padding: 5px; margin: 5px; /* Margin needed in high contrast theme. */
 							color: #000000; text-shadow: 0 0 5px #FFFFFF, 0 0 5px #FFFFFF, 0 0 5px #FFFFFF; font-size: 1.25em; overflow-wrap: break-word;
 						}
 
@@ -1252,83 +1252,69 @@
 					top: 70px;
 					height: calc(100vh - 140px); height: calc(100dvh - 140px);
 				}
-					/* Sections */
+					/* General */
 					#CtrlGroup_GameInfoWindowCloseButton {
-						position: sticky; top: 0; left: 0; z-index: 1;
-						width: 240px;
-					}
-					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
-						width: 240px; padding: 15px 0;
+						position: sticky; top: 0; right: 0; z-index: 1;
 					}
 					#CtrlGroup_GameInfoWindowCloseButton .Ctrl {
-						position: absolute; top: 15px; right: 15px;
+						position: absolute; top: -15px; right: -15px;
 						width: 35px;
 					}
-					.InfoWindowSection {
-						width: 100%; height: unset; padding: 0 15px;
+					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+						width: 210px;
 					}
-					.InfoWindowSection.Hidden {
-						padding: 0 15px !important;
+					.InfoWindowItem {
+						width: 100%; margin: 0 0 15px 0;
 					}
-						/* Title */
-						.InfoWindowTitle .Ctrl {
-							width: calc(100% - 50px); height: unset; min-height: 35px;
-						}
-						.InfoWindowTitle h2 {
-							padding: 0;
-							font-size: 1.25em;
-						}
-						.Icon.CollapseCaret {
-							margin: 0 0 0 5px;
-						}
-						.InfoWindowSection:has(.InfoWindowContent.Hidden) .Icon.CollapseCaret {
-							transform: rotate(-90deg);
-						}
-
-						/* Content */
-						.InfoWindowContent {
-							border-bottom: 1px solid #00000040; padding: 15px 0; margin: 0 0 15px 0;
-						}
-						.InfoWindowContentCardImage, .InfoWindowContentSkillImage, .InfoWindowContentStatusImage {
-							width: 56px; margin: 0 0 10px 0;
-						}
-						.InfoWindowContentCardImage {
-							height: 96px;
-						}
-						.InfoWindowContentSkillImage, .InfoWindowContentStatusImage {
-							height: 56px;
-						}
-						.InfoWindowContent img {
-							width: 100%; height: 100%;
-						}
-						.InfoWindowContentDetails {
-							width: calc(100% - 71px); height: unset;
-						}
-						.InfoWindowSubtitle {
-							margin: 0 0 10px 0;
-							font-size: 1.25em;
-						}
-						.InfoWindowTags {
-							margin: 10px -5px 0 0;
-							justify-content: start;
-						}
-						.InfoWindowTags .Ctrl {
-							height: 30px; margin: 0 5px 10px 0;
-						}
-						.InfoWindowTags .Ctrl.Box {
-							padding: 0 5px;
-							background-color: #FFFFFF;
-							display: flex; align-items: center;
-						}
-						.InfoWindowTags .LabelAfterIcon {
-							margin: 0 0 0 2px;
-						}
-						.InfoWindowTags .CostIndicator {
-							width: 30px;
-						}
-						.InfoWindowContent i { /* .Transparent.Less */
-							opacity: 0.6;
-						}
+					.InfoWindowItem .Ctrl:has(h2) {
+						width: calc(100% - 35px);
+					}
+					.InfoWindowItem:has(fieldset.Hidden) .CollapseCaret {
+						transform: rotate(-90deg);
+					}
+					.InfoWindowItem fieldset {
+						border-bottom: 1px solid #00000040;
+					}
+					.InfoWindowItem fieldset .InfoWindowCardImage, .InfoWindowItem fieldset .InfoWindowSkillImage, .InfoWindowItem fieldset .InfoWindowStatusImage {
+						width: 56px; margin: 0 0 10px 0;
+					}
+					.InfoWindowItem fieldset .InfoWindowCardImage {
+						height: 96px;
+					}
+					.InfoWindowItem fieldset .InfoWindowSkillImage, .InfoWindowItem fieldset .InfoWindowStatusImage {
+						height: 56px;
+					}
+					.InfoWindowItem img {
+						width: 100%; height: 100%;
+					}
+					.InfoWindowItem fieldset .InfoWindowDetails {
+						width: calc(100% - 71px); height: unset;
+					}
+					.InfoWindowSubtitle {
+						margin: 0 0 10px 0;
+						font-size: 1.25em;
+					}
+					.InfoWindowTags {
+						margin: 10px -5px 0 0;
+						justify-content: start;
+					}
+					.InfoWindowTags .Ctrl {
+						height: 30px; margin: 0 5px 10px 0;
+					}
+					.InfoWindowTags .Ctrl.Box {
+						padding: 0 5px;
+						background-color: #FFFFFF;
+						display: flex; align-items: center;
+					}
+					.InfoWindowTags .LabelAfterIcon {
+						margin: 0 0 0 2px;
+					}
+					.InfoWindowTags .CostIndicator {
+						width: 30px;
+					}
+					.InfoWindowItem i { /* .Transparent.Less */
+						opacity: 0.6;
+					}
 
 					/* Area specific */
 						/* Character card */
@@ -1348,17 +1334,13 @@
 						}
 
 						/* Character profile & Credits & Tech info */
-						#CtrlGroup_GameInfoWindowCharacterProfile, #CtrlGroup_GameInfoWindowCredits, #CtrlGroup_GameInfoWindowTechInfo {
-							padding: 10px 0 15px 0;
-						}
-						#CtrlGroup_GameInfoWindowCharacterProfile .Ctrl, #CtrlGroup_GameInfoWindowCredits .Ctrl, #CtrlGroup_GameInfoWindowTechInfo .Ctrl {
+						#Fieldset_GameInfoWindowCharacterProfile .Ctrl, #Fieldset_GameInfoWindowCredits .Ctrl, #Fieldset_GameInfoWindowTechInfo .Ctrl {
 							height: unset;
 						}
 
 		/* Casket */
 		#Casket .ListHeader {
-			padding: 5px;
-			display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center;
+			flex-direction: row-reverse;
 		}
 		#Casket .Radiobtn {
 			width: 18px;
@@ -1369,7 +1351,7 @@
 		.ListItemName {
 			overflow: hidden;
 		}
-		#Casket .Button.ShownAsLabel {
+		#Casket .ScrollableList .Button {
 			width: 22px; height: 22px;
 			justify-content: center;
 		}
@@ -1397,14 +1379,14 @@
 			.CasketCardLabel {
 				width: calc(100% - 98px);
 			}
+			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
+				margin: 0 0 0 10px;
+			}
 			#CtrlGroup_CasketCharacterCardsList .ListItemName {
 				max-width: 201px; margin: 0 0 0 1px;
 			}
 			#CtrlGroup_CasketActionCardsList .ListItemName {
 				max-width: 219px;
-			}
-			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
-				margin: 0 0 0 10px;
 			}
 
 			/* Management */
@@ -1442,7 +1424,7 @@
 		}
 
 /* Responsive web design */
-@media (max-width: 880px) {
+@media (max-width: 920px) {
 	/* Area specific */
 		/* Header */
 		#DropctrlGroup_Nav {
@@ -1990,7 +1972,7 @@
 							justify-content: end;
 						}
 						#Ctnr_GameStatus #Ctrl_GameBusy { /* .Hidden */
-							height: 0 !important; border: none !important; padding: 0 !important; margin: 0 !important;
+							height: 0 !important; border-top: none !important; border-bottom: none !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important;
 							opacity: 0 !important;
 							overflow: hidden !important;
 							pointer-events: none !important;
@@ -2081,7 +2063,7 @@
 							margin: 0;
 						}
 						#Ctrl_GameYourDeckLabel, #Ctrl_GameOpponentDeckLabel { /* .Hidden */
-							height: 0 !important; border: none !important; padding: 0 !important; margin: 0 !important;
+							height: 0 !important; border-top: none !important; border-bottom: none !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important;
 							opacity: 0 !important;
 							overflow: hidden !important;
 							pointer-events: none !important;
@@ -2150,49 +2132,46 @@
 						top: 15px;
 						height: 200px;
 					}
-						/* Sections */
-						#CtrlGroup_GameInfoWindowCloseButton, #CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
-							width: 180px;
-						}
-						#Window_Game #CtrlGroup_GameInfoWindowCloseButton .Ctrl {
+						/* General */
+						#CtrlGroup_GameInfoWindowCloseButton .Ctrl {
 							width: 30px; height: 30px;
 						}
-							/* Title */
-							.InfoWindowTitle .Ctrl {
-								width: calc(100% - 40px); min-height: 30px;
-							}
-
-							/* Content */
-							.InfoWindowContent {
-								padding: 10px 0; margin: 0 0 10px 0;
-							}
-							.InfoWindowContentCardImage, .InfoWindowContentSkillImage, .InfoWindowContentStatusImage {
-								width: 42px;
-							}
-							.InfoWindowContentCardImage {
-								height: 72px;
-							}
-							.InfoWindowContentSkillImage, .InfoWindowContentStatusImage {
-								height: 42px;
-							}
-							.InfoWindowContentDetails {
-								width: calc(100% - 52px);
-							}
-							.InfoWindowSubtitle {
-								margin: 0 0 5px 0;
-							}
-							.InfoWindowTags {
-								margin: 5px -5px 0 0;
-							}
-							.InfoWindowTags .Ctrl {
-								height: 25px; margin: 0 5px 5px 0;
-							}
-							.InfoWindowTags .LabelAfterIcon {
-								margin: 0 0 0 1px;
-							}
-							.InfoWindowTags .CostIndicator {
-								width: 25px;
-							}
+						#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
+							width: 150px;
+						}
+						.InfoWindowItem .Ctrl:has(h2) {
+							width: calc(100% - 30px);
+						}
+						.InfoWindowItem fieldset {
+							padding: 10px 0;
+						}
+						.InfoWindowItem fieldset .InfoWindowCardImage, .InfoWindowItem fieldset .InfoWindowSkillImage, .InfoWindowItem fieldset .InfoWindowStatusImage {
+							width: 42px;
+						}
+						.InfoWindowItem fieldset .InfoWindowCardImage {
+							height: 72px;
+						}
+						.InfoWindowItem fieldset .InfoWindowSkillImage, .InfoWindowItem fieldset .InfoWindowStatusImage {
+							height: 42px;
+						}
+						.InfoWindowItem fieldset .InfoWindowDetails {
+							width: calc(100% - 52px);
+						}
+						.InfoWindowSubtitle {
+							margin: 0 0 5px 0;
+						}
+						.InfoWindowTags {
+							margin: 5px -5px 0 0;
+						}
+						.InfoWindowTags .Ctrl {
+							height: 25px; margin: 0 5px 5px 0;
+						}
+						.InfoWindowTags .LabelAfterIcon {
+							margin: 0 0 0 1px;
+						}
+						.InfoWindowTags .CostIndicator {
+							width: 25px;
+						}
 
 						/* Area specific */
 							/* Character card */

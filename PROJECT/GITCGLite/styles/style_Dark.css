@@ -170,11 +170,10 @@
 				}
 
 				/* Info window */
-					/* Sections */
-						/* Content */
-						.InfoWindowContent {
-							border-bottom: 1px solid #FFFFFF40;
-						}
-						.InfoWindowTags .Ctrl.Box {
-							background-color: #303030;
-						}
+					/* General */
+					.InfoWindowItem fieldset {
+						border-bottom: 1px solid #FFFFFF40;
+					}
+					.InfoWindowTags .Ctrl.Box {
+						background-color: #303030;
+					}
