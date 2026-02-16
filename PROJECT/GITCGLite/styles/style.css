@@ -1266,9 +1266,6 @@
 					.InfoWindowItem {
 						width: 100%; margin: 0 0 15px 0;
 					}
-					.InfoWindowItem .Ctrl:has(h2) {
-						width: calc(100% - 35px);
-					}
 					.InfoWindowItem:has(fieldset.Hidden) .CollapseCaret {
 						transform: rotate(-90deg);
 					}
@@ -2189,7 +2186,7 @@
 			#Item_SettingsDisplay {
 				width: 800px;
 			}
-			#Item_SettingsDisplay .Ctrl { /* .WidthDividedBy2 */
+			#Fieldset_SettingsDisplay .Ctrl { /* .WidthDividedBy2 */
 				width: calc((100% - 10px) / 2);
 			}
 }
