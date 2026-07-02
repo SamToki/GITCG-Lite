@@ -27,7 +27,6 @@
 				"styles/style_Genshin.css",
 				"styles/style_HighContrast.css",
 				"../scripts/common.js",
-				"../scripts/common_UserDataRepairer.js",
 				"scripts/script_BuiltinCasket.js",
 				"scripts/script_Game.js",
 				"scripts/script_GameFunctions.js",
