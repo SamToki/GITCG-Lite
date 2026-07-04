@@ -251,8 +251,8 @@
 				}
 			}
 			if(Casket.DeckSelection.Player > 0) {
-				ChangeText("Label_CasketSelectAllCharacterCards", "已选 " + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1));
-				ChangeText("Label_CasketSelectAllActionCards", "已选 " + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1));
+				ChangeText("Label_CasketSelectAllCharacterCards", "已选" + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1));
+				ChangeText("Label_CasketSelectAllActionCards", "已选" + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1));
 			} else {
 				ChangeText("Label_CasketSelectAllCharacterCards", "不可选择");
 				ChangeText("Label_CasketSelectAllActionCards", "不可选择");
