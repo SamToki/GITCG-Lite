@@ -1622,7 +1622,7 @@
 						if(LotteryNumber <= Threshold) {
 							LotteryNumber = Randomize(1, 2);
 							if(LotteryNumber == 1) {
-								// When miHoYo will listen to our feedback and actually improve Genshin Impact
+								// When miHoYo will listen to our feedback and actually improve Genshin
 								Is5050Won = true;
 								ShowDialog("Game_WishComplete",
 									"Info",

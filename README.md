@@ -12,7 +12,7 @@ There are some unreadable content below.
 # 简介 Description
 
 七圣召唤 Lite，「[原神](https://zh.moegirl.org.cn/原神)」同人游戏。相比原版「[七圣召唤](https://zh.moegirl.org.cn/七圣召唤)」，具有轻量化、高自由度等特点。<br>
-GITCG Lite is a [*Genshin Impact*](https://genshin-impact.fandom.com/wiki/Genshin_Impact) Doujin game. It is lightweight and highly customizable compared to the original game.
+GITCG Lite is a [*Genshin*](https://genshin-impact.fandom.com/wiki/Genshin_Impact) Doujin game. It is lightweight and highly customizable compared to the original game.
 
 # 预览 Preview
 
@@ -34,6 +34,6 @@ https://SamToki.github.io/#ToyStore
 The source codes of this website are released under [GNU GPL v3 open source license](https://www.gnu.org/licenses/gpl-3.0.en.html). Some contents in the website are works by other people, and their copyrights belong to the corresponding authors. They are used under the "[fair use](https://en.wikipedia.org/wiki/fair_use)" principle and are credited. Other contents and the webpage design are copyrighted. The documents are also copyrighted.
 
 「原神」是 [miHoYo](https://zh.moegirl.org.cn/miHoYo) Inc. 的商标。<br>
-*Genshin Impact* is a trademark of [miHoYo](https://genshin-impact.fandom.com/wiki/MiHoYo) Inc.
+*Genshin* is a trademark of [miHoYo](https://genshin-impact.fandom.com/wiki/MiHoYo) Inc.
 
 © 2024 SAM TOKI STUDIO
