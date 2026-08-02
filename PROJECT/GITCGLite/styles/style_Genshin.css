@@ -152,9 +152,6 @@
 					#Button_GameEndAction {
 						border-radius: 50%;
 					}
-					#Button_GameEndAction:hover {
-						box-shadow: 0 0 0 3px inset #DEB76C;
-					}
 
 					/* Skill ctrl */
 					#Ctnr_GameSkillCtrl .Button {
@@ -206,6 +203,9 @@
 
 				/* Info window */
 					/* General */
+					#CtrlGroup_GameInfoWindowCloseButton .Button:hover {
+						box-shadow: 0 0 0 3px inset #DEB76C;
+					}
 					.InfoWindowItem fieldset {
 						border-bottom: 1px solid #EEE4D940;
 					}
