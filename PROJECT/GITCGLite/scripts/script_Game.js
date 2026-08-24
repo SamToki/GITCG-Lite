@@ -1093,9 +1093,9 @@
 				}
 				ChangeShapedProgbar("ProgbarFg_GamePlayerCharacter" + Looper + "HP", "Vertical", Percentage);
 				if(Percentage <= Subsystem.Display.HPCautionThreshold) {
-					AddClass("ProgbarFg_GamePlayerCharacter" + Looper + "HP", "Low");
+					AddClass("ProgbarFg_GamePlayerCharacter" + Looper + "HP", "Caution");
 				} else {
-					RemoveClass("ProgbarFg_GamePlayerCharacter" + Looper + "HP", "Low");
+					RemoveClass("ProgbarFg_GamePlayerCharacter" + Looper + "HP", "Caution");
 				}
 				ChangeText("ProgbarText_GamePlayerCharacter" + Looper + "HP", Game0.Stats.Player.HPDisplay[Looper].toFixed(0));
 				if(ReadCardNumberByID(Game.Status.Opponent.CharacterCard[Looper].ID) > 0) {
@@ -1107,26 +1107,26 @@
 				}
 				ChangeShapedProgbar("ProgbarFg_GameOpponentCharacter" + Looper + "HP", "Vertical", Percentage);
 				if(Percentage <= Subsystem.Display.HPCautionThreshold) {
-					AddClass("ProgbarFg_GameOpponentCharacter" + Looper + "HP", "Low");
+					AddClass("ProgbarFg_GameOpponentCharacter" + Looper + "HP", "Caution");
 				} else {
-					RemoveClass("ProgbarFg_GameOpponentCharacter" + Looper + "HP", "Low");
+					RemoveClass("ProgbarFg_GameOpponentCharacter" + Looper + "HP", "Caution");
 				}
 				ChangeText("ProgbarText_GameOpponentCharacter" + Looper + "HP", Game0.Stats.Opponent.HPDisplay[Looper].toFixed(0));
 			}
 			Percentage = TotalHP.Player.HPDisplay / TotalHP.Player.MaxHP * 100;
 			ChangeShapedProgbar("ProgbarFg_GamePlayerTotalHP", "Vertical", Percentage);
 			if(Percentage <= Subsystem.Display.HPCautionThreshold) {
-				AddClass("ProgbarFg_GamePlayerTotalHP", "Low");
+				AddClass("ProgbarFg_GamePlayerTotalHP", "Caution");
 			} else {
-				RemoveClass("ProgbarFg_GamePlayerTotalHP", "Low");
+				RemoveClass("ProgbarFg_GamePlayerTotalHP", "Caution");
 			}
 			ChangeText("ProgbarText_GamePlayerTotalHP", TotalHP.Player.HPDisplay.toFixed(0));
 			Percentage = TotalHP.Opponent.HPDisplay / TotalHP.Opponent.MaxHP * 100;
 			ChangeShapedProgbar("ProgbarFg_GameOpponentTotalHP", "Vertical", Percentage);
 			if(Percentage <= Subsystem.Display.HPCautionThreshold) {
-				AddClass("ProgbarFg_GameOpponentTotalHP", "Low");
+				AddClass("ProgbarFg_GameOpponentTotalHP", "Caution");
 			} else {
-				RemoveClass("ProgbarFg_GameOpponentTotalHP", "Low");
+				RemoveClass("ProgbarFg_GameOpponentTotalHP", "Caution");
 			}
 			ChangeText("ProgbarText_GameOpponentTotalHP", TotalHP.Opponent.HPDisplay.toFixed(0));
 		}

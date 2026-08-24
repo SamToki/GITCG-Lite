@@ -18,7 +18,7 @@
 		.ProgbarFg.Shaped.HP .Shape {
 			fill: #73A41A;
 		}
-		.ProgbarFg.Shaped.HP.Low .Shape {
+		.ProgbarFg.Shaped.HP.Caution .Shape {
 			fill: #FF5858;
 		}
 		.Energy {
