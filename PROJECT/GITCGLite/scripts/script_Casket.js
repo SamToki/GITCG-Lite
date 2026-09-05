@@ -60,7 +60,7 @@
 						ShowDialog("Casket_UnrecognizableCardDetected",
 							"Caution",
 							"对手牌组含有无法识别的卡牌。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 					}
 				}
 				if(Casket.DeckSelection.Player > 0) {
@@ -81,7 +81,7 @@
 						ShowDialog("Casket_UnrecognizableCardDetected",
 							"Caution",
 							"您的牌组含有无法识别的卡牌。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 					}
 				}
 
@@ -390,7 +390,7 @@
 				ShowDialog("Casket_DeckExported",
 					"Info",
 					"已导出牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」至剪贴板。",
-					"不再弹窗提示", "", "", "确定");
+					"不再弹窗提示", "", "", "OK");
 			} else {
 				ShowToast("已导出牌组");
 			}
@@ -671,7 +671,7 @@
 				ShowDialog("Casket_CardExported",
 					"Info",
 					"已导出卡牌「" + ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name) + "」至剪贴板。",
-					"不再弹窗提示", "", "", "确定");
+					"不再弹窗提示", "", "", "OK");
 			} else {
 				ShowToast("已导出卡牌");
 			}
@@ -956,24 +956,24 @@
 					ShowDialog("Casket_ObjectsImported",
 						"Info",
 						"成功导入" + Counter + "个对象。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 				} else {
 					ShowDialog("Casket_ObjectsImported",
 						"Info",
 						"成功导入" + Counter + "个对象。" + Counter2 + "个对象的 JSON 字符串不合法，无法导入。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 				}
 			} else {
 				if(ReadValue("Textbox_CasketImport") != "") {
 					ShowDialog("Casket_ImportFailed",
 						"Error",
 						"您键入的 JSON 字符串不合法。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 				} else {
 					ShowDialog("Casket_ImportFailed",
 						"Error",
 						"文本框为空。请先在文本框键入要导入的对象，然后再点击「导入」。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 				}
 			}
 			ChangeValue("Textbox_CasketImport", "");
@@ -986,21 +986,21 @@
 			ShowDialog("Casket_DeckLibraryExported",
 				"Info",
 				"已导出牌组库 (" + (Casket.Deck.length - 1) + "个牌组) 至剪贴板。",
-				"", "", "", "确定");
+				"", "", "", "OK");
 		}
 		function ExportCardLibrary() {
 			navigator.clipboard.writeText(JSON.stringify(Casket.Card));
 			ShowDialog("Casket_CardLibraryExported",
 				"Info",
 				"已导出卡牌库 (" + (Casket.Card.length - 1) + "张卡牌) 至剪贴板。",
-				"", "", "", "确定");
+				"", "", "", "OK");
 		}
 		function ExportCasket() {
 			navigator.clipboard.writeText(JSON.stringify(Casket));
 			ShowDialog("Casket_CasketExported",
 				"Info",
 				"已导出牌盒 (" + (Casket.Deck.length - 1) + "个牌组与" + (Casket.Card.length - 1) + "张卡牌) 至剪贴板。",
-				"", "", "", "确定");
+				"", "", "", "OK");
 		}
 		function ConfirmResetCasket() {
 			ShowDialog("Casket_ConfirmResetCasket",

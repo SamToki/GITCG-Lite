@@ -652,7 +652,7 @@
 				ShowDialog("Editor_CardNotFound",
 					"Error",
 					"找不到 ID 为「" + ReadValue("Textbox_EditorOpen") + "」的卡牌。",
-					"", "", "", "确定");
+					"", "", "", "OK");
 				ChangeValue("Textbox_EditorOpen", "");
 				ChangeDisabled("Button_EditorDuplicate", true);
 				ChangeDisabled("Button_EditorExport", true);
@@ -731,7 +731,7 @@
 					ShowDialog("Editor_CardIDInvalid",
 						"Error",
 						"卡牌 ID 不能为空。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 					break;
 				case "NewCharacterCard":
 				case "NewActionCard":
@@ -744,7 +744,7 @@
 					ShowDialog("Editor_CardIDInvalid",
 						"Error",
 						"「" + ReadValue("Textbox_EditorBasicPropertiesID") + "」是保留 ID，无法设定为新 ID。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 					break;
 				default:
 					if(ReadCardNumberByID(ReadValue("Textbox_EditorBasicPropertiesID")) == 0) {
@@ -754,7 +754,7 @@
 						ShowDialog("Editor_CardIDInvalid",
 							"Error",
 							"该 ID 已被卡牌「" + ReadCardNameByID(ReadValue("Textbox_EditorBasicPropertiesID")) + "」占用，无法设定为新 ID。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 					}
 					break;
 			}

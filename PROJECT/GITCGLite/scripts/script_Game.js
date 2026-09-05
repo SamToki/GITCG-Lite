@@ -49,7 +49,7 @@
 							ShowDialog("Game_LoadingError",
 								"Error",
 								"牌盒中第" + Looper + "张卡牌「" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "」的 ID「" + Casket.Card[Looper].BasicProperties.ID + "」不合法。请尝试修复牌盒。",
-								"", "", "", "确定");
+								"", "", "", "OK");
 							Game.Status.Operation = "Title";
 							setTimeout(ExitGame, 0);
 							return;
@@ -66,7 +66,7 @@
 							ShowDialog("Game_LoadingError",
 								"Error",
 								"牌盒中存在重复的卡牌 ID「" + Casket.Card[Looper].BasicProperties.ID + "」。请尝试修复牌盒。",
-								"", "", "", "确定");
+								"", "", "", "OK");
 							Game.Status.Operation = "Title";
 							setTimeout(ExitGame, 0);
 							return;
@@ -82,7 +82,7 @@
 						ShowDialog("Game_LoadingError",
 							"Error",
 							"牌盒中只有" + Counter + "张角色牌。至少需要3张角色牌才能开始游戏。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 						Game.Status.Operation = "Title";
 						setTimeout(ExitGame, 0);
 						return;
@@ -97,7 +97,7 @@
 						ShowDialog("Game_LoadingError",
 							"Error",
 							"牌盒中只有" + Counter + "张行动牌。至少需要30张行动牌才能开始游戏。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 						Game.Status.Operation = "Title";
 						setTimeout(ExitGame, 0);
 						return;
@@ -120,7 +120,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -129,7 +129,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"您的牌组中有" + (Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -152,7 +152,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection.Opponent].CharacterCardSelection.length - 1) + "张角色牌。牌组中必须有且仅有3张角色牌。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -161,7 +161,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"对手牌组中有" + (Casket.Deck[Casket.DeckSelection.Opponent].ActionCardSelection.length - 1) + "张行动牌。牌组中必须有且仅有30张行动牌。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -189,7 +189,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"您的牌组含有未知的角色牌。请尝试修复牌组。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -201,7 +201,7 @@
 									"您的角色牌「" + ReadCardNameByID(Game.Status.Player.CharacterCard[(Game0.Load.Progress - 10) / 2].ID) + "」不合法。请尝试修复该卡牌，或向卡牌作者提供反馈。<br />" +
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -230,7 +230,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"您的牌组含有未知的行动牌。请尝试修复牌组。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -242,7 +242,7 @@
 									"您的行动牌「" + ReadCardNameByID(Game.Status.Player.ActionCard[(Game0.Load.Progress - 16) / 2].ID) + "」不合法。请尝试修复该卡牌，或向卡牌作者提供反馈。<br />" +
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -261,7 +261,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"对手牌组含有未知的角色牌。请尝试修复牌组。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -273,7 +273,7 @@
 									"对手角色牌「" + ReadCardNameByID(Game.Status.Opponent.CharacterCard[(Game0.Load.Progress - 76) / 2].ID) + "」不合法。请尝试修复该卡牌，或向卡牌作者提供反馈。<br />" +
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -302,7 +302,7 @@
 								ShowDialog("Game_LoadingError",
 									"Error",
 									"对手牌组含有未知的行动牌。请尝试修复牌组。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -314,7 +314,7 @@
 									"对手行动牌「" + ReadCardNameByID(Game.Status.Opponent.ActionCard[(Game0.Load.Progress - 82) / 2].ID) + "」不合法。请尝试修复该卡牌，或向卡牌作者提供反馈。<br />" +
 									"<br />" +
 									"详细信息：" + CardValidityMessage,
-									"", "", "", "确定");
+									"", "", "", "OK");
 								Game.Status.Operation = "Title";
 								setTimeout(ExitGame, 0);
 								return;
@@ -983,37 +983,37 @@
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过小。这可能导致控件重叠，影响游戏体验。建议您调大窗口或缩小网页。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							case window.innerWidth >= 400 && window.innerWidth <= 600 && window.innerHeight < 650:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							case window.innerWidth > 600 && window.innerWidth <= 920:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在竖版布局下过宽。这可能影响游戏体验。建议您调窄窗口，或调宽至横版布局。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							case window.innerWidth > 920 && window.innerWidth <= 1100:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口在横板布局下过窄。这可能影响游戏体验。建议您调宽窗口，或调窄至竖版布局。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							case window.innerWidth > 1100 && window.innerWidth <= 1920 && window.innerHeight < 700:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过矮。这可能影响游戏体验。建议您调高窗口或缩小网页。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							case window.innerWidth > 1920:
 								ShowDialog("Game_WindowLayoutImproper",
 									"Info",
 									"窗口过大。这可能影响游戏体验。建议您调小窗口或放大网页。",
-									"不再提示", "", "", "确定");
+									"不再提示", "", "", "OK");
 								break;
 							default:
 								break;

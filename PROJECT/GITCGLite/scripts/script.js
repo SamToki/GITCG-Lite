@@ -498,7 +498,7 @@
 							ShowDialog("System_NewVersionReady",
 								"Info",
 								"新版本已就绪，将在下次启动时生效。",
-								"", "", "", "确定");
+								"", "", "", "OK");
 						}
 					});
 				});
@@ -516,7 +516,7 @@
 						ShowDialog("System_NewVersionReady",
 							"Info",
 							"新版本已就绪，将在下次启动时生效。",
-							"", "", "", "确定");
+							"", "", "", "OK");
 						break;
 					case ServiceWorkerRegistration.active != null:
 						ChangeText("Label_SettingsPWAServiceWorkerRegistration", "已生效");
@@ -632,7 +632,7 @@
 		ShowDialog("System_RefreshingWebpage",
 			"Info",
 			"正在刷新网页...",
-			"", "", "", "确定");
+			"", "", "", "OK");
 		ChangeCursorOverall("wait");
 		window.location.reload();
 	}
@@ -928,7 +928,7 @@
 					ShowDialog("System_JSONStringInvalid",
 						"Error",
 						"您键入的 JSON 字符串不合法。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 				}
 				RefreshGame();
 			}
@@ -948,7 +948,7 @@
 				ShowDialog("Game_SavedGameExported",
 					"Info",
 					"已导出存档至剪贴板。",
-					"", "", "", "确定");
+					"", "", "", "OK");
 			} else {
 				AlertSystemError("No saved game was selected when trying to export a saved game.");
 			}
@@ -1075,7 +1075,7 @@
 					ShowDialog("System_JSONStringInvalid",
 						"Error",
 						"您键入的 JSON 字符串不合法。",
-						"", "", "", "确定");
+						"", "", "", "OK");
 					RefreshSystem();
 				}
 			}
@@ -1090,7 +1090,7 @@
 			ShowDialog("System_UserDataExported",
 				"Info",
 				"已导出本网页的用户数据至剪贴板。",
-				"", "", "", "确定");
+				"", "", "", "OK");
 		}
 		function ConfirmClearUserData() {
 			ShowDialog("System_ConfirmClearUserData",
@@ -1627,7 +1627,7 @@
 								ShowDialog("Game_WishComplete",
 									"Info",
 									"您于第" + Pity + "发抽中了限定五星角色。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 							} else {
 								// When miHoYo will suck my d---
 								Is5050Won = false;
@@ -1677,7 +1677,7 @@
 								ShowDialog("Game_WishComplete",
 									"Info",
 									"您于第" + Pity + "发抽中了「" + CharacterName + "」，然后于第" + Pity2 + "发抽中了限定五星角色。合计" + (Pity + Pity2) + "发。",
-									"", "", "", "确定");
+									"", "", "", "OK");
 								break;
 							}
 						}
@@ -1970,5 +1970,5 @@ function AlertGameFunctionError(Message) {
 		"<br />" +
 		"错误信息：" + Message + "<br />" +
 		"您可在浏览器控制台查看更详细的错误信息。",
-		"", "", "", "确定");
+		"", "", "", "OK");
 }
