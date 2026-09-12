@@ -97,12 +97,12 @@
 		var Subsystem = {
 			Display: {
 				HPCautionThreshold: 40,
-				ShowSpokenLines: true,
-				SkillIndicator: "ShowOnElementalBurstOnly",
 				NameOnCard: "ShowOnHover",
 				InfoWindow: {
 					InfoWindow: "ShowOnHover", ShowWhenOpponentActs: true, AlsoShowInCasket: true
 				},
+				ShowSpokenLines: true,
+				SkillIndicator: "ShowOnElementalBurstOnly",
 				FlashOnHighDamage: false,
 				ColorBlindMode: false
 			},
@@ -675,12 +675,7 @@
 
 		// Settings
 			// Display
-			if(window.matchMedia("(prefers-contrast: more)").matches == false) {
-				ChangeDisabled("Combobox_SettingsTheme", false);
-			} else {
-				System.Display.Theme = "HighContrast";
-				ChangeDisabled("Combobox_SettingsTheme", true);
-			}
+			ChangeEnabled("Combobox_SettingsTheme", !IsOSHighContrast());
 			ChangeValue("Combobox_SettingsTheme", System.Display.Theme);
 			switch(System.Display.Theme) {
 				case "Auto":
@@ -723,11 +718,10 @@
 					AlertSystemError("The value of System.Display.Theme \"" + System.Display.Theme + "\" in function RefreshSystem is invalid.");
 					break;
 			}
-			if(System.Display.Theme != "HighContrast") {
-				ChangeDisabled("Checkbox_SettingsColorBlindMode", false);
-			} else { // Force color blind mode on high contrast theme.
-				Subsystem.Display.ColorBlindMode = true;
-				ChangeDisabled("Checkbox_SettingsColorBlindMode", true);
+			if(IsOSHighContrast() == false && System.Display.Theme != "HighContrast") {
+				ChangeEnabled("Checkbox_SettingsColorBlindMode", true);
+			} else {
+				ChangeEnabled("Checkbox_SettingsColorBlindMode", false);
 				RefreshSubsystem();
 				RefreshGame();
 			}
@@ -768,40 +762,35 @@
 					AlertSystemError("The value of System.Display.HotkeyIndicators \"" + System.Display.HotkeyIndicators + "\" in function RefreshSystem is invalid.");
 					break;
 			}
-			if(window.matchMedia("(prefers-reduced-motion: reduce)").matches == false) {
-				ChangeDisabled("Combobox_SettingsAnim", false);
-			} else {
-				System.Display.Anim = 0;
-				ChangeDisabled("Combobox_SettingsAnim", true);
-			}
+			ChangeEnabled("Combobox_SettingsAnim", IsOSAnimEnabled());
 			ChangeValue("Combobox_SettingsAnim", System.Display.Anim);
 			ChangeAnimOverall(System.Display.Anim);
 
 			// Audio
 			ChangeChecked("Checkbox_SettingsPlayAudio", System.Audio.PlayAudio);
 			if(System.Audio.PlayAudio) {
-				Show("Ctrl_SettingsSoundVolume");
-				Show("Ctrl_SettingsVoiceVolume");
-				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
-				if(Subsystem.Audio.SoundVolume > 0) {
-					ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
-				} else {
-					ChangeText("Label_SettingsSoundVolume", "禁用");
-				}
-				ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
-				ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
-				if(Subsystem.Audio.VoiceVolume > 0) {
-					ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
-				} else {
-					ChangeText("Label_SettingsVoiceVolume", "禁用");
-				}
-				ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
-				ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
+				ChangeEnabled("Slider_SettingsSoundVolume", true);
+				ChangeEnabled("Slider_SettingsVoiceVolume", true);
 			} else {
 				StopAllAudio();
-				Hide("Ctrl_SettingsSoundVolume");
-				Hide("Ctrl_SettingsVoiceVolume");
+				ChangeEnabled("Slider_SettingsSoundVolume", false);
+				ChangeEnabled("Slider_SettingsVoiceVolume", false);
 			}
+			ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
+			if(Subsystem.Audio.SoundVolume > 0) {
+				ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
+			} else {
+				ChangeText("Label_SettingsSoundVolume", "禁用");
+			}
+			ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
+			ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
+			if(Subsystem.Audio.VoiceVolume > 0) {
+				ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
+			} else {
+				ChangeText("Label_SettingsVoiceVolume", "禁用");
+			}
+			ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
+			ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
 
 			// PWA
 			if(window.matchMedia("(display-mode: standalone)").matches) {
@@ -818,6 +807,11 @@
 			} else {
 				RemoveClass("Html", "TryToOptimizePerformance");
 				Automation.ClockRate = 20;
+			}
+			if(IsOSHighContrast() == false && System.Display.Theme != "HighContrast") {
+				ChangeEnabled("Checkbox_SettingsShowDebugOutlines", true);
+			} else {
+				ChangeEnabled("Checkbox_SettingsShowDebugOutlines", false);
 			}
 			ChangeChecked("Checkbox_SettingsShowDebugOutlines", System.Dev.ShowDebugOutlines);
 			if(System.Dev.ShowDebugOutlines) {
@@ -836,11 +830,6 @@
 		// Settings
 			// Display
 			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
-			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
-			if(Subsystem.Display.ShowSpokenLines == false) {
-				FadeByClass("SpokenLine");
-			}
-			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
 			ChangeValue("Combobox_SettingsNameOnCard", Subsystem.Display.NameOnCard);
 			switch(Subsystem.Display.NameOnCard) {
 				case "Disabled":
@@ -858,48 +847,49 @@
 			switch(Subsystem.Display.InfoWindow.InfoWindow) {
 				case "Disabled":
 					HideInfoWindow();
-					Hide("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
-					Hide("Ctrl_SettingsAlsoShowInfoWindowInCasket");
+					ChangeEnabled("Checkbox_SettingsShowInfoWindowWhenOpponentActs", false);
+					ChangeEnabled("Checkbox_SettingsAlsoShowInfoWindowInCasket", false);
 					break;
 				case "ShowOnClick":
 				case "ShowOnHover":
-					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
-					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
-					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
-					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
+					ChangeEnabled("Checkbox_SettingsShowInfoWindowWhenOpponentActs", true);
+					ChangeEnabled("Checkbox_SettingsAlsoShowInfoWindowInCasket", true);
 					break;
 				case "AlwaysShow":
 					ShowInfoWindow();
-					Show("Ctrl_SettingsShowInfoWindowWhenOpponentActs");
-					Show("Ctrl_SettingsAlsoShowInfoWindowInCasket");
-					ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
-					ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
+					ChangeEnabled("Checkbox_SettingsShowInfoWindowWhenOpponentActs", true);
+					ChangeEnabled("Checkbox_SettingsAlsoShowInfoWindowInCasket", true);
 					break;
 				default:
 					AlertSystemError("The value of Subsystem.Display.InfoWindow.InfoWindow \"" + Subsystem.Display.InfoWindow.InfoWindow + "\" in function RefreshSubsystem is invalid.");
 					break;
 			}
+			ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
+			ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
+			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
+			if(Subsystem.Display.ShowSpokenLines == false) {
+				FadeByClass("SpokenLine");
+			}
+			ChangeValue("Combobox_SettingsSkillIndicator", Subsystem.Display.SkillIndicator);
 			ChangeChecked("Checkbox_SettingsFlashOnHighDamage", Subsystem.Display.FlashOnHighDamage);
 			ChangeChecked("Checkbox_SettingsColorBlindMode", Subsystem.Display.ColorBlindMode);
 
 			// Audio
-			if(System.Audio.PlayAudio) {
-				ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
-				if(Subsystem.Audio.SoundVolume > 0) {
-					ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
-				} else {
-					ChangeText("Label_SettingsSoundVolume", "禁用");
-				}
-				ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
-				ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
-				if(Subsystem.Audio.VoiceVolume > 0) {
-					ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
-				} else {
-					ChangeText("Label_SettingsVoiceVolume", "禁用");
-				}
-				ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
-				ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
+			ChangeValue("Slider_SettingsSoundVolume", Subsystem.Audio.SoundVolume);
+			if(Subsystem.Audio.SoundVolume > 0) {
+				ChangeText("Label_SettingsSoundVolume", Subsystem.Audio.SoundVolume + "%");
+			} else {
+				ChangeText("Label_SettingsSoundVolume", "禁用");
 			}
+			ChangeVolume("Audio_Sound", Subsystem.Audio.SoundVolume);
+			ChangeValue("Slider_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume);
+			if(Subsystem.Audio.VoiceVolume > 0) {
+				ChangeText("Label_SettingsVoiceVolume", Subsystem.Audio.VoiceVolume + "%");
+			} else {
+				ChangeText("Label_SettingsVoiceVolume", "禁用");
+			}
+			ChangeVolume("Audio_VoicePlayer", Subsystem.Audio.VoiceVolume);
+			ChangeVolume("Audio_VoiceOpponent", Subsystem.Audio.VoiceVolume);
 
 			// Dev
 			ChangeChecked("Checkbox_SettingsCheat", Subsystem.Dev.Cheat);
@@ -995,14 +985,6 @@
 			Subsystem.Display.HPCautionThreshold = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold")), 0, 60);
 			RefreshSubsystem();
 		}
-		function SetShowSpokenLines() {
-			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
-			RefreshSubsystem();
-		}
-		function SetSkillIndicator() {
-			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
-			RefreshSubsystem();
-		}
 		function SetNameOnCard() {
 			Subsystem.Display.NameOnCard = ReadValue("Combobox_SettingsNameOnCard");
 			RefreshSubsystem();
@@ -1017,6 +999,14 @@
 		}
 		function SetAlsoShowInfoWindowInCasket() {
 			Subsystem.Display.InfoWindow.AlsoShowInCasket = IsChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket");
+			RefreshSubsystem();
+		}
+		function SetShowSpokenLines() {
+			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
+			RefreshSubsystem();
+		}
+		function SetSkillIndicator() {
+			Subsystem.Display.SkillIndicator = ReadValue("Combobox_SettingsSkillIndicator");
 			RefreshSubsystem();
 		}
 		function SetFlashOnHighDamage() {

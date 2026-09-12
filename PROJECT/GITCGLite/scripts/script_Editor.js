@@ -27,10 +27,10 @@
 			if(Editor.CardNumber > 0) {
 				// Choose a Card to Edit
 				ChangeText("Label_EditorCardNumber", "#" + Editor.CardNumber);
-				ChangeDisabled("Button_EditorDuplicate", false);
-				ChangeDisabled("Button_EditorExport", false);
-				ChangeDisabled("Button_EditorDelete", false);
-				ChangeDisabled("Button_EditorClose", false);
+				ChangeEnabled("Button_EditorDuplicate", true);
+				ChangeEnabled("Button_EditorExport", true);
+				ChangeEnabled("Button_EditorDelete", true);
+				ChangeEnabled("Button_EditorClose", true);
 
 				// Basic Properties
 				Show("Item_EditorBasicProperties");
@@ -654,10 +654,10 @@
 					"找不到 ID 为「" + ReadValue("Textbox_EditorOpen") + "」的卡牌。",
 					"", "", "", "OK");
 				ChangeValue("Textbox_EditorOpen", "");
-				ChangeDisabled("Button_EditorDuplicate", true);
-				ChangeDisabled("Button_EditorExport", true);
-				ChangeDisabled("Button_EditorDelete", true);
-				ChangeDisabled("Button_EditorClose", true);
+				ChangeEnabled("Button_EditorDuplicate", false);
+				ChangeEnabled("Button_EditorExport", false);
+				ChangeEnabled("Button_EditorDelete", false);
+				ChangeEnabled("Button_EditorClose", false);
 				HideToCorner("Item_EditorBasicProperties");
 				HideToCorner("Item_EditorCredits");
 				HideToCorner("Item_EditorCharacterCardProperties");
@@ -682,10 +682,10 @@
 				HideToCorner("Item_EditorVoiceover");
 			}
 		} else {
-			ChangeDisabled("Button_EditorDuplicate", true);
-			ChangeDisabled("Button_EditorExport", true);
-			ChangeDisabled("Button_EditorDelete", true);
-			ChangeDisabled("Button_EditorClose", true);
+			ChangeEnabled("Button_EditorDuplicate", false);
+			ChangeEnabled("Button_EditorExport", false);
+			ChangeEnabled("Button_EditorDelete", false);
+			ChangeEnabled("Button_EditorClose", false);
 			HideToCorner("Item_EditorBasicProperties");
 			HideToCorner("Item_EditorCredits");
 			HideToCorner("Item_EditorCharacterCardProperties");

@@ -1061,7 +1061,7 @@
 			}
 
 			// Update display value
-			if(System.Display.Anim > 0) {
+			if(IsOSAnimEnabled() && System.Display.Anim > 0) {
 				for(let Looper = 1; Looper <= 3; Looper++) {
 					Game0.Stats.Player.HPDisplay[Looper] += (Game.Status.Player.CharacterCard[Looper].HP - Game0.Stats.Player.HPDisplay[Looper]) / 5;
 					Game0.Stats.Opponent.HPDisplay[Looper] += (Game.Status.Opponent.CharacterCard[Looper].HP - Game0.Stats.Opponent.HPDisplay[Looper]) / 5;
@@ -1161,20 +1161,20 @@
 				AddText("Combobox_SettingsSelectSavedGame",
 					"<option value=" + Looper + ">" + Game.SavedGames[Looper].Name + "</option>");
 			}
-			ChangeDisabled("Combobox_SettingsSelectSavedGame", false);
-			ChangeDisabled("Button_SettingsLoadSavedGame", false);
-			ChangeDisabled("Button_SettingsExportSavedGame", false);
-			ChangeDisabled("Button_SettingsDeleteSavedGame", false);
+			ChangeEnabled("Combobox_SettingsSelectSavedGame", true);
+			ChangeEnabled("Button_SettingsLoadSavedGame", true);
+			ChangeEnabled("Button_SettingsExportSavedGame", true);
+			ChangeEnabled("Button_SettingsDeleteSavedGame", true);
 		} else {
-			ChangeDisabled("Combobox_SettingsSelectSavedGame", true);
-			ChangeDisabled("Button_SettingsLoadSavedGame", true);
-			ChangeDisabled("Button_SettingsExportSavedGame", true);
-			ChangeDisabled("Button_SettingsDeleteSavedGame", true);
+			ChangeEnabled("Combobox_SettingsSelectSavedGame", false);
+			ChangeEnabled("Button_SettingsLoadSavedGame", false);
+			ChangeEnabled("Button_SettingsExportSavedGame", false);
+			ChangeEnabled("Button_SettingsDeleteSavedGame", false);
 		}
 		if(Game.Status.Operation != "Title" && Game.Status.Operation != "Loading") {
-			ChangeDisabled("Button_SettingsSaveCurrentGame", false);
+			ChangeEnabled("Button_SettingsSaveCurrentGame", true);
 		} else {
-			ChangeDisabled("Button_SettingsSaveCurrentGame", true);
+			ChangeEnabled("Button_SettingsSaveCurrentGame", false);
 		}
 		ChangeChecked("Checkbox_SettingsLetOpponentActFirstAtBeginning", Game.Options.LetOpponentActFirstAtBeginning);
 		ChangeChecked("Checkbox_SettingsShowOpponentDiceContent", Game.Options.ShowOpponentDiceContent);
@@ -1933,7 +1933,7 @@
 						ChangeText("Label_GamePlayerAction" + Looper, Casket.Card[CardNumber].BasicProperties.Name);
 						ChangeElementColor("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
 						ChangeText("CostIndicatorText_GamePlayerAction" + Looper, ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GamePlayerAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]) + "</span>");
 						}
 						switch(true) {
@@ -1949,7 +1949,7 @@
 						if(Casket.Card[CardNumber].BasicProperties.Type == "TalentCard" && Casket.Card[CardNumber].TalentCardProperties.Cost[3] > 0) {
 							Show("CostIndicator_GamePlayerAction" + Looper + "Additional");
 							ChangeText("CostIndicatorText_GamePlayerAction" + Looper + "Additional", ReadCost("Player", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[3]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GamePlayerAction" + Looper + "Additional", "<span class=\"SmallerText\">任</span>");
 							}
 							switch(true) {
@@ -1971,13 +1971,13 @@
 							switch(Casket.Card[CardNumber].SupportCardProperties.Duration.Type) {
 								case "Usages":
 									RemoveClass("ProgbarText_GamePlayerAction" + Looper + "Duration", "DurationInRounds");
-									if(Subsystem.Display.ColorBlindMode) {
+									if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 										AddText("ProgbarText_GamePlayerAction" + Looper + "Duration", "<span class=\"SmallerText\">次</span>");
 									}
 									break;
 								case "Rounds":
 									AddClass("ProgbarText_GamePlayerAction" + Looper + "Duration", "DurationInRounds");
-									if(Subsystem.Display.ColorBlindMode) {
+									if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 										AddText("ProgbarText_GamePlayerAction" + Looper + "Duration", "<span class=\"SmallerText\">轮</span>");
 									}
 									break;
@@ -1999,7 +1999,7 @@
 							ChangeText("Label_GamePlayerAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
 							ChangeElementColor("CostIndicator_GamePlayerAction" + Looper, ReadCost("Player", "EventCard", CardNumber)[2]);
 							ChangeText("CostIndicatorText_GamePlayerAction" + Looper, ReadCost("Player", "EventCard", CardNumber)[1]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GamePlayerAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "EventCard", CardNumber)[2]) + "</span>");
 							}
 							switch(true) {
@@ -2033,7 +2033,7 @@
 						ChangeText("Label_GameOpponentAction" + Looper, Casket.Card[CardNumber].BasicProperties.Name);
 						ChangeElementColor("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]);
 						ChangeText("CostIndicatorText_GameOpponentAction" + Looper, ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameOpponentAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[2]) + "</span>");
 						}
 						switch(true) {
@@ -2049,7 +2049,7 @@
 						if(Casket.Card[CardNumber].BasicProperties.Type == "TalentCard" && Casket.Card[CardNumber].TalentCardProperties.Cost[3] > 0) {
 							Show("CostIndicator_GameOpponentAction" + Looper + "Additional");
 							ChangeText("CostIndicatorText_GameOpponentAction" + Looper + "Additional", ReadCost("Opponent", Casket.Card[CardNumber].BasicProperties.Type, CardNumber)[3]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameOpponentAction" + Looper + "Additional", "<span class=\"SmallerText\">任</span>");
 							}
 							switch(true) {
@@ -2071,13 +2071,13 @@
 							switch(Casket.Card[CardNumber].SupportCardProperties.Duration.Type) {
 								case "Usages":
 									RemoveClass("ProgbarText_GameOpponentAction" + Looper + "Duration", "DurationInRounds");
-									if(Subsystem.Display.ColorBlindMode) {
+									if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 										AddText("ProgbarText_GameOpponentAction" + Looper + "Duration", "<span class=\"SmallerText\">次</span>");
 									}
 									break;
 								case "Rounds":
 									AddClass("ProgbarText_GameOpponentAction" + Looper + "Duration", "DurationInRounds");
-									if(Subsystem.Display.ColorBlindMode) {
+									if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 										AddText("ProgbarText_GameOpponentAction" + Looper + "Duration", "<span class=\"SmallerText\">轮</span>");
 									}
 									break;
@@ -2099,7 +2099,7 @@
 							ChangeText("Label_GameOpponentAction" + Looper, Casket.Card[CardNumber].AffiliatedCard.Name);
 							ChangeElementColor("CostIndicator_GameOpponentAction" + Looper, ReadCost("Opponent", "EventCard", CardNumber)[2]);
 							ChangeText("CostIndicatorText_GameOpponentAction" + Looper, ReadCost("Opponent", "EventCard", CardNumber)[1]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameOpponentAction" + Looper, "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Opponent", "EventCard", CardNumber)[2]) + "</span>");
 							}
 							switch(true) {
@@ -2388,19 +2388,19 @@
 			switch(Game.Status.Player.Turn) {
 				case "InTurn":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorPlayer", "Green");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextPlayer", "行动");
 					}
 					break;
 				case "Standby":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorPlayer", "Off");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextPlayer", "待机");
 					}
 					break;
 				case "EndedAction":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorPlayer", "Red");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextPlayer", "结束");
 					}
 					break;
@@ -2412,19 +2412,19 @@
 			switch(Game.Status.Opponent.Turn) {
 				case "InTurn":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorOpponent", "Green");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextOpponent", "行动");
 					}
 					break;
 				case "Standby":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorOpponent", "Off");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextOpponent", "待机");
 					}
 					break;
 				case "EndedAction":
 					ChangeIndicatorLight("Ctrl_GameTurnIndicatorOpponent", "Red");
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						ChangeText("Label_GameTurnIndicatorAdditionalTextOpponent", "结束");
 					}
 					break;
@@ -2433,9 +2433,9 @@
 					break;
 			}
 			if(Game.Status.Player.Turn == "InTurn" && Game.Status.Player.ActiveCharacter > 0) {
-				ChangeDisabled("Button_GameEndAction", false);
+				ChangeEnabled("Button_GameEndAction", true);
 			} else {
-				ChangeDisabled("Button_GameEndAction", true);
+				ChangeEnabled("Button_GameEndAction", false);
 			}
 
 			// Skill ctrl
@@ -2453,7 +2453,7 @@
 				}
 				ChangeElementColor("CostIndicator_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[2]);
 				ChangeText("CostIndicatorText_GameNormalAttack", ReadCost("Player", "NormalAttack", null)[1]);
-				if(Subsystem.Display.ColorBlindMode) {
+				if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 					AddText("CostIndicatorText_GameNormalAttack", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "NormalAttack", null)[2]) + "</span>");
 				}
 				switch(true) {
@@ -2469,7 +2469,7 @@
 				if(ReadOriginalCost("Player", "NormalAttack", null)[3] > 0) {
 					Show("CostIndicator_GameNormalAttackAdditional");
 					ChangeText("CostIndicatorText_GameNormalAttackAdditional", ReadCost("Player", "NormalAttack", null)[3]);
-					/* if(Subsystem.Display.ColorBlindMode) {
+					/* if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						AddText("CostIndicatorText_GameNormalAttackAdditional", "<span class=\"SmallerText\">任</span>");
 					} */
 					switch(true) {
@@ -2496,7 +2496,7 @@
 				}
 				ChangeElementColor("CostIndicator_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalSkill", ReadCost("Player", "ElementalSkill", null)[1]);
-				if(Subsystem.Display.ColorBlindMode) {
+				if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 					AddText("CostIndicatorText_GameElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "ElementalSkill", null)[2]) + "</span>");
 				}
 				switch(true) {
@@ -2521,7 +2521,7 @@
 					}
 					ChangeElementColor("CostIndicator_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[2]);
 					ChangeText("CostIndicatorText_GameSecondaryElementalSkill", ReadCost("Player", "SecondaryElementalSkill", null)[1]);
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						AddText("CostIndicatorText_GameSecondaryElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "SecondaryElementalSkill", null)[2]) + "</span>");
 					}
 					switch(true) {
@@ -2548,7 +2548,7 @@
 				}
 				ChangeElementColor("CostIndicator_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[2]);
 				ChangeText("CostIndicatorText_GameElementalBurst", ReadCost("Player", "ElementalBurst", null)[1]);
-				if(Subsystem.Display.ColorBlindMode) {
+				if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 					AddText("CostIndicatorText_GameElementalBurst", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "ElementalBurst", null)[2]) + "</span>");
 				}
 				switch(true) {
@@ -2588,15 +2588,15 @@
 				ChangeText("CostIndicatorText_GameElementalBurstAdditional", "?");
 			}
 			if(Game.Status.Player.Turn == "InTurn" && Game.Status.Player.ActiveCharacter > 0) {
-				ChangeDisabled("Button_GameNormalAttack", false);
-				ChangeDisabled("Button_GameElementalSkill", false);
-				ChangeDisabled("Button_GameSecondaryElementalSkill", false);
-				ChangeDisabled("Button_GameElementalBurst", false);
+				ChangeEnabled("Button_GameNormalAttack", true);
+				ChangeEnabled("Button_GameElementalSkill", true);
+				ChangeEnabled("Button_GameSecondaryElementalSkill", true);
+				ChangeEnabled("Button_GameElementalBurst", true);
 			} else {
-				ChangeDisabled("Button_GameNormalAttack", true);
-				ChangeDisabled("Button_GameElementalSkill", true);
-				ChangeDisabled("Button_GameSecondaryElementalSkill", true);
-				ChangeDisabled("Button_GameElementalBurst", true);
+				ChangeEnabled("Button_GameNormalAttack", false);
+				ChangeEnabled("Button_GameElementalSkill", false);
+				ChangeEnabled("Button_GameSecondaryElementalSkill", false);
+				ChangeEnabled("Button_GameElementalBurst", false);
 			}
 		}
 		function RefreshOperationPanel() {
@@ -2679,9 +2679,9 @@
 						Fade("CtrlGroup_GameStartingHand");
 					}
 					if(JSON.stringify(Game0.Selection.StartingHand) != "[0,false,false,false,false,false]") {
-						ChangeDisabled("Button_GameSwitchStartingHand", false);
+						ChangeEnabled("Button_GameSwitchStartingHand", true);
 					} else {
-						ChangeDisabled("Button_GameSwitchStartingHand", true);
+						ChangeEnabled("Button_GameSwitchStartingHand", false);
 					}
 					for(let Looper = 1; Looper <= 5; Looper++) {
 						ChangeChecked("Checkbox_GameStartingHand" + Looper, Game0.Selection.StartingHand[Looper]);
@@ -2764,9 +2764,9 @@
 
 						// Reroll
 						if(JSON.stringify(Game0.Selection.Dice) != "[0,false,false,false,false,false,false,false,false,false,false,false,false]") {
-							ChangeDisabled("Button_GameReroll", false);
+							ChangeEnabled("Button_GameReroll", true);
 						} else {
-							ChangeDisabled("Button_GameReroll", true);
+							ChangeEnabled("Button_GameReroll", false);
 						}
 
 					break;
@@ -2779,7 +2779,7 @@
 					// Refresh operation panel content
 					ChangeElementColor("CostIndicator_GameSwitchCharacter", ReadCost("Player", "CharacterCard", null)[2]);
 					ChangeText("CostIndicatorText_GameSwitchCharacter", ReadCost("Player", "CharacterCard", null)[1]);
-					if(Subsystem.Display.ColorBlindMode) {
+					if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 						AddText("CostIndicatorText_GameSwitchCharacter", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(ReadCost("Player", "CharacterCard", null)[2]) + "</span>");
 					}
 					switch(true) {
@@ -2794,9 +2794,9 @@
 					}
 					ChangeText("Label_GameSwitchCharacterTarget", ReadCardNameByID(Game.Status.Player.CharacterCard[Game0.Selection.Action.Number].ID));
 					if(IsSelectedDiceMatchingCost("Player", "CharacterCard", null)) {
-						ChangeDisabled("Button_GameSwitchCharacter", false);
+						ChangeEnabled("Button_GameSwitchCharacter", true);
 					} else {
-						ChangeDisabled("Button_GameSwitchCharacter", true);
+						ChangeEnabled("Button_GameSwitchCharacter", false);
 					}
 
 					// Specify in-preview ctrls
@@ -2887,26 +2887,26 @@
 				RemoveClassByClass("OnRolling", "Transparent");
 			}
 			if(Game.Status.Operation == "Title" || Game.Status.Operation == "Loading") {
-				ChangeDisabled("Button_GameRestart", true);
+				ChangeEnabled("Button_GameRestart", false);
 			} else {
-				ChangeDisabled("Button_GameRestart", false);
+				ChangeEnabled("Button_GameRestart", true);
 			}
 			if(Game.Status.Operation == "Title") {
-				ChangeDisabled("Button_GameExit", true);
-				ChangeDisabled("Fieldset_CasketDecks", false);
-				ChangeDisabled("Fieldset_CasketCharacterCards", false);
-				ChangeDisabled("Fieldset_CasketActionCards", false);
-				ChangeDisabled("Fieldset_CasketDeckProperties", false);
-				ChangeDisabled("Fieldset_CasketManagement", false);
-				ChangeDisabled("Fieldset_EditorChooseACardToEdit", false);
+				ChangeEnabled("Button_GameExit", false);
+				ChangeEnabled("Fieldset_CasketDecks", true);
+				ChangeEnabled("Fieldset_CasketCharacterCards", true);
+				ChangeEnabled("Fieldset_CasketActionCards", true);
+				ChangeEnabled("Fieldset_CasketDeckProperties", true);
+				ChangeEnabled("Fieldset_CasketManagement", true);
+				ChangeEnabled("Fieldset_EditorChooseACardToEdit", true);
 			} else {
-				ChangeDisabled("Button_GameExit", false);
-				ChangeDisabled("Fieldset_CasketDecks", true);
-				ChangeDisabled("Fieldset_CasketCharacterCards", true);
-				ChangeDisabled("Fieldset_CasketActionCards", true);
-				ChangeDisabled("Fieldset_CasketDeckProperties", true);
-				ChangeDisabled("Fieldset_CasketManagement", true);
-				ChangeDisabled("Fieldset_EditorChooseACardToEdit", true);
+				ChangeEnabled("Button_GameExit", true);
+				ChangeEnabled("Fieldset_CasketDecks", false);
+				ChangeEnabled("Fieldset_CasketCharacterCards", false);
+				ChangeEnabled("Fieldset_CasketActionCards", false);
+				ChangeEnabled("Fieldset_CasketDeckProperties", false);
+				ChangeEnabled("Fieldset_CasketManagement", false);
+				ChangeEnabled("Fieldset_EditorChooseACardToEdit", false);
 				CloseCard();
 			}
 		}
@@ -2960,13 +2960,13 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowNormalAttack", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowNormalAttack", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowNormalAttack", Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowNormalAttack", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
 						}
 						if(Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Cost[2] > 0) {
 							Show("CostIndicator_GameInfoWindowNormalAttackAdditional");
 							ChangeText("CostIndicatorText_GameInfoWindowNormalAttackAdditional", Casket.Card[CardNumberOrBuiltinStatus].NormalAttack.Cost[2]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameInfoWindowNormalAttackAdditional", "<span class=\"SmallerText\">任</span>");
 							}
 						} else {
@@ -2980,7 +2980,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowElementalSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Cost);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowElementalSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].ElementalSkill.Description);
@@ -2992,7 +2992,7 @@
 							ChangeText("InfoWindowSubtitle_GameInfoWindowSecondaryElementalSkill", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Name));
 							ChangeElementColor("CostIndicator_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 							ChangeText("CostIndicatorText_GameInfoWindowSecondaryElementalSkill", Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Cost);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameInfoWindowSecondaryElementalSkill", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
 							}
 							ChangeText("Label_GameInfoWindowSecondaryElementalSkillDescription", Casket.Card[CardNumberOrBuiltinStatus].SecondaryElementalSkill.Description);
@@ -3004,7 +3004,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowElementalBurst", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType);
 						ChangeText("CostIndicatorText_GameInfoWindowElementalBurst", Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Cost);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowElementalBurst", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].CharacterCardProperties.ElementType) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowElementalBurstDescription", Casket.Card[CardNumberOrBuiltinStatus].ElementalBurst.Description);
@@ -3049,7 +3049,7 @@
 									Show("CostIndicator_GameInfoWindowAffiliatedCard");
 									ChangeElementColor("CostIndicator_GameInfoWindowAffiliatedCard", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[2]);
 									ChangeText("CostIndicatorText_GameInfoWindowAffiliatedCard", Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[1]);
-									if(Subsystem.Display.ColorBlindMode) {
+									if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 										AddText("CostIndicatorText_GameInfoWindowAffiliatedCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].AffiliatedCard.Cost[2]) + "</span>");
 									}
 									HideHorizontally("Ctrl_GameInfoWindowAffiliatedCardDuration");
@@ -3083,13 +3083,13 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowTalentCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowTalentCard", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowTalentCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[2]) + "</span>");
 						}
 						if(Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[3] > 0) {
 							Show("CostIndicator_GameInfoWindowTalentCardAdditional");
 							ChangeText("CostIndicatorText_GameInfoWindowTalentCardAdditional", Casket.Card[CardNumberOrBuiltinStatus].TalentCardProperties.Cost[3]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameInfoWindowTalentCardAdditional", "<span class=\"SmallerText\">任</span>");
 							}
 						} else {
@@ -3109,7 +3109,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowWeaponCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowWeaponCard", Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowWeaponCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowWeaponCardWeaponType", Translate(Casket.Card[CardNumberOrBuiltinStatus].WeaponCardProperties.WeaponType));
@@ -3121,7 +3121,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowArtifactCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowArtifactCard", Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowArtifactCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].ArtifactCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowArtifactCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
@@ -3132,7 +3132,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowSupportCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowSupportCard", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowSupportCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowSupportCardDuration", Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].SupportCardProperties.Duration.Type));
@@ -3144,7 +3144,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEventCard", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEventCard", Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowEventCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumberOrBuiltinStatus].EventCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowEventCardDescription", Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Description);
@@ -3155,29 +3155,15 @@
 				}
 
 				// Status
-				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 1) {
-					Show("Ctrl_GameInfoWindowStatus1");
-					ChangeImage("Image_GameInfoWindowStatus1", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Image);
-					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus1", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Name));
-					ChangeText("Label_GameInfoWindowStatus1Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Type));
-					ChangeText("Label_GameInfoWindowStatus1Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[1].Duration.Type));
-					ChangeText("Label_GameInfoWindowStatus1Description", Casket.Card[CardNumberOrBuiltinStatus].Status[1].Description);
-				}
-				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 2) {
-					Show("Ctrl_GameInfoWindowStatus2");
-					ChangeImage("Image_GameInfoWindowStatus2", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Image);
-					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus2", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Name));
-					ChangeText("Label_GameInfoWindowStatus2Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Type));
-					ChangeText("Label_GameInfoWindowStatus2Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[2].Duration.Type));
-					ChangeText("Label_GameInfoWindowStatus2Description", Casket.Card[CardNumberOrBuiltinStatus].Status[2].Description);
-				}
-				if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= 3) {
-					Show("Ctrl_GameInfoWindowStatus3");
-					ChangeImage("Image_GameInfoWindowStatus3", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Image);
-					ChangeText("InfoWindowSubtitle_GameInfoWindowStatus3", ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Name));
-					ChangeText("Label_GameInfoWindowStatus3Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Type));
-					ChangeText("Label_GameInfoWindowStatus3Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[3].Duration.Type));
-					ChangeText("Label_GameInfoWindowStatus3Description", Casket.Card[CardNumberOrBuiltinStatus].Status[3].Description);
+				for(let Looper = 1; Looper <= 3; Looper++) {
+					if(Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.StatusQuantity >= Looper) {
+						Show("Ctrl_GameInfoWindowStatus" + Looper);
+						ChangeImage("Image_GameInfoWindowStatus" + Looper, Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Image);
+						ChangeText("InfoWindowSubtitle_GameInfoWindowStatus" + Looper, ConvertEmptyName(Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Name));
+						ChangeText("Label_GameInfoWindowStatus" + Looper + "Type", Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Type));
+						ChangeText("Label_GameInfoWindowStatus" + Looper + "Duration", Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Duration.Quantity + Translate(Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Duration.Type));
+						ChangeText("Label_GameInfoWindowStatus" + Looper + "Description", Casket.Card[CardNumberOrBuiltinStatus].Status[Looper].Description);
+					}
 				}
 
 				// Credits
@@ -3298,13 +3284,13 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedTalentCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].TalentCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedTalentCard", Casket.Card[CardNumber].TalentCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedTalentCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].TalentCardProperties.Cost[2]) + "</span>");
 						}
 						if(Casket.Card[CardNumber].TalentCardProperties.Cost[3] > 0) {
 							Show("CostIndicator_GameInfoWindowEquippedTalentCardAdditional");
 							ChangeText("CostIndicatorText_GameInfoWindowEquippedTalentCardAdditional", Casket.Card[CardNumber].TalentCardProperties.Cost[3]);
-							if(Subsystem.Display.ColorBlindMode) {
+							if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 								AddText("CostIndicatorText_GameInfoWindowEquippedTalentCardAdditional", "<span class=\"SmallerText\">任</span>");
 							}
 						} else {
@@ -3327,7 +3313,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedWeaponCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].WeaponCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedWeaponCard", Casket.Card[CardNumber].WeaponCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedWeaponCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].WeaponCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowEquippedWeaponCardWeaponType", Translate(Casket.Card[CardNumber].WeaponCardProperties.WeaponType));
@@ -3342,7 +3328,7 @@
 						ChangeText("InfoWindowSubtitle_GameInfoWindowEquippedArtifactCard", ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name));
 						ChangeElementColor("CostIndicator_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].ArtifactCardProperties.Cost[2]);
 						ChangeText("CostIndicatorText_GameInfoWindowEquippedArtifactCard", Casket.Card[CardNumber].ArtifactCardProperties.Cost[1]);
-						if(Subsystem.Display.ColorBlindMode) {
+						if(IsOSHighContrast() || System.Display.Theme == "HighContrast" || Subsystem.Display.ColorBlindMode) {
 							AddText("CostIndicatorText_GameInfoWindowEquippedArtifactCard", "<span class=\"SmallerText\">" + ConvertElementTypeToAbbr(Casket.Card[CardNumber].ArtifactCardProperties.Cost[2]) + "</span>");
 						}
 						ChangeText("Label_GameInfoWindowEquippedArtifactCardDescription", Casket.Card[CardNumber].BasicProperties.Description);
@@ -5021,7 +5007,7 @@
 				PlayAudio("Audio_Sound", "audio/SkillIndicator.mp3");
 
 				// Phase 2
-				if(System.Display.Anim > 0) {
+				if(IsOSAnimEnabled() && System.Display.Anim > 0) {
 					setTimeout(function() {
 						ChangeAnim("ScreenFilter_GameSkillIndicator", "500ms");
 						ChangeAnim("Ctrl_GameSkillIndicatorImage", "500ms");
@@ -5052,7 +5038,7 @@
 				}
 
 				// Phase 3
-				if(System.Display.Anim > 0) {
+				if(IsOSAnimEnabled() && System.Display.Anim > 0) {
 					setTimeout(function() {
 						ChangeAnim("ScreenFilter_GameSkillIndicator", "");
 						ChangeAnim("Ctrl_GameSkillIndicatorImage", "");

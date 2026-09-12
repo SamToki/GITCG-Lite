@@ -31,11 +31,11 @@
 
 				// Check empty deck library
 				if(Casket.Deck.length > 1) {
-					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckPlayer", false);
-					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckOpponent", false);
+					ChangeEnabled("Radiobtn_CasketRandomlySelectDeckPlayer", true);
+					ChangeEnabled("Radiobtn_CasketRandomlySelectDeckOpponent", true);
 				} else { // It is impossible to randomly select deck when there are no decks.
-					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckPlayer", true);
-					ChangeDisabled("Radiobtn_CasketRandomlySelectDeckOpponent", true);
+					ChangeEnabled("Radiobtn_CasketRandomlySelectDeckPlayer", false);
+					ChangeEnabled("Radiobtn_CasketRandomlySelectDeckOpponent", false);
 					Casket.DeckSelection = {
 						Player: -2, Opponent: -2
 					};
@@ -232,7 +232,7 @@
 			for(let Looper = 1; Looper < Casket.Card.length; Looper++) {
 				ChangeChecked("Checkbox_CasketCard" + Looper, false);
 				if(Casket.DeckSelection.Player > 0) {
-					ChangeDisabled("Checkbox_CasketCard" + Looper, false);
+					ChangeEnabled("Checkbox_CasketCard" + Looper, true);
 					if(Casket.Card[Looper].BasicProperties.Type == "CharacterCard") {
 						for(let Looper2 = 1; Looper2 < Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length; Looper2++) {
 							if(Casket.Card[Looper].BasicProperties.ID == Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection[Looper2]) {
@@ -247,7 +247,7 @@
 						}
 					}
 				} else {
-					ChangeDisabled("Checkbox_CasketCard" + Looper, true);
+					ChangeEnabled("Checkbox_CasketCard" + Looper, false);
 				}
 			}
 			if(Casket.DeckSelection.Player > 0) {
@@ -268,14 +268,14 @@
 				RemoveClass("Label_CasketSelectAllActionCards", "RedText");
 			}
 			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].CharacterCardSelection.length > 1) {
-				ChangeDisabled("Button_CasketCharacterCardsDelete", false);
+				ChangeEnabled("Button_CasketCharacterCardsDelete", true);
 			} else {
-				ChangeDisabled("Button_CasketCharacterCardsDelete", true);
+				ChangeEnabled("Button_CasketCharacterCardsDelete", false);
 			}
 			if(Casket.DeckSelection.Player > 0 && Casket.Deck[Casket.DeckSelection.Player].ActionCardSelection.length > 1) {
-				ChangeDisabled("Button_CasketActionCardsDelete", false);
+				ChangeEnabled("Button_CasketActionCardsDelete", true);
 			} else {
-				ChangeDisabled("Button_CasketActionCardsDelete", true);
+				ChangeEnabled("Button_CasketActionCardsDelete", false);
 			}
 
 		// Filter
@@ -338,9 +338,9 @@
 			}
 			ChangeText("Label_CasketDecksItemCount", "显示 " + Counter + "/" + Counter2);
 			if(Counter > 0) {
-				ChangeDisabled("Button_CasketDecksSortByName", false);
+				ChangeEnabled("Button_CasketDecksSortByName", true);
 			} else {
-				ChangeDisabled("Button_CasketDecksSortByName", true);
+				ChangeEnabled("Button_CasketDecksSortByName", false);
 			}
 		}
 		function SetPlayerDeckGenerateTemporaryDeck() {
@@ -479,9 +479,9 @@
 			}
 			ChangeText("Label_CasketCharacterCardsItemCount", "显示 " + Counter + "/" + Counter2);
 			if(Casket.DeckSelection.Player > 0 && Counter > 0) {
-				ChangeDisabled("Checkbox_CasketSelectAllCharacterCards", false);
+				ChangeEnabled("Checkbox_CasketSelectAllCharacterCards", true);
 			} else {
-				ChangeDisabled("Checkbox_CasketSelectAllCharacterCards", true);
+				ChangeEnabled("Checkbox_CasketSelectAllCharacterCards", false);
 			}
 			if(Counter == Counter3 && IsAnyHiddenCardSelected == false) {
 				ChangeChecked("Checkbox_CasketSelectAllCharacterCards", true);
@@ -489,11 +489,11 @@
 				ChangeChecked("Checkbox_CasketSelectAllCharacterCards", false);
 			}
 			if(Counter > 0) {
-				ChangeDisabled("Button_CasketCharacterCardsSortByName", false);
-				ChangeDisabled("Button_CasketCharacterCardsSortByElementType", false);
+				ChangeEnabled("Button_CasketCharacterCardsSortByName", true);
+				ChangeEnabled("Button_CasketCharacterCardsSortByElementType", true);
 			} else {
-				ChangeDisabled("Button_CasketCharacterCardsSortByName", true);
-				ChangeDisabled("Button_CasketCharacterCardsSortByElementType", true);
+				ChangeEnabled("Button_CasketCharacterCardsSortByName", false);
+				ChangeEnabled("Button_CasketCharacterCardsSortByElementType", false);
 			}
 		}
 		function FilterActionCards() {
@@ -580,9 +580,9 @@
 			}
 			ChangeText("Label_CasketActionCardsItemCount", "显示 " + Counter + "/" + Counter2);
 			if(Casket.DeckSelection.Player > 0 && Counter > 0) {
-				ChangeDisabled("Checkbox_CasketSelectAllActionCards", false);
+				ChangeEnabled("Checkbox_CasketSelectAllActionCards", true);
 			} else {
-				ChangeDisabled("Checkbox_CasketSelectAllActionCards", true);
+				ChangeEnabled("Checkbox_CasketSelectAllActionCards", false);
 			}
 			if(Counter == Counter3 && IsAnyHiddenCardSelected == false) {
 				ChangeChecked("Checkbox_CasketSelectAllActionCards", true);
@@ -590,11 +590,11 @@
 				ChangeChecked("Checkbox_CasketSelectAllActionCards", false);
 			}
 			if(Counter > 0) {
-				ChangeDisabled("Button_CasketActionCardsSortByName", false);
-				ChangeDisabled("Button_CasketActionCardsSortByType", false);
+				ChangeEnabled("Button_CasketActionCardsSortByName", true);
+				ChangeEnabled("Button_CasketActionCardsSortByType", true);
 			} else {
-				ChangeDisabled("Button_CasketActionCardsSortByName", true);
-				ChangeDisabled("Button_CasketActionCardsSortByType", true);
+				ChangeEnabled("Button_CasketActionCardsSortByName", false);
+				ChangeEnabled("Button_CasketActionCardsSortByType", false);
 			}
 		}
 		function SetCard(CardNumber) {

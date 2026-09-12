@@ -7651,22 +7651,6 @@
 									</label>
 								</li>
 								<li class="Ctrl">
-									<label for="Checkbox_SettingsShowSpokenLines">
-										<input class="Checkbox" id="Checkbox_SettingsShowSpokenLines" type="checkbox" checked="true" onchange="SetShowSpokenLines()" />
-										<span>显示台词</span>
-									</label>
-								</li>
-								<li class="Ctrl">
-									<label for="Combobox_SettingsSkillIndicator">
-										<span>技能指示器：</span>
-										<select class="Combobox" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
-											<option value="Disabled">禁用</option>
-											<option value="ShowOnElementalBurstOnly" selected>仅于元素爆发显示</option>
-											<option value="ShowOnAnySkill">于所有技能显示</option>
-										</select>
-									</label>
-								</li>
-								<li class="Ctrl">
 									<label for="Combobox_SettingsNameOnCard">
 										<span>牌面卡牌名称：</span>
 										<select class="Combobox" id="Combobox_SettingsNameOnCard" onchange="SetNameOnCard()">
@@ -7687,16 +7671,32 @@
 										</select>
 									</label>
 								</li>
-								<li class="Ctrl" id="Ctrl_SettingsShowInfoWindowWhenOpponentActs">
+								<li class="Ctrl">
 									<label for="Checkbox_SettingsShowInfoWindowWhenOpponentActs">
 										<input class="Checkbox" id="Checkbox_SettingsShowInfoWindowWhenOpponentActs" type="checkbox" checked="true" onchange="SetShowInfoWindowWhenOpponentActs()" />
 										<span>对手行动时显示详情窗口</span>
 									</label>
 								</li>
-								<li class="Ctrl" id="Ctrl_SettingsAlsoShowInfoWindowInCasket">
+								<li class="Ctrl">
 									<label for="Checkbox_SettingsAlsoShowInfoWindowInCasket">
 										<input class="Checkbox" id="Checkbox_SettingsAlsoShowInfoWindowInCasket" type="checkbox" checked="true" onchange="SetAlsoShowInfoWindowInCasket()" />
 										<span>在牌盒界面中也显示详情窗口</span>
+									</label>
+								</li>
+								<li class="Ctrl">
+									<label for="Checkbox_SettingsShowSpokenLines">
+										<input class="Checkbox" id="Checkbox_SettingsShowSpokenLines" type="checkbox" checked="true" onchange="SetShowSpokenLines()" />
+										<span>显示台词</span>
+									</label>
+								</li>
+								<li class="Ctrl">
+									<label for="Combobox_SettingsSkillIndicator">
+										<span>技能指示器：</span>
+										<select class="Combobox" id="Combobox_SettingsSkillIndicator" onchange="SetSkillIndicator()">
+											<option value="Disabled">禁用</option>
+											<option value="ShowOnElementalBurstOnly" selected>仅于元素爆发显示</option>
+											<option value="ShowOnAnySkill">于所有技能显示</option>
+										</select>
 									</label>
 								</li>
 								<li class="Ctrl">
@@ -7707,6 +7707,17 @@
 											<option value="ShowOnWrongKeyPress">按下无关按键时显示</option>
 											<option value="ShowOnAnyKeyPress" selected>按下任意按键时显示</option>
 											<option value="AlwaysShow">始终显示</option>
+										</select>
+									</label>
+								</li>
+								<li class="Ctrl">
+									<label for="Combobox_SettingsAnim">
+										<span>动画：</span>
+										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
+											<option value="0">禁用</option>
+											<option value="100">快速 (100ms)</option>
+											<option value="250" selected>中速 (250ms)</option>
+											<option value="500">慢速 (500ms)</option>
 										</select>
 									</label>
 								</li>
@@ -7726,17 +7737,6 @@
 									<label for="Checkbox_SettingsColorBlindMode">
 										<input class="Checkbox" id="Checkbox_SettingsColorBlindMode" type="checkbox" checked="false" onchange="SetColorBlindMode()" />
 										<span>色盲模式</span>
-									</label>
-								</li>
-								<li class="Ctrl">
-									<label for="Combobox_SettingsAnim">
-										<span>动画：</span>
-										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
-											<option value="0">禁用</option>
-											<option value="100">快速 (100ms)</option>
-											<option value="250" selected>中速 (250ms)</option>
-											<option value="500">慢速 (500ms)</option>
-										</select>
 									</label>
 								</li>
 							</ul>
@@ -7761,14 +7761,14 @@
 										<span>播放声音</span>
 									</label>
 								</li>
-								<li class="Ctrl" id="Ctrl_SettingsSoundVolume">
+								<li class="Ctrl">
 									<label for="Slider_SettingsSoundVolume">
 										<span>音效：</span>
 										<input class="Slider" id="Slider_SettingsSoundVolume" type="range" min="0" max="100" step="1" value="100" onpointerup="PreviewSoundVolume()" oninput="SetSoundVolume()" />
 										<span id="Label_SettingsSoundVolume">音量</span>
 									</label>
 								</li>
-								<li class="Ctrl" id="Ctrl_SettingsVoiceVolume">
+								<li class="Ctrl">
 									<label for="Slider_SettingsVoiceVolume">
 										<span>语音：</span>
 										<input class="Slider" id="Slider_SettingsVoiceVolume" type="range" min="0" max="100" step="1" value="40" onpointerup="PreviewVoiceVolume()" oninput="SetVoiceVolume()" />
@@ -8160,10 +8160,8 @@
 			</ul>
 		</div>
 
-		<div class="Watermark" id="Watermark_TestVersion">
-			<span>七圣召唤 Lite　by SAM TOKI STUDIO　v0.47 Alpha Test<br />
-				注意：这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。<br />
-				CAUTION: This is an early test version which is not indicative of the final content and quality. Many features still don't work. Do not distribute.</span>
+		<div class="Watermark">
+			<span>Alpha Test</span>
 		</div>
 
 		<div class="NonInteractiveCtnr">
