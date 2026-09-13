@@ -108,7 +108,7 @@
 					</nav>
 				</li>
 				<li class="Ctrl" id="Ctrl_CollapseAllFieldsets">
-					<button class="Button" onclick="CollapseAllFieldsets()" title="折叠所有 fieldset" aria-label="折叠所有 fieldset">
+					<button class="Button" onclick="CollapseAllFieldsets()" title="折叠所有板块" aria-label="折叠所有板块">
 						<svg class="Icon Larger" viewBox="0 0 16 16" aria-hidden="true">
 							<path d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"/>
 						</svg>
@@ -7598,18 +7598,18 @@
 							</ul>
 						</fieldset>
 					</li>
-					<li class="Item" id="Item_SettingsDisplay">
+					<li class="Item">
 						<ul class="CtrlGroup">
 							<li class="Ctrl">
-								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsDisplay')">
-									<h2>显示</h2>
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsAppearance')">
+									<h2>外观</h2>
 									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
 									</svg>
 								</button>
 							</li>
 						</ul>
-						<fieldset id="Fieldset_SettingsDisplay">
+						<fieldset id="Fieldset_SettingsAppearance">
 							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Combobox_SettingsTheme">
@@ -7644,12 +7644,32 @@
 									</label>
 								</li>
 								<li class="Ctrl">
-									<label for="Textbox_SettingsHPCautionThreshold">
-										<span>血量：低于</span>
-										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" placeholder="0~60" title="0~60" />
-										<span>%时显示红色</span>
+									<label for="Combobox_SettingsAnim">
+										<span>动画：</span>
+										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
+											<option value="0">禁用</option>
+											<option value="100">快速 (100ms)</option>
+											<option value="250" selected>中速 (250ms)</option>
+											<option value="500">慢速 (500ms)</option>
+										</select>
 									</label>
 								</li>
+							</ul>
+						</fieldset>
+					</li>
+					<li class="Item" id="Item_SettingsFeatureDisplay">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsFeatureDisplay')">
+									<h2>功能显示</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsFeatureDisplay">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Combobox_SettingsNameOnCard">
 										<span>牌面卡牌名称：</span>
@@ -7684,6 +7704,13 @@
 									</label>
 								</li>
 								<li class="Ctrl">
+									<label for="Textbox_SettingsHPCautionThreshold">
+										<span>血量：低于</span>
+										<input class="Textbox Width120" id="Textbox_SettingsHPCautionThreshold" type="number" min="0" max="60" step="5" value="40" onclick="SelectText('Textbox_SettingsHPCautionThreshold')" onchange="SetHPCautionThreshold()" placeholder="0~60" title="0~60" />
+										<span>%时显示红色</span>
+									</label>
+								</li>
+								<li class="Ctrl">
 									<label for="Checkbox_SettingsShowSpokenLines">
 										<input class="Checkbox" id="Checkbox_SettingsShowSpokenLines" type="checkbox" checked="true" onchange="SetShowSpokenLines()" />
 										<span>显示台词</span>
@@ -7710,17 +7737,6 @@
 										</select>
 									</label>
 								</li>
-								<li class="Ctrl">
-									<label for="Combobox_SettingsAnim">
-										<span>动画：</span>
-										<select class="Combobox" id="Combobox_SettingsAnim" onchange="SetAnim()">
-											<option value="0">禁用</option>
-											<option value="100">快速 (100ms)</option>
-											<option value="250" selected>中速 (250ms)</option>
-											<option value="500">慢速 (500ms)</option>
-										</select>
-									</label>
-								</li>
 							</ul>
 							<p><span class="RedText">警告：</span>「打出高额伤害时闪烁画面」可能会诱发<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>。若您在游玩时感到难受，请立即停止游戏并禁用该功能。</p>
 							<ul class="CtrlGroup BelowParagraph">
@@ -7730,7 +7746,28 @@
 										<span>打出高额伤害时闪烁画面</span>
 									</label>
 								</li>
+								<li class="Ctrl Hidden"></li> <!-- Placeholder -->
+								<li class="Ctrl">
+									<button class="Button" onclick="ExpandAllFieldsets()">展开所有板块</button>
+								</li>
+								<li class="Ctrl">
+									<button class="Button" onclick="ResetDontShowAgainDialogs()">重置不再显示的对话框</button>
+								</li>
 							</ul>
+						</fieldset>
+					</li>
+					<li class="Item">
+						<ul class="CtrlGroup">
+							<li class="Ctrl">
+								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsColorBlindMode')">
+									<h2>色盲模式</h2>
+									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<fieldset id="Fieldset_SettingsColorBlindMode">
 							<p>色盲模式会给依赖颜色的 UI 控件 (例如花费指示器) 补充文字，但其颜色保持不变。若您启用色盲模式后仍无法正常使用，请尝试高对比度主题。</p>
 							<ul class="CtrlGroup BelowParagraph">
 								<li class="Ctrl">
@@ -7800,28 +7837,6 @@
 							<p>PWA standalone display：<span id="Label_SettingsPWAStandaloneDisplay">未知</span><br />
 								PWA service worker registration：<span id="Label_SettingsPWAServiceWorkerRegistration">未知</span><br />
 								PWA service worker controller：<span id="Label_SettingsPWAServiceWorkerController">未知</span></p>
-						</fieldset>
-					</li>
-					<li class="Item">
-						<ul class="CtrlGroup">
-							<li class="Ctrl">
-								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsMisc')">
-									<h2>其他</h2>
-									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
-										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-									</svg>
-								</button>
-							</li>
-						</ul>
-						<fieldset id="Fieldset_SettingsMisc">
-							<ul class="CtrlGroup">
-								<li class="Ctrl">
-									<button class="Button" onclick="ResetFieldsetCollapsing()">重置 fieldset 折叠</button>
-								</li>
-								<li class="Ctrl">
-									<button class="Button" onclick="ResetAllDontShowAgainDialogs()">重置所有「不再显示」的对话框</button>
-								</li>
-							</ul>
 						</fieldset>
 					</li>
 					<li class="Item">

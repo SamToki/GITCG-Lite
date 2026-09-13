@@ -96,11 +96,11 @@
 		// Saved
 		var Subsystem = {
 			Display: {
-				HPCautionThreshold: 40,
 				NameOnCard: "ShowOnHover",
 				InfoWindow: {
 					InfoWindow: "ShowOnHover", ShowWhenOpponentActs: true, AlsoShowInCasket: true
 				},
+				HPCautionThreshold: 40,
 				ShowSpokenLines: true,
 				SkillIndicator: "ShowOnElementalBurstOnly",
 				FlashOnHighDamage: false,
@@ -652,7 +652,7 @@
 		let Elements = document.getElementsByTagName("fieldset");
 		for(let Looper = 0; Looper < Elements.length; Looper++) {
 			if(Elements[Looper].id != "") {
-				if(System.CollapsedFieldset.includes(Elements[Looper].id.replace("Fieldset_", "")) == false) {
+				if(System.Display.CollapsedFieldset.includes(Elements[Looper].id.replace("Fieldset_", "")) == false) {
 					Show(Elements[Looper].id);
 				} else {
 					Hide(Elements[Looper].id);
@@ -747,6 +747,9 @@
 			} else {
 				RemoveClass("BgImage", "Blur");
 			}
+			ChangeEnabled("Combobox_SettingsAnim", IsOSAnimEnabled());
+			ChangeValue("Combobox_SettingsAnim", System.Display.Anim);
+			ChangeAnimOverall(System.Display.Anim);
 			ChangeValue("Combobox_SettingsHotkeyIndicators", System.Display.HotkeyIndicators);
 			switch(System.Display.HotkeyIndicators) {
 				case "Disabled":
@@ -762,9 +765,6 @@
 					AlertSystemError("The value of System.Display.HotkeyIndicators \"" + System.Display.HotkeyIndicators + "\" in function RefreshSystem is invalid.");
 					break;
 			}
-			ChangeEnabled("Combobox_SettingsAnim", IsOSAnimEnabled());
-			ChangeValue("Combobox_SettingsAnim", System.Display.Anim);
-			ChangeAnimOverall(System.Display.Anim);
 
 			// Audio
 			ChangeChecked("Checkbox_SettingsPlayAudio", System.Audio.PlayAudio);
@@ -829,7 +829,6 @@
 	function RefreshSubsystem() {
 		// Settings
 			// Display
-			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
 			ChangeValue("Combobox_SettingsNameOnCard", Subsystem.Display.NameOnCard);
 			switch(Subsystem.Display.NameOnCard) {
 				case "Disabled":
@@ -866,6 +865,7 @@
 			}
 			ChangeChecked("Checkbox_SettingsShowInfoWindowWhenOpponentActs", Subsystem.Display.InfoWindow.ShowWhenOpponentActs);
 			ChangeChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket", Subsystem.Display.InfoWindow.AlsoShowInCasket);
+			ChangeValue("Textbox_SettingsHPCautionThreshold", Subsystem.Display.HPCautionThreshold);
 			ChangeChecked("Checkbox_SettingsShowSpokenLines", Subsystem.Display.ShowSpokenLines);
 			if(Subsystem.Display.ShowSpokenLines == false) {
 				FadeByClass("SpokenLine");
@@ -981,10 +981,6 @@
 		}
 
 		// Display
-		function SetHPCautionThreshold() {
-			Subsystem.Display.HPCautionThreshold = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold")), 0, 60);
-			RefreshSubsystem();
-		}
 		function SetNameOnCard() {
 			Subsystem.Display.NameOnCard = ReadValue("Combobox_SettingsNameOnCard");
 			RefreshSubsystem();
@@ -1001,6 +997,10 @@
 			Subsystem.Display.InfoWindow.AlsoShowInCasket = IsChecked("Checkbox_SettingsAlsoShowInfoWindowInCasket");
 			RefreshSubsystem();
 		}
+		function SetHPCautionThreshold() {
+			Subsystem.Display.HPCautionThreshold = CheckRangeAndCorrect(Math.trunc(ReadValue("Textbox_SettingsHPCautionThreshold")), 0, 60);
+			RefreshSubsystem();
+		}
 		function SetShowSpokenLines() {
 			Subsystem.Display.ShowSpokenLines = IsChecked("Checkbox_SettingsShowSpokenLines");
 			RefreshSubsystem();
@@ -1012,6 +1012,11 @@
 		function SetFlashOnHighDamage() {
 			Subsystem.Display.FlashOnHighDamage = IsChecked("Checkbox_SettingsFlashOnHighDamage");
 			RefreshSubsystem();
+		}
+		function ResetDontShowAgainDialogs() {
+			System.Display.DontShowAgain = [0];
+			RefreshSystem();
+			ShowToast("已重置");
 		}
 		function SetColorBlindMode() {
 			Subsystem.Display.ColorBlindMode = IsChecked("Checkbox_SettingsColorBlindMode");
@@ -1033,13 +1038,6 @@
 		}
 		function PreviewVoiceVolume() {
 			PlayAudio("Audio_VoicePlayer", "audio/PreviewVoiceVolume.mp3");
-		}
-
-		// Misc
-		function ResetAllDontShowAgainDialogs() {
-			System.DontShowAgain = [0];
-			RefreshSystem();
-			ShowToast("已重置");
 		}
 
 		// Dev
@@ -1166,7 +1164,7 @@
 				switch(Selector) {
 					case 2:
 						if(IsChecked("Checkbox_DialogCheckboxOption")) {
-							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_LoadingPaused";
+							System.Display.DontShowAgain[System.Display.DontShowAgain.length] = "GITCGLite_Game_LoadingPaused";
 							RefreshSystem();
 						}
 						Game0.Load.IsPaused = false;
@@ -1184,7 +1182,7 @@
 				switch(Selector) {
 					case 3:
 						if(IsChecked("Checkbox_DialogCheckboxOption")) {
-							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Game_WindowLayoutImproper";
+							System.Display.DontShowAgain[System.Display.DontShowAgain.length] = "GITCGLite_Game_WindowLayoutImproper";
 							RefreshSystem();
 						}
 						break;
@@ -1266,8 +1264,8 @@
 				switch(Selector) {
 					case 3:
 						if(IsChecked("Checkbox_DialogCheckboxOption")) {
-							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_DeckExported";
-							System.DontShowAgain[System.DontShowAgain.length] = "GITCGLite_Casket_CardExported";
+							System.Display.DontShowAgain[System.Display.DontShowAgain.length] = "GITCGLite_Casket_DeckExported";
+							System.Display.DontShowAgain[System.Display.DontShowAgain.length] = "GITCGLite_Casket_CardExported";
 							RefreshSystem();
 						}
 						break;

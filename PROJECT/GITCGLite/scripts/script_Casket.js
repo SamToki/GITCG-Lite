@@ -386,7 +386,7 @@
 		}
 		function ExportDeck(DeckNumber) {
 			navigator.clipboard.writeText(JSON.stringify(Casket.Deck[DeckNumber]));
-			if(System.DontShowAgain.includes("GITCGLite_Casket_DeckExported") == false) {
+			if(System.Display.DontShowAgain.includes("GITCGLite_Casket_DeckExported") == false) {
 				ShowDialog("Casket_DeckExported",
 					"Info",
 					"已导出牌组「" + ConvertEmptyName(Casket.Deck[DeckNumber].Properties.Name) + "」至剪贴板。",
@@ -667,7 +667,7 @@
 		}
 		function ExportCard(CardNumber) {
 			navigator.clipboard.writeText(JSON.stringify(Casket.Card[CardNumber]));
-			if(System.DontShowAgain.includes("GITCGLite_Casket_CardExported") == false) {
+			if(System.Display.DontShowAgain.includes("GITCGLite_Casket_CardExported") == false) {
 				ShowDialog("Casket_CardExported",
 					"Info",
 					"已导出卡牌「" + ConvertEmptyName(Casket.Card[CardNumber].BasicProperties.Name) + "」至剪贴板。",

@@ -216,7 +216,7 @@
 							case "Valid":
 								if(IsCardApplicable("Player", ReadCardNumberByID(Game.Status.Player.ActionCard[(Game0.Load.Progress - 16) / 2].ID)) ||
 								Casket.DeckSelection.Player == -2 ||
-								System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+								System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 									Game0.Load.Progress += 2;
 								} else {
 									ShowDialog("Game_LoadingPaused",
@@ -288,7 +288,7 @@
 							case "Valid":
 								if(IsCardApplicable("Opponent", ReadCardNumberByID(Game.Status.Opponent.ActionCard[(Game0.Load.Progress - 82) / 2].ID)) ||
 								Casket.DeckSelection.Opponent == -2 ||
-								System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+								System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 									Game0.Load.Progress += 2;
 								} else {
 									ShowDialog("Game_LoadingPaused",
@@ -340,7 +340,7 @@
 										break;
 								}
 							}
-							if(Casket.DeckSelection.Player == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							if(Casket.DeckSelection.Player == -2 || System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								switch(PartyBalance) {
@@ -369,7 +369,7 @@
 							if(Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[1].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[2].ID)].CharacterCardProperties.ElementType ||
 							Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[2].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Player.CharacterCard[3].ID)].CharacterCardProperties.ElementType ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -391,7 +391,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -413,7 +413,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -435,7 +435,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -457,7 +457,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -479,7 +479,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Player == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -508,7 +508,7 @@
 										break;
 								}
 							}
-							if(Casket.DeckSelection.Opponent == -2 || System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							if(Casket.DeckSelection.Opponent == -2 || System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								switch(PartyBalance) {
@@ -537,7 +537,7 @@
 							if(Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[1].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[2].ID)].CharacterCardProperties.ElementType ||
 							Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[2].ID)].CharacterCardProperties.ElementType != Casket.Card[ReadCardNumberByID(Game.Status.Opponent.CharacterCard[3].ID)].CharacterCardProperties.ElementType ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -559,7 +559,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -581,7 +581,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -603,7 +603,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -625,7 +625,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -647,7 +647,7 @@
 							}
 							if(Counter > 0 ||
 							Casket.DeckSelection.Opponent == -2 ||
-							System.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
+							System.Display.DontShowAgain.includes("GITCGLite_Game_LoadingPaused")) {
 								Game0.Load.Progress += 2;
 							} else {
 								ShowDialog("Game_LoadingPaused",
@@ -977,7 +977,7 @@
 				// Check viewport
 				case Game0.Load.Progress >= 620 && Game0.Load.Progress < 622:
 					ChangeText("Label_GameLoadingPrompt", "正在检查窗口布局...");
-					if(System.DontShowAgain.includes("GITCGLite_Game_WindowLayoutImproper") == false) {
+					if(System.Display.DontShowAgain.includes("GITCGLite_Game_WindowLayoutImproper") == false) {
 						switch(true) {
 							case window.innerWidth < 400:
 								ShowDialog("Game_WindowLayoutImproper",
@@ -3198,7 +3198,7 @@
 							case "SupportCard":
 							case "EventCard":
 								ScrollIntoView("Ctrl_GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type);
-								if(System.CollapsedFieldset.includes("GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type)) {
+								if(System.Display.CollapsedFieldset.includes("GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type)) {
 									ToggleFieldsetCollapsing("GameInfoWindow" + Casket.Card[CardNumberOrBuiltinStatus].BasicProperties.Type);
 								}
 								break;
@@ -3216,7 +3216,7 @@
 					case "Status2":
 					case "Status3":
 						ScrollIntoView("Ctrl_GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
-						if(System.CollapsedFieldset.includes("GameInfoWindow" + ScrollToWhereOrBuiltinStatusName)) {
+						if(System.Display.CollapsedFieldset.includes("GameInfoWindow" + ScrollToWhereOrBuiltinStatusName)) {
 							ToggleFieldsetCollapsing("GameInfoWindow" + ScrollToWhereOrBuiltinStatusName);
 						}
 						break;
@@ -3242,7 +3242,7 @@
 
 				// Scroll and expand
 				ScrollIntoView("Ctrl_GameInfoWindowCharacterCard");
-				if(System.CollapsedFieldset.includes("GameInfoWindowCharacterCard")) {
+				if(System.Display.CollapsedFieldset.includes("GameInfoWindowCharacterCard")) {
 					ToggleFieldsetCollapsing("GameInfoWindowCharacterCard");
 				}
 
@@ -3258,7 +3258,7 @@
 
 				// Scroll and expand
 				ScrollIntoView("Ctrl_GameInfoWindowBuiltinStatus");
-				if(System.CollapsedFieldset.includes("GameInfoWindowBuiltinStatus")) {
+				if(System.Display.CollapsedFieldset.includes("GameInfoWindowBuiltinStatus")) {
 					ToggleFieldsetCollapsing("GameInfoWindowBuiltinStatus");
 				}
 

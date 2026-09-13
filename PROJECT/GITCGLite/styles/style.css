@@ -2183,10 +2183,10 @@
 	/* Area specific */
 		/* Main */
 			/* Settings */
-			#Item_SettingsDisplay {
+			#Item_SettingsFeatureDisplay {
 				width: 800px;
 			}
-			#Fieldset_SettingsDisplay .Ctrl { /* .WidthDividedBy2 */
+			#Fieldset_SettingsFeatureDisplay .Ctrl { /* .WidthDividedBy2 */
 				width: calc((100% - 10px) / 2);
 			}
 }
