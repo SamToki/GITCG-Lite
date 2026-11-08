@@ -96,7 +96,7 @@
 					}
 					AddText("CtrlGroup_CasketDecksList",
 						"<li class=\"Ctrl\" id=\"Ctrl_CasketDeck" + Looper + "\">" +
-						"	<label class=\"CasketDeckLabel\" id=\"Label_CasketDeck" + Looper + "\" for=\"Radiobtn_CasketDeck" + Looper + "Player\">" +
+						"	<label id=\"Label_CasketDeck" + Looper + "\" for=\"Radiobtn_CasketDeck" + Looper + "Player\">" +
 						"		<input class=\"Radiobtn\" id=\"Radiobtn_CasketDeck" + Looper + "Player\" type=\"radio\" checked=\"false\" onchange=\"SetPlayerDeck(" + Looper + ")\" />" +
 						"		<input class=\"Radiobtn\" id=\"Radiobtn_CasketDeck" + Looper + "Opponent\" type=\"radio\" checked=\"false\" onchange=\"SetOpponentDeck(" + Looper + ")\" />" +
 						"		<img class=\"CardImage\" id=\"Image_CasketDeck" + Looper + "Character1\" src=\"" + CharacterImage[1] + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"角色牌图像\" />" +
@@ -216,10 +216,8 @@
 			for(let Looper = 1; Looper < Casket.Deck.length; Looper++) {
 				if(Casket.DeckSelection.Player == Looper) {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Player", true);
-					AddClass("Label_CasketDeck" + Looper, "Active");
 				} else {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Player", false);
-					RemoveClass("Label_CasketDeck" + Looper, "Active");
 				}
 				if(Casket.DeckSelection.Opponent == Looper) {
 					ChangeChecked("Radiobtn_CasketDeck" + Looper + "Opponent", true);

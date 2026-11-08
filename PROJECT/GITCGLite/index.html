@@ -10,7 +10,7 @@
 		<link rel="icon" type="image/png" href="images/Icon.png" />
 		<title>七圣召唤 Lite</title>
 		<meta name="author" content="SAM TOKI STUDIO" />
-		<meta name="version" content="v0.47 (2025/11/12) Alpha Test. Since 2023/12/02." />
+		<meta name="version" content="v0.47 Alpha (2025/11/12). Since 2023/12/02." />
 		<meta name="description" content="「原神」同人游戏。相比原版「七圣召唤」，具有轻量化、高自由度等特点。" />
 		<meta name="copyright" content="© 2024 SAM TOKI STUDIO" />
 
@@ -31,8 +31,6 @@
 		<script defer src="scripts/script_Casket.js"></script>
 		<script defer src="scripts/script_Editor.js"></script>
 		<script defer src="scripts/script.js"></script>
-
-		<link rel="manifest" href="manifests/manifest.json">
 	</head>
 
 	<body>
@@ -46,14 +44,9 @@
 					</a>
 				</li>
 				<li class="Ctrl" id="Ctrl_Nav">
-					<button class="Button HiddenHorizontally" id="Button_Nav" inert="true" onclick="Show('DropctrlGroup_Nav')" title="导航菜单" aria-label="导航菜单">
-						<svg class="Icon Larger" viewBox="0 0 16 16" aria-hidden="true">
-							<path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-						</svg>
-					</button>
 					<nav>
-						<ul class="DropctrlGroup HiddenInMobileLayout" id="DropctrlGroup_Nav">
-							<li class="Dropctrl Nav" id="Nav_Game">
+						<ul class="CtrlGroup">
+							<li class="Ctrl Nav" id="Nav_Game">
 								<a class="Button" href="#Game">
 									<svg class="Icon Larger" viewBox="0 0 512 512" aria-hidden="true">
 										<path d="M510.002,309.835l-0.068-0.326l-0.076-0.334l-26.508-112.721l-0.106-0.417l-0.106-0.418 c-16.668-62.217-73.294-105.666-137.712-105.666H166.579c-64.418,0-121.045,43.449-137.712,105.666l-0.114,0.418l-0.099,0.417 L2.147,309.174l-0.076,0.326l-0.068,0.326c-9.749,46.43,16.926,92.496,62.036,107.168l1.586,0.509 c9.24,3.012,18.89,4.544,28.624,4.544c32.668,0,63.128-17.404,79.758-45.489l22.556-33.343l0.561-0.835l0.509-0.872 c0.796-1.388,2.276-2.253,3.861-2.253h109.02c1.586,0,3.066,0.865,3.862,2.253l0.508,0.872l0.562,0.835l22.555,33.343 c16.63,28.085,47.09,45.489,79.766,45.489c9.734,0,19.384-1.532,28.67-4.56l1.533-0.493 C493.07,402.331,519.737,356.257,510.002,309.835z M439.318,390.397l-1.54,0.501c-6.608,2.154-13.353,3.186-20.014,3.186 c-22.646,0-44.283-11.949-56.088-32.433l-23.064-34.101c-5.788-10.053-16.508-16.258-28.101-16.258h-109.02 c-11.592,0-22.312,6.206-28.101,16.258l-23.063,34.101c-11.804,20.484-33.434,32.433-56.081,32.433 c-6.661,0-13.405-1.032-20.013-3.186l-1.548-0.501c-31.431-10.219-50.102-42.485-43.311-74.819l26.508-112.722 c13.42-50.102,58.826-84.94,110.696-84.94h178.847c51.869,0,97.276,34.838,110.696,84.94l26.508,112.722 C489.413,347.912,470.75,380.178,439.318,390.397z"/>
@@ -66,7 +59,7 @@
 									<span class="LabelAfterIcon">游戏</span>
 								</a>
 							</li>
-							<li class="Dropctrl Nav" id="Nav_Casket">
+							<li class="Ctrl Nav" id="Nav_Casket">
 								<a class="Button" href="#Casket">
 									<svg class="Icon" viewBox="0 0 512 512" aria-hidden="true">
 										<path d="M473.472,40.656l-33.761-2.545c-7.26-13.066-21.779-21.269-37.532-19.674l-34.916,3.488 c-8.422-15.391-26.572-23.524-44.14-18.589l-38.263,10.819C273.828,0.648,254.736-4.066,238.323,3.846L121.372,60.251 l-48.21,23.233L24.67,106.866c-19.092,9.216-27.154,32.229-17.93,51.322l160.077,331.994c9.294,19.163,32.236,27.224,51.399,18.001 l61.489-29.692l31.946-3.19l128.79,9.578c21.198,1.595,39.638-14.3,41.162-35.427L508.97,81.888 C510.566,60.69,494.67,42.25,473.472,40.656z M450.962,384.553l1.454,5.296c2.907,10.378-3.19,21.198-13.576,24.175l-61.269,17.277 l54.3-26.21C440.945,400.738,447.553,393.259,450.962,384.553z M443.993,432.173c7.338-2.105,13.577-6.168,18.299-11.47 l0.071,0.801c1.092,10.741-6.75,20.326-17.568,21.41l-60.545,6.105L443.993,432.173z M376.84,52.339l-3.41-12.052l30.564-3.049 c10.818-1.084,20.404,6.757,21.488,17.498l0.15,1.234l26.423,263.097L376.84,52.339z M304.392,28.312l0.652-0.22l23.162-6.529 c5.806-1.602,11.755-0.44,16.334,2.679c2.68,1.815,4.935,4.289,6.459,7.26c0.582,1.092,1.014,2.325,1.375,3.559l2.035,7.189 l2.396,8.635l74.774,265.132L302.137,47.475l-0.362-0.723l-7.55-15.612L304.392,28.312z M210.014,491.124 c-9.728,4.714-21.418,0.652-26.14-9.075l-3.34-6.898l-11.974-24.899l-14.016-29.039L23.727,149.984 c-4.644-9.727-0.582-21.418,9.146-26.132l33.98-16.412l20.177-9.649l41.02-19.823l3.701-1.815l68.535-33.031l11.471-5.516 l14.229-6.898l15.313-7.33l5.232-2.545c5.226-2.468,10.961-2.468,15.966-0.362c2.688,1.092,5.154,2.758,7.118,5.005 c1.234,1.312,2.248,2.836,3.049,4.502l0.652,1.383l2.396,5.005l4.282,8.792l2.105,4.353l150.712,312.462 c4.65,9.727,0.581,21.418-9.146,26.132l-137.716,66.43l-11.542,5.516l-1.454,0.73l-20.978,10.088l-27.302,13.215L210.014,491.124z M441.817,466.076l-22.141-1.666l27.005-2.687c4.43-0.44,8.571-1.603,12.343-3.418C455.103,463.46,448.786,466.587,441.817,466.076z M471.799,326.758L444.724,57.422l27.366,2.035c10.747,0.794,18.88,10.238,18.078,20.978L471.799,326.758z"/>
@@ -77,7 +70,7 @@
 									<span class="LabelAfterIcon">牌盒</span>
 								</a>
 							</li>
-							<li class="Dropctrl Nav" id="Nav_Editor">
+							<li class="Ctrl Nav" id="Nav_Editor">
 								<a class="Button" href="#Editor">
 									<svg class="Icon" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
@@ -85,7 +78,7 @@
 									<span class="LabelAfterIcon">编辑器</span>
 								</a>
 							</li>
-							<li class="Dropctrl Nav" id="Nav_Settings">
+							<li class="Ctrl Nav" id="Nav_Settings">
 								<a class="Button" href="#Settings">
 									<svg class="Icon" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
@@ -94,7 +87,7 @@
 									<span class="LabelAfterIcon">设定</span>
 								</a>
 							</li>
-							<li class="Dropctrl Nav" id="Nav_Help">
+							<li class="Ctrl Nav" id="Nav_Help">
 								<a class="Button" href="#Help">
 									<svg class="Icon" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -6138,7 +6131,7 @@
 						<fieldset id="Fieldset_CasketManagement">
 							<p><span class="RedText">注意：</span>使用「导入」功能前请先阅读<a href="#Item_HelpDisclaimer" onclick="ShowIAmHere('HelpDisclaimer')">免责声明</a>。</p>
 							<p>可导入牌组、牌组库、卡牌、卡牌库或整个牌盒。支持批量导入，每行一个对象。导入牌组前，请确保其包含的卡牌均已在您的牌盒里。您可向牌组的发布者索要卡牌。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl" id="Ctrl_CasketImport">
 									<textarea class="Textbox" id="Textbox_CasketImport" placeholder="粘贴 JSON 字符串" title="粘贴 JSON 字符串"></textarea>
 								</li>
@@ -6147,7 +6140,7 @@
 								</li>
 							</ul>
 							<p>若要分享导出的数据，请注意其中是否包含个人信息。分享牌组时请一并提供相关卡牌数据。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl WidthDividedBy2">
 									<button class="Button" onclick="ExportDeckLibrary()">导出牌组库</button>
 								</li>
@@ -6301,7 +6294,7 @@
 						</ul>
 						<fieldset id="Fieldset_EditorCredits">
 							<p>请勿填写您的真实姓名、电话号码等个人信息。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorCreditsAuthor">
 										<span>作者：</span>
@@ -6316,7 +6309,7 @@
 								</li>
 							</ul>
 							<p>若要制作原版「<a href="https://zh.moegirl.org.cn/七圣召唤">七圣召唤</a>」尚未推出的<a href="https://zh.moegirl.org.cn/原神">原神</a>角色卡牌，请指定卡牌来源为「二次创作」。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Combobox_EditorCreditsCardSource">
 										<span>卡牌来源：</span>
@@ -7362,7 +7355,7 @@
 								</li>
 							</ul>
 							<p>语言代码用于正确显示声优的名字。若为日语声优请键入「ja-JP」，若为国语声优请键入「zh-CN」。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorCharacterProfileLanguage">
 										<span>语言代码：</span>
@@ -7409,7 +7402,7 @@
 						<fieldset id="Fieldset_EditorSpokenLine">
 							<p>若非国语配音，推荐录入译文。若台词为空，则即使有语音也不会播放。</p>
 							<!-- 在有台词的前提下，角色倒下时不显示台词，只播放语音。后台角色倒下时，既不显示台词，也不播放语音。 -->
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_EditorSpokenLineBecomingActive1">
 										<span>切换至前台：</span>
@@ -7528,7 +7521,7 @@
 						</ul>
 						<fieldset id="Fieldset_SettingsSavedGames">
 							<p>本功能可让您体验残局游玩。导入存档前，请确保其包含的卡牌均已在您的<a href="#Casket">牌盒</a>里。您可向存档的发布者索要卡牌。若要分享导出的存档，请一并提供相关卡牌数据，并且注意其中是否包含个人信息。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_SettingsImportSavedGame">
 										<span>导入：</span>
@@ -7739,7 +7732,7 @@
 								</li>
 							</ul>
 							<p><span class="RedText">警告：</span>「打出高额伤害时闪烁画面」可能会诱发<a href="https://zh.wikipedia.org/wiki/光敏性癫痫">光敏性癫痫</a>。若您在游玩时感到难受，请立即停止游戏并禁用该功能。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Checkbox_SettingsFlashOnHighDamage">
 										<input class="Checkbox" id="Checkbox_SettingsFlashOnHighDamage" type="checkbox" checked="false" onchange="SetFlashOnHighDamage()" />
@@ -7769,7 +7762,7 @@
 						</ul>
 						<fieldset id="Fieldset_SettingsColorBlindMode">
 							<p>色盲模式会给依赖颜色的 UI 控件 (例如花费指示器) 补充文字，但其颜色保持不变。若您启用色盲模式后仍无法正常使用，请尝试高对比度主题。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Checkbox_SettingsColorBlindMode">
 										<input class="Checkbox" id="Checkbox_SettingsColorBlindMode" type="checkbox" checked="false" onchange="SetColorBlindMode()" />
@@ -7813,30 +7806,6 @@
 									</label>
 								</li>
 							</ul>
-						</fieldset>
-					</li>
-					<li class="Item">
-						<ul class="CtrlGroup">
-							<li class="Ctrl">
-								<button class="Button ShownAsLabel" onclick="ToggleFieldsetCollapsing('SettingsPWA')">
-									<h2>PWA</h2>
-									<svg class="Icon Smaller CollapseCaret" viewBox="0 0 16 16" aria-hidden="true">
-										<path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-									</svg>
-								</button>
-							</li>
-						</ul>
-						<fieldset id="Fieldset_SettingsPWA">
-							<p>您可将本游戏安装至桌面，以 <a href="https://zh.wikipedia.org/wiki/progressive_web_app">PWA</a> (俗称小程序) 的形式更方便地使用。若下面的按钮不可用，请尝试前往浏览器的菜单来安装。</p>
-							<ul class="CtrlGroup BelowParagraph">
-								<li class="Ctrl">
-									<button class="Button" id="Button_SettingsInstallPWA" disabled="true" onclick="InstallPWA()">安装</button>
-								</li>
-							</ul>
-							<h3>状态</h3>
-							<p>PWA standalone display：<span id="Label_SettingsPWAStandaloneDisplay">未知</span><br />
-								PWA service worker registration：<span id="Label_SettingsPWAServiceWorkerRegistration">未知</span><br />
-								PWA service worker controller：<span id="Label_SettingsPWAServiceWorkerController">未知</span></p>
 						</fieldset>
 					</li>
 					<li class="Item">
@@ -7886,7 +7855,7 @@
 						</ul>
 						<fieldset id="Fieldset_SettingsUserData">
 							<p>本功能可快速更改整个网站的用户数据。若要分享导出的数据，请注意其中是否包含个人信息。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<label for="Textbox_SettingsUserDataImport">
 										<span>导入：</span>
@@ -7936,7 +7905,7 @@
 						</ul>
 						<fieldset id="Fieldset_HelpTutorial">
 							<p>本游戏的教程以 PDF 文档的形式提供。这方便您保存至本地，还可以打印出来备用。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl WidthDividedBy2">
 									<a class="Button" href="docs/七圣召唤%20Lite%20快速入门.pdf">快速入门</a>
 								</li>
@@ -7945,7 +7914,7 @@
 								</li>
 							</ul>
 							<p>您也可以参考原版「七圣召唤」的资料，但请注意本游戏的规则与其有些许差异。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl WidthDividedBy2">
 									<a class="Button" href="https://wiki.biligame.com/ys/七圣召唤">中文 Wiki</a>
 								</li>
@@ -7969,7 +7938,7 @@
 						<fieldset id="Fieldset_HelpGetInvolved">
 							<h3>反馈</h3>
 							<p>您可通过以下渠道向我提供反馈：</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<a class="Button" href="https://github.com/SamToki/GITCG-Lite/issues">GitHub Issues</a>
 								</li>
@@ -8093,11 +8062,11 @@
 						<fieldset id="Fieldset_HelpAbout">
 							<p>七圣召唤 Lite</p>
 							<p>by SAM TOKI STUDIO</p>
-							<p>v0.47 (<time datetime="2025-11-12" pubdate="pubdate">2025/11/12</time>) Alpha Test<br />
+							<p>v0.47 Alpha (2025/11/12)<br />
 								始于 2023/12/02</p>
 							<p><span class="RedText">注意：</span>这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。测试版本更新迭代时可能会丢失用户数据。</p>
 							<p class="GreenText Hidden" id="Label_HelpNewVersionReady" inert="true">新版本已就绪，将在下次启动时生效。</p>
-							<ul class="CtrlGroup BelowParagraph">
+							<ul class="CtrlGroup">
 								<li class="Ctrl">
 									<a class="Button" href="https://github.com/SamToki/GITCG-Lite">查看 GitHub 项目</a>
 								</li>
@@ -8118,7 +8087,7 @@
 					<path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
 					<path d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
 				</svg>
-				<span class="LabelAfterIcon">正在初始化...</span>
+				<span class="LabelAfterIcon">正在载入...</span>
 				<noscript class="LabelAfterIcon RedText">请启用 JavaScript</noscript>
 			</span>
 		</div>
@@ -8176,7 +8145,7 @@
 		</div>
 
 		<div class="Watermark">
-			<span>Alpha Test</span>
+			<span>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</span>
 		</div>
 
 		<div class="NonInteractiveCtnr">

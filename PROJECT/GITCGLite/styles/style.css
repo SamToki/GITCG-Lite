@@ -105,6 +105,9 @@
 		left: calc(50% - 300px);
 		width: 600px;
 	}
+	.Nav {
+		width: calc(100% / 5);
+	}
 
 	/* Main */
 		/* Game */
@@ -1245,7 +1248,7 @@
 				/* Info window */
 				#Window_Game {
 					position: fixed; top: 130px; left: 15px; z-index: 41;
-					width: 240px; height: calc(100vh - 200px); height: calc(100dvh - 200px); /* dvh compatibility fallback */
+					width: 230px; height: calc(100vh - 200px); height: calc(100dvh - 200px); padding: 10px; /* dvh compatibility fallback */
 					overflow: auto; scroll-padding-top: 15px;
 				}
 				#Html:has(#Topbar.Hidden) #Window_Game {
@@ -1257,7 +1260,7 @@
 						position: sticky; top: 0; right: 0; z-index: 1;
 					}
 					#CtrlGroup_GameInfoWindowCloseButton .Ctrl {
-						position: absolute; top: -15px; right: -15px;
+						position: absolute; top: -10px; right: -10px;
 						width: 35px;
 					}
 					#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
@@ -1365,25 +1368,22 @@
 			position: absolute; top: calc(50% - 11px); right: 5px;
 		}
 			/* Decks */
-			.CasketDeckLabel {
-				width: calc(100% - 76px);
-			}
 			#CtrlGroup_CasketDecksList .ListItemName {
-				max-width: 174px;
+				max-width: calc(100% - 194.5px);
 			}
 
 			/* Cards */
-			.CasketCardLabel {
-				width: calc(100% - 98px);
-			}
 			#CtrlGroup_CasketCharacterCardsList .CardImage, #CtrlGroup_CasketActionCardsList .CardImage {
-				margin: 0 0 0 10px;
+				margin: 0 5px;
+			}
+			.CasketCardLabel .Icon {
+				margin: 0 1px 0 0;
 			}
 			#CtrlGroup_CasketCharacterCardsList .ListItemName {
-				max-width: 201px; margin: 0 0 0 1px;
+				max-width: calc(100% - 168px);
 			}
 			#CtrlGroup_CasketActionCardsList .ListItemName {
-				max-width: 219px;
+				max-width: calc(100% - 149.5px);
 			}
 
 			/* Management */
@@ -1421,13 +1421,8 @@
 		}
 
 /* Responsive web design */
-@media (max-width: 920px) {
+@media (max-width: 910px) {
 	/* Area specific */
-		/* Header */
-		#DropctrlGroup_Nav {
-			height: 177px;
-		}
-
 		/* Main */
 			/* Game */
 				/* Viewport */
@@ -2134,13 +2129,13 @@
 							width: 30px; height: 30px;
 						}
 						#CtrlGroup_GameInfoWindowObjectProperties, #CtrlGroup_GameInfoWindowInGameCharacterProperties {
-							width: 150px;
+							width: 160px;
 						}
-						.InfoWindowItem .Ctrl:has(h2) {
-							width: calc(100% - 30px);
+						.InfoWindowItem {
+							margin: 0 0 10px 0;
 						}
 						.InfoWindowItem fieldset {
-							padding: 10px 0;
+							margin: 0;
 						}
 						.InfoWindowItem fieldset .InfoWindowCardImage, .InfoWindowItem fieldset .InfoWindowSkillImage, .InfoWindowItem fieldset .InfoWindowStatusImage {
 							width: 42px;
