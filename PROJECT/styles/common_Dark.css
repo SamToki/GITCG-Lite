@@ -10,9 +10,6 @@
 		#Html {
 			color: #FFFFFF; accent-color: #D090F0;
 		}
-		#BgFilter {
-			background-color: #000000E0;
-		}
 
 		/* Group frameworks */
 		fieldset {
@@ -219,10 +216,9 @@
 		background-color: #FFFFFF;
 	}
 
-	/* Footer */
-	footer {
+	/* Main */
+	#Main {
 		background-color: #000000E0;
-		color: #FFFFFF80;
 	}
 
 /* Dev */

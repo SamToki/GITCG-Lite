@@ -82,6 +82,12 @@
 		function ReadLeft(ID) {
 			return document.getElementById(ID).offsetLeft;
 		}
+		function ReadScrollTop(ID) {
+			return document.getElementById(ID).scrollTop;
+		}
+		function ReadScrollLeft(ID) {
+			return document.getElementById(ID).scrollLeft;
+		}
 
 		// Size
 		function ReadWidth(ID) {
@@ -629,7 +635,7 @@
 
 // Listeners
 	// On scroll
-	document.addEventListener("scroll", HighlightActiveSectionInNav);
+	document.getElementById("Main").addEventListener("scroll", HighlightActiveSectionInNav);
 
 	// On click (mouse left button, Enter key or Space key)
 	document.addEventListener("click", function() {
@@ -726,7 +732,7 @@
 
 		// Active section
 		for(let Looper = 0; Looper < TheDocument.Sections.length; Looper++) {
-			if(window.scrollX >= TheDocument.Sections[Looper].offsetLeft - window.innerWidth / 2) {
+			if(ReadScrollLeft("Main") >= TheDocument.Sections[Looper].offsetLeft - window.innerWidth / 2) {
 				TheDocument.ActiveSectionID = TheDocument.Sections[Looper].getAttribute("id");
 			}
 		}
@@ -740,7 +746,9 @@
 		}
 
 		// Underline
-		ChangeLeft("Ctrl_NavUnderline", (TheDocument.NavCtrls[0].offsetWidth * (TheDocument.Sections.length - 1)) * (window.scrollX / (window.innerWidth * (TheDocument.Sections.length - 1))) + 4 + "px");
+		let WebpageScrollableWidth = window.innerWidth * (TheDocument.Sections.length - 1),
+		NavScrollableWidth = TheDocument.NavCtrls[0].offsetWidth * (TheDocument.Sections.length - 1);
+		ChangeLeft("Ctrl_NavUnderline", NavScrollableWidth * (ReadScrollLeft("Main") / WebpageScrollableWidth) + 4 + "px");
 		ChangeWidth("Ctrl_NavUnderline", TheDocument.NavCtrls[0].offsetWidth - 8 + "px");
 	}
 

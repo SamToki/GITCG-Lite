@@ -1248,12 +1248,12 @@
 				/* Info window */
 				#Window_Game {
 					position: fixed; top: 130px; left: 15px; z-index: 41;
-					width: 230px; height: calc(100vh - 200px); height: calc(100dvh - 200px); padding: 10px; /* dvh compatibility fallback */
+					width: 230px; height: calc(100dvh - 200px); padding: 10px;
 					overflow: auto; scroll-padding-top: 15px;
 				}
 				#Html:has(#Topbar.Hidden) #Window_Game {
 					top: 70px;
-					height: calc(100vh - 140px); height: calc(100dvh - 140px);
+					height: calc(100dvh - 140px);
 				}
 					/* General */
 					#CtrlGroup_GameInfoWindowCloseButton {
