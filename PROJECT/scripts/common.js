@@ -724,9 +724,9 @@
 		clearTimeout(Automation.HighlightActiveSectionInNav);
 		Automation.HighlightActiveSectionInNav = setTimeout(HighlightActiveSectionInNav, 500);
 
-		// Main
+		// Active section
 		for(let Looper = 0; Looper < TheDocument.Sections.length; Looper++) {
-			if(scrollY >= TheDocument.Sections[Looper].offsetTop - 200) {
+			if(window.scrollX >= TheDocument.Sections[Looper].offsetLeft - window.innerWidth / 2) {
 				TheDocument.ActiveSectionID = TheDocument.Sections[Looper].getAttribute("id");
 			}
 		}
@@ -734,14 +734,14 @@
 			let NavButtonID = TheDocument.NavCtrls[Looper].getAttribute("id");
 			if(NavButtonID == "Nav_" + TheDocument.ActiveSectionID) {
 				AddClass(NavButtonID, "ActiveSection");
-				ChangeTop("Ctrl_NavUnderline", "calc(100% - 2px)");
-				ChangeLeft("Ctrl_NavUnderline", TheDocument.NavCtrls[Looper].offsetLeft + 4 + "px");
-				ChangeWidth("Ctrl_NavUnderline", TheDocument.NavCtrls[Looper].offsetWidth - 8 + "px");
-				ChangeHeight("Ctrl_NavUnderline", "2px");
 			} else {
 				RemoveClass(NavButtonID, "ActiveSection");
 			}
 		}
+
+		// Underline
+		ChangeLeft("Ctrl_NavUnderline", (TheDocument.NavCtrls[0].offsetWidth * (TheDocument.Sections.length - 1)) * (window.scrollX / (window.innerWidth * (TheDocument.Sections.length - 1))) + 4 + "px");
+		ChangeWidth("Ctrl_NavUnderline", TheDocument.NavCtrls[0].offsetWidth - 8 + "px");
 	}
 
 	// Hide DropctrlGroups

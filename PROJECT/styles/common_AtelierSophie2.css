@@ -10,6 +10,9 @@
 		#Html {
 			color: #291900; accent-color: #904738;
 		}
+		#BgFilter {
+			background-color: #D4C4ABE0;
+		}
 
 		/* Group frameworks */
 		fieldset {
@@ -225,11 +228,6 @@
 	}
 	#Ctrl_NavUnderline {
 		background-color: #291900;
-	}
-
-	/* Main */
-	#Main {
-		background-color: #D4C4ABE0;
 	}
 
 	/* Footer */

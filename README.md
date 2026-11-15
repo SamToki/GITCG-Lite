@@ -1,11 +1,8 @@
-这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。禁止随意传播。<br>
-This is an early test version which is not indicative of the final content and quality. Many features still don't work. Do not distribute.
+这是早期测试版本，不代表最终内容与品质。很多功能仍不起作用。版本迭代时可能会丢失用户数据。<br>
+This is an alpha test version, which is not indicative of the final content and quality. Many features still don't work. When version updates, user data may get lost.
 
-本项目预计长时间**停止开发**。<br>
-The development of this project is expected to be **suspended** for a long time.
-
-以下部分内容无法加载是正常现象。<br>
-There are some unreadable content below.
+本项目已停止开发。以下部分内容无法载入是正常现象。<br>
+The development of this project has been terminated. There are some unreadable content below.
 
 ----------
 
@@ -23,8 +20,6 @@ GITCG Lite is a [*Genshin*](https://genshin-impact.fandom.com/wiki/Genshin_Impac
 https://SamToki.github.io/#ToyStore
 
 # 了解更多 Learn More
-
-[快速入门](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20快速入门.pdf)
 
 [说明文档](/PROJECT/GITCGLite/docs/七圣召唤%20Lite%20说明文档.pdf)
 

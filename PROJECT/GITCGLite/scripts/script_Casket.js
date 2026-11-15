@@ -102,7 +102,7 @@
 						"		<img class=\"CardImage\" id=\"Image_CasketDeck" + Looper + "Character1\" src=\"" + CharacterImage[1] + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"角色牌图像\" />" +
 						"		<img class=\"CardImage\" id=\"Image_CasketDeck" + Looper + "Character2\" src=\"" + CharacterImage[2] + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"角色牌图像\" />" +
 						"		<img class=\"CardImage\" id=\"Image_CasketDeck" + Looper + "Character3\" src=\"" + CharacterImage[3] + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"角色牌图像\" />" +
-						"		<span class=\"ListItemName\">" + ConvertEmptyName(Casket.Deck[Looper].Properties.Name) + "</span>" +
+						"		<span>" + ConvertEmptyName(Casket.Deck[Looper].Properties.Name) + "</span>" +
 						"	</label>" +
 						"	<button class=\"Button ShownAsLabel ListItemDuplicate\" onclick=\"DuplicateDeck(" + Looper + ")\" title=\"生成副本\" aria-label=\"生成副本\">" +
 						"		<svg class=\"Icon Smaller\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">" +
@@ -134,7 +134,7 @@
 					"		<input class=\"Checkbox\" id=\"Checkbox_CasketCard" + Looper + "\" type=\"checkbox\" checked=\"false\" onfocus=\"HoverCardInCasket(" + Looper + ")\" onchange=\"SetCard(" + Looper + ")\" />" +
 					"		<img class=\"CardImage\" id=\"Image_CasketCard" + Looper + "\" src=\"" + Casket.Card[Looper].BasicProperties.Image + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"角色牌图像\" />" +
 							ConvertElementTypeToIcon(Casket.Card[Looper].CharacterCardProperties.ElementType) +
-					"		<span class=\"ListItemName\">" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "</span>" +
+					"		<span>" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "</span>" +
 					"	</label>" +
 					"	<button class=\"Button ShownAsLabel ListItemEdit\" onclick=\"EditCard(" + Looper + ")\" title=\"编辑\" aria-label=\"编辑\">" +
 					"		<svg class=\"Icon Smaller\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">" +
@@ -164,7 +164,7 @@
 					"	<label class=\"CasketCardLabel\" for=\"Checkbox_CasketCard" + Looper + "\" onpointerenter=\"HoverCardInCasket(" + Looper + ")\" onclick=\"ClickCardInCasket(" + Looper + ")\">" +
 					"		<input class=\"Checkbox\" id=\"Checkbox_CasketCard" + Looper + "\" type=\"checkbox\" checked=\"false\" onfocus=\"HoverCardInCasket(" + Looper + ")\" onchange=\"SetCard(" + Looper + ")\" />" +
 					"		<img class=\"CardImage\" id=\"Image_CasketCard" + Looper + "\" src=\"" + Casket.Card[Looper].BasicProperties.Image + "\" onerror=\"this.src='images/UnknownCard.jpg'\" alt=\"行动牌图像\" />" +
-					"		<span class=\"ListItemName\">" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "</span>" +
+					"		<span>" + ConvertEmptyName(Casket.Card[Looper].BasicProperties.Name) + "</span>" +
 					"	</label>" +
 					"	<button class=\"Button ShownAsLabel ListItemEdit\" onclick=\"EditCard(" + Looper + ")\" title=\"编辑\" aria-label=\"编辑\">" +
 					"		<svg class=\"Icon Smaller\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">" +

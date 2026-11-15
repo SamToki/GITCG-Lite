@@ -61,19 +61,21 @@
 			transform-origin: center center;
 			box-sizing: border-box;
 			color: #000000; accent-color: #8040A0; font-variant-numeric: tabular-nums; font-size: 14px; line-height: 1.2;
-			scroll-padding-top: 60px;
+			scroll-snap-type: x mandatory; scrollbar-width: none;
 			transition: 250ms, z-index 0ms; scroll-behavior: smooth;
 		}
-		#Html:has(#Topbar.Hidden) {
-			scroll-padding-top: 0;
-		}
 		#BgImage {
-			position: fixed; top: 0; left: 0; z-index: -1;
+			position: fixed; top: 0; left: 0; z-index: -11;
 			width: 100%; height: 100vh; height: 100dvh; /* dvh compatibility fallback */
 			background-color: #808080; background-image: url(../images/Background.jpg); background-position: top center; background-size: cover; background-repeat: no-repeat;
 		}
 		#BgImage.Blur {
 			filter: blur(50px);
+		}
+		#BgFilter {
+			position: fixed; top: 0; left: 0; z-index: -10;
+			width: 100%; height: 100vh; height: 100dvh;
+			background-color: #E0E0E0E0;
 		}
 
 		/* Containers */
@@ -84,13 +86,10 @@
 		/* Sections */
 		section {
 			padding: 0 15px;
-			overflow: hidden;
+			scroll-snap-align: center; flex: 0 0 100%; overflow: auto;
 		}
 		section:has(.Viewport) {
-			height: calc(100vh - 60px); height: calc(100dvh - 60px);
-		}
-		#Html:has(#Topbar.Hidden) section:has(.Viewport) {
-			height: 100vh; height: 100dvh;
+			overflow: hidden;
 		}
 		.Viewport {
 			position: relative;
@@ -136,7 +135,7 @@
 			width: 100%;
 		}
 		fieldset > .CtrlGroup > .Ctrl {
-			width: 100%; max-width: 100%; margin: 0 0 10px 0;
+			width: 100%; margin: 0 0 10px 0;
 		}
 		.ScrollableLog {
 			height: unset; max-height: 200px;
@@ -148,6 +147,14 @@
 		}
 		.ScrollableList .Ctrl {
 			width: 100%;
+		}
+		.ScrollableList label {
+			max-width: 250px;
+			overflow: hidden;
+		}
+		.ScrollableList .Button {
+			width: 22px; height: 22px;
+			justify-content: center;
 		}
 		.ListHeader {
 			display: flex; justify-content: space-between; align-items: center;
@@ -230,7 +237,7 @@
 		.RollingDigit {
 			position: absolute; top: unset; left: 0;
 			width: 100%;
-			transition: none !important;
+			transition: none;
 		}
 		.RollingDigit span {
 			width: 100%;
@@ -753,6 +760,7 @@
 		position: absolute; top: calc(100% - 2px); left: 4px;
 		width: 0; height: 2px; border-radius: 1px;
 		background-color: #000000;
+		transition: none;
 	}
 	#Ctrl_CollapseAllFieldsets {
 		position: absolute; top: 0; right: 0;
@@ -768,19 +776,11 @@
 
 	/* Main */
 	#Main {
-		padding: 60px 0 0 0;
-		background-color: #E0E0E0E0;
+		height: 100vh; height: 100dvh; padding: 60px 0 0 0;
+		display: flex;
 	}
 	#Html:has(#Topbar.Hidden) #Main {
 		padding: 0;
-	}
-
-	/* Footer */
-	footer {
-		padding: 15px;
-		background-color: #E0E0E0E0;
-		color: #00000080; text-align: center;
-		display: flex; justify-content: center; align-items: center;
 	}
 
 /* Responsive web design */
