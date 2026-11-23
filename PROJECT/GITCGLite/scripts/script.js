@@ -1635,7 +1635,7 @@
 		if(Value != "") {
 			return Value;
 		} else {
-			return "N/A";
+			return "---";
 		}
 	}
 	function ConvertCardTypeToNumber(CardType) {
